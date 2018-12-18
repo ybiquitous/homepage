@@ -7,6 +7,10 @@
     <title>ybiquitous homepage</title>
     <link rel="icon" href="/favicon.png" />
     <style>
+      :root {
+        --space: 1rem;
+      }
+
       *,
       *::before,
       *::after {
@@ -16,13 +20,27 @@
       body {
         color: #000;
         margin: auto;
-        max-width: 1000px;
-        padding: 1rem 0;
+        max-width: 50rem;
+        padding: var(--space);
       }
 
       main {
         min-height: 50vh;
-        padding: 2rem 0;
+        padding: var(--space) 0;
+      }
+
+      figure {
+        margin: var(--space) 0;
+        display: flex;
+        align-items: center;
+      }
+
+      figcaption {
+        margin: 0 var(--space);
+      }
+
+      img {
+        border-radius: 50%;
       }
 
       a {
@@ -39,10 +57,10 @@
       ul {
         list-style: none;
         margin: 0;
-        padding: 1rem 0;
+        padding: var(--space) 0;
         display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: 8rem 8rem;
+        grid-gap: var(--space);
+        grid-template-columns: repeat(2, 8em);
       }
 
       footer {
@@ -63,17 +81,23 @@
     />
   </head>
   <body>
-    <header><h1>ybiquitous homepage</h1></header>
+    <header>
+      <h1><em>ybiquitous</em> home</h1>
+      <figure>
+        <img src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=60" alt="Masafumi Koba" />
+        <figcaption>Masafumi Koba (<em>@ybiquitous</em>), Software Engineer</figcaption>
+      </figure>
+    </header>
     <main>
       <nav>
         <ul>
           <li>
-            <a href="https://github.com/ybiquitous" target="_blank" rel="noopener" title="Go to GitHub.com">
+            <a href="https://github.com/ybiquitous" target="_blank" rel="noopener" title="@ybiquitous">
               <i class="fab fa-github fa-fw"></i> GitHub
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/ybiquitous" target="_blank" rel="noopener" title="Go to Twitter.com">
+            <a href="https://twitter.com/ybiquitous" target="_blank" rel="noopener" title="@ybiquitous">
               <i class="fab fa-twitter fa-fw"></i> Twitter
             </a>
           </li>
@@ -81,7 +105,7 @@
       </nav>
     </main>
     <footer>
-      <p><small>© 2018 ybiquitous</small></p>
+      <p><small>© 2018 Masafumi Koba</small></p>
     </footer>
   </body>
 </html>

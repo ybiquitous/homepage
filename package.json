@@ -1,0 +1,49 @@
+{
+  "name": "homepage",
+  "version": "0.0.1",
+  "description": "ybiquitous Homepage",
+  "author": "Masafumi Koba <ybiquitous@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "repository": "ybiquitous/homepage",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "rm -rf public/ && cp -rf src/ public/",
+    "format": "npm-run-all --print-label --parallel lint:js:fix prettier:write",
+    "lint": "npm-run-all --print-label --parallel lint:*",
+    "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{html,json,md,yaml,yml}\""
+  },
+  "devDependencies": {
+    "eslint-config-ybiquitous": "latest",
+    "ybiq": "latest"
+  },
+  "prettier": {
+    "trailingComma": "es5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "ybiquitous"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,jsx,mjs}": [
+        "eslint --fix --no-ignore",
+        "git add"
+      ],
+      "*.{html,json,md,yaml,yml}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  }
+}

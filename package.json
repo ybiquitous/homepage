@@ -15,10 +15,12 @@
     "lint": "npm-run-all --print-label --parallel lint:*",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{html,json,md,yaml,yml}\""
+    "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{css,html,json,md,yaml,yml}\""
   },
   "devDependencies": {
     "eslint-config-ybiquitous": "latest",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest",
     "ybiq": "latest"
   },
   "prettier": {
@@ -27,6 +29,11 @@
   "eslintConfig": {
     "extends": [
       "ybiquitous"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard"
     ]
   },
   "husky": {
@@ -40,7 +47,10 @@
         "eslint --fix --no-ignore",
         "git add"
       ],
-      "*.{html,json,md,yaml,yml}": [
+      "*.{css,html}": [
+        "stylelint"
+      ],
+      "*.{css,html,json,md,yaml,yml}": [
         "prettier --write",
         "git add"
       ]

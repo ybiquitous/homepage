@@ -2,25 +2,86 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <meta
-      name="description"
-      content="ybiquitous homepage; softwares, blog, slides, and so on."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="ybiquitous homepage; softwares, blog, slides, and so on." />
     <title>ybiquitous homepage</title>
     <link rel="icon" href="/favicon.png" />
     <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
       body {
+        color: #000;
         margin: auto;
         max-width: 1000px;
-        padding: 1rem;
+        padding: 1rem 0;
+      }
+
+      main {
+        min-height: 50vh;
+        padding: 2rem 0;
+      }
+
+      a {
+        color: #494949;
+        text-decoration: none;
+        border-bottom: 0.1em solid transparent;
+        transition: border-color 0.2s ease-out;
+      }
+
+      a:hover {
+        border-color: inherit;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 1rem 0;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 8rem 8rem;
+      }
+
+      footer {
+        color: #7c7c7c;
       }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/brands.css"
+      integrity="sha384-whKHCkwP9f4MyD1vda26+XRyEg2zkyZezur14Kxc784RxUU1E7HvWVYj9EoJnUV7"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css"
+      integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>ybiquitous homepage</h1>
+    <header><h1>ybiquitous homepage</h1></header>
+    <main>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://github.com/ybiquitous" target="_blank" rel="noopener" title="Go to GitHub.com">
+              <i class="fab fa-github fa-fw"></i> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ybiquitous" target="_blank" rel="noopener" title="Go to Twitter.com">
+              <i class="fab fa-twitter fa-fw"></i> Twitter
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+    <footer>
+      <p><small>© 2018 ybiquitous</small></p>
+    </footer>
   </body>
 </html>

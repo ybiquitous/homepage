@@ -9,6 +9,11 @@
     <style>
       :root {
         --space: 1rem;
+
+        /* Color pallete from https://clrs.cc/ */
+        --default-text-color: #111;
+        --link-text-color: #001f3f;
+        --secondary-text-color: #aaa;
       }
 
       *,
@@ -18,7 +23,7 @@
       }
 
       body {
-        color: #000;
+        color: var(--default-text-color);
         margin: auto;
         max-width: 50rem;
         padding: var(--space);
@@ -29,29 +34,25 @@
         padding: var(--space) 0;
       }
 
-      figure {
+      .avatar {
         margin: var(--space) 0;
         display: flex;
         align-items: center;
       }
 
-      figcaption {
-        margin: 0 var(--space);
-      }
-
-      img {
+      .avatar img {
         border-radius: 50%;
       }
 
-      a {
-        color: #494949;
-        text-decoration: none;
-        border-bottom: 0.1em solid transparent;
-        transition: border-color 0.2s ease-out;
+      .avatar figcaption {
+        margin-left: var(--space);
+        display: flex;
+        flex-flow: column;
       }
 
-      a:hover {
-        border-color: inherit;
+      .avatar figcaption small {
+        color: var(--secondary-text-color);
+        margin-top: 0.2em;
       }
 
       ul {
@@ -63,8 +64,19 @@
         grid-template-columns: repeat(2, 8em);
       }
 
+      ul a {
+        color: var(--link-text-color);
+        text-decoration: none;
+        border-bottom: 0.1em solid transparent;
+        transition: border-color 0.1s ease-out;
+      }
+
+      ul a:hover {
+        border-color: inherit;
+      }
+
       footer {
-        color: #7c7c7c;
+        color: var(--secondary-text-color);
       }
     </style>
     <link
@@ -83,9 +95,9 @@
   <body>
     <header>
       <h1><em>ybiquitous</em> home</h1>
-      <figure>
+      <figure class="avatar">
         <img src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=60" alt="Masafumi Koba" />
-        <figcaption>Masafumi Koba (<em>@ybiquitous</em>), Software Engineer</figcaption>
+        <figcaption><span>Masafumi Koba (<em>@ybiquitous</em>)</span> <small>Web Developer</small></figcaption>
       </figure>
     </header>
     <main>
@@ -105,7 +117,7 @@
       </nav>
     </main>
     <footer>
-      <p><small>© 2018 Masafumi Koba</small></p>
+      <p><small>© Masafumi Koba</small></p>
     </footer>
   </body>
 </html>

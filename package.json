@@ -7,7 +7,7 @@
   "private": true,
   "repository": "ybiquitous/homepage",
   "engines": {
-    "node": ">=10"
+    "node": ">=11"
   },
   "scripts": {
     "build": "rm -rf public/ && cp -rf src/ public/",

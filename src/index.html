@@ -9,6 +9,7 @@
     <style>
       :root {
         --space: 1rem;
+        --space-s: 0.5rem;
 
         /* Color pallete from https://clrs.cc/ */
         --default-text-color: #111;
@@ -34,6 +35,12 @@
         padding: var(--space) 0;
       }
 
+      h1 a {
+        color: inherit;
+        font-style: italic;
+        text-decoration: none;
+      }
+
       .avatar {
         margin: var(--space) 0;
         display: flex;
@@ -55,24 +62,55 @@
         margin-top: 0.2em;
       }
 
-      ul {
+      .menu {
         list-style: none;
         margin: 0;
         padding: var(--space) 0;
         display: grid;
         grid-gap: var(--space);
-        grid-template-columns: repeat(2, 8em);
+        grid-template-columns: repeat(3, minmax(max-content, 8em));
       }
 
-      ul a {
+      .menu a {
         color: var(--link-text-color);
         text-decoration: none;
         border-bottom: 0.1em solid transparent;
         transition: border-color 0.1s ease-out;
       }
 
-      ul a:hover {
+      .menu a:hover {
         border-color: inherit;
+      }
+
+      .menu time {
+        font-style: italic;
+      }
+
+      .menu-slides i {
+        font-style: normal;
+        display: inline-block;
+        transition: transform 0.1s ease-out;
+      }
+
+      .menu-slides.open i {
+        transform: rotateX(180deg);
+      }
+
+      .menu-slides ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-top: var(--space-s);
+        opacity: 0;
+        transition: opacity 0.1s ease-out;
+      }
+
+      .menu-slides.open ul {
+        opacity: 1;
+      }
+
+      .menu-slides ul li::before {
+        content: "»";
       }
 
       footer {
@@ -89,12 +127,13 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css"
       integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
       crossorigin="anonymous"
     />
   </head>
   <body>
     <header>
-      <h1><em>ybiquitous</em> home</h1>
+      <h1><a href="/">ybiquitous</a> home</h1>
       <figure class="avatar">
         <img src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=60" alt="Masafumi Koba" />
         <figcaption><span>Masafumi Koba (<em>@ybiquitous</em>)</span> <small>Web Developer</small></figcaption>
@@ -102,7 +141,7 @@
     </header>
     <main>
       <nav>
-        <ul>
+        <ul class="menu">
           <li>
             <a href="https://github.com/ybiquitous" target="_blank" rel="noopener" title="@ybiquitous">
               <i class="fab fa-github fa-fw"></i> GitHub
@@ -113,11 +152,34 @@
               <i class="fab fa-twitter fa-fw"></i> Twitter
             </a>
           </li>
+          <li class="menu-slides">
+            <a href="#slides">Slides <i>▾</i></a>
+            <ul>
+              <li>
+                <a href="/slides/css-in-js">CSS in JS (<time datetime="2016-12-08">8 Dec 2016</time>)</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </main>
     <footer>
       <p><small>© Masafumi Koba</small></p>
     </footer>
+
+    <script>
+      const menuSlides = document.querySelector(".menu-slides");
+      const toggleMenuSlides = () => {
+        const isOpen = location.hash === "#slides";
+        menuSlides.classList.toggle("open", isOpen);
+      };
+      toggleMenuSlides();
+      window.addEventListener("popstate", toggleMenuSlides);
+      menuSlides.querySelector("a[href='#slides']").addEventListener("click", e => {
+        e.preventDefault();
+        history.replaceState(null, "", location.hash === "#slides" ? location.pathname : "#slides");
+        toggleMenuSlides();
+      });
+    </script>
   </body>
 </html>

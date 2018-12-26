@@ -1,0 +1,319 @@
+export { default as theme } from "./theme";
+import { Head, Appear } from "mdx-deck";
+
+<Head>
+  <title>CSS in JS</title>
+  <meta name="description" content="Research for 'CSS in JS'" />
+  <meta name="date.created" content="2016-12-08" />
+</Head>
+
+# CSS in JS
+
+---
+
+## What is it?
+
+---
+
+```jsx
+/* Button.jsx */
+
+const style = {
+  border: "1px solid red",
+  borderRadius: "4px",
+};
+
+<div style={style}>Button</div>;
+```
+
+---
+
+This idea was published on _2014-11-08_
+
+by **[@vjeux](http://blog.vjeux.com/)** (React developer)
+
+[speakerdeck.com/vjeux/react-css-in-js](https://speakerdeck.com/vjeux/react-css-in-js)
+
+---
+
+## Solve CSS problems
+
+## **AT SCALE**
+
+---
+
+<ul style={{ textAlign: "left" }}>
+  <Appear>
+    <li>Global Namespace</li>
+    <li>Depedencies</li>
+    <li>Dead Code Elimination</li>
+    <li>Minification (long class name such as BEM)</li>
+    <li>Sharing Constants</li>
+    <li>Non-deterministic Resolution</li>
+    <li>Isolation</li>
+  </Appear>
+</ul>
+
+---
+
+Solution by CSS in JS
+
+```js
+/* Button.css.js */
+export default {
+  normal: {
+    border: "1px solid red",
+    borderRadius: "4px",
+  },
+  large: {
+    "font-size": "2em",
+  },
+};
+```
+
+---
+
+```jsx
+/* Button.jsx */
+import styles from "./Button.css.js";
+
+export default function Button() {
+  return <div style={styles.normal}>Button</div>;
+}
+```
+
+---
+
+```html
+<!-- DOM output as inline style -->
+<div style="border: 1px solid red; border-radius: 4px;">Button</div>
+```
+
+---
+
+## Solved
+
+<ul style={{ textAlign: "left", listStyle: "none" }}>
+  <Appear>
+    <li>✓ Not global</li>
+    <li>✓ No depedencies</li>
+    <li>✓ Findable dead code</li>
+    <li>✓ Unnecessary minification</li>
+    <li>✓ Handle constants by JS</li>
+    <li>✓ No resolution</li>
+    <li>✓ Yes isolation</li>
+  </Appear>
+</ul>
+
+---
+
+## Libraries supporting these features
+
+[github.com/MicheleBertoli/css-in-js](https://github.com/MicheleBertoli/css-in-js)
+
+---
+
+## In case of [glamor](https://github.com/threepointone/glamor)
+
+```jsx
+import { css } from "glamor";
+
+const rule = css({
+  color: "red",
+  ":hover": { color: "pink" },
+  "@media (min-width: 300px)": {
+    color: "green",
+    ":hover": { color: "yellow" },
+  },
+});
+
+<div {...rule}>zomg</div>; // as data attributes
+<div className={`${rule}`}>zomg</div>; // as classes
+```
+
+---
+
+```html
+<!-- DOM output -->
+<style>
+  .css-1yv2jt6,
+  [data-css-1yv2jt6] {
+    color: red;
+  }
+  /* and so on... */
+</style>
+```
+
+---
+
+## Dynamic injection to DOM
+
+in [glamor/src/sheet.js](https://github.com/threepointone/glamor/blob/v2.20.8/src/sheet.js)
+
+```js
+// Line 57
+let tag = document.createElement("style");
+tag.type = "text/css";
+tag.appendChild(document.createTextNode(""));
+(document.head || document.getElementsByTagName("head")[0]).appendChild(tag);
+
+// Line 109
+let sheet = this.getSheet();
+sheet.insertRule(rule, sheet.cssRules.length); // todo - correct index here
+```
+
+---
+
+## But we want to write **CSS** not **JS**
+
+---
+
+## Then, how about [CSS module](https://github.com/css-modules/css-modules)?
+
+---
+
+Can write CSS
+
+```css
+/* Button.css */
+.normal {
+  border: 1px solid red;
+  border-radius: 4px;
+}
+.large {
+  font-size: 2em;
+}
+```
+
+---
+
+```jsx
+/* Button.jsx */
+import styles from "./Button.css";
+
+export default function Button() {
+  return <div className={styles.normal}>Button</div>;
+}
+```
+
+---
+
+DOM/CSS output
+
+```html
+<div className="_15c3f4wqKAXaiGk7M-YNyg">Button</div>
+```
+
+```css
+/* bundle.css */
+._15c3f4wqKAXaiGk7M-YNyg {
+  border: 1px solid red;
+  border-radius: 4px;
+}
+._2GTX5gQmyeaRbW76nYk1bm {
+  font-size: 2em;
+}
+```
+
+---
+
+## Dependencies (Composition)
+
+`composes` keyword (such as `@extends` in Sass)
+
+```css
+.className {
+  color: red;
+}
+.otherClassName {
+  composes: className;
+}
+/* or */
+.otherClassName {
+  composes: className from "./style.css";
+}
+```
+
+---
+
+## Variables
+
+Use [CSS Custom Properties](https://www.w3.org/TR/css-variables)
+
+```css
+:root {
+  --img-border-radius: 3px;
+}
+
+.imageContainer {
+  border-radius: var(--img-border-radius);
+}
+```
+
+---
+
+## Global also
+
+```css
+:global {
+  .global-class-name {
+    color: green;
+  }
+}
+```
+
+(...but not recommended)
+
+---
+
+## But can we use actually?
+
+---
+
+## Yes we can!
+
+- [postcss-modules](https://github.com/css-modules/postcss-modules) (PostCSS plugin)
+- [css-loader](https://github.com/webpack/css-loader) (Webpack plugin)
+
+---
+
+## CSS in JS
+
+- For JS developer
+- NOT for designer
+- Very simple solution (only JS)
+- NOT full-featured CSS
+- Performance problem ([try this](https://jsperf.com/stylesheet-vs-dom-manipulation))
+- Non-standard technology
+
+---
+
+## CSS modules
+
+- For both developer and designer
+- Full-featured CSS
+- Most CSS syntax available
+- Learning cost for special syntax
+- Dependency in PostCSS or Webpack
+
+---
+
+# Thanks!
+
+---
+
+## Links
+
+- [speakerdeck.com/vjeux/react-css-in-js](https://speakerdeck.com/vjeux/react-css-in-js)
+- [github.com/MicheleBertoli/css-in-js](https://github.com/MicheleBertoli/css-in-js)
+- [github.com/threepointone/glamor](https://github.com/threepointone/glamor)
+- [github.com/css-modules/css-modules](https://github.com/css-modules/css-modules)
+- [github.com/css-modules/postcss-modules](https://github.com/css-modules/postcss-modules)
+- [github.com/webpack/css-loader](https://github.com/webpack/css-loader)
+- [github.com/hellofresh/css-in-js-perf-tests](https://github.com/hellofresh/css-in-js-perf-tests)
+- [github.com/krasimir/cssx](https://github.com/krasimir/cssx)
+- [www.w3.org/TR/css-variables](https://www.w3.org/TR/css-variables)
+- [postd.cc/modular-css-with-react](http://postd.cc/modular-css-with-react)
+- [postd.cc/css-modules](http://postd.cc/css-modules)
+- [qiita.com/koba04/items/0e81a04262e1158dbbe4](http://qiita.com/koba04/items/0e81a04262e1158dbbe4)
+- [qiita.com/inuscript/items/0cfdb1a0c1d172e27694](http://qiita.com/inuscript/items/0cfdb1a0c1d172e27694)

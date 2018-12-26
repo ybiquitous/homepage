@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -rf public/slides/
+
+for file in src/slides/*.mdx; do
+  filename=$(basename -- "$file")
+  name="${filename%.*}"
+  mdx-deck build "$file" --out-dir "public/slides/${name}"
+done

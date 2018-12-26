@@ -10,15 +10,18 @@
     "node": ">=11"
   },
   "scripts": {
-    "build": "rm -rf public/ && cp -rf src/ public/",
+    "build": "rm -rf public/ && cp -rf src/ public/ && npm run slide:build",
     "format": "npm-run-all --print-label --parallel lint:js:fix prettier:write",
     "lint": "npm-run-all --print-label --parallel lint:*",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{css,html,json,md,yaml,yml}\""
+    "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{css,html,json,md,mdx,yaml,yml}\"",
+    "slide:dev": "mdx-deck src/slides/*.mdx",
+    "slide:build": "./scripts/build-slides"
   },
   "devDependencies": {
     "eslint-config-ybiquitous": "latest",
+    "mdx-deck": "^1.8.2",
     "stylelint": "latest",
     "stylelint-config-standard": "latest",
     "ybiq": "latest"
@@ -29,7 +32,11 @@
   "eslintConfig": {
     "extends": [
       "ybiquitous"
-    ]
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    }
   },
   "stylelint": {
     "extends": [
@@ -50,7 +57,7 @@
       "*.{css,html}": [
         "stylelint"
       ],
-      "*.{css,html,json,md,yaml,yml}": [
+      "*.{css,html,json,md,mdx,yaml,yml}": [
         "prettier --write",
         "git add"
       ]

@@ -16,7 +16,7 @@
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{css,html,json,md,mdx,yaml,yml}\"",
-    "slide:dev": "mdx-deck src/slides/*.mdx",
+    "slide:dev": "mdx-deck",
     "slide:build": "./scripts/build-slides"
   },
   "devDependencies": {

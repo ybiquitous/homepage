@@ -1,9 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-rm -rf public/slides/
+require 'fileutils'
+require 'pathname'
 
-for file in src/slides/*.mdx; do
-  filename=$(basename -- "$file")
-  name="${filename%.*}"
-  mdx-deck build "$file" --out-dir "public/slides/${name}"
-done
+FileUtils.rm_r('public/slides/', force: true)
+
+def run!(*command)
+  system(*command) || raise("command failed: #{command.join(' ')}")
+end
+
+Pathname.glob('src/slides/*/index.mdx') do |input_file|
+  name = input_file.dirname.basename
+  out_dir = Pathname.new('public/slides') / name
+  command = ['mdx-deck', 'build', input_file.to_s, '--out-dir', out_dir.to_s]
+  puts "# #{input_file} -> #{out_dir}"
+  run!(*command)
+end
+
+Pathname.glob('src/slides/*/images') do |image_dir|
+  name = image_dir.dirname.basename
+  dest_dir = Pathname.new('public/slides') / name
+  puts "# #{image_dir} -> #{dest_dir}"
+  FileUtils.cp_r(image_dir, dest_dir)
+end

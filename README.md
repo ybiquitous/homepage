@@ -28,9 +28,7 @@ Publish `public/` directory on HTTP server. For example:
 python3 -m http.server --directory public/
 ```
 
-```sh
-open http://localhost:8000/
-```
+Then, open [localhost:8000](http://localhost:8000/) in your browser.
 
 ### Deploy
 

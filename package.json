@@ -11,11 +11,15 @@
   },
   "scripts": {
     "build": "rm -rf public/ && cp -rf src/ public/ && npm run slide:build",
-    "format": "npm-run-all --print-label --parallel lint:js:fix prettier:write",
+    "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
     "lint": "npm-run-all --print-label --parallel lint:*",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{css,html,json,md,mdx,yaml,yml}\"",
+    "lint:md": "remark . --frail",
+    "lint:md:fix": "remark . --output",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}\"",
+    "prettier:check": "npm run prettier -- --check",
+    "prettier:write": "npm run prettier -- --write",
     "slide:dev": "mdx-deck",
     "slide:build": "./scripts/build-slides"
   },
@@ -57,10 +61,39 @@
       "*.{css,html}": [
         "stylelint"
       ],
-      "*.{css,html,json,md,mdx,yaml,yml}": [
+      "*.md": [
+        "remark --output --",
+        "git add"
+      ],
+      "*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}": [
         "prettier --write",
         "git add"
       ]
     }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-markdown-style-guide",
+      "remark-preset-lint-recommended",
+      "remark-lint-first-heading-level",
+      "remark-lint-no-tabs",
+      [
+        "remark-lint-emphasis-marker",
+        false
+      ],
+      [
+        "remark-lint-list-item-indent",
+        false
+      ],
+      [
+        "remark-lint-list-item-spacing",
+        false
+      ],
+      [
+        "remark-lint-ordered-list-marker-value",
+        "ordered"
+      ],
+      "remark-validate-links"
+    ]
   }
 }

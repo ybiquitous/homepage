@@ -20,11 +20,11 @@
     "slide:build": "./scripts/build-slides"
   },
   "devDependencies": {
-    "eslint-config-ybiquitous": "latest",
+    "eslint-config-ybiquitous": "^7.2.0",
     "mdx-deck": "^1.8.2",
-    "stylelint": "latest",
-    "stylelint-config-standard": "latest",
-    "ybiq": "latest"
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "ybiq": "^7.2.2"
   },
   "prettier": {
     "trailingComma": "es5"

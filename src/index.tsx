@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faImages, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faImages } from "@fortawesome/free-solid-svg-icons";
 
-function Header() {
+const Header = () => {
   return (
     <header>
       <h1>
@@ -24,9 +24,9 @@ function Header() {
       </figure>
     </header>
   );
-}
+};
 
-function Footer() {
+const Footer = () => {
   return (
     <footer>
       <p>
@@ -34,7 +34,7 @@ function Footer() {
       </p>
     </footer>
   );
-}
+};
 
 const slides = [
   ["website-performance", "サイトスピードを改善する", "2017-05-25"],
@@ -43,7 +43,7 @@ const slides = [
   ["css-in-js", "CSS in JS", "2016-12-08"],
 ];
 
-function Slides() {
+const Slides = () => {
   const [expanded, setExpanded] = useState(false);
   return (
     <>
@@ -84,9 +84,9 @@ function Slides() {
       </ul>
     </>
   );
-}
+};
 
-function Main() {
+const Main = () => {
   return (
     <main>
       <nav>
@@ -95,7 +95,7 @@ function Main() {
             <a
               href="https://github.com/ybiquitous"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="menu-link"
             >
               <FontAwesomeIcon icon={faGithub} className="menu-icon" />
@@ -106,7 +106,7 @@ function Main() {
             <a
               href="https://twitter.com/ybiquitous"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="menu-link"
             >
               <FontAwesomeIcon icon={faTwitter} className="menu-icon" />
@@ -120,9 +120,9 @@ function Main() {
       </nav>
     </main>
   );
-}
+};
 
-function Index() {
+const Index = () => {
   return (
     <>
       <Header />
@@ -130,6 +130,6 @@ function Index() {
       <Footer />
     </>
   );
-}
+};
 
 ReactDOM.render(<Index />, document.getElementById("root"));

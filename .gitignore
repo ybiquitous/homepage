@@ -79,6 +79,3 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-
-# Custom
-public/

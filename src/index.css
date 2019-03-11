@@ -104,6 +104,10 @@ h1 a {
   font-style: italic;
 }
 
+.menu-slides-button[aria-expanded="true"] {
+  color: var(--link-hover-text-color);
+}
+
 .menu-slides {
   list-style: none;
   margin: 0;
@@ -116,7 +120,7 @@ h1 a {
   transition-property: visibility, opacity, transform;
 }
 
-.menu-slides[aria-expanded="true"] {
+.menu-slides[aria-hidden="false"] {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);

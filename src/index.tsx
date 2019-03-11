@@ -47,14 +47,27 @@ function Slides() {
   const [expanded, setExpanded] = useState(false);
   return (
     <>
-      <button className="menu-link text-button" onClick={() => setExpanded(!expanded)}>
+      <button
+        id="menu-slides-button"
+        className="menu-link text-button menu-slides-button"
+        onClick={() => setExpanded(!expanded)}
+        aria-haspopup={true}
+        aria-controls="menu-slides"
+        aria-expanded={expanded}
+      >
         <FontAwesomeIcon icon={faImages} className="menu-icon" />
         Slides
       </button>
-      <ul className="menu-slides" aria-expanded={expanded}>
+      <ul
+        id="menu-slides"
+        className="menu-slides"
+        role="menu"
+        aria-labelledby="menu-slides-button"
+        aria-hidden={!expanded}
+      >
         {slides.map(([id, title, date]) => (
-          <li key={id}>
-            <a href={`/slides/${id}`} className="menu-link">
+          <li key={id} role="none">
+            <a href={`/slides/${id}`} className="menu-link" role="menuitem">
               <FontAwesomeIcon icon={faAngleRight} fixedWidth />
               {title} (
               <time dateTime={date}>

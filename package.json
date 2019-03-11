@@ -24,7 +24,7 @@
     "slide:build": "./scripts/build-slides"
   },
   "devDependencies": {
-    "eslint-config-ybiquitous": "^7.2.0",
+    "eslint-config-ybiquitous": "^7.3.0",
     "mdx-deck": "^1.10.0",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",

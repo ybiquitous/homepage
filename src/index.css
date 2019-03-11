@@ -1,0 +1,132 @@
+:root {
+  --space: 1rem;
+  --space-s: 0.5rem;
+
+  /* Color pallete from https://clrs.cc/ */
+  --default-text-color: #111;
+  --link-text-color: #001f3f;
+  --link-hover-text-color: #0074d9;
+  --secondary-text-color: #aaa;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: var(--default-text-color);
+  margin: auto;
+  max-width: 50rem;
+  padding: var(--space);
+}
+
+main {
+  min-height: 50vh;
+  padding: var(--space) 0;
+}
+
+h1 a {
+  color: inherit;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.avatar {
+  margin: var(--space) 0;
+  display: flex;
+  align-items: center;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+.avatar figcaption {
+  margin-left: var(--space);
+  display: flex;
+  flex-flow: column;
+}
+
+.avatar figcaption small {
+  color: var(--secondary-text-color);
+  margin-top: 0.2em;
+}
+
+.text-button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: var(--space) 0;
+  display: grid;
+  grid-gap: var(--space);
+}
+
+@media (min-width: 40rem) {
+  .menu {
+    grid-template-columns: repeat(2, minmax(8em, 10em)) max-content;
+  }
+}
+
+@media (max-width: 39.99rem) {
+  /* NOTE: Unsupported `calc(40rem - 1px)` by Chrome yet */
+  .menu-slides {
+    grid-column: 1 / span 2;
+  }
+}
+
+.menu-link {
+  display: inline-block;
+  color: var(--link-text-color);
+  text-decoration: none;
+  line-height: 1.6;
+  padding: 0;
+  transition: color 0.2s ease-out;
+  position: relative;
+}
+
+.menu-link:hover {
+  color: var(--link-hover-text-color);
+}
+
+.menu-icon {
+  padding-right: 0.5em;
+}
+
+.menu time {
+  font-style: italic;
+}
+
+.menu-slides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20%);
+  transition: 0.2s ease-out;
+  transition-property: visibility, opacity, transform;
+}
+
+.menu-slides[aria-expanded="true"] {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.menu-slides li {
+  margin: var(--space-s) 0;
+}
+
+footer {
+  color: var(--secondary-text-color);
+}

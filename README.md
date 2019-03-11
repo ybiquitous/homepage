@@ -22,10 +22,10 @@ npm run build
 
 ### View
 
-Publish `public/` directory on HTTP server. For example:
+Publish `dist/` directory on HTTP server. For example:
 
 ```sh
-python3 -m http.server --directory public/
+python3 -m http.server --directory dist/
 ```
 
 Then, open [localhost:8000](http://localhost:8000/) in your browser.

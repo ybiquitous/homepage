@@ -37,7 +37,7 @@
     "@types/react-dom": "^16.8.2",
     "eslint-config-ybiquitous": "^7.3.0",
     "eslint-plugin-react-hooks": "^1.5.1",
-    "mdx-deck": "^1.10.2",
+    "mdx-deck": "^2.0.0",
     "parcel-bundler": "^1.12.2",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",

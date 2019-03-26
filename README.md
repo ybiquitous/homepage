@@ -12,6 +12,14 @@ Install NPM packages.
 npm ci
 ```
 
+### Start server
+
+Start a development server on localhost.
+
+```sh
+npm run dev
+```
+
 ### Build
 
 Bulid static files.
@@ -37,3 +45,8 @@ Just push to `master` branch. Build & publish automatically on [Netlify](https:/
 ```sh
 git push origin master
 ```
+
+## Stack
+
+- [React](https://reactjs.org/)
+- [Parcel](https://parceljs.org/)

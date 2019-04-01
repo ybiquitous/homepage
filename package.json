@@ -29,11 +29,11 @@
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "react": "^16.8.5",
+    "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@types/react": "^16.8.8",
+    "@types/react": "^16.8.10",
     "@types/react-dom": "^16.8.3",
     "eslint-config-ybiquitous": "^7.3.0",
     "eslint-plugin-react-hooks": "^1.6.0",
@@ -41,7 +41,7 @@
     "parcel-bundler": "^1.12.3",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
-    "typescript": "^3.3.4000",
+    "typescript": "^3.4.1",
     "ybiq": "^7.3.0"
   },
   "prettier": {

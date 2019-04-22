@@ -41,7 +41,7 @@
     "parcel-bundler": "^1.12.3",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
-    "typescript": "^3.4.2",
+    "typescript": "^3.4.4",
     "ybiq": "^7.3.0"
   },
   "prettier": {

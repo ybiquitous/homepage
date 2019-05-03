@@ -40,18 +40,27 @@ h1 a {
 
   & img {
     border-radius: 50%;
-    width: 60px;
+    width: 90px;
   }
+}
 
-  & figcaption {
-    margin-left: var(--space);
-    display: flex;
-    flex-flow: column;
-  }
+.profile-caption {
+  margin-left: var(--space);
+  display: flex;
+  flex-flow: column;
 
   & small {
     color: var(--secondary-text-color);
-    margin-top: 0.2em;
+    margin-top: 0.25em;
+  }
+}
+
+.profile-icons {
+  display: flex;
+  margin-top: 0.75em;
+
+  & > :last-child {
+    margin-left: 0.5em;
   }
 }
 
@@ -62,47 +71,35 @@ h1 a {
   font: inherit;
 }
 
-.menu {
-  list-style: none;
-  margin: 0;
-  padding: var(--space) 0;
-  display: grid;
-  grid-gap: var(--space);
-}
-
-@media (min-width: 40rem) {
-  .menu {
-    grid-template-columns: repeat(2, minmax(8em, 10em)) max-content;
-  }
-}
-
-@media (max-width: 39.99rem) {
-  /* NOTE: Unsupported `calc(40rem - 1px)` by Chrome yet */
-  .menu-slides {
-    grid-column: 1 / span 2;
-  }
-}
-
-.menu-link {
-  display: inline-block;
+.link {
   color: var(--link-text-color);
   text-decoration: none;
-  line-height: 1.6;
-  padding: 0;
   transition: color 0.2s ease-out;
-  position: relative;
 
   &:hover {
     color: var(--link-hover-text-color);
   }
 }
 
-.menu-icon {
-  padding-right: 0.5em;
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: var(--space) 0;
+
+  & time {
+    font-style: italic;
+  }
 }
 
-.menu time {
-  font-style: italic;
+.menu-link {
+  display: inline-block;
+  line-height: 1.6;
+  padding: 0;
+  position: relative;
+}
+
+.menu-icon {
+  padding-right: 0.5em;
 }
 
 .menu-slides-button[aria-expanded="true"] {
@@ -116,15 +113,14 @@ h1 a {
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-20%);
-  transition: 0.2s ease-out;
+  transform: translateY(-10%);
+  transition: 0.1s ease-out;
   transition-property: visibility, opacity, transform;
 
   &[aria-hidden="false"] {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.1s;
   }
 
   & li {

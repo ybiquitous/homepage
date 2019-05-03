@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <figure className="profile">
       <img
-        src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=60"
+        src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
         alt="Masafumi Koba"
       />
       <figcaption>

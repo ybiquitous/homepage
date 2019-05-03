@@ -4,24 +4,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faAngleRight, faImages } from "@fortawesome/free-solid-svg-icons";
 
+const Profile = () => {
+  return (
+    <figure className="profile">
+      <img
+        src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=60"
+        alt="Masafumi Koba"
+      />
+      <figcaption>
+        <span>
+          Masafumi Koba (<em>@ybiquitous</em>)
+        </span>
+        <small>Web Developer</small>
+      </figcaption>
+    </figure>
+  );
+};
+
 const Header = () => {
   return (
     <header>
       <h1>
         <a href="/">ybiquitous</a> home
       </h1>
-      <figure className="avatar">
-        <img
-          src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=60"
-          alt="Masafumi Koba"
-        />
-        <figcaption>
-          <span>
-            Masafumi Koba (<em>@ybiquitous</em>)
-          </span>
-          <small>Web Developer</small>
-        </figcaption>
-      </figure>
+      <Profile />
     </header>
   );
 };

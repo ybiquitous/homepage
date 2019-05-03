@@ -33,25 +33,25 @@ h1 a {
   text-decoration: none;
 }
 
-.avatar {
+.profile {
   margin: var(--space) 0;
   display: flex;
   align-items: center;
-}
 
-.avatar img {
-  border-radius: 50%;
-}
+  & img {
+    border-radius: 50%;
+  }
 
-.avatar figcaption {
-  margin-left: var(--space);
-  display: flex;
-  flex-flow: column;
-}
+  & figcaption {
+    margin-left: var(--space);
+    display: flex;
+    flex-flow: column;
+  }
 
-.avatar figcaption small {
-  color: var(--secondary-text-color);
-  margin-top: 0.2em;
+  & small {
+    color: var(--secondary-text-color);
+    margin-top: 0.2em;
+  }
 }
 
 .text-button {

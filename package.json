@@ -35,10 +35,12 @@
   "devDependencies": {
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
+    "autoprefixer": "^9.5.1",
     "eslint-config-ybiquitous": "^7.3.0",
     "eslint-plugin-react-hooks": "^1.6.0",
     "mdx-deck": "^1.10.2",
     "parcel-bundler": "^1.12.3",
+    "postcss-nesting": "^7.0.0",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "typescript": "^3.4.5",
@@ -59,6 +61,15 @@
     ],
     "rules": {
       "sort-imports": "off",
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".tsx"
+          ]
+        }
+      ],
+      "react/jsx-no-literals": "warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn"
     }
@@ -66,6 +77,12 @@
   "stylelint": {
     "extends": [
       "stylelint-config-standard"
+    ]
+  },
+  "postcss": {
+    "plugins": [
+      "autoprefixer",
+      "postcss-nesting"
     ]
   },
   "husky": {

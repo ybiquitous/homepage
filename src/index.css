@@ -90,10 +90,10 @@ h1 a {
   padding: 0;
   transition: color 0.2s ease-out;
   position: relative;
-}
 
-.menu-link:hover {
-  color: var(--link-hover-text-color);
+  &:hover {
+    color: var(--link-hover-text-color);
+  }
 }
 
 .menu-icon {
@@ -118,17 +118,17 @@ h1 a {
   transform: translateY(-20%);
   transition: 0.2s ease-out;
   transition-property: visibility, opacity, transform;
-}
 
-.menu-slides[aria-hidden="false"] {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.1s;
-}
+  &[aria-hidden="false"] {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+  }
 
-.menu-slides li {
-  margin: var(--space-s) 0;
+  & li {
+    margin: var(--space-s) 0;
+  }
 }
 
 footer {

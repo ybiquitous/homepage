@@ -1,23 +1,37 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core"; // eslint-disable-line import/named
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faAngleRight, faImages } from "@fortawesome/free-solid-svg-icons";
 
+const IconLink = ({ href, icon }: { href: string; icon: IconProp }) => {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="link">
+      <FontAwesomeIcon icon={icon} />
+    </a>
+  );
+};
+
 const Profile = () => {
   return (
-    <figure className="profile">
+    <div className="profile">
       <img
         src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
         alt="Masafumi Koba"
       />
-      <figcaption>
+      <div className="profile-caption">
         <span>
           Masafumi Koba (<em>@ybiquitous</em>)
         </span>
         <small>Web Developer</small>
-      </figcaption>
-    </figure>
+
+        <span className="profile-icons">
+          <IconLink href="https://github.com/ybiquitous" icon={faGithub} />
+          <IconLink href="https://twitter.com/ybiquitous" icon={faTwitter} />
+        </span>
+      </div>
+    </div>
   );
 };
 
@@ -55,7 +69,7 @@ const Slides = () => {
     <>
       <button
         id="menu-slides-button"
-        className="menu-link text-button menu-slides-button"
+        className="link menu-link text-button menu-slides-button"
         onClick={() => setExpanded(!expanded)}
         aria-haspopup={true}
         aria-controls="menu-slides"
@@ -73,7 +87,7 @@ const Slides = () => {
       >
         {slides.map(([id, title, date]) => (
           <li key={id} role="none">
-            <a href={`/slides/${id}`} className="menu-link" role="menuitem">
+            <a href={`/slides/${id}`} className="link menu-link" role="menuitem">
               <FontAwesomeIcon icon={faAngleRight} fixedWidth />
               {title} (
               <time dateTime={date}>
@@ -97,28 +111,6 @@ const Main = () => {
     <main>
       <nav>
         <ul className="menu">
-          <li>
-            <a
-              href="https://github.com/ybiquitous"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="menu-link"
-            >
-              <FontAwesomeIcon icon={faGithub} className="menu-icon" />
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/ybiquitous"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="menu-link"
-            >
-              <FontAwesomeIcon icon={faTwitter} className="menu-icon" />
-              Twitter
-            </a>
-          </li>
           <li>
             <Slides />
           </li>

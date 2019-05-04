@@ -1,12 +1,17 @@
 :root {
+  --space-xxl: 4rem;
+  --space-xl: 3rem;
+  --space-l: 2rem;
   --space: 1rem;
   --space-s: 0.5rem;
 
   /* Color pallete from https://clrs.cc/ */
   --default-text-color: #111;
-  --link-text-color: #001f3f;
-  --link-hover-text-color: #0074d9;
+  --link-text-color: #0074d9;
+  --link-secondary-text-color: #39cccc;
   --secondary-text-color: #aaa;
+  --body-bg-color: #fff;
+  --code-bg-color: #eee;
 }
 
 *,
@@ -16,10 +21,77 @@
 }
 
 body {
+  background: var(--body-bg-color);
   color: var(--default-text-color);
   margin: auto;
   max-width: 50rem;
   padding: var(--space);
+  font-family: serif;
+  line-height: 1.6;
+}
+
+main {
+  min-height: 50vh;
+  padding: var(--space) 0;
+}
+
+footer {
+  color: var(--secondary-text-color);
+  margin: var(--space-l) 0 var(--space);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+code {
+  background: var(--code-bg-color);
+  border-radius: 0.25em;
+  padding: 0 0.5em;
+  margin: 0 0.25em;
+  display: inline-block;
+  vertical-align: text-bottom;
+  line-height: 1.4;
+}
+
+:any-link,
+.link {
+  color: var(--link-text-color);
+  text-decoration: none;
+  transition: color 0.1s ease-out;
+
+  &:hover {
+    color: var(--link-secondary-text-color);
+  }
 }
 
 .textButton {
@@ -28,18 +100,5 @@ body {
   cursor: pointer;
   font: inherit;
   padding: 0;
-}
-
-.link {
-  color: var(--link-text-color);
-  text-decoration: none;
-  transition: color 0.2s ease-out;
-
-  &:hover {
-    color: var(--link-hover-text-color);
-  }
-}
-
-footer {
-  color: var(--secondary-text-color);
+  text-align: left;
 }

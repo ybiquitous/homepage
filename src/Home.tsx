@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core"; // eslint-disable-line import/named
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faAngleRight, faImages } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faImages, faBlog } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "./router";
+import { Time, useTitle } from "./utils";
+import slidesMetadata from "./slides/metadata.yml";
 import "./Home.css";
 
 const IconLink = ({ href, icon }: { href: string; icon: IconProp }) => {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="link">
+    <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
       <FontAwesomeIcon icon={icon} />
     </a>
   );
@@ -51,24 +54,11 @@ const Header = () => {
   );
 };
 
-const slides = [
-  ["website-performance", "サイトスピードを改善する", "2017-05-25", "ja"],
-  ["test-and-refactoring", "テストとリファクタリング", "2017-04-06", "ja"],
-  ["progressive-web-apps-hackathon", "Progressive Web Apps Hackathon", "2017-03-16", "en"],
-  ["css-in-js", "CSS in JS", "2016-12-08", "en"],
-];
-
-const formatDate = (date: string, lang: string) =>
-  new Date(date).toLocaleDateString(lang, {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-
 const Slides = () => {
   const [expanded, setExpanded] = useState(false);
   return (
     <>
+      <FontAwesomeIcon icon={faImages} fixedWidth className="menu-icon" />
       <button
         id="menu-slides-button"
         className="link textButton menu-slides-button"
@@ -77,7 +67,6 @@ const Slides = () => {
         aria-controls="menu-slides"
         aria-expanded={expanded}
       >
-        <FontAwesomeIcon icon={faImages} className="menu-icon" />
         Slides
       </button>
       <ul
@@ -87,12 +76,13 @@ const Slides = () => {
         aria-labelledby="menu-slides-button"
         aria-hidden={!expanded}
       >
-        {slides.map(([id, title, date, lang]) => (
+        {slidesMetadata.map(({ id, title, date }: any) => (
           <li key={id} role="none">
-            <a href={`/slides/${id}`} className="link menu-link" role="menuitem">
-              <FontAwesomeIcon icon={faAngleRight} fixedWidth />
-              {title} (<time dateTime={date}>{formatDate(date, lang)}</time>)
+            <FontAwesomeIcon icon={faAngleRight} fixedWidth />
+            <a href={`/slides/${id}`} className="menu-link" role="menuitem">
+              {title}
             </a>
+            <Time date={date} />
           </li>
         ))}
       </ul>
@@ -102,9 +92,13 @@ const Slides = () => {
 
 const Main = () => {
   return (
-    <main className="main">
+    <main>
       <nav>
         <ul className="menu">
+          <li>
+            <FontAwesomeIcon icon={faBlog} fixedWidth className="menu-icon" />
+            <Link href="/blog">Blog</Link>
+          </li>
           <li>
             <Slides />
           </li>
@@ -115,6 +109,8 @@ const Main = () => {
 };
 
 export const Home = () => {
+  useTitle("🏡 ybiquitous");
+
   return (
     <>
       <Header />

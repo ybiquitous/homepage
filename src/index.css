@@ -29,7 +29,6 @@ main {
 
 h1 a {
   color: inherit;
-  font-style: italic;
   text-decoration: none;
 }
 
@@ -41,6 +40,10 @@ h1 a {
   & img {
     border-radius: 50%;
     width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -60,7 +63,7 @@ h1 a {
   margin-top: 0.75em;
 
   & > :last-child {
-    margin-left: 0.5em;
+    margin-left: 0.75em;
   }
 }
 
@@ -69,6 +72,7 @@ h1 a {
   border: none;
   cursor: pointer;
   font: inherit;
+  padding: 0;
 }
 
 .link {
@@ -92,10 +96,8 @@ h1 a {
 }
 
 .menu-link {
-  display: inline-block;
   line-height: 1.6;
   padding: 0;
-  position: relative;
 }
 
 .menu-icon {

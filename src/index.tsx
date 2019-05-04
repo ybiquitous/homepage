@@ -18,7 +18,7 @@ const Profile = () => {
     <div className="profile">
       <img
         src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
-        alt="Masafumi Koba"
+        alt="Avatar"
       />
       <div className="profile-caption">
         <span>
@@ -39,7 +39,12 @@ const Header = () => {
   return (
     <header>
       <h1>
-        <a href="/">ybiquitous</a> home
+        <a href="/">
+          <span role="img" aria-label="home" style={{ marginRight: "0.25em" }}>
+            🏡
+          </span>
+          ybiquitous
+        </a>
       </h1>
       <Profile />
     </header>
@@ -69,7 +74,7 @@ const Slides = () => {
     <>
       <button
         id="menu-slides-button"
-        className="link menu-link text-button menu-slides-button"
+        className="link text-button menu-slides-button"
         onClick={() => setExpanded(!expanded)}
         aria-haspopup={true}
         aria-controls="menu-slides"

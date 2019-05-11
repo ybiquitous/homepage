@@ -40,6 +40,7 @@
     "autoprefixer": "^9.5.1",
     "eslint-config-ybiquitous": "^7.3.0",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "marked": "^0.6.2",
     "mdx-deck": "^1.10.2",
     "parcel-bundler": "^1.12.3",
     "postcss-nesting": "^7.0.0",
@@ -66,6 +67,7 @@
       "import/extensions": "off",
       "import/no-unresolved": "off",
       "import/prefer-default-export": "off",
+      "react/display-name": "off",
       "react/jsx-filename-extension": [
         "error",
         {
@@ -74,7 +76,9 @@
           ]
         }
       ],
+      "react/jsx-key": "warn",
       "react/jsx-no-literals": "warn",
+      "react/no-array-index-key": "warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn"
     }
@@ -100,9 +104,6 @@
       "*.{js,jsx,mjs,ts,tsx}": [
         "eslint --fix --no-ignore",
         "git add"
-      ],
-      "*.{ts,tsx}": [
-        "tsc --noEmit"
       ],
       "*.{css,html}": [
         "stylelint"

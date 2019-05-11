@@ -1,11 +1,5 @@
 .header-link {
   color: inherit;
-  text-decoration: none;
-}
-
-.main {
-  min-height: 50vh;
-  padding: var(--space) 0;
 }
 
 .profile {
@@ -46,20 +40,23 @@
 .menu {
   list-style: none;
   margin: 0;
-  padding: var(--space) 0;
+  padding: 0;
 
-  & time {
-    font-style: italic;
+  & li {
+    margin: var(--space-l) 0;
+    font-size: 1.1em;
   }
 }
 
 .menu-link {
   line-height: 1.6;
   padding: 0;
+  font-size: 1rem;
+  margin-right: 1em;
 }
 
 .menu-icon {
-  margin-right: 0.5em;
+  margin-right: 0.75em;
 }
 
 .menu-slides-button[aria-expanded="true"] {
@@ -67,13 +64,15 @@
 }
 
 .menu-slides {
+  position: absolute;
+  background: var(--body-bg-color);
   list-style: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-10%);
+  transform: translateY(-5%);
   transition: 0.1s ease-out;
   transition-property: visibility, opacity, transform;
 

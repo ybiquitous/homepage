@@ -1,0 +1,13 @@
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+
+  & li:not(:first-child)::before {
+    content: "/";
+    color: var(--secondary-text-color);
+    padding: 0 0.5em;
+  }
+}

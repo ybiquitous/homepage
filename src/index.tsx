@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { Home } from "./Home";
+import { Router } from "./router";
+import { routes } from "./routes";
 
 const Footer = () => {
   return (
@@ -13,9 +14,17 @@ const Footer = () => {
 };
 
 const Index = () => {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const popStateListener = () => setCurrentPath(window.location.pathname);
+    window.addEventListener("popstate", popStateListener);
+    return () => window.removeEventListener("popstate", popStateListener);
+  }, []);
+
   return (
     <>
-      <Home />
+      <Router routes={routes} currentPath={currentPath} />
       <Footer />
     </>
   );

@@ -10,6 +10,8 @@
     "node": ">=12"
   },
   "scripts": {
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html && npm run slide:build",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
@@ -98,6 +100,9 @@
       "*.{js,jsx,mjs,ts,tsx}": [
         "eslint --fix --no-ignore",
         "git add"
+      ],
+      "*.{ts,tsx}": [
+        "tsc --noEmit"
       ],
       "*.{css,html}": [
         "stylelint"

@@ -2,15 +2,14 @@ import React from "react";
 import { Home } from "./Home";
 import { Blog } from "./Blog";
 import { BlogPost } from "./BlogPost";
-import blogMetadata from "~blog/metadata.yml";
-import blogStartBlog from "./blog/start-blog.md";
+import { blogs } from "./blog/index";
 import { NotFound } from "./NotFound";
 import { Routes } from "./router";
 
-const blogRoutes = blogMetadata.reduce(
-  (newRoutes: Routes, meta) => ({
+const blogRoutes = blogs.reduce(
+  (newRoutes: Routes, blog) => ({
     ...newRoutes,
-    [`/blog/${meta.id}`]: () => <BlogPost {...meta} content={blogStartBlog} />,
+    [`/blog/${blog.id}`]: () => <BlogPost {...blog} />,
   }),
   {}
 );

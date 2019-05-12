@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5fb40f6a-f14e-4736-84c7-fc6bf149e269/deploy-status)](https://app.netlify.com/sites/ybiquitous-homepage/deploys)
+
 # ybiquitous homepage
 
 Visit [ybiquitous.me](https://ybiquitous.me).
@@ -48,5 +50,5 @@ git push origin master
 
 ## Stack
 
-- [React](https://reactjs.org/)
-- [Parcel](https://parceljs.org/)
+-   [React](https://reactjs.org/)
+-   [Parcel](https://parceljs.org/)

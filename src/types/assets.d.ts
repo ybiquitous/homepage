@@ -1,2 +1,4 @@
-declare module "*.md";
-declare module "*.yml";
+declare module "*.md" {
+  const content: string;
+  export default content;
+}

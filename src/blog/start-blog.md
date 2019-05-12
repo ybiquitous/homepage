@@ -20,7 +20,7 @@ Blogを始めました。最初は、このBlogを乗せているホームペー
 ### TypeScript
 
 ふだん仕事で使っていて、慣れているから、というのが主な理由です。特にReactとの相性がよいです。
-型チェックがあるので[`PropTypes`](https://github.com/facebook/prop-types)を書く必要が無いし、DOM APIもいい感じに補完してくれます。
+型チェックがあるので [`PropTypes`](https://github.com/facebook/prop-types) を書く必要が無いし、DOM APIもいい感じに補完してくれます。
 
 もはや、**TypeScriptなしでReactを書くことは考えられません**。
 
@@ -55,4 +55,4 @@ GitHub Pagesの時はTravis CIでビルド&デプロイをしていたので、G
 
 以上が、簡単な説明となります。
 
-このホームページのソースコードは[GitHubで公開](https://github.com/ybiquitous/homepage)してありますので、[`package.json`](https://github.com/ybiquitous/homepage/blob/master/package.json)に今回説明したスタックを見ることができます。
+このホームページのソースコードは[GitHubで公開](https://github.com/ybiquitous/homepage)してありますので、[`package.json`](https://github.com/ybiquitous/homepage/blob/master/package.json) に今回説明したスタックを見ることができます。

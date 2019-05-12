@@ -20,7 +20,7 @@
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}\"",
+    "prettier": "prettier \"**/*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}\"",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "slide:dev": "mdx-deck",

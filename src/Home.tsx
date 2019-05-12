@@ -5,7 +5,7 @@ import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faAngleRight, faImages, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "./router";
 import { Time, useTitle } from "./utils";
-import slidesMetadata from "./slides/metadata.yml";
+import slidesMetadata from "~slides/metadata.yml";
 import "./Home.css";
 
 const IconLink = ({ href, icon }: { href: string; icon: IconProp }) => {
@@ -76,7 +76,7 @@ const Slides = () => {
         aria-labelledby="menu-slides-button"
         aria-hidden={!expanded}
       >
-        {slidesMetadata.map(({ id, title, date }: any) => (
+        {slidesMetadata.map(({ id, title, date }) => (
           <li key={id} role="none">
             <FontAwesomeIcon icon={faAngleRight} fixedWidth />
             <a href={`/slides/${id}`} className="menu-link" role="menuitem">

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "./router";
 import { Breadcrumb, Time, useTitle } from "./utils";
-import metadata from "./blog/metadata.yml";
+import metadata from "~blog/metadata.yml";
 
 export const Blog = () => {
   useTitle("ybiquitous blog");
@@ -18,14 +18,16 @@ export const Blog = () => {
         <h2 style={{ margin: "var(--space) 0", fontSize: "1.5rem" }}>Recent posts</h2>
 
         <ul style={{ listStyle: "none", padding: "0" }}>
-          {metadata.map(({ id, title, published }: any) => (
-            <li key={id}>
-              <Link href={`/blog/${id}`} style={{ marginRight: "1em" }}>
-                {title}
-              </Link>
-              <Time date={published} />
-            </li>
-          ))}
+          {metadata
+            .filter(({ published }) => published != null)
+            .map(({ id, title, published }) => (
+              <li key={id}>
+                <Link href={`/blog/${id}`} style={{ marginRight: "1em" }}>
+                  {title}
+                </Link>
+                <Time date={published as Date} />
+              </li>
+            ))}
         </ul>
       </main>
     </>

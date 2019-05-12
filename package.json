@@ -15,6 +15,7 @@
     "dev": "parcel src/index.html",
     "build:parcel": "parcel build src/index.html",
     "build": "npm-run-all --print-label --parallel build:* slide:build",
+    "postbuild": "cp -v _redirects dist/",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
     "lint": "npm-run-all --print-label --parallel lint:*",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs,.ts,.tsx .",

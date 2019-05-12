@@ -79,7 +79,13 @@ const Slides = () => {
         {slidesMetadata.map(({ id, title, date }) => (
           <li key={id} role="none">
             <FontAwesomeIcon icon={faAngleRight} fixedWidth />
-            <a href={`/slides/${id}`} className="menu-link" role="menuitem">
+            <a
+              href={`/slides/${id}`}
+              className="menu-link"
+              role="menuitem"
+              target="_blank"
+              rel="noopener"
+            >
               {title}
             </a>
             <Time date={date} />

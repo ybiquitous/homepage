@@ -80,6 +80,7 @@
       ],
       "react/jsx-key": "warn",
       "react/jsx-no-literals": "warn",
+      "react/jsx-no-target-blank": "warn",
       "react/no-array-index-key": "warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn"

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "./router";
-import { Breadcrumb, Time, useTitle } from "./utils";
+import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "./utils";
 import "./BlogPost.css";
 
 interface Props extends BlogMetadata {
@@ -9,6 +9,7 @@ interface Props extends BlogMetadata {
 
 export const BlogPost = ({ title, published, modified, content }: Props) => {
   useTitle(`${title} - ybiquitous blog`);
+  useExternalLinkAsNewTab();
 
   const dateStyle = { fontSize: "inherit", color: "currentColor" };
 

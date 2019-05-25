@@ -15,7 +15,9 @@ export const Blog = () => {
       <main>
         <h1 style={{ margin: "var(--space-s) 0 var(--space-xl)" }}>ybiquitous blog</h1>
 
-        <h2 style={{ margin: "var(--space) 0", fontSize: "1.5rem" }}>Recent posts</h2>
+        <h2 style={{ margin: "var(--space-m) 0", fontSize: "var(--font-size-h4)" }}>
+          Recent posts
+        </h2>
 
         <ul style={{ listStyle: "none", padding: "0" }}>
           {metadata

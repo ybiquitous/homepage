@@ -15,7 +15,7 @@ export const NotFound = () => {
 
   return (
     <main>
-      <h1 style={{ fontSize: "3em" }}>Page Not Found</h1>
+      <h1 style={{ fontSize: "calc(var(--font-size-h1) * 2)" }}>Page Not Found</h1>
     </main>
   );
 };

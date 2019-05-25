@@ -1,0 +1,15 @@
+{
+  "name": "@ybiquitous/parcel-plugin-markdown",
+  "version": "0.0.1",
+  "private": true,
+  "peerDependencies": {
+    "highlight.js": "9",
+    "marked": "<1",
+    "parcel-bundler": "1"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    }
+  }
+}

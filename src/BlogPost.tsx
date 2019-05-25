@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "./router";
 import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "./utils";
 import "./BlogPost.css";
+import "highlight.js/styles/xcode.css";
 
 interface Props extends BlogMetadata {
   content: string;

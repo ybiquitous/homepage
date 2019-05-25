@@ -116,6 +116,7 @@ code {
 
 pre {
   background: var(--code-bg-color);
+  border-radius: 0.25em;
   font-size: var(--font-size-base);
   overflow: auto;
   padding: var(--space-m);

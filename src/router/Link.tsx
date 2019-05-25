@@ -14,6 +14,10 @@ export const Link = ({ href, children, className, style }: Props) => {
       className={className}
       style={style}
       onClick={event => {
+        if (event.metaKey) {
+          return; // normal behavior
+        }
+
         event.preventDefault();
 
         const state = null;

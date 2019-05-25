@@ -26,7 +26,6 @@
   /* Color pallete from https://clrs.cc/ */
   --default-text-color: #111;
   --link-text-color: #0074d9;
-  --link-secondary-text-color: #39cccc;
   --secondary-text-color: #aaa;
   --body-bg-color: #fff;
   --code-bg-color: #eee;
@@ -130,10 +129,11 @@ pre {
 .link {
   color: var(--link-text-color);
   text-decoration: none;
-  transition: color 0.1s ease-out;
+  transition: filter 0.1s ease-out;
 
-  &:hover {
-    color: var(--link-secondary-text-color);
+  &:hover,
+  &:focus {
+    filter: brightness(1.75);
   }
 }
 

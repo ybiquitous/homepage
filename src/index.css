@@ -21,7 +21,7 @@
   /* Font family */
   --font-family-serif: serif;
   --font-family-sans-serif: sans-serif;
-  --font-family-monospace: "Courie New", monospace;
+  --font-family-monospace: Consolas, Menlo, "Courie New", monospace;
 
   /* Color pallete from https://clrs.cc/ */
   --default-text-color: #111;
@@ -111,8 +111,19 @@ samp {
 code {
   background: var(--code-bg-color);
   border-radius: 0.25em;
-  padding: 0.1em 0.4em 0;
-  display: inline-block;
+  padding: 0.1em 0.3em;
+  margin: 0;
+}
+
+pre {
+  background: var(--code-bg-color);
+  font-size: var(--font-size-base);
+  overflow: auto;
+  padding: var(--space-m);
+
+  & > code {
+    padding: 0;
+  }
 }
 
 :any-link,

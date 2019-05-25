@@ -125,6 +125,13 @@ pre {
   }
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--secondary-text-color);
+  margin: var(--space-xl) 0;
+}
+
 :any-link,
 .link {
   color: var(--link-text-color);

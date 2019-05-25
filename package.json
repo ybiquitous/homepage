@@ -93,6 +93,7 @@
       "stylelint-config-standard"
     ],
     "rules": {
+      "declaration-block-no-duplicate-properties": true,
       "declaration-block-trailing-semicolon": null,
       "declaration-property-value-whitelist": {
         "font-family": [

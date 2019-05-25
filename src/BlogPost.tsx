@@ -22,7 +22,7 @@ export const BlogPost = ({ title, published, lastUpdated, author, content }: Pro
 
       <main className="blog">
         <div className="blog-metadata">
-          {published && <Time date={published} />}
+          {published ? <Time date={published} /> : <em>Unpublished</em>}
 
           <span className="blog-author">{author}</span>
         </div>

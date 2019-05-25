@@ -13,26 +13,33 @@
 
 .blog-footer {
   color: var(--secondary-text-color);
-  margin-top: var(--space-l);
+  margin-top: var(--space-xl);
 }
 
 .blog-content {
   & > h1 {
-    margin: var(--space-m) 0;
+    margin: var(--space-m) 0 var(--space-xl);
   }
 
   & > h2 {
-    margin: var(--space-xxl) 0 var(--space-m);
+    margin: var(--space-xxl) 0 0;
     border-bottom: 1px solid var(--secondary-text-color);
   }
 
-  & > h3 {
-    margin: var(--space-xl) 0 var(--space-m);
+  & > h3,
+  & > h4 {
+    margin: var(--space-xl) 0 calc(var(--space-m) * -1);
+  }
+
+  & > h5,
+  & > h6 {
+    margin: var(--space-l) 0 calc(var(--space-l) * -1);
   }
 
   & > p,
+  & > pre,
   & > ul,
   & > ol {
-    margin: var(--space-m) 0;
+    margin: var(--space-l) 0 0;
   }
 }

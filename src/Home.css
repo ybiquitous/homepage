@@ -6,34 +6,35 @@
   margin: var(--space-m) 0;
   display: flex;
   align-items: center;
+}
+
+.profile-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   & img {
     border-radius: 50%;
     width: 90px;
     height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 
 .profile-caption {
-  margin-left: var(--space-m);
+  margin-left: var(--space-l);
   display: flex;
   flex-flow: column;
 
   & small {
     color: var(--secondary-text-color);
-    margin-top: 0.25em;
   }
 }
 
 .profile-icons {
-  display: flex;
-  margin-top: 0.75em;
+  margin-top: var(--space-s);
 
   & > :last-child {
-    margin-left: 0.75em;
+    margin-left: var(--space-m);
   }
 }
 

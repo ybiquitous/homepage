@@ -19,10 +19,12 @@ const IconLink = ({ href, icon }: { href: string; icon: IconProp }) => {
 const Profile = () => {
   return (
     <div className="profile">
-      <img
-        src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
-        alt="Avatar"
-      />
+      <div className="profile-image">
+        <img
+          src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
+          alt="Avatar"
+        />
+      </div>
       <div className="profile-caption">
         <span>
           Masafumi Koba (<em>@ybiquitous</em>)

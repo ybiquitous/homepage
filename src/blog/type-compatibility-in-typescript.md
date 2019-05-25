@@ -1,4 +1,4 @@
-# TypeScriptにおける型の互換性
+# TypeScriptにおける型の互換性（翻訳）
 
 TypeScriptドキュメント『[_Type Compatibility_](https://www.typescriptlang.org/docs/handbook/type-compatibility.html)』を読んで面白い内容だったので、勉強がてら翻訳してみました。
 なお、この翻訳に関する一切の責任は負いかねますので、あらかじめご了承ください。

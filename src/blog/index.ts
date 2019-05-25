@@ -1,6 +1,6 @@
 import metadata from "~blog/metadata.yml";
-import startBlog from "./start-blog.md";
-import typeCompatibilityInTypescript from "./type-compatibility-in-typescript.md";
+import startBlog from "./2019/start-blog.md";
+import typeCompatibilityInTypescript from "./2019/type-compatibility-in-typescript.md";
 
 const contents = [startBlog, typeCompatibilityInTypescript];
 

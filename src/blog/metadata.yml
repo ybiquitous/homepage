@@ -3,3 +3,9 @@
   published: 2019-05-11
   lastUpdated: 2019-05-12
   author: Masafumi Koba
+
+- id: type-compatibility-in-typescript
+  title: TypeScriptにおける型の互換性
+  published: 2019-05-25
+  lastUpdated: null
+  author: Masafumi Koba

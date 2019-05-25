@@ -20,8 +20,9 @@ export const Blog = () => {
         <ul style={{ listStyle: "none", padding: "0" }}>
           {metadata
             .filter(({ published }) => published != null)
+            .sort((a, b) => (b.published as Date).getTime() - (a.published as Date).getTime())
             .map(({ id, title, published }) => (
-              <li key={id}>
+              <li key={id} style={{ margin: "0.5em 0" }}>
                 <Link href={`/blog/${id}`} style={{ marginRight: "1em" }}>
                   {title}
                 </Link>

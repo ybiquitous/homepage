@@ -3,6 +3,7 @@ interface BlogMetadata {
   title: string;
   published: Date | null;
   lastUpdated: Date | null;
+  author: string;
 }
 
 declare module "~blog/metadata.yml" {

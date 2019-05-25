@@ -1,6 +1,6 @@
 .blog-dates {
   color: var(--secondary-text-color);
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   margin-top: var(--space-s);
   display: flex;
 
@@ -11,21 +11,21 @@
 
 .blog-content {
   & > h1 {
-    margin: var(--space) 0;
+    margin: var(--space-m) 0;
   }
 
   & > h2 {
-    margin: var(--space-xxl) 0 var(--space);
+    margin: var(--space-xxl) 0 var(--space-m);
     border-bottom: 1px solid var(--secondary-text-color);
   }
 
   & > h3 {
-    margin: var(--space-xl) 0 var(--space);
+    margin: var(--space-xl) 0 var(--space-m);
   }
 
   & > p,
   & > ul,
   & > ol {
-    margin: var(--space) 0;
+    margin: var(--space-m) 0;
   }
 }

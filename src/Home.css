@@ -73,8 +73,8 @@
   visibility: hidden;
   opacity: 0;
   transform: translateY(-5%);
-  transition: 0.1s ease-out;
-  transition-property: visibility, opacity, transform;
+  transition: none 0.1s ease-out;
+  transition-property: visibility, opacity, transform; /* stylelint-disable-line */
 
   &[aria-hidden="false"] {
     visibility: visible;

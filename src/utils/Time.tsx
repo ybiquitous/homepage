@@ -1,4 +1,5 @@
 import React from "react";
+import "./Time.css";
 
 const dateFormats = Object.freeze({
   year: "numeric",
@@ -13,15 +14,7 @@ interface Props {
 
 export const Time = ({ date, style }: Props) => {
   return (
-    <time
-      dateTime={date.toISOString()}
-      style={{
-        color: "var(--secondary-text-color)",
-        fontSize: "0.9em",
-        fontStyle: "italic",
-        ...style,
-      }}
-    >
+    <time dateTime={date.toISOString()} className="Time" style={style}>
       {new Date(date).toLocaleDateString("en", dateFormats)}
     </time>
   );

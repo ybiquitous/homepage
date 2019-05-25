@@ -2,7 +2,7 @@ interface BlogMetadata {
   id: string;
   title: string;
   published: Date | null;
-  modified: Date | null;
+  lastUpdated: Date | null;
 }
 
 declare module "~blog/metadata.yml" {

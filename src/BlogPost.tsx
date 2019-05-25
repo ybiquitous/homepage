@@ -7,7 +7,7 @@ interface Props extends BlogMetadata {
   content: string;
 }
 
-export const BlogPost = ({ title, published, modified, content }: Props) => {
+export const BlogPost = ({ title, published, lastUpdated, content }: Props) => {
   useTitle(`${title} - ybiquitous blog`);
   useExternalLinkAsNewTab();
 
@@ -28,9 +28,9 @@ export const BlogPost = ({ title, published, modified, content }: Props) => {
               Published on <Time date={published} style={dateStyle} />
             </div>
           )}
-          {modified && (
+          {lastUpdated && (
             <div>
-              Modified on <Time date={modified} style={dateStyle} />
+              Last updated on <Time date={lastUpdated} style={dateStyle} />
             </div>
           )}
         </div>

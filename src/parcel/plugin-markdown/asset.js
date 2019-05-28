@@ -6,7 +6,7 @@ const hljs = require("highlight.js");
 
 const markedOptions = {
   breaks: true,
-  highlight: (code, lang) => hljs.highlight(lang, code).value,
+  highlight: (code, lang) => (lang ? hljs.highlight(lang, code).value : code),
 };
 
 class MarkdownAsset extends Asset {

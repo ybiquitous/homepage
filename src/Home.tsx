@@ -29,7 +29,7 @@ const Profile = () => {
         <span>
           Masafumi Koba (<em>@ybiquitous</em>)
         </span>
-        <small>Web Developer</small>
+        <small>Web Developer. I love Emacs / JavaScript / Ruby.</small>
 
         <span className="profile-icons">
           <IconLink href="https://github.com/ybiquitous" icon={faGithub} />

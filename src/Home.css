@@ -6,6 +6,11 @@
   margin: var(--space-m) 0;
   display: flex;
   align-items: center;
+  flex-flow: column;
+
+  @media (--small-viewport-up) {
+    flex-flow: row;
+  }
 }
 
 .profile-image {
@@ -21,9 +26,13 @@
 }
 
 .profile-caption {
-  margin-left: var(--space-l);
+  margin: var(--space-m) 0;
   display: flex;
   flex-flow: column;
+
+  @media (--small-viewport-up) {
+    margin-left: var(--space-l);
+  }
 
   & small {
     color: var(--secondary-text-color);

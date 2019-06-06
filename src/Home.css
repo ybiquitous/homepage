@@ -5,30 +5,23 @@
 .profile {
   margin: var(--space-m) 0;
   display: flex;
-  align-items: center;
-  flex-flow: column;
-
-  @media (--small-viewport-up) {
-    flex-flow: row;
-  }
 }
 
 .profile-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
 
-  & img {
-    border-radius: 50%;
+  @media (--small-viewport-up) {
     width: 90px;
     height: 90px;
   }
 }
 
 .profile-caption {
-  margin: var(--space-m) 0;
   display: flex;
   flex-flow: column;
+  margin-left: var(--space-m);
 
   @media (--small-viewport-up) {
     margin-left: var(--space-l);

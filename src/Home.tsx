@@ -19,8 +19,9 @@ const IconLink = ({ href, icon }: { href: string; icon: IconProp }) => {
 const Profile = () => {
   return (
     <div className="profile">
-      <div className="profile-image">
+      <div>
         <img
+          className="profile-image"
           src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
           alt="Avatar"
         />

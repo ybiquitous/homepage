@@ -1,4 +1,4 @@
-.header-link {
+.headerLink {
   color: inherit;
 }
 
@@ -7,7 +7,7 @@
   display: flex;
 }
 
-.profile-image {
+.profileImage {
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -18,7 +18,7 @@
   }
 }
 
-.profile-caption {
+.profileCaption {
   display: flex;
   flex-flow: column;
   margin-left: var(--space-m);
@@ -26,13 +26,13 @@
   @media (--small-viewport-up) {
     margin-left: var(--space-l);
   }
-
-  & small {
-    color: var(--secondary-text-color);
-  }
 }
 
-.profile-icons {
+.profileDescription {
+  color: var(--secondary-text-color);
+}
+
+.profileIcons {
   margin-top: var(--space-s);
 
   & > :last-child {
@@ -44,29 +44,29 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  & li {
-    margin: var(--space-l) 0;
-    font-size: var(--font-size-l);
-  }
+  font-size: var(--font-size-l);
 }
 
-.menu-link {
+.menuItem {
+  margin: var(--space-l) 0;
+}
+
+.menuLink {
   line-height: 1.6;
   padding: 0;
   font-size: var(--font-size-base);
   margin-right: 1em;
 }
 
-.menu-icon {
+.menuIcon {
   margin-right: 0.75em;
 }
 
-.menu-slides-button[aria-expanded="true"] {
+.menuSlidesButton[aria-expanded="true"] {
   color: var(--link-hover-text-color);
 }
 
-.menu-slides {
+.menuSlides {
   position: absolute;
   background: var(--body-bg-color);
   list-style: none;
@@ -84,8 +84,8 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
 
-  & li {
-    margin: var(--space-s) 0;
-  }
+.menuSlideItem {
+  margin: var(--space-s) 0;
 }

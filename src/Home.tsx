@@ -6,7 +6,7 @@ import { faAngleRight, faImages, faBlog } from "@fortawesome/free-solid-svg-icon
 import { Link } from "./router";
 import { Time, useTitle } from "./utils";
 import slidesMetadata from "~slides/metadata.yml";
-import "./Home.css";
+import styles from "./Home.css";
 
 const IconLink = ({ href, icon }: { href: string; icon: IconProp }) => {
   return (
@@ -18,21 +18,23 @@ const IconLink = ({ href, icon }: { href: string; icon: IconProp }) => {
 
 const Profile = () => {
   return (
-    <div className="profile">
+    <div className={styles.profile}>
       <div>
         <img
-          className="profile-image"
+          className={styles.profileImage}
           src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
           alt="Avatar"
         />
       </div>
-      <div className="profile-caption">
+      <div className={styles.profileCaption}>
         <span>
           Masafumi Koba (<em>@ybiquitous</em>)
         </span>
-        <small>Web Developer. I love Emacs / JavaScript / Ruby.</small>
+        <small className={styles.profileDescription}>
+          Web Developer. I love Emacs / JavaScript / Ruby.
+        </small>
 
-        <span className="profile-icons">
+        <span className={styles.profileIcons}>
           <IconLink href="https://github.com/ybiquitous" icon={faGithub} />
           <IconLink href="https://twitter.com/ybiquitous" icon={faTwitter} />
         </span>
@@ -45,7 +47,7 @@ const Header = () => {
   return (
     <header>
       <h1>
-        <a href="/" className="header-link">
+        <a href="/" className={styles.headerLink}>
           <span role="img" aria-label="home" style={{ marginRight: "0.25em" }}>
             🏡
           </span>
@@ -61,10 +63,10 @@ const Slides = () => {
   const [expanded, setExpanded] = useState(false);
   return (
     <>
-      <FontAwesomeIcon icon={faImages} fixedWidth className="menu-icon" />
+      <FontAwesomeIcon icon={faImages} fixedWidth className={styles.menuIcon} />
       <button
         id="menu-slides-button"
-        className="link textButton menu-slides-button"
+        className={`link textButton ${styles.menuSlidesButton}`}
         onClick={() => setExpanded(!expanded)}
         aria-haspopup={true}
         aria-controls="menu-slides"
@@ -74,17 +76,17 @@ const Slides = () => {
       </button>
       <ul
         id="menu-slides"
-        className="menu-slides"
+        className={styles.menuSlides}
         role="menu"
         aria-labelledby="menu-slides-button"
         aria-hidden={!expanded}
       >
         {slidesMetadata.map(({ id, title, date }) => (
-          <li key={id} role="none">
+          <li key={id} role="none" className={styles.menuSlideItem}>
             <FontAwesomeIcon icon={faAngleRight} fixedWidth />
             <a
               href={`/slides/${id}`}
-              className="menu-link"
+              className={styles.menuLink}
               role="menuitem"
               target="_blank"
               rel="noopener"
@@ -103,12 +105,12 @@ const Main = () => {
   return (
     <main>
       <nav>
-        <ul className="menu">
-          <li>
-            <FontAwesomeIcon icon={faBlog} fixedWidth className="menu-icon" />
+        <ul className={styles.menu}>
+          <li className={styles.menuItem}>
+            <FontAwesomeIcon icon={faBlog} fixedWidth className={styles.menuIcon} />
             <Link href="/blog">Blog</Link>
           </li>
-          <li>
+          <li className={styles.menuItem}>
             <Slides />
           </li>
         </ul>

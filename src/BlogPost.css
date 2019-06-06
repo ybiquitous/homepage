@@ -2,21 +2,21 @@
   padding: var(--space-xl) 0 var(--space-m);
 }
 
-.blog-metadata {
+.blogMetadata {
   color: var(--secondary-text-color);
   font-size: var(--font-size-s);
 }
 
-.blog-author {
+.blogAuthor {
   margin-left: var(--space-l);
 }
 
-.blog-footer {
+.blogFooter {
   color: var(--secondary-text-color);
   margin-top: var(--space-xl);
 }
 
-.blog-content {
+.blogContent {
   & > h1 {
     margin: var(--space-m) 0 var(--space-xl);
   }

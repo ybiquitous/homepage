@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "./router";
 import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "./utils";
-import "./BlogPost.css";
+import styles from "./BlogPost.css";
 import "highlight.js/styles/xcode.css";
 
 interface Props extends BlogMetadata {
@@ -20,16 +20,16 @@ export const BlogPost = ({ title, published, lastUpdated, author, content }: Pro
         />
       </header>
 
-      <main className="blog">
-        <div className="blog-metadata">
+      <main className={styles.blog}>
+        <div className={styles.blogMetadata}>
           {published ? <Time date={published} /> : <em>Unpublished</em>}
 
-          <span className="blog-author">{author}</span>
+          <span className={styles.blogAuthor}>{author}</span>
         </div>
 
-        <article dangerouslySetInnerHTML={{ __html: content }} className="blog-content" />
+        <article dangerouslySetInnerHTML={{ __html: content }} className={styles.blogContent} />
 
-        <p className="blog-footer">
+        <p className={styles.blogFooter}>
           {lastUpdated && (
             <>
               Last updated on <Time date={lastUpdated} />

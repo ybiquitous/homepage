@@ -136,8 +136,17 @@ hr {
   margin: var(--space-xl) 0;
 }
 
+:global(.textButton) {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+}
+
 :any-link,
-.link {
+:global(.link) {
   color: var(--link-text-color);
   text-decoration: none;
   transition: filter 0.1s ease-out;
@@ -146,13 +155,4 @@ hr {
   &:focus {
     filter: brightness(1.75);
   }
-}
-
-.textButton {
-  background: inherit;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  padding: 0;
-  text-align: left;
 }

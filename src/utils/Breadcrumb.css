@@ -5,10 +5,10 @@
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
+}
 
-  & li:not(:last-child)::after {
-    content: "/";
-    color: var(--secondary-text-color);
-    padding: 0 0.5em;
-  }
+.breadcrumbItem:not(:last-child)::after {
+  content: "/";
+  color: var(--secondary-text-color);
+  padding: 0 0.5em;
 }

@@ -50,6 +50,7 @@
     "mdx-deck": "^1.10.2",
     "parcel-bundler": "^1.12.3",
     "postcss-custom-media": "^7.0.8",
+    "postcss-modules": "^1.4.1",
     "postcss-nesting": "^7.0.0",
     "stylelint": "^10.1.0",
     "stylelint-a11y": "^1.2.0",
@@ -72,6 +73,7 @@
       "react-hooks"
     ],
     "rules": {
+      "no-undefined": "warn",
       "sort-imports": "off",
       "import/extensions": "off",
       "import/no-unresolved": "off",
@@ -125,11 +127,20 @@
           "var(--font-size-code)"
         ]
       },
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ],
       "a11y/media-prefers-reduced-motion": null,
       "plugin/no-low-performance-animation-properties": true
     }
   },
   "postcss": {
+    "modules": true,
     "plugins": [
       "autoprefixer",
       "postcss-nesting",

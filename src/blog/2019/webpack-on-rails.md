@@ -7,7 +7,7 @@ Webpack を素の状態で使えるチームであれば、Webpacker という�
 
 この記事では、できるだけ疎結合な形で両者を連携させる方法を説明します。
 
-手っ取り早く試したい方は、この記事で使用したソースコードのサンプルをこちらの[リポジトリ](https://github.com/ybiquitous/webpack-on-rails-example)に置いてますので、ご覧ください（現時点で最新の Rails 6.0.0.rc1 を使っています）。
+手っ取り早く試したい方は、この記事で使用したソースコードのサンプルをこちらの[リポジトリ](https://github.com/ybiquitous/webpack-on-rails-example)に置いてますので、ご覧ください（現時点で最新の Rails 6.0.0.rc1 を使用しています）。
 
 ## 目次
 
@@ -31,20 +31,17 @@ Webpack を素の状態で使えるチームであれば、Webpacker という�
 3.  高級言語の使用（Sass など）
 4.  フィンガープリントの付与（キャッシュの破棄のため）
 
-これらはすべて、Webpack で代替可能です（いくつかの Webpack プラグインが必要になりますが）。しかも「アセットの連結」よりも頑健なモジュールシステムを使えます。
+これらはすべて、Webpack で代替可能です（いくつかの Webpack プラグインが必要になりますが）。しかも「アセットの連結」よりも頑健なモジュールシステム（ES Modules）を使えます。
 
-このゴールを達成するために最低限必要なものは、Webpack が出力したファイルを Rails から参照するためのヘルパーでしょう。
-もちろん、フィンガープリントを付与しないという選択肢もあり、その場合は単純に `public/` に出力すればいいのですが、現時点でアセットキャッシュの破棄にはフィンガープリントが最も確実で有効な方法でしょう。
+このゴールを達成するために最低限必要なものは、Webpack が出力したファイルを Rails から参照するためのヘルパーでしょう。もちろん、フィンガープリントを付与しないという選択肢もあり、その場合は単純に `public/` に出力すればいいのですが、現時点でアセットキャッシュの破棄にはフィンガープリントが最も確実で有効な方法でしょう。
 
-さらに、開発者体験（Developer eXperience; DX）を高めるため、この記事では [Webpack DevServer](https://webpack.js.org/configuration/dev-server/) も使うことにします。これにより、コードを更新したらブラウザが自動でリロードされるようになります（この機能のことを [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) と呼びます）。
-もし DevServer を使わない場合は、ファイル更新の[監視モード](https://webpack.js.org/configuration/watch/)で代用することは可能です。
+さらに、開発者体験（Developer eXperience; DX）を高めるため、この記事では [Webpack DevServer](https://webpack.js.org/configuration/dev-server/) も使うことにします。これにより、コードを更新したらブラウザが自動でリロードされるようになります（この機能のことを [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) と呼びます）。もし DevServer を使わない場合は、ファイル更新の[監視モード](https://webpack.js.org/configuration/watch/)で代用することは可能です。
 
 反対に、この記事でやらないことは gem 化です。こういった Tips は時間とともにすぐに陳腐化しますし、各プロジェクトの事情に応じてカスタマイズしたくなるのが常です。
 
 ## プロジェクト構成
 
-通常の Rails ディレクトリとは別に、`frontend/` ディレクトリを作ります。名前は何でもいいのですが、疎結合であることを示すためにディレクトリを分けることが重要です。
-まあ、このあたりは好みですし、`app/frontend/` を作るプロジェクトがあっても構わないと思います。プロジェクトの都合に合わせましょう。
+通常の Rails ディレクトリとは別に、`frontend/` ディレクトリを作ります。名前は何でもいいのですが、疎結合であることを示すためにディレクトリを分けることが重要です。このあたりは好みですし、`app/frontend/` を作るプロジェクトがあっても構わないと思います。プロジェクトの都合に合わせましょう。
 
     <project_root>
     ├── app/
@@ -129,8 +126,7 @@ npm パッケージをインストールしたら、`npm run` で使えるショ
 -   `npm run dev` - DevServer 起動
 -   `npm run build` - アセットファイルの出力
 
-次に `webpack.config.js` を作成・編集します。各オプションの詳細については、[ドキュメント](https://webpack.js.org/configuration/)をご覧ください。
-重要なのは [`output`](https://webpack.js.org/configuration/output/) オプションです。このオプションには Rails の `public/assets/webpack/` ディレクトリを指定します。
+次に `webpack.config.js` を作成・編集します。各オプションの詳細については、[ドキュメント](https://webpack.js.org/configuration/)をご覧ください。重要なのは [`output`](https://webpack.js.org/configuration/output/) オプションです。このオプションには Rails の `public/assets/webpack/` ディレクトリを指定します。
 
 以下は設定例です。
 
@@ -173,8 +169,8 @@ module.exports = (env, argv) => {
 ```
 
 [`ManifestPlugin`](https://github.com/danethurber/webpack-manifest-plugin) を設定することで、ビルド時に `public/assets/webpack/manifest.json` ファイルが自動生成されます。このマニフェストファイルは Rails 側から参照されます。
-マニフェストファイルは以下のようなフォーマットです（`npm run build` 実行時の例）。ファイル名と実際の URL パスのマッピングになっています。
-また、フィンガープリント用のハッシュダイジェストが付与されています。これは `[contenthash]` という設定によって有効になってます。
+
+マニフェストファイルは以下のようなフォーマットです（`npm run build` 実行時の例）。ファイル名と実際の URL パスのマッピングになっています。また、フィンガープリント用のハッシュダイジェストが付与されています。これは `[contenthash]` という設定によるものです。
 
 ```json
 {
@@ -182,14 +178,14 @@ module.exports = (env, argv) => {
 }
 ```
 
-注意すべきなのは `WEBPACK_DEV_SERVER_PORT` 環境変数を設定している部分です（`devServer.port`）。これは今回独自に追加したものです。
-後で Rails 側に Proxy の設定をするときに同じポート番号を指定する必要があるため、環境変数でポート番号を指定するようにします。
-デフォルトでは `3100` ポートにしていますが、これは何でも構いません（Rails サーバーのポートと被らなければ）。プロジェクトの都合に合わせて変更しましょう。
-（常に環境変数を設定できる環境であれば、デフォルトポートはなくても構いません）
+注意すべきなのは `WEBPACK_DEV_SERVER_PORT` 環境変数を設定している部分です（`devServer.port`）。これは今回独自に追加した変数です。後で Rails 側に Proxy の設定をするときに同じポート番号を指定する必要があるため、環境変数でポート番号を指定するようにします。
+
+デフォルトでは `3100` ポートにしていますが、これは何でも構いません（Rails サーバーのポートと被らなければ）。プロジェクトの都合に合わせて変更しましょう（常に環境変数を設定できる環境であれば、デフォルトのポートはなくても構いません）。
 
 ## Rails
 
 Webpack の設定が終わったら、次は Rails の設定です。
+
 まず、Webpack が出力するアセットファイルを Rails から利用するための View ヘルパーを用意します。これはマニフェストファイルを解釈して、パスを解決するためのものです。
 
 ```ruby
@@ -218,11 +214,10 @@ end
 ```
 
 `development` 環境では `http://localhost:3000/assets/webpack/manifest.json` からマニフェストを読み込んでいることに注意してください（`3000` ポートは Rails のデフォルト）。
-このマニフェストへの HTTP リクエストは、次に説明する Proxy へ転送されます。
-反対に、非 `development` 環境ではマニフェストは `public/assets/webpack/manifest.json` から読み込まれます。
 
-次に、Webpack DevServer へリクエストを転送する Proxy を追加します。ここでは Rack ミドルウェアとして実装します。これは Webpacker の[実装](https://github.com/rails/webpacker/blob/master/lib/webpacker/dev_server_proxy.rb)とほぼ同じです。
-ポートの設定で `WEBPACK_DEV_SERVER_PORT` 環境変数が再登場していることに注意しましょう。
+このマニフェストへの HTTP リクエストは、次に説明する Proxy へ転送されます。反対に、非 `development` 環境ではマニフェストは `public/assets/webpack/manifest.json` ファイルから読み込まれます。
+
+次に、Webpack DevServer へリクエストを転送する Proxy を追加します。ここでは Rack ミドルウェアとして実装します。これは Webpacker の[実装](https://github.com/rails/webpacker/blob/master/lib/webpacker/dev_server_proxy.rb)を参考にしました。`WEBPACK_DEV_SERVER_PORT` 環境変数が再登場していることに注意しましょう。
 
 ```ruby
 # config/initializers/webpack.rb
@@ -255,7 +250,7 @@ if Rails.env.development?
 end
 ```
 
-なお、忘れずに `public_file_server.enabled` を有効にしておきましょう。これが無効になっていると、本番環境で `/assets/` 以下へのアクセスが許可されません。
+なお、忘れずに `public_file_server.enabled` を有効にしておきましょう。これが無効になっていると、本番環境で `/assets/*` へのアクセスが許可されません。
 
 ```ruby
 # config/environments/production.rb
@@ -278,13 +273,15 @@ end
 
 ## ビルド
 
-`npm run build` コマンドを実行すれば、`public/assets/webpack/` ディレクトリにファイルが最小化された状態で出力されます。これらの出力された静的ファイルを、そのままサーバーにデプロイすればよいです。実際の本番環境では CDN が使われることも多いと思いますが、通常の Rails 設定と同じように `action_controller.asset_host` を設定すれば、それがそのまま Webpack アセットに対しても有効になります。
+`npm run build` コマンドを実行すれば、`public/assets/webpack/` ディレクトリにファイルが最小化された状態で出力されます。これらの出力された静的ファイルを、そのままサーバーにデプロイすればよいです。
+
+実際の本番環境では CDN が使われることも多いと思いますが、通常の Rails 設定と同じように `action_controller.asset_host` を設定すれば、それがそのまま Webpack アセットに対しても有効になります。通常の静的ファイルと扱いは同じです。
 
 ## まとめ
 
-以上のように、若干の設定やコードは必要になりますが、Webpacker や Sprockets といった抽象化を介さずにモダンなフロントエンド環境は構築可能です。
+以上、若干の設定やコードは必要になりますが、Webpacker や Sprockets といった抽象レイヤーを介さずにモダンなフロントエンド環境は構築することができました。
 
-ActiveRecord や MVC フレームワークといった Rails の強力な部分を活用しつつ、Babel・TypeScript・Sass・PostCSS・React・Vue.js といったフロントエンド技術を Webpack を通じて利用することができます。これは Rails エンジニアとフロントエンドエンジニアとの妥当な解決策の一つと考えることもできます。
+ActiveRecord や MVC フレームワークといった Rails の強力な部分を活用しつつ、Babel・TypeScript・Sass・PostCSS・React・Vue.js といった最新のフロントエンド技術を Webpack を通じて利用することができます。
 
 Webpacker や Sprockets にも良い点はありますが（少なくとも Rails にデフォルトで組み込まれています）、密結合になっているがゆえの柔軟性の欠如が問題になるケースもあります。例えば、以下のようなケースです。
 
@@ -292,4 +289,4 @@ Webpacker や Sprockets にも良い点はありますが（少なくとも Rail
 -   Webpack の設定を `webpack.config.js` ではなく `webpacker.yml` でおこなう必要があり、学習コストが上がる。
 -   [`sass-rails`](https://github.com/rails/sass-rails) といった gem が必要で、直接 npm パッケージを使うことができない（またはサポートしてない）。
 
-最終的には、プロジェクトを取り巻く状況に応じたトレードオフの判断を下すことになります。この記事がその判断の一助になれば幸いです。
+最終的には、プロジェクトを取り巻く状況に応じたトレードオフの判断を下すことになるかと思います。この記事がその判断の一助になれば幸いです。

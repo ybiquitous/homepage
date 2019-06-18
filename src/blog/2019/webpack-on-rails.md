@@ -7,8 +7,7 @@ Webpack を素の状態で使えるチームであれば、Webpacker という�
 
 この記事では、できるだけ疎結合な形で両者を連携させる方法を説明します。
 
-手っ取り早く試したい方は、この記事で使用したソースコードのサンプルをこちらのリポジトリに置いてますので、ご覧ください（現時点で最新の Rails 6.0.0.rc1 を使っています）。
-<https://github.com/ybiquitous/webpack-on-rails-example>
+手っ取り早く試したい方は、この記事で使用したソースコードのサンプルをこちらの[リポジトリ](https://github.com/ybiquitous/webpack-on-rails-example)に置いてますので、ご覧ください（現時点で最新の Rails 6.0.0.rc1 を使っています）。
 
 ## 目次
 

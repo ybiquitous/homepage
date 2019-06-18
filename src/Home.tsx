@@ -8,9 +8,15 @@ import { Time, useTitle } from "./utils";
 import slidesMetadata from "~slides/metadata.yml";
 import styles from "./Home.css";
 
-const IconLink = ({ href, icon }: { href: string; icon: IconProp }) => {
+const IconLink = ({ href, title, icon }: { href: string; title: string; icon: IconProp }) => {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+    <a
+      href={href}
+      title={title}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "inherit" }}
+    >
       <FontAwesomeIcon icon={icon} />
     </a>
   );
@@ -28,15 +34,19 @@ const Profile = () => {
       </div>
       <div className={styles.profileCaption}>
         <span>
-          Masafumi Koba (<em>@ybiquitous</em>)
+          <strong>Masafumi Koba</strong>
+          <small style={{ marginLeft: "1em" }}>@ybiquitous</small>
         </span>
         <small className={styles.profileDescription}>
           Web Developer. I love Emacs / JavaScript / Ruby.
         </small>
-
         <span className={styles.profileIcons}>
-          <IconLink href="https://github.com/ybiquitous" icon={faGithub} />
-          <IconLink href="https://twitter.com/ybiquitous" icon={faTwitter} />
+          <IconLink
+            href="https://github.com/ybiquitous"
+            title="See code on GitHub"
+            icon={faGithub}
+          />
+          <IconLink href="https://twitter.com/ybiquitous" title="See tweets" icon={faTwitter} />
         </span>
       </div>
     </div>

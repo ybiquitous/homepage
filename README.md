@@ -50,5 +50,5 @@ git push origin master
 
 ## Stack
 
--   [React](https://reactjs.org/)
--   [Parcel](https://parceljs.org/)
+- [React](https://reactjs.org/)
+- [Parcel](https://parceljs.org/)

@@ -162,8 +162,7 @@
         "stylelint"
       ],
       "*.md": [
-        "remark --output --",
-        "git add"
+        "remark --frail"
       ],
       "*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}": [
         "prettier --write",
@@ -173,27 +172,17 @@
   },
   "remarkConfig": {
     "plugins": [
-      "remark-preset-lint-markdown-style-guide",
-      "remark-preset-lint-recommended",
-      "remark-lint-first-heading-level",
-      "remark-lint-no-tabs",
+      "preset-lint-recommended",
+      "lint-no-heading-punctuation",
       [
-        "remark-lint-emphasis-marker",
+        "lint-list-item-bullet-indent",
         false
       ],
       [
-        "remark-lint-list-item-indent",
+        "lint-list-item-indent",
         false
       ],
-      [
-        "remark-lint-list-item-spacing",
-        false
-      ],
-      [
-        "remark-lint-ordered-list-marker-value",
-        "ordered"
-      ],
-      "remark-validate-links"
+      "validate-links"
     ]
   }
 }

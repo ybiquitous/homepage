@@ -13,7 +13,9 @@ FileUtils.rm_rf(DEST)
 Pathname.glob("#{SRC}/*/index.mdx").map(&:cleanpath).each do |input_file|
   name = input_file.dirname.basename
   dest_dir = Pathname(DEST) / name
-  command = ['mdx-deck', 'build', input_file.to_s, '--out-dir', dest_dir.to_s]
+  # HACK: Use undocumented option `--basepath`.
+  #       See https://github.com/jxnblk/mdx-deck/issues/368#issuecomment-494828254
+  command = ['mdx-deck', 'build', input_file.to_s, '--out-dir', dest_dir.to_s, '--basepath', "/slides/#{name}"]
   puts "# #{input_file} -> #{dest_dir}"
   system(*command, exception: true)
 end

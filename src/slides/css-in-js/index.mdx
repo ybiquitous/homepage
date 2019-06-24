@@ -86,7 +86,9 @@ export default function Button() {
 
 ```html
 <!-- DOM output as inline style -->
-<div style="border: 1px solid red; border-radius: 4px;">Button</div>
+<div style="border: 1px solid red; border-radius: 4px;">
+  Button
+</div>
 ```
 
 ---
@@ -128,7 +130,7 @@ const rule = css({
 });
 
 <div {...rule}>zomg</div>; // as data attributes
-<div className={`${rule}`}>zomg</div>; // as classes
+<div className={rule}>zomg</div>; // as classes
 ```
 
 ---

@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "./router";
-import { Breadcrumb, Time, useTitle } from "./utils";
+import { Link } from "../router";
+import { Breadcrumb, Time, useTitle } from "../utils";
 import metadata from "~blog/metadata.yml";
 
 export const Blog = () => {
@@ -19,16 +19,21 @@ export const Blog = () => {
           Recent posts
         </h2>
 
-        <ul style={{ listStyle: "none", padding: "0" }}>
+        <ul style={{ listStyle: "none", padding: "0", margin: "var(--space-l) 0" }}>
           {metadata
             .filter(({ published }) => published != null)
-            .sort((a, b) => (b.published as Date).getTime() - (a.published as Date).getTime())
+            .sort((a, b) => {
+              if (a.published == null || b.published == null) {
+                return 0;
+              }
+              return b.published.getTime() - a.published.getTime();
+            })
             .map(({ id, title, published }) => (
-              <li key={id} style={{ margin: "0.5em 0" }}>
-                <Link href={`/blog/${id}`} style={{ marginRight: "1em" }}>
+              <li key={id} style={{ margin: "var(--space-m) 0" }}>
+                <Link href={`/blog/${id}`} style={{ marginRight: "var(--space-m)" }}>
                   {title}
                 </Link>
-                <Time date={published as Date} />
+                {published && <Time date={published} />}
               </li>
             ))}
         </ul>

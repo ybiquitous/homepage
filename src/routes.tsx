@@ -1,9 +1,10 @@
 import React from "react";
-import { Home } from "./Home";
-import { Blog } from "./Blog";
-import { BlogPost } from "./BlogPost";
+import { Home } from "./pages/Home";
+import { Blog } from "./pages/Blog";
+import { BlogPost } from "./pages/BlogPost";
 import { blogs } from "./blog/index";
-import { NotFound } from "./NotFound";
+import { Slides } from "./pages/Slides";
+import { NotFound } from "./pages/NotFound";
 
 interface Routes {
   [key: string]: () => JSX.Element;
@@ -21,5 +22,6 @@ export const routes: Routes = {
   "/": () => <Home />,
   "/blog": () => <Blog />,
   ...blogRoutes,
+  "/slides": () => <Slides />,
   "*": () => <NotFound />,
 };

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useTitle } from "./utils";
+import { useTitle } from "../utils";
 
 export const NotFound = () => {
   useEffect(() => {
@@ -15,7 +15,13 @@ export const NotFound = () => {
 
   return (
     <main>
-      <h1 style={{ fontSize: "calc(var(--font-size-h1) * 2)" }}>Page Not Found</h1>
+      <h1 style={{ fontSize: "calc(var(--font-size-h1) * 1.5)" }}>Ooops!</h1>
+
+      <p style={{ fontSize: "var(--font-size-l)" }}>Sorry, the page not found.</p>
+
+      <p>
+        <a href="/">← Back to Home</a>
+      </p>
     </main>
   );
 };

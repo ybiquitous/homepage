@@ -42,3 +42,14 @@
     margin: var(--space-l) 0 0;
   }
 }
+
+.headingAnchor {
+  color: var(--secondary-text-color);
+  padding-right: 0.25em;
+
+  &:hover,
+  &:focus {
+    filter: none;
+    text-decoration: underline;
+  }
+}

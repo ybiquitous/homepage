@@ -15,3 +15,9 @@
   published: 2019-06-19
   lastUpdated: null
   author: Masafumi Koba
+
+- id: spa-redirect-settings-on-netlify
+  title: SPAのためのリダイレクト設定 on Netlify
+  published: 2019-07-03
+  lastUpdated: null
+  author: Masafumi Koba

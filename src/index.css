@@ -29,6 +29,7 @@
   --secondary-text-color: #aaa;
   --body-bg-color: #fff;
   --code-bg-color: #eee;
+  --blockquote-text-color: #6a737d; /* not in color palette */
 }
 
 /* See https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints */

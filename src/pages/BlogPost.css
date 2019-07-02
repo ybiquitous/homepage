@@ -35,8 +35,15 @@
     margin: var(--space-l) 0 calc(var(--space-l) * -1);
   }
 
+  & > blockquote {
+    border-left: 0.25em solid var(--code-bg-color);
+    color: var(--blockquote-text-color);
+    padding: 0 var(--space-m);
+  }
+
   & > p,
   & > pre,
+  & > blockquote,
   & > ul,
   & > ol {
     margin: var(--space-l) 0 0;

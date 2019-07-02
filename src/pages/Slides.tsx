@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "../router";
 import { Breadcrumb, Time, useTitle } from "../utils";
 import metadata from "~slides/metadata.yml";
+import s from "./Blog.css"; // borrow
 
 export const Slides = () => {
   useTitle("ybiquitous slides");
@@ -13,23 +14,16 @@ export const Slides = () => {
       </header>
 
       <main>
-        <h1 style={{ margin: "var(--space-s) 0 var(--space-xl)" }}>ybiquitous slides</h1>
+        <h1 className={s.title}>ybiquitous slides</h1>
 
-        <h2 style={{ margin: "var(--space-m) 0", fontSize: "var(--font-size-h4)" }}>
-          Recent slides
-        </h2>
+        <h2 className={s.heading}>Recent slides</h2>
 
-        <ul style={{ listStyle: "none", padding: "0", margin: "var(--space-l) 0" }}>
+        <ul className={s.list}>
           {metadata
             .sort((a, b) => b.date.getTime() - a.date.getTime())
             .map(({ id, title, date }) => (
-              <li key={id} style={{ margin: "var(--space-m) 0" }}>
-                <a
-                  href={`/slides/${id}`}
-                  target="_blank"
-                  rel="noopener"
-                  style={{ marginRight: "var(--space-m)" }}
-                >
+              <li key={id} className={s.listItem}>
+                <a href={`/slides/${id}`} target="_blank" rel="noopener" className={s.link}>
                   {title}
                 </a>
                 <Time date={date} />

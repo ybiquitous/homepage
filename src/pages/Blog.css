@@ -1,0 +1,22 @@
+.title {
+  margin: var(--space-s) 0 var(--space-xl);
+}
+
+.heading {
+  margin: var(--space-m) 0;
+  font-size: var(--font-size-h4);
+}
+
+.list {
+  list-style: none;
+  margin: var(--space-l) 0;
+  padding: 0;
+}
+
+.listItem {
+  margin: var(--space-m) 0;
+}
+
+.link {
+  margin-right: var(--space-m);
+}

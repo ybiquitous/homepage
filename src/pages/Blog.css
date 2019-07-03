@@ -14,9 +14,9 @@
 }
 
 .listItem {
-  margin: var(--space-m) 0;
+  margin-top: var(--space-l);
 }
 
 .link {
-  margin-right: var(--space-m);
+  display: block;
 }

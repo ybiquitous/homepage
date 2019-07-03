@@ -38,7 +38,7 @@
 /blog/*    /    200
 ```
 
-そして、ルーティングはこのようになっていました。
+そして、ルーティングはこのようになっていました（[コード](https://github.com/ybiquitous/homepage/blob/f21b1e5963607f5b6fd9a3b114efeb0786093ffe/src/routes.tsx#L21-L27)）。
 
 ```ts
 export const routes: Routes = {
@@ -49,8 +49,6 @@ export const routes: Routes = {
   "*": () => <NotFound />,
 };
 ```
-
-<https://github.com/ybiquitous/homepage/blob/f21b1e5963607f5b6fd9a3b114efeb0786093ffe/src/routes.tsx#L21-L27>
 
 `/` へのアクセスはNetlifyがデフォルトで `/index.html` に転送してくれるのですが、他のURLを書かないとページをリロードしたときに404になってしまいます。そこで、`/blog` や `/blog/*` の設定を追加していたのでした（そうしないといけないと思い込んでました…）。
 

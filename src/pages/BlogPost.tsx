@@ -42,9 +42,7 @@ export const BlogPost = ({ title, published, lastUpdated, author, content }: Pro
   return (
     <>
       <header>
-        <Breadcrumb
-          links={[<Link href="/">Home</Link>, <Link href="/blog">Blog</Link>, `“${title}”`]}
-        />
+        <Breadcrumb links={[<Link href="/">Home</Link>, <Link href="/blog">Blog</Link>]} />
       </header>
 
       <main className={s.blog}>

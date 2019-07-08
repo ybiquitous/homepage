@@ -47,7 +47,7 @@
     "eslint-config-ybiquitous": "^7.3.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "marked": "^0.7.0",
-    "mdx-deck": "^2.4.0",
+    "mdx-deck": "^2.5.0",
     "parcel-bundler": "^1.12.3",
     "postcss-custom-media": "^7.0.8",
     "postcss-modules": "^1.4.1",

@@ -9,7 +9,7 @@ const addAnchor = (target: Element) => {
   anchor.href = `#${target.id}`;
   anchor.textContent = "#";
   anchor.classList.add(s.headingAnchor);
-  target.insertAdjacentElement("afterbegin", anchor);
+  target.insertAdjacentElement("beforeend", anchor);
 };
 
 const scrollToAnchor = (target: Element) => {

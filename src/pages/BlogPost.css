@@ -16,6 +16,8 @@
 }
 
 .blogContent {
+  overflow-x: auto;
+
   & > h1 {
     margin: var(--space-m) 0 var(--space-xl);
   }
@@ -52,11 +54,10 @@
 
 .headingAnchor {
   color: var(--secondary-text-color);
-  padding-right: 0.25em;
+  margin-left: 0.5em;
 
   &:hover,
   &:focus {
-    filter: none;
-    text-decoration: underline;
+    filter: brightness(0.75);
   }
 }

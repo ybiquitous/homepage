@@ -53,7 +53,7 @@
     "postcss-modules": "^1.4.1",
     "postcss-nesting": "^7.0.0",
     "stylelint": "^10.1.0",
-    "stylelint-a11y": "^1.2.0",
+    "stylelint-a11y": "^1.2.1",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-high-performance-animation": "^1.2.1",
     "typescript": "^3.5.2",

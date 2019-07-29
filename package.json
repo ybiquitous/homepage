@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
+    "@types/react-dom": "^16.8.5",
     "@ybiquitous/parcel-plugin-markdown": "file:src/parcel/plugin-markdown",
     "autoprefixer": "^9.6.1",
     "eslint-config-ybiquitous": "^7.3.0",

@@ -93,7 +93,17 @@
       "react/no-array-index-key": "warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn"
-    }
+    },
+    "overrides": [
+      {
+        "files": ["src/slides/*.js"],
+        "rules": {
+          "import/default": "off",
+          "import/no-extraneous-dependencies": "off",
+          "import/no-internal-modules": "off"
+        }
+      }
+    ]
   },
   "stylelint": {
     "extends": [

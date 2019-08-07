@@ -1,10 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import theme, { syntaxHighlighterPrism } from "@mdx-deck/themes";
-/* eslint-enable import/no-extraneous-dependencies */
+import defaultTheme, { prism } from "mdx-deck/themes";
 
-const customeTheme = {
-  ...theme,
-  ...syntaxHighlighterPrism(theme),
-};
+const themes = [defaultTheme, prism];
 
-export default customeTheme;
+export default themes;

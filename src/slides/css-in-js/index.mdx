@@ -1,4 +1,7 @@
-export { default as theme } from "../theme";
+import myThemes from "../theme";
+
+export const themes = myThemes;
+
 import { Head, Appear } from "mdx-deck";
 
 <Head>
@@ -15,8 +18,7 @@ import { Head, Appear } from "mdx-deck";
 
 ---
 
-```jsx
-/* Button.jsx */
+```jsx /* Button.jsx */
 
 const style = {
   border: "1px solid red",

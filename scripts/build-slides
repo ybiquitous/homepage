@@ -8,22 +8,30 @@ unless SRC && DEST
   abort "Usage: #{__FILE__} <src> <dest>"
 end
 
-FileUtils.rm_rf(DEST)
+def output(message)
+  len = message.size + 4
+  puts "#" * len
+  puts "# #{' ' * message.size} #"
+  puts "# #{message} #"
+  puts "# #{' ' * message.size} #"
+  puts "#" * len
+end
 
-Pathname.glob("#{SRC}/*/index.mdx").map(&:cleanpath).each do |input_file|
+FileUtils.rm_rf DEST
+FileUtils.mkdir_p DEST
+
+Pathname.glob("#{SRC}/css*/index.mdx").map(&:cleanpath).each do |input_file|
   name = input_file.dirname.basename
   dest_dir = Pathname(DEST) / name
-  # HACK: Use undocumented option `--basepath`.
-  #       See https://github.com/jxnblk/mdx-deck/issues/368#issuecomment-494828254
-  command = ['mdx-deck', 'build', input_file.to_s, '--out-dir', dest_dir.to_s, '--basepath', "/slides/#{name}"]
-  puts "# #{input_file} -> #{dest_dir}"
-  system(*command, exception: true)
+  output "#{input_file} -> #{dest_dir}"
+  system 'mdx-deck', 'build', input_file.to_s, "--basepath=/slides/#{name}", exception: true
+  FileUtils.mv 'public', dest_dir
 end
 
 Pathname.glob("#{SRC}/*/images").map(&:cleanpath).each do |image_dir|
   name = image_dir.dirname.basename
   dest_dir = Pathname(DEST) / name
-  puts "# #{image_dir} -> #{dest_dir}"
-  FileUtils.cp_r(image_dir, dest_dir)
+  output "#{image_dir} -> #{dest_dir}"
+  FileUtils.cp_r image_dir, dest_dir
   puts "done"
 end

@@ -4,7 +4,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core"; // eslint-disable-
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faAngleRight, faImages, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "../router";
-import { Time, useTitle, useExternalLinkAsNewTab } from "../utils";
+import { Time, useExternalLinkAsNewTab } from "../utils";
 import s from "./Home.css";
 
 const Profile = () => {
@@ -82,8 +82,6 @@ const Main = () => {
 };
 
 export const Home = () => {
-  useTitle("@ybiquitous");
-
   return (
     <>
       <Header />

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core"; // eslint-disable-line import/named
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faAngleRight, faImages, faBlog } from "@fortawesome/free-solid-svg-icons";
+import { faImages, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "../router";
-import { Time, useExternalLinkAsNewTab } from "../utils";
+import { useExternalLinkAsNewTab } from "../utils";
 import s from "./Home.css";
 
 const Profile = () => {

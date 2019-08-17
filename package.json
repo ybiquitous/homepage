@@ -10,9 +10,9 @@
     "node": ">=12"
   },
   "scripts": {
-    "tsc": "tsc",
-    "tsc:watch": "tsc --watch",
     "dev": "parcel src/index.html",
+    "build:ts": "tsc",
+    "build:ts:watch": "tsc --watch",
     "build:parcel": "parcel build src/index.html",
     "build": "npm-run-all --print-label --parallel build:* slide:build",
     "postbuild": "cp -v _redirects dist/",
@@ -149,7 +149,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run build:ts"
     }
   },
   "lint-staged": {

@@ -1,6 +1,5 @@
 import React from "react";
 
-// eslint-disable-next-line import/exports-last
 export interface Routes {
   [key: string]: () => React.ReactElement;
 }

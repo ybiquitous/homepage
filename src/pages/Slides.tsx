@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "../router";
 import { Breadcrumb, Time, useTitle } from "../utils";
-import metadata from "~slides/metadata.yml";
 import s from "./Blog.css"; // borrow
+import metadata from "~slides/metadata.yml";
 
 export const Slides = () => {
   useTitle("ybiquitous slides");

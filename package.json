@@ -31,9 +31,9 @@
     "slide:build": "./scripts/build-slides src/slides/ dist/slides/"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.24",
-    "@fortawesome/free-brands-svg-icons": "^5.10.2",
-    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "highlight.js": "^9.15.10",
     "react": "^16.9.0",

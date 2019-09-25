@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "../router";
 import { Breadcrumb, Time, useTitle } from "../utils";
-import metadata from "~blog/metadata.yml";
 import s from "./Blog.css";
+import metadata from "~blog/metadata.yml";
 
 export const Blog = () => {
   useTitle("ybiquitous blog");

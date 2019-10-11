@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 
-export const useTitle = (title: string): void => {
+const base = "@ybiquitous";
+const separator = " - ";
+
+export const useTitle = (...title: string[]): void => {
   useEffect(() => {
-    document.title = title;
+    document.title = title.length === 0 ? base : [...title, base].join(separator);
   }, [title]);
 };

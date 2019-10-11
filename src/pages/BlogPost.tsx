@@ -27,7 +27,7 @@ interface Props extends BlogMetadata {
 }
 
 export const BlogPost = ({ title, published, lastUpdated, author, content }: Props) => {
-  useTitle(`${title} - ybiquitous blog`);
+  useTitle(title, "Blog");
   useExternalLinkAsNewTab();
 
   const contentElement = useRef<HTMLElement>(null);
@@ -42,7 +42,7 @@ export const BlogPost = ({ title, published, lastUpdated, author, content }: Pro
   return (
     <>
       <header>
-        <Breadcrumb links={[<Link href="/">Home</Link>, <Link href="/blog">Blog</Link>]} />
+        <Breadcrumb links={[<Link href="/blog">Blog</Link>, "Current post"]} />
       </header>
 
       <main className={s.blog}>

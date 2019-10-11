@@ -5,18 +5,16 @@ import s from "./Blog.css";
 import metadata from "~blog/metadata.yml";
 
 export const Blog = () => {
-  useTitle("ybiquitous blog");
+  useTitle("Blog");
 
   return (
     <>
       <header>
-        <Breadcrumb links={[<Link href="/">Home</Link>, "Blog"]} />
+        <Breadcrumb links={["Blog"]} />
       </header>
 
       <main>
-        <h1 className={s.title}>ybiquitous blog</h1>
-
-        <h2 className={s.heading}>Recent posts</h2>
+        <h1 className={s.title}>Recent posts</h1>
 
         <ul className={s.list}>
           {metadata

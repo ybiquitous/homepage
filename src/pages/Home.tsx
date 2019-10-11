@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core"; // eslint-disable-line import/named
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faImages, faBlog } from "@fortawesome/free-solid-svg-icons";
+import { faImages, faBlog, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "../router";
 import { useExternalLinkAsNewTab, useTitle } from "../utils";
 import s from "./Home.css";
@@ -20,7 +20,8 @@ const Profile = () => {
       <div className={s.profileCaption}>
         <strong>Masafumi Koba</strong>
         <small className={s.profileDescription}>
-          Web Developer. I love Emacs / JavaScript / CSS / Ruby.
+          Web Developer. I love Emacs, JavaScript, CSS, and Ruby. <br />
+          <FontAwesomeIcon icon={faMapMarkerAlt} /> Tokyo, Japan
         </small>
       </div>
     </div>

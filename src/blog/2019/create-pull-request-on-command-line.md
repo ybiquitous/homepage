@@ -70,13 +70,13 @@ $ open-pull-request
 
 ## まとめ
 
-私にとって普段の作業は Git ＝ GitHub なので、`hub` は今やなくてはならないものである。
-本稿を書いている最中、`hub` は GitLab や Bitbucket で使えるのか？と疑問に思ったので調べてみると、次の issue を見つけた。
+私にとって普段の作業は Git ＝ GitHub なので、hub は今やなくてはならないものである。
+本稿を書いている最中、hub は GitLab や Bitbucket で使えるのか？と疑問に思ったので調べてみると、次の issue を見つけた。
 
 [gitlab support plz · Issue #1383 · github/hub](https://github.com/github/hub/issues/1383)
 
-…やはり欲しくなるのだろう。`hub` は「GitHub の準公式 CLI ツール」らしいので、GitHub しかサポートされてないと明言されてある。
-GitLab 向けに `lab` という似たようなツールを作っている人もいる。
+…やはり欲しくなるのだろう。hub は「GitHub の準公式 CLI ツール」らしいので、GitHub しかサポートされてないと明言されてある。
+GitLab 向けに [lab](https://zaquestion.github.io/lab/) という似たようなツールを作っている人もいる。
 
 [lab | Lab wraps Git or Hub, making it simple to clone, fork, and interact with repositories on GitLab](https://zaquestion.github.io/lab/)
 

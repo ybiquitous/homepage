@@ -1,22 +1,19 @@
 import React from "react";
-import { Link } from "../router";
 import { Breadcrumb, Time, useTitle } from "../utils";
 import s from "./Blog.css"; // borrow
 import metadata from "~slides/metadata.yml";
 
 export const Slides = () => {
-  useTitle("ybiquitous slides");
+  useTitle("Slides");
 
   return (
     <>
       <header>
-        <Breadcrumb links={[<Link href="/">Home</Link>, "Slides"]} />
+        <Breadcrumb links={["Slides"]} />
       </header>
 
       <main>
-        <h1 className={s.title}>ybiquitous slides</h1>
-
-        <h2 className={s.heading}>Recent slides</h2>
+        <h1 className={s.title}>Recent slides</h1>
 
         <ul className={s.list}>
           {metadata

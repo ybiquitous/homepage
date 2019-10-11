@@ -4,7 +4,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core"; // eslint-disable-
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faImages, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "../router";
-import { useExternalLinkAsNewTab } from "../utils";
+import { useExternalLinkAsNewTab, useTitle } from "../utils";
 import s from "./Home.css";
 
 const Profile = () => {
@@ -82,6 +82,8 @@ const Main = () => {
 };
 
 export const Home = () => {
+  useTitle();
+
   return (
     <>
       <Header />

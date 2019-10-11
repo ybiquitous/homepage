@@ -21,3 +21,9 @@
   published: 2019-07-03
   lastUpdated: null
   author: Masafumi Koba
+
+- id: create-pull-request-on-command-line
+  title: コマンドラインでプルリクエストを作る
+  published: 2019-10-11
+  lastUpdated: null
+  author: Masafumi Koba

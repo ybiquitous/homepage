@@ -3,7 +3,7 @@ import styles from "./Time.css";
 
 const dateFormats = Object.freeze({
   year: "numeric",
-  month: "short",
+  month: "long",
   day: "numeric",
 });
 

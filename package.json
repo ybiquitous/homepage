@@ -34,7 +34,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.6",
+    "@fortawesome/react-fontawesome": "^0.1.7",
     "highlight.js": "^9.15.10",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"

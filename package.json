@@ -44,7 +44,7 @@
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
     "@ybiquitous/parcel-plugin-markdown": "file:src/parcel/plugin-markdown",
-    "autoprefixer": "^9.6.5",
+    "autoprefixer": "^9.7.0",
     "eslint-config-ybiquitous": "^10.0.0",
     "eslint-plugin-react-hooks": "^2.1.2",
     "marked": "^0.7.0",

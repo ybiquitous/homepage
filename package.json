@@ -47,7 +47,7 @@
     "autoprefixer": "^9.7.3",
     "eslint-config-ybiquitous": "^10.3.0",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "marked": "^0.7.0",
+    "marked": "^0.8.0",
     "mdx-deck": "^2.5.0",
     "parcel-bundler": "^1.12.4",
     "postcss-custom-media": "^7.0.8",

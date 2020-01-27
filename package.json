@@ -58,7 +58,7 @@
     "stylelint-config-standard": "^19.0.0",
     "stylelint-high-performance-animation": "^1.4.0",
     "typescript": "^3.7.5",
-    "ybiq": "^9.1.0"
+    "ybiq": "^10.0.0"
   },
   "prettier": {
     "trailingComma": "es5"

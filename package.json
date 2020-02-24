@@ -57,7 +57,7 @@
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-high-performance-animation": "^1.4.0",
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.2",
     "ybiq": "^10.0.0"
   },
   "prettier": {

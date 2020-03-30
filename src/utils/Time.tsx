@@ -7,10 +7,10 @@ const dateFormats = Object.freeze({
   day: "numeric",
 });
 
-interface Props {
+type Props = {
   date: Date;
   style?: React.CSSProperties;
-}
+};
 
 export const Time = ({ date, style }: Props) => {
   return (

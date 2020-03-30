@@ -22,9 +22,9 @@ const scrollToAnchor = (target: Element) => {
   }
 };
 
-interface Props extends BlogMetadata {
+type Props = BlogMetadata & {
   content: string;
-}
+};
 
 export const BlogPost = ({ title, published, lastUpdated, author, content }: Props) => {
   useTitle(title, "Blog");

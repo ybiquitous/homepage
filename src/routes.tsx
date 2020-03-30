@@ -6,9 +6,9 @@ import { blogs } from "./blog/index";
 import { Slides } from "./pages/Slides";
 import { NotFound } from "./pages/NotFound";
 
-interface Routes {
+type Routes = {
   [key: string]: () => JSX.Element;
-}
+};
 
 const blogRoutes: Routes = blogs.reduce(
   (newRoutes, blog) => ({

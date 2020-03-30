@@ -37,7 +37,7 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "highlight.js": "^9.18.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@types/node": "^13.9.5",

@@ -47,7 +47,7 @@
     "@typescript-eslint/parser": "^2.27.0",
     "@ybiquitous/parcel-plugin-markdown": "file:src/parcel/plugin-markdown",
     "autoprefixer": "^9.7.6",
-    "eslint-config-ybiquitous": "^10.9.1",
+    "eslint-config-ybiquitous": "^10.10.1",
     "eslint-plugin-react-hooks": "^3.0.0",
     "marked": "^1.0.0",
     "mdx-deck": "^2.5.0",

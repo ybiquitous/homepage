@@ -49,7 +49,7 @@
     "autoprefixer": "^9.7.6",
     "eslint-config-ybiquitous": "^10.9.1",
     "eslint-plugin-react-hooks": "^3.0.0",
-    "marked": "^0.8.2",
+    "marked": "^1.0.0",
     "mdx-deck": "^2.5.0",
     "parcel-bundler": "^1.12.4",
     "postcss-custom-media": "^7.0.8",

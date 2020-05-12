@@ -21,6 +21,7 @@
   /* Font family */
   --font-family-serif: serif;
   --font-family-sans-serif: sans-serif;
+  /* stylelint-disable-next-line value-keyword-case */
   --font-family-monospace: Consolas, Menlo, "Courie New", monospace;
 
   /* Color pallete from https://clrs.cc/ */

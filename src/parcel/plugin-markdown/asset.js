@@ -4,7 +4,7 @@ const hljs = require("highlight.js");
 
 class MarkdownAsset extends Asset {
   constructor(name, options) {
-    super(name, options);
+    super(name, options); // eslint-disable-line @typescript-eslint/no-unsafe-call
     this.type = "html";
     this.hmrPageReload = true;
   }

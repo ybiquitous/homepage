@@ -90,3 +90,5 @@ typings/
 
 # Custom
 dist/
+.remarkignore
+.nvmrc

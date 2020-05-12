@@ -6,9 +6,6 @@
   "license": "MIT",
   "private": true,
   "repository": "ybiquitous/homepage",
-  "engines": {
-    "node": ">=12"
-  },
   "scripts": {
     "dev": "parcel src/index.html",
     "build:ts": "tsc",

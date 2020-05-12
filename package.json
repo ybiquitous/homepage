@@ -71,6 +71,9 @@
       "ybiquitous/react",
       "ybiquitous/typescript"
     ],
+    "parserOptions": {
+      "project": "tsconfig.json"
+    },
     "rules": {
       "sort-imports": "off",
       "import/extensions": "off",

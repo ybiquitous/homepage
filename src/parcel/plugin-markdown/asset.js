@@ -2,11 +2,6 @@ const { Asset } = require("parcel-bundler");
 const marked = require("marked");
 const hljs = require("highlight.js");
 
-const markedOptions = {
-  breaks: true,
-  highlight: (code, lang) => (lang ? hljs.highlight(lang, code).value : code),
-};
-
 class MarkdownAsset extends Asset {
   constructor(name, options) {
     super(name, options);
@@ -15,7 +10,11 @@ class MarkdownAsset extends Asset {
   }
 
   generate() {
-    return marked(this.contents, markedOptions);
+    return marked(this.contents, {
+      breaks: true,
+      highlight: (code, lang) =>
+        typeof lang === "string" ? hljs.highlight(lang, code).value : code,
+    });
   }
 }
 

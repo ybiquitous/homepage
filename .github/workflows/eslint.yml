@@ -1,0 +1,13 @@
+name: ESLint
+
+on: pull_request
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: nvm install
+        shell: bash
+      - run: npx install-peerdeps eslint-config-ybiquitous
+      - run: npx eslint .

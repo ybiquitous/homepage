@@ -1,0 +1,21 @@
+# https://help.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-error-message
+# https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell
+#
+# https://stylelint.io/user-guide/usage/options#formatter
+
+name: stylelint
+
+on: pull_request
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: nvm install
+        shell: bash --login {0}
+      - run: npm install stylelint stylelint-config-standard stylelint-a11y stylelint-high-performance-animation
+      - run: |
+          npx stylelint "**/*.{css,html,tsx}" --format unix --report-needless-disables \
+            | ruby -pe 'sub(/^(.+):(\d+):(\d+): (.+) \[(.+)\]$/, %q{::\5 file=\1,line=\2,col=\3::\4})'
+        shell: bash

@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: nvm install $(< .nvmrc)
-        shell: bash --login -eo pipefail {0}
+        shell: bash --login {0}
       - run: npx install-peerdeps eslint-config-ybiquitous
       - run: npx eslint .

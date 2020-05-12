@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "peerDependencies": {
-    "highlight.js": "9",
-    "marked": "<1",
-    "parcel-bundler": "1"
+    "highlight.js": "10.x",
+    "marked": "1.x",
+    "parcel-bundler": "1.x"
   },
   "eslintConfig": {
     "env": {

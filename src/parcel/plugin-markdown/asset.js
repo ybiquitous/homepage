@@ -13,7 +13,7 @@ class MarkdownAsset extends Asset {
     return marked(this.contents, {
       breaks: true,
       highlight: (code, lang) =>
-        typeof lang === "string" ? hljs.highlight(lang, code).value : code,
+        typeof lang === "string" && lang.length > 0 ? hljs.highlight(lang, code).value : code,
     });
   }
 }

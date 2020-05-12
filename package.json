@@ -152,7 +152,6 @@
     }
   },
   "lint-staged": {
-    "*.{css,html,tsx}": "stylelint",
     "*": "prettier --write",
     "!(CHANGELOG).md": "remark --frail"
   },

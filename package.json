@@ -40,15 +40,14 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@types/highlight.js": "^9.12.3",
+    "@types/marked": "^0.7.4",
     "@types/node": "^13.13.4",
+    "@types/parcel-bundler": "^1.12.1",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
-    "@typescript-eslint/eslint-plugin": "^2.27.0",
-    "@typescript-eslint/parser": "^2.27.0",
     "@ybiquitous/parcel-plugin-markdown": "file:src/parcel/plugin-markdown",
     "autoprefixer": "^9.7.6",
-    "eslint-config-ybiquitous": "^10.9.1",
-    "eslint-plugin-react-hooks": "^3.0.0",
     "marked": "^1.0.0",
     "mdx-deck": "^2.5.0",
     "parcel-bundler": "^1.12.4",
@@ -71,6 +70,9 @@
       "ybiquitous/react",
       "ybiquitous/typescript"
     ],
+    "parserOptions": {
+      "project": "tsconfig.json"
+    },
     "rules": {
       "sort-imports": "off",
       "import/extensions": "off",
@@ -93,7 +95,8 @@
         ],
         "rules": {
           "@typescript-eslint/explicit-function-return-type": "off",
-          "@typescript-eslint/no-require-imports": "off"
+          "@typescript-eslint/no-require-imports": "off",
+          "@typescript-eslint/no-var-requires": "off"
         }
       }
     ]
@@ -157,7 +160,6 @@
   },
   "lint-staged": {
     "*.{css,html,tsx}": "stylelint",
-    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix --no-ignore",
     "*.{css,html,js,json,jsx,md,mdx,mjs,scss,ts,tsx,yaml,yml}": "prettier --write",
     "!(CHANGELOG).md": "remark --frail"
   },

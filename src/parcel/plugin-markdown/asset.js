@@ -1,23 +1,20 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { Asset } = require("parcel-bundler");
 const marked = require("marked");
 const hljs = require("highlight.js");
-/* eslint-enable @typescript-eslint/no-var-requires */
-
-const markedOptions = {
-  breaks: true,
-  highlight: (code, lang) => (lang ? hljs.highlight(lang, code).value : code),
-};
 
 class MarkdownAsset extends Asset {
   constructor(name, options) {
-    super(name, options);
+    super(name, options); // eslint-disable-line @typescript-eslint/no-unsafe-call
     this.type = "html";
     this.hmrPageReload = true;
   }
 
   generate() {
-    return marked(this.contents, markedOptions);
+    return marked(this.contents, {
+      breaks: true,
+      highlight: (code, lang) =>
+        typeof lang === "string" ? hljs.highlight(lang, code).value : code,
+    });
   }
 }
 

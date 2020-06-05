@@ -63,7 +63,7 @@ nvmを使うには `.bashrc` や `.bash_profile` を読み込む必要がある�
 
 ## まとめ
 
-多くのケースでは `.nvmrc` ファイルをリポジトリにコミットすると思うので、普通は [actions/checkout](https://github.com/actions/checkout) を使ってこのように書くだろう。
+多くのケースでは `.nvmrc` ファイルをリポジトリにコミットすると思うので、普通は [actions/checkout](https://github.com/actions/checkout) を使ってこのように書くだろう（ちなみに、`--latest-npm --no-progress` を付ける付けないは好みである）。
 
 ```yaml
 name: nvm
@@ -74,7 +74,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          nvm install
+          nvm install --latest-npm --no-progress
           echo "::set-env name=PATH::${NVM_BIN}:${PATH}"
         shell: bash --login {0}
       - run: ... # using `node` or `npm`

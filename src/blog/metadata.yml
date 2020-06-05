@@ -27,3 +27,9 @@
   published: 2019-10-11
   lastUpdated: null
   author: Masafumi Koba
+
+- id: using-nvm-on-github-actions
+  title: GitHub Actionsでnvmを使う
+  published: 2020-06-06
+  lastUpdated: null
+  author: Masafumi Koba

@@ -52,7 +52,7 @@
     "postcss-modules": "^3.2.0",
     "postcss-nesting": "^7.0.1",
     "typescript": "^3.9.5",
-    "ybiq": "^11.0.0"
+    "ybiq": "^11.3.0"
   },
   "prettier": {
     "trailingComma": "es5"

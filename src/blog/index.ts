@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import blog_2019_01 from "./2019/start-blog.md";
 import blog_2019_02 from "./2019/type-compatibility-in-typescript.md";
 import blog_2019_03 from "./2019/webpack-on-rails.md";
@@ -14,5 +15,6 @@ const contents = [
   blog_2019_05,
   blog_2020_01,
 ];
+/* eslint-enable camelcase */
 
 export const blogs = metadata.map((meta, index) => ({ ...meta, content: contents[index] }));

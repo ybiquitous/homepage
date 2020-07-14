@@ -8,7 +8,7 @@ name: stylelint
 on: pull_request
 
 jobs:
-  run:
+  stylelint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

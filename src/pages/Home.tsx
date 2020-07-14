@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core"; // eslint-disable-line import/named
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faImages, faBlog, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "../router";

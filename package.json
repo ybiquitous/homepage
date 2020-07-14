@@ -17,7 +17,7 @@
     "lint": "npm-run-all --print-label --parallel lint:*",
     "lint:css": "stylelint --ignore-path .gitignore \"**/*.{css,html,tsx}\"",
     "lint:css:fix": "npm run lint:css -- --fix",
-    "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs,.ts,.tsx .",
+    "lint:js": "eslint .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
@@ -52,12 +52,13 @@
     "postcss-modules": "^3.2.0",
     "postcss-nesting": "^7.0.1",
     "typescript": "^3.9.5",
-    "ybiq": "^11.0.0"
+    "ybiq": "^11.3.0"
   },
   "prettier": {
     "trailingComma": "es5"
   },
   "eslintConfig": {
+    "root": true,
     "extends": [
       "ybiquitous/browser",
       "ybiquitous/react",

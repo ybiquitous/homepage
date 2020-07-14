@@ -13,7 +13,7 @@ export const Link = ({ href, children, className, style }: Props) => {
       href={href}
       className={className}
       style={style}
-      onClick={event => {
+      onClick={(event) => {
         if (event.metaKey) {
           return; // normal behavior
         }

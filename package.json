@@ -51,7 +51,7 @@
     "postcss-custom-media": "^7.0.8",
     "postcss-modules": "^3.2.0",
     "postcss-nesting": "^7.0.1",
-    "typescript": "^3.9.6",
+    "typescript": "^3.9.7",
     "ybiq": "^11.3.0"
   },
   "prettier": {

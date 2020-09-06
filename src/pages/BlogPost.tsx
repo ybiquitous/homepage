@@ -26,7 +26,7 @@ type Props = BlogMetadata & {
   content: string;
 };
 
-export const BlogPost = ({ title, published, lastUpdated, author, content }: Props) => {
+export const BlogPost = ({ title, published, lastUpdated, content }: Props) => {
   useTitle(title, "Blog");
   useExternalLinkAsNewTab();
 
@@ -42,14 +42,23 @@ export const BlogPost = ({ title, published, lastUpdated, author, content }: Pro
   return (
     <>
       <header>
-        <Breadcrumb links={[<Link href="/blog">Blog</Link>, "Current post"]} />
+        <Breadcrumb links={[<Link href="/blog">Blog</Link>, `“${title}”`]} />
       </header>
 
       <main className={s.blog}>
         <div className={s.blogMetadata}>
-          {published ? <Time date={published} /> : <em>Unpublished</em>}
-
-          <span className={s.blogAuthor}>{author}</span>
+          {published ? (
+            <span>
+              Published on <Time date={published} />
+            </span>
+          ) : (
+            <em>Unpublished</em>
+          )}
+          {lastUpdated && (
+            <span>
+              Last updated on <Time date={lastUpdated} />
+            </span>
+          )}
         </div>
 
         <article
@@ -57,14 +66,6 @@ export const BlogPost = ({ title, published, lastUpdated, author, content }: Pro
           dangerouslySetInnerHTML={{ __html: content }}
           className={s.blogContent}
         />
-
-        <p className={s.blogFooter}>
-          {lastUpdated && (
-            <>
-              Last updated on <Time date={lastUpdated} />
-            </>
-          )}
-        </p>
       </main>
     </>
   );

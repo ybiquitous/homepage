@@ -3,7 +3,7 @@ import { Link } from "../router";
 import styles from "./Breadcrumb.css";
 
 export const Breadcrumb = ({ links }: { links: React.ReactNode[] }) => {
-  const home = <Link href="/">@ybiquitous</Link>;
+  const home = <Link href="/">Home</Link>;
 
   return (
     <nav aria-label="Breadcrumb">

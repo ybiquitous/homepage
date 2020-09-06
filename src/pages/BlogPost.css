@@ -4,15 +4,16 @@
 
 .blogMetadata {
   color: var(--secondary-text-color);
-}
+  display: flex;
+  flex-flow: column;
 
-.blogAuthor {
-  margin-left: var(--space-l);
-}
+  @media (--small-viewport-up) {
+    flex-flow: row;
+  }
 
-.blogFooter {
-  color: var(--secondary-text-color);
-  margin-top: var(--space-xl);
+  & > * {
+    padding-right: var(--space-l);
+  }
 }
 
 .blogContent {

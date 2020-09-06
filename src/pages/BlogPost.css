@@ -2,7 +2,7 @@
   padding: var(--space-xl) 0 var(--space-m);
 }
 
-.blogMetadata {
+.blogDate {
   color: var(--secondary-text-color);
   display: flex;
 
@@ -15,7 +15,31 @@
   }
 }
 
+.blogTags {
+  display: flex;
+  margin-top: var(--space-s);
+
+  & > * {
+    margin-right: var(--space-s);
+  }
+}
+
+.blogTag {
+  &::before {
+    content: "#";
+    color: #ccc;
+  }
+
+  background: #444;
+  border-radius: 0.2em;
+  color: #fff;
+  font-size: var(--font-size-s);
+  padding: 0 calc(var(--space-s) / 2);
+  line-height: 1.5;
+}
+
 .blogContent {
+  margin-top: var(--space-s);
   overflow-x: auto;
 
   & > h1 {

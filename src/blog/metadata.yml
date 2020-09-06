@@ -3,33 +3,39 @@
   published: 2019-05-11
   lastUpdated: 2019-05-12
   author: Masafumi Koba
+  tags: [typescript, react, parcel, netlify]
 
 - id: type-compatibility-in-typescript
   title: TypeScriptにおける型の互換性（翻訳）
   published: 2019-05-25
   lastUpdated: null
   author: Masafumi Koba
+  tags: [typescript]
 
 - id: webpack-on-rails
   title: Webpack on Rails
   published: 2019-06-19
   lastUpdated: null
   author: Masafumi Koba
+  tags: [rails, webpack]
 
 - id: spa-redirect-settings-on-netlify
   title: SPAのためのリダイレクト設定 on Netlify
   published: 2019-07-03
   lastUpdated: null
   author: Masafumi Koba
+  tags: [netlify]
 
 - id: create-pull-request-on-command-line
   title: コマンドラインでプルリクエストを作る
   published: 2019-10-11
   lastUpdated: null
   author: Masafumi Koba
+  tags: [github]
 
 - id: using-nvm-on-github-actions
   title: GitHub Actionsでnvmを使う
   published: 2020-06-06
   lastUpdated: null
   author: Masafumi Koba
+  tags: [github-actions, nvm, nodejs]

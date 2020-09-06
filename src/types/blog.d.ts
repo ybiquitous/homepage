@@ -4,6 +4,7 @@ type BlogMetadata = {
   published: Date | null;
   lastUpdated: Date | null;
   author: string;
+  tags: readonly string[];
 };
 
 declare module "~blog/metadata.yml" {

@@ -26,7 +26,7 @@ type Props = BlogMetadata & {
   content: string;
 };
 
-export const BlogPost = ({ title, published, lastUpdated, content }: Props) => {
+export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props) => {
   useTitle(title, "Blog");
   useExternalLinkAsNewTab();
 
@@ -46,7 +46,7 @@ export const BlogPost = ({ title, published, lastUpdated, content }: Props) => {
       </header>
 
       <main className={s.blog}>
-        <div className={s.blogMetadata}>
+        <div className={s.blogDate}>
           {published ? (
             <span>
               Published on <Time date={published} />
@@ -59,6 +59,12 @@ export const BlogPost = ({ title, published, lastUpdated, content }: Props) => {
               Last updated on <Time date={lastUpdated} />
             </span>
           )}
+        </div>
+
+        <div className={s.blogTags}>
+          {tags.map((tag) => (
+            <span className={s.blogTag}>{tag}</span>
+          ))}
         </div>
 
         <article

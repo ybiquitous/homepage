@@ -1,29 +1,58 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env node
+"use strict";
 
-require 'fileutils'
-require 'pathname'
+const path = require("path");
+const fs = require("fs");
+const cp = require("child_process");
+const util = require("util");
 
-SRC, DEST = ARGV
-unless SRC && DEST
-  abort "Usage: #{__FILE__} <src> <dest>"
-end
+const [_0, _1, src, dest] = process.argv;
 
-FileUtils.rm_rf(DEST)
+if (!src || !dest) {
+  process.stderr.write(`Usage: ${path.basename(__filename)} <src> <dest>\n`);
+  process.exit(1);
+}
 
-Pathname.glob("#{SRC}/*/index.mdx").map(&:cleanpath).each do |input_file|
-  name = input_file.dirname.basename
-  dest_dir = Pathname(DEST) / name
-  # HACK: Use undocumented option `--basepath`.
-  #       See https://github.com/jxnblk/mdx-deck/issues/368#issuecomment-494828254
-  command = ['mdx-deck', 'build', input_file.to_s, '--out-dir', dest_dir.to_s, '--basepath', "/slides/#{name}"]
-  puts "# #{input_file} -> #{dest_dir}"
-  system(*command, exception: true)
-end
+if (fs.existsSync(dest)) {
+  fs.rmdirSync(dest, { recursive: true });
+}
 
-Pathname.glob("#{SRC}/*/images").map(&:cleanpath).each do |image_dir|
-  name = image_dir.dirname.basename
-  dest_dir = Pathname(DEST) / name
-  puts "# #{image_dir} -> #{dest_dir}"
-  FileUtils.cp_r(image_dir, dest_dir)
-  puts "done"
-end
+const dirs = fs
+  .readdirSync(src, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((dir) => dir.name);
+
+dirs.forEach((dir) => {
+  const inputFile = path.join(src, dir, "index.mdx");
+  const outDir = path.join(dest, dir);
+
+  process.stdout.write(`\n### ${inputFile} -> ${outDir} ###\n\n`);
+
+  // HACK: Use undocumented option `--basepath`.
+  //       See https://github.com/jxnblk/mdx-deck/issues/368#issuecomment-494828254
+  cp.execFileSync(
+    "mdx-deck",
+    ["build", inputFile, "--out-dir", outDir, "--basepath", `/slides/${dir}`],
+    { stdio: "inherit" }
+  );
+});
+
+dirs.forEach((dir) => {
+  const imageDir = path.join(src, dir, "images");
+
+  if (fs.existsSync(imageDir)) {
+    const imageOutDir = path.join(dest, dir, "images");
+    fs.mkdirSync(imageOutDir, { recursive: true });
+
+    process.stdout.write(`### ${imageDir} -> ${imageOutDir} ###\n`);
+
+    fs.readdirSync(imageDir, { withFileTypes: true })
+      .filter((entry) => entry.isFile())
+      .map((file) => file.name)
+      .forEach((image) => {
+        const imageFile = path.join(imageDir, image);
+        const imageOutFile = path.join(imageOutDir, image);
+        fs.copyFileSync(imageFile, imageOutFile);
+      });
+  }
+});

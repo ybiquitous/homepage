@@ -26,6 +26,7 @@ type Props = BlogMetadata & {
   content: string;
 };
 
+// eslint-disable-next-line max-lines-per-function
 export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props) => {
   useTitle(title, "Blog");
   useExternalLinkAsNewTab();

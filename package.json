@@ -14,13 +14,14 @@
     "build": "npm-run-all --print-label --parallel build:* slide:build",
     "postbuild": "cp -v _redirects dist/",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
-    "lint": "npm-run-all --print-label --parallel lint:*",
+    "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:css": "stylelint --ignore-path .gitignore \"**/*.{css,html,tsx}\"",
     "lint:css:fix": "npm run lint:css -- --fix",
     "lint:js": "eslint .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
+    "lint:types": "tsc --noEmit",
     "prettier": "prettier --ignore-path .gitignore .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
@@ -52,7 +53,7 @@
     "postcss-modules": "^3.2.0",
     "postcss-nesting": "^7.0.1",
     "typescript": "^3.9.7",
-    "ybiq": "^11.3.0"
+    "ybiq": "^11.4.3"
   },
   "prettier": {
     "trailingComma": "es5"
@@ -76,6 +77,7 @@
       "react/jsx-key": "warn",
       "react/jsx-no-target-blank": "warn",
       "react/no-array-index-key": "warn",
+      "react/require-default-props": "warn",
       "@typescript-eslint/consistent-type-definitions": [
         "error",
         "type"
@@ -153,7 +155,7 @@
     }
   },
   "lint-staged": {
-    "*": "prettier --write",
+    "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail"
   },
   "remarkConfig": {

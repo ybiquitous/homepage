@@ -10,7 +10,7 @@
     "dev": "parcel src/index.html",
     "build:ts": "tsc",
     "build:ts:watch": "tsc --watch",
-    "build:parcel": "parcel build src/index.html",
+    "build:parcel": "parcel build src/index.html --no-autoinstall --no-cache --no-source-maps",
     "build": "npm-run-all --print-label --parallel build:* slide:build",
     "postbuild": "cp -v _redirects dist/",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",

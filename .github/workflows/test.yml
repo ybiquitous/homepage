@@ -16,5 +16,6 @@ jobs:
           echo "::set-env name=PATH::${NVM_BIN}:${PATH}"
         shell: bash --login {0}
       - run: npm ci
+      - run: npm run lint:types
       - run: npm run build:ts
       - run: npm run build:parcel

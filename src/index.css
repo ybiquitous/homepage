@@ -35,6 +35,7 @@
 
 /* See https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints */
 @custom-media --small-viewport-up (min-width: 576px);
+@custom-media --small-viewport-down (max-width: 575px);
 
 html {
   box-sizing: border-box;

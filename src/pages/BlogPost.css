@@ -5,10 +5,9 @@
 .blogMetadata {
   color: var(--secondary-text-color);
   display: flex;
-  flex-flow: column;
 
-  @media (--small-viewport-up) {
-    flex-flow: row;
+  @media (--small-viewport-down) {
+    flex-flow: column;
   }
 
   & > * {

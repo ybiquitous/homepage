@@ -62,8 +62,10 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props
         </div>
 
         <div className={s.blogTags}>
-          {tags.map((tag) => (
-            <span className={s.blogTag}>{tag}</span>
+          {tags.map((tag, index) => (
+            <span className={s.blogTag} key={index}>
+              {tag}
+            </span>
           ))}
         </div>
 

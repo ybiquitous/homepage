@@ -19,8 +19,8 @@
   display: flex;
   margin-top: var(--space-s);
 
-  & > * {
-    margin-right: var(--space-s);
+  & > :not(:first-child) {
+    margin-left: var(--space-s);
   }
 }
 

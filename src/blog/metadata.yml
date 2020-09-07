@@ -39,3 +39,10 @@
   lastUpdated: null
   author: Masafumi Koba
   tags: [github-actions, nvm, nodejs]
+
+- id: rubykaigi-takeout-2020
+  title: RubyKaigi Takeout 2020に参加した
+  published: null
+  lastUpdated: null
+  author: Masafumi Koba
+  tags: [ruby]

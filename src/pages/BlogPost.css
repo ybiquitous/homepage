@@ -27,12 +27,12 @@
 .blogTag {
   &::before {
     content: "#";
-    color: #ccc;
+    color: #ddd;
   }
 
-  background: #444;
-  border-radius: 0.2em;
-  color: #fff;
+  background: var(--accent-color);
+  border-radius: var(--border-radius);
+  color: var(--icon-text-color);
   font-size: var(--font-size-s);
   padding: 0 calc(var(--space-s) / 2);
   line-height: 1.5;
@@ -48,7 +48,7 @@
 
   & > h2 {
     margin: var(--space-xxl) 0 0;
-    border-bottom: 1px solid var(--secondary-text-color);
+    border-bottom: 1px solid var(--divider-color);
   }
 
   & > h3,
@@ -62,8 +62,8 @@
   }
 
   & > blockquote {
-    border-left: 0.25em solid var(--code-bg-color);
-    color: var(--blockquote-text-color);
+    border-left: 0.25em solid var(--divider-color);
+    color: var(--secondary-text-color);
     padding: 0 var(--space-m);
   }
 

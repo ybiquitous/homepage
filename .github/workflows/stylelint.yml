@@ -5,7 +5,11 @@
 
 name: stylelint
 
-on: pull_request
+on:
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch:
+    branches: ["**"]
 
 jobs:
   stylelint:

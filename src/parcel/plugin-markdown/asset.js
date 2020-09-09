@@ -10,10 +10,20 @@ class MarkdownAsset extends Asset {
   }
 
   generate() {
+    class MyRenderer extends marked.Renderer {
+      link(href, title, text) {
+        return super.link(href.replace(/\.md$/, ""), title, text);
+      }
+    }
+
     return marked(this.contents, {
       breaks: true,
-      highlight: (code, lang) =>
-        typeof lang === "string" && lang.length > 0 ? hljs.highlight(lang, code).value : code,
+      highlight(code, lang) {
+        return typeof lang === "string" && lang.length > 0
+          ? hljs.highlight(lang, code).value
+          : code;
+      },
+      renderer: new MyRenderer(),
     });
   }
 }

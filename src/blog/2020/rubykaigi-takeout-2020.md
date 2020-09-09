@@ -11,7 +11,7 @@
 
 ただやはり、オフラインでのface-to-faceがないのは、かなり寂しかった。これは仕方ないことだが…。
 
-この投稿は1日目のセッションについて書く。2日目は[こちら](https://ybiquitous.me/blog/rubykaigi-takeout-2020-2)。
+この投稿は1日目のセッションについて書く。2日目は[こちら](./rubykaigi-takeout-2020-2.md)。
 
 ## Ractor report
 

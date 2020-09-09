@@ -45,13 +45,13 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props
   const contentElement = useRef<HTMLElement>(null);
   const tocElement = useRef<HTMLUListElement>(null);
   useEffect(() => {
-    const content = contentElement.current;
-    const toc = tocElement.current;
-    if (content && toc) {
-      generateTOC(content, toc);
+    const contentEl = contentElement.current;
+    const tocEl = tocElement.current;
+    if (contentEl && tocEl) {
+      generateTOC(contentEl, tocEl);
 
       content.querySelectorAll("h2[id],h3[id],h4[id],h5[id],h6[id]").forEach(addAnchor);
-      scrollToAnchor(content);
+      scrollToAnchor(contentEl);
     }
   }, [contentElement, tocElement]);
 

@@ -13,7 +13,7 @@ class MarkdownAsset extends Asset {
   generate() {
     class MyRenderer extends marked.Renderer {
       link(href, title, text) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access @typescript-eslint/no-unsafe-call
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         return super.link(href.replace(/\.md$/u, ""), title, text);
       }
     }

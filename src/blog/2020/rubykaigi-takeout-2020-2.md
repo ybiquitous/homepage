@@ -181,7 +181,7 @@ Rubyの文化とあんまりマッチしないんだろうなぁと漠然と感�
 どういうカタチでFormatterが提供されることになるか、今後が非常に気になる。
 RuboCopが準拠する[The Ruby Style Guide](https://rubystyle.guide/)との兼ね合いとか…。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">RuboCopのデフォルトがアレな問題は確かに同意なんだけど、RuboCop作者個人の好みにしたがって作ってきてて、かなりの規模のコミュニティが育ってきてるという事実がある（デファクトスタンダード）し、それは作者の自由だよなぁとも思う。<a href="https://twitter.com/hashtag/rubykaigi?src=hash&amp;ref_src=twsrc%5Etfw">#rubykaigi</a></p>&mdash; Masafumi Koba (@ybiquitous) <a href="https://twitter.com/ybiquitous/status/1302161022246031362?ref_src=twsrc%5Etfw">September 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">RuboCopのデフォルトがアレな問題は確かに同意なんだけど、RuboCop作者個人の好みにしたがって作ってきてて、かなりの規模のコミュニティが育ってきてるという事実がある（デファクトスタンダード）し、それは作者の自由だよなぁとも思う。<a href="https://twitter.com/hashtag/rubykaigi?src=hash&amp;ref_src=twsrc%5Etfw">#rubykaigi</a></p>&mdash; Masafumi Koba (@ybiquitous) <a href="https://twitter.com/ybiquitous/status/1302161022246031362?ref_src=twsrc%5Etfw">September 5, 2020</a></blockquote>
 
 ## 感想戦
 

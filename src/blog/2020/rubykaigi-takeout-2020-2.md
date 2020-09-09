@@ -1,19 +1,17 @@
 # RubyKaigi Takeout 2020に参加した（2）
 
-[前回](https://ybiquitous.me/blog/rubykaigi-takeout-2020)の続き。
+[前回](https://ybiquitous.me/blog/rubykaigi-takeout-2020)の続き。2日目。
 
 すでにYouTubeに[すべてのセッションの動画](https://www.youtube.com/playlist?list=PLbFmgWm555yZeLpdOLhYwORIF9UjBAFHw)がアップされていた。
 
-## 2日目
-
-### Ruby Committers vs the World
+## Ruby Committers vs the World
 
 2日目のオープニング。例のごとく、事前の質問にコミッタが回答するという形式をとっていた。
 型の話をしていたような記憶がある。soutaroさんがコミッタになったという紹介があった。めでたい。
 
 内容は正直ほとんど覚えていない…。
 
-### Magic is organizing chaos
+## Magic is organizing chaos
 
 <https://rubykaigi.org/2020-takeout/speakers#shugomaeda>
 <https://github.com/shugo/RubyKaigi2020>
@@ -58,7 +56,7 @@ User.where { :name == 'matz' }
 かなりアグレッシブで面白いとは思うけど、いかんせんアグレッシブ過ぎて賛否が分かれているようだ。
 もしDSLが提供されていたら使うけど、あんまり自分では書こうとは思わないかも。
 
-### msgraph: Microsoft Graph API Client with Ruby
+## msgraph: Microsoft Graph API Client with Ruby
 
 <https://rubykaigi.org/2020-takeout/speakers#jimlock>
 <https://youtu.be/TrVhnrTPtoI>
@@ -76,7 +74,7 @@ jinroqさんが[msgraph](https://github.com/jinroq/msgraph)という[Microsoft G
 と思ってリポジトリを漁ってみたら、[octokit/octokit.rb#1157](https://github.com/octokit/octokit.rb/issues/1157)というissueを見つけた。タイトルは「Generating client code from the OpenAPI schema」。
 [aws-sdk-ruby](https://github.com/aws/aws-sdk-ruby)みたいにコードの自動生成が目標なのか。まあそうだよな。
 
-### Don't @ me! Instance Variable Performance in Ruby
+## Don't @ me! Instance Variable Performance in Ruby
 
 <https://rubykaigi.org/2020-takeout/speakers#tenderlove>
 <https://youtu.be/iDW93fAp2I8>
@@ -86,7 +84,7 @@ GC Compactionのアルゴリズムの話がわかりやすくスライド（ア�
 `jemalloc` とか `mprotect` とかのシステムコールの話がでていたが、自分にはちんぷんかんぷんだった。とにかくGCを速くしようとしている、という雑な理解にとどまった。
 
 
-### Dependency Resolution with Standard Libraries
+## Dependency Resolution with Standard Libraries
 
 <https://rubykaigi.org/2020-takeout/speakers#hsbt>
 <https://www.slideshare.net/hsbt/dependency-resolution-with-standard-libraries>
@@ -121,7 +119,7 @@ hsbtさんのRubygems、Bundlerに関するセッション。私なりの理解�
 `Gemfile` にdefault gemsを追加することでライブラリの更新を随時受け取ることができ、かつ `Gemfile.lock` でバージョンが固定されるので環境依存の問題も減る。
 こうやって調べてみると、めちゃくちゃ重要なことがわかった。むしろ、ここにリソース投下すべきなのでは…とも思ってしまう。
 
-### Live coding: Grepping Ruby code like a boss
+## Live coding: Grepping Ruby code like a boss
 
 <https://rubykaigi.org/2020-takeout/speakers#jonatas>
 <https://youtu.be/YczrZQC9aP8>
@@ -137,7 +135,7 @@ Querlyの方がASTを知らない人向けに作られているので柔軟性�
 
 ちなみに、README内のリンクが壊れてたので[修正PR](https://github.com/jonatas/fast/pull/24)を出し、無事にマージされた。
 
-### Keyword Arguments: Past, Present, and Future
+## Keyword Arguments: Past, Present, and Future
 
 <https://rubykaigi.org/2020-takeout/speakers#jeremyevans0>
 <https://youtu.be/rxJRrccXRfg>
@@ -148,7 +146,7 @@ jeremyevansさんのKeyword Arguments（kwargs）の話。この件について�
 そういえば、[`Module#ruby2_keywords`](http://ruby-doc.org/core-2.7.1/Module.html#ruby2_keywords-method)がライブラリ内で書かれているのをたまに見るなぁ。
 自分でこのメソッドを書く日が来るのだろうか…。
 
-### Ruby3 and Beyond
+## Ruby3 and Beyond
 
 <https://rubykaigi.org/2020-takeout/speakers#yukihiro_matz>
 <https://youtu.be/wVrJZReHlM8>

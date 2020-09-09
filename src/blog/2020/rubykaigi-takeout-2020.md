@@ -11,11 +11,12 @@
 
 ただやはり、オフラインでのface-to-faceがないのは、かなり寂しかった。これは仕方ないことだが…。
 
-## 1日目
+この投稿は1日目のセッションについて書く。2日目は[こちら](https://ybiquitous.me/blog/rubykaigi-takeout-2020-2)。
 
-### Ractor report
+## Ractor report
 
 <https://rubykaigi.org/2020-takeout/speakers#ko1>
+<https://youtu.be/40t8EPpnujg>
 
 ko1さんのRuby 3に向けての並行性改善の話。C言語・Ruby内部の話はよくわからないのでなんとなくだが、以下が記憶に残った。
 
@@ -32,10 +33,11 @@ Stringのimmutabilityの話も盛んに出るし、マルチコア時代で不�
 
 アプリケーションプログラマとしては直接Ractorを触ることはほとんどないと思うけど（実際Rubyで `Thread` 使ったことがない）、PumaとかSidekiqのミドルウェア層で使われるようになるのかな。
 
-### Type Profiler: a Progress Report of a Ruby 3 Type Analyzer
+## Type Profiler: a Progress Report of a Ruby 3 Type Analyzer
 
 <https://rubykaigi.org/2020-takeout/speakers#mametter>
 <https://www.slideshare.net/mametter/type-profiler-ambitious-type-inference-for-ruby-3-238384550>
+<https://youtu.be/6KcFdQWp8W0>
 
 mameさんの型に関する進捗の話。[ruby-jp](https://ruby-jp.slack.com)の#typesチャンネルでちょこちょこ回答してもらっていたこともあり、比較的すんなり頭に入った。
 [Steep](https://github.com/soutaro/steep)は結構触っていたが、これを機に[Ruby Type Profiler](https://github.com/mame/ruby-type-profiler)のリポジトリも眺めてみた。
@@ -62,6 +64,7 @@ mameさんの型に関する進捗の話。[ruby-jp](https://ruby-jp.slack.com)�
 
 <https://rubykaigi.org/2020-takeout/speakers#shyouhei>
 <https://speakerdeck.com/shyouhei/on-sending-methods>
+<https://youtu.be/IAkrGf9XJi0>
 
 メソッド呼び出しのパフォーマンス改善（キャッシュヒット率の改善）の話。shyouheiさんのセッション初めて聞いた。
 C言語ほとんどわからないのでぼんやり聞いてたが、スライドがわかりやすく作られていたので比較的理解ができたと思う（日本語だったから余計に）。
@@ -70,6 +73,7 @@ C言語ほとんどわからないのでぼんやり聞いてたが、スライ�
 ## Reflecting on Ruby Reflection for Rendering RBIs
 
 <https://rubykaigi.org/2020-takeout/speakers#paracycle>
+<https://youtu.be/OJRQAn6BfpE>
 
 型チェッカの一つである[Sorbet](https://sorbet.org/)用のRBI（RBSとはまた別。ちょっとややこしい）生成ツール、[Tapioca](https://github.com/Shopify/tapioca)の話。
 同時間帯の[Opal](https://opalrb.com/)のセッションと迷ったが、型関連をウォッチしてきているのでこちらを選択。
@@ -84,6 +88,7 @@ C言語ほとんどわからないのでぼんやり聞いてたが、スライ�
 
 <https://rubykaigi.org/2020-takeout/speakers#ktou>
 <https://www.clear-code.com/blog/2020/9/3.html>
+<https://youtu.be/tGZiCqyMU_g>
 
 kouさんのfat gemに関するセッション。fat gemとは「ビルド済みバイナリー入りのgem」のこと。
 ユーザにとって便利かと思いきや、メンテのコストが大変（最新のRubyに対応するとか）で、下手すりゃ古いバージョンのまま放置されることもありとか。
@@ -95,6 +100,7 @@ Windowsでの開発環境も整ってきたし、システムのライブラリ�
 ## Don't Wait For Me! Scalable Concurrency for Ruby 3!
 
 <https://rubykaigi.org/2020-takeout/speakers#ioquatix>
+<https://youtu.be/Y29SSOS4UOc>
 
 ioquatixさんの非同期I/Oに関するセッション。[Falcon](https://github.com/socketry/falcon)というHTTPサーバーのgemを紹介してた。
 Rubyにおける非同期I/Oの背景についてはあまり理解してないが、やはりNode.jsの成功の影響を受けているのだろうか。
@@ -105,6 +111,7 @@ Rubyにおける非同期I/Oの背景についてはあまり理解してない�
 ## The State of Ruby 3 Typing
 
 <https://rubykaigi.org/2020-takeout/speakers#soutaro>
+<https://youtu.be/PvkpW1OEaP8>
 
 soutaroさんの型の話。同時間帯の「Road to RuboCop 1.0」と迷ったが、やはり型の話が気になるのでこちらを選択。
 普段から情報収集してるせいか、あんまり新しい話はなかった気がするが、着々と進んでいる印象は受けた。
@@ -126,6 +133,7 @@ Ruby 3以降、公式の型チェッカを提供する予定があるのかど�
 
 <https://rubykaigi.org/2020-takeout/speakers#koic>
 <https://speakerdeck.com/koic/road-to-rubocop-1-dot-0>
+<https://youtu.be/jkY7J9k6mHs>
 
 koicさんのRuboCop 1.0に向けた話。関心が高かったのですぐに見直した（YouTube便利）。
 coreからいくつかcopを切り出した話（rubocop-railsとかrubocop-performanceとか）があったり、その過程でcherry-pickを積んでいくという気の遠くなる話があった。
@@ -146,7 +154,3 @@ RuboCopは長い歴史があるから、そのコード解析エンジンの部�
 
 これはこれで何か大きな会場で登壇されている人々の会話を聴くという以上の生々しさが感じられ（本当にラジオを聴いているかのよう）、1リスナーとして面白い体験だった。
 個人的には、大きな会場で聴くよりも、このカタチの方が好きかもしれない。（…ただ内容は思い出せないw）
-
-## 2日目
-
-長くなったので、後日、別記事で書く。

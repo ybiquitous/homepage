@@ -42,10 +42,10 @@ Then, open [localhost:8000](http://localhost:8000/) in your browser.
 
 ### Deploy
 
-Just push to `master` branch. Build & publish automatically on [Netlify](https://www.netlify.com/).
+Just push to the default branch. Build & publish automatically on [Netlify](https://www.netlify.com/).
 
 ```sh
-git push origin master
+git push
 ```
 
 ## Stack

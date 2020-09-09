@@ -9,7 +9,9 @@ export const useExternalLinkAsNewTab = (): void => {
         target.rel = "noopener";
       }
     };
-    const externalLinks = document.querySelectorAll("a[href^='http']");
+    const externalLinks = Array.from(document.querySelectorAll("a[href^='http']")).filter(
+      (link) => link instanceof HTMLAnchorElement && link.host !== globalThis.location.host
+    );
     externalLinks.forEach((link) => link.addEventListener("click", listener));
     return () => {
       externalLinks.forEach((link) => link.removeEventListener("click", listener));

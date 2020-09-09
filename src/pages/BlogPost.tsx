@@ -22,6 +22,17 @@ const scrollToAnchor = (target: Element) => {
   }
 };
 
+const generateTOC = (content: HTMLElement, toc: HTMLElement) => {
+  content.querySelectorAll("h2[id]").forEach((h2) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = `#${h2.id}`;
+    a.textContent = h2.textContent;
+    li.appendChild(a);
+    toc.appendChild(li);
+  });
+};
+
 type Props = BlogMetadata & {
   content: string;
 };
@@ -32,13 +43,17 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props
   useExternalLinkAsNewTab();
 
   const contentElement = useRef<HTMLElement>(null);
+  const tocElement = useRef<HTMLUListElement>(null);
   useEffect(() => {
-    const target = contentElement.current;
-    if (target) {
-      target.querySelectorAll("h2[id],h3[id],h4[id],h5[id],h6[id]").forEach(addAnchor);
-      scrollToAnchor(target);
+    const contentEl = contentElement.current;
+    const tocEl = tocElement.current;
+    if (contentEl && tocEl) {
+      generateTOC(contentEl, tocEl);
+
+      contentEl.querySelectorAll("h2[id],h3[id],h4[id],h5[id],h6[id]").forEach(addAnchor);
+      scrollToAnchor(contentEl);
     }
-  }, [contentElement]);
+  }, [contentElement, tocElement]);
 
   return (
     <>
@@ -47,6 +62,11 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props
       </header>
 
       <main className={s.blog}>
+        <details open className={s.blogToc}>
+          <summary>Table of Contents</summary>
+          <ul ref={tocElement} />
+        </details>
+
         <div className={s.blogDate}>
           {published ? (
             <span>

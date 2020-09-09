@@ -2,6 +2,32 @@
   padding: var(--space-xl) 0 var(--space-m);
 }
 
+.blogToc {
+  @media (--large-viewport-down) {
+    display: none;
+  }
+
+  position: fixed;
+  right: var(--space-xl);
+  color: var(--secondary-text-color);
+  font-size: var(--font-size-s);
+
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 20em;
+  }
+
+  & li {
+    padding-top: var(--space-m);
+  }
+
+  & :any-link {
+    color: inherit;
+  }
+}
+
 .blogDate {
   color: var(--secondary-text-color);
   display: flex;

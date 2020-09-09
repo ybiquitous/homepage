@@ -4,7 +4,8 @@ const hljs = require("highlight.js");
 
 class MarkdownAsset extends Asset {
   constructor(name, options) {
-    super(name, options); // eslint-disable-line @typescript-eslint/no-unsafe-call
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    super(name, options);
     this.type = "html";
     this.hmrPageReload = true;
   }
@@ -12,7 +13,8 @@ class MarkdownAsset extends Asset {
   generate() {
     class MyRenderer extends marked.Renderer {
       link(href, title, text) {
-        return super.link(href.replace(/\.md$/, ""), title, text);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access @typescript-eslint/no-unsafe-call
+        return super.link(href.replace(/\.md$/u, ""), title, text);
       }
     }
 

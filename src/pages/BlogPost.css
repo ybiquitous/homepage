@@ -7,24 +7,26 @@
     display: none;
   }
 
-  position: fixed;
-  right: var(--space-xl);
-  color: var(--secondary-text-color);
-  font-size: var(--font-size-s);
+  @media (--large-viewport-up) {
+    position: fixed;
+    right: var(--space-xl);
+    color: var(--secondary-text-color);
+    font-size: var(--font-size-s);
 
-  & ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-width: 20em;
-  }
+    & ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 20em;
+    }
 
-  & li {
-    padding-top: var(--space-m);
-  }
+    & li {
+      padding-top: var(--space-m);
+    }
 
-  & :any-link {
-    color: inherit;
+    & :any-link {
+      color: inherit;
+    }
   }
 }
 

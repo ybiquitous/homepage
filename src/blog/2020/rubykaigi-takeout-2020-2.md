@@ -1,6 +1,6 @@
 # RubyKaigi Takeout 2020に参加した（2）
 
-[前回](https://ybiquitous.me/blog/rubykaigi-takeout-2020)の続き。2日目。
+[前回](./rubykaigi-takeout-2020.md)の続き。2日目。
 
 すでにYouTubeに[すべてのセッションの動画](https://www.youtube.com/playlist?list=PLbFmgWm555yZeLpdOLhYwORIF9UjBAFHw)がアップされていた。
 

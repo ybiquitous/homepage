@@ -50,7 +50,7 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props
     if (contentEl && tocEl) {
       generateTOC(contentEl, tocEl);
 
-      content.querySelectorAll("h2[id],h3[id],h4[id],h5[id],h6[id]").forEach(addAnchor);
+      contentEl.querySelectorAll("h2[id],h3[id],h4[id],h5[id],h6[id]").forEach(addAnchor);
       scrollToAnchor(contentEl);
     }
   }, [contentElement, tocElement]);

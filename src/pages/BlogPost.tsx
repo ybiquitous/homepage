@@ -62,11 +62,6 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props
       </header>
 
       <main className={s.blog}>
-        <details open className={s.blogToc}>
-          <summary>Table of Contents</summary>
-          <ul ref={tocElement} />
-        </details>
-
         <div className={s.blogDate}>
           {published ? (
             <span>
@@ -89,6 +84,11 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props
             </span>
           ))}
         </div>
+
+        <details className={s.blogToc}>
+          <summary>Table of Contents</summary>
+          <ul ref={tocElement} />
+        </details>
 
         <article
           ref={contentElement}

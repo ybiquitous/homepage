@@ -4,29 +4,31 @@
 
 .blogToc {
   @media (--large-viewport-down) {
-    display: none;
+    /* display: none; */
   }
 
   @media (--large-viewport-up) {
     position: fixed;
     right: var(--space-xl);
-    color: var(--secondary-text-color);
-    font-size: var(--font-size-s);
+  }
 
-    & ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      max-width: 20em;
-    }
+  color: var(--secondary-text-color);
+  font-size: var(--font-size-s);
+  margin-top: var(--space-m);
 
-    & li {
-      padding-top: var(--space-m);
-    }
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 20em;
+  }
 
-    & :any-link {
-      color: inherit;
-    }
+  & li {
+    padding-top: var(--space-s);
+  }
+
+  & :any-link {
+    color: inherit;
   }
 }
 

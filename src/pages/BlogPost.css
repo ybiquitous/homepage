@@ -3,14 +3,14 @@
 }
 
 .blogToc {
-  @media (--large-viewport-down) {
-    display: none;
+  @media (--large-viewport-up) {
+    position: fixed;
+    right: var(--space-xl);
   }
 
-  position: fixed;
-  right: var(--space-xl);
   color: var(--secondary-text-color);
   font-size: var(--font-size-s);
+  margin-top: var(--space-m);
 
   & ul {
     list-style: none;
@@ -20,7 +20,7 @@
   }
 
   & li {
-    padding-top: var(--space-m);
+    padding-top: var(--space-s);
   }
 
   & :any-link {

@@ -2,7 +2,7 @@
 
 # ybiquitous homepage
 
-Visit [ybiquitous.me](https://ybiquitous.me).
+Visit [ybiquitous.me](https://ybiquitous.me/).
 
 ## Development
 

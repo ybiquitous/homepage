@@ -3,10 +3,6 @@
 }
 
 .blogToc {
-  @media (--large-viewport-down) {
-    /* display: none; */
-  }
-
   @media (--large-viewport-up) {
     position: fixed;
     right: var(--space-xl);

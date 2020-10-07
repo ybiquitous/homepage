@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faImages, faBlog, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "../router";
@@ -41,7 +41,7 @@ const Header = () => {
   );
 };
 
-const MenuIcon = ({ icon }: { icon: IconProp }) => {
+const MenuIcon = ({ icon }: Pick<FontAwesomeIconProps, "icon">) => {
   return <FontAwesomeIcon icon={icon} fixedWidth className={s.menuIcon} />;
 };
 

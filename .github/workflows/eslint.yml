@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           nvm install --latest-npm --no-progress
-          echo "::set-env name=PATH::${NVM_BIN}:${PATH}"
+          echo "PATH=${NVM_BIN}:${PATH}" >> $GITHUB_ENV
         shell: bash --login {0}
       - run: npx install-peerdeps eslint-config-ybiquitous
       - run: npx eslint .

@@ -53,3 +53,10 @@
   lastUpdated: 2020-09-10
   author: Masafumi Koba
   tags: [ruby, rubykaigi]
+
+- id: example-of-type-checking-by-steep
+  title: Steepによる型チェックの実践例
+  published: 2020-12-21
+  lastUpdated: null
+  author: Masafumi Koba
+  tags: [ruby, rbs, steep, advent-calendar]

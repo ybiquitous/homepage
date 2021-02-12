@@ -47,7 +47,7 @@
     "@ybiquitous/parcel-plugin-markdown": "file:src/parcel/plugin-markdown",
     "autoprefixer": "^9.8.6",
     "marked": "^2.0.0",
-    "mdx-deck": "^2.5.1",
+    "mdx-deck": "^4.1.1",
     "parcel-bundler": "^1.12.4",
     "postcss-custom-media": "^7.0.8",
     "postcss-modules": "^3.2.2",

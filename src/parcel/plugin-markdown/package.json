@@ -4,7 +4,7 @@
   "private": true,
   "peerDependencies": {
     "highlight.js": "10.x",
-    "marked": "1.x",
+    "marked": "2.x",
     "parcel-bundler": "1.x"
   },
   "eslintConfig": {

@@ -52,8 +52,9 @@
     "postcss-custom-media": "^7.0.8",
     "postcss-modules": "^3.2.2",
     "postcss-nesting": "^7.0.1",
+    "remark-preset-ybiquitous": "^0.0.3",
     "typescript": "^4.2.3",
-    "ybiq": "^11.7.0"
+    "ybiq": "^12.2.2"
   },
   "eslintConfig": {
     "root": true,
@@ -62,6 +63,7 @@
       "ybiquitous/react",
       "ybiquitous/typescript"
     ],
+    "reportUnusedDisableDirectives": true,
     "parserOptions": {
       "project": "tsconfig.json"
     },
@@ -146,28 +148,13 @@
       "postcss-custom-media"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail"
   },
   "remarkConfig": {
     "plugins": [
-      "preset-lint-recommended",
-      "lint-no-heading-punctuation",
-      [
-        "lint-list-item-bullet-indent",
-        false
-      ],
-      [
-        "lint-list-item-indent",
-        false
-      ],
-      "validate-links"
+      "remark-preset-ybiquitous"
     ]
   }
 }

@@ -15,5 +15,5 @@ jobs:
           nvm install --latest-npm --no-progress
           echo "PATH=${NVM_BIN}:${PATH}" >> $GITHUB_ENV
         shell: bash --login {0}
-      - run: npx install-peerdeps eslint-config-ybiquitous
+      - run: npm install eslint-config-ybiquitous
       - run: npx eslint .

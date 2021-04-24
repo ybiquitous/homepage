@@ -2,6 +2,8 @@
 #
 # See https://github.com/prettier/prettier/issues/5938
 /src/blog/**/*.md
+/src/slides
+/src/slides-build
 
 # ↓↓↓ Copy from .gitignore ↓↓↓
 

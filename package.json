@@ -8,10 +8,9 @@
   "repository": "ybiquitous/homepage",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build:ts": "tsc",
-    "build:ts:watch": "tsc --watch",
     "build:parcel": "parcel build src/index.html --no-autoinstall --no-cache --no-source-maps",
-    "build": "npm-run-all --print-label --parallel build:* slide:build",
+    "build:slide": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
+    "build": "npm-run-all --print-label --parallel build:*",
     "postbuild": "cp -v _redirects dist/",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
@@ -22,11 +21,9 @@
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
     "lint:types": "tsc --noEmit",
-    "prettier": "prettier --ignore-path .gitignore .",
+    "prettier": "prettier .",
     "prettier:check": "npm run prettier -- --check",
-    "prettier:write": "npm run prettier -- --write",
-    "slide:dev": "mdx-deck",
-    "slide:build": "./scripts/build-slides src/slides/ dist/slides/"
+    "prettier:write": "npm run prettier -- --write"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -47,7 +44,6 @@
     "@ybiquitous/parcel-plugin-markdown": "file:src/parcel/plugin-markdown",
     "autoprefixer": "^9.8.6",
     "marked": "^2.0.1",
-    "mdx-deck": "^2.5.1",
     "parcel-bundler": "^1.12.5",
     "postcss-custom-media": "^7.0.8",
     "postcss-modules": "^3.2.2",
@@ -62,6 +58,12 @@
       "ybiquitous/browser",
       "ybiquitous/react",
       "ybiquitous/typescript"
+    ],
+    "ignorePatterns": [
+      "coverage",
+      "dist",
+      "src/slides",
+      "src/slides-build"
     ],
     "reportUnusedDisableDirectives": true,
     "parserOptions": {
@@ -97,6 +99,11 @@
     ]
   },
   "stylelint": {
+    "ignoreFiles": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "src/slides-build/**/*"
+    ],
     "extends": [
       "stylelint-config-standard",
       "stylelint-a11y/recommended"

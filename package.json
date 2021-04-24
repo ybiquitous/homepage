@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build:parcel": "parcel build src/index.html --no-autoinstall --no-cache --no-source-maps",
-    "build:slide": "rm -rf dist/slides && cp -R src/slides-build dist/slides",
+    "build:slide": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build dist/slides",
     "build": "npm-run-all --print-label --parallel build:*",
     "postbuild": "cp -v _redirects dist/",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",

@@ -97,7 +97,11 @@ Windowsでの開発環境も整ってきたし、システムのライブラリ�
 そういえば、あんまり意識したことなかったなぁ。使ったことがあるかどうかもわからない…。
 [`libv8`](https://github.com/rubyjs/libv8) gemとかはfat gemなのかな。
 
+<!-- lint disable no-heading-punctuation -->
+
 ## Don't Wait For Me! Scalable Concurrency for Ruby 3!
+
+<!-- lint enable no-heading-punctuation -->
 
 <https://rubykaigi.org/2020-takeout/speakers#ioquatix>
 <https://youtu.be/Y29SSOS4UOc>

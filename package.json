@@ -99,6 +99,11 @@
     ]
   },
   "stylelint": {
+    "ignoreFiles": [
+      "dist",
+      "node_modules",
+      "src/slides-build"
+    ],
     "extends": [
       "stylelint-config-standard",
       "stylelint-a11y/recommended"

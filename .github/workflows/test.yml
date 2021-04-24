@@ -16,5 +16,5 @@ jobs:
           echo "PATH=${NVM_BIN}:${PATH}" >> $GITHUB_ENV
         shell: bash --login {0}
       - run: npm ci
-      - run: npm run lint:types
+      - run: npm run lint
       - run: npm run build

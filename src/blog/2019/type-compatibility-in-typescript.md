@@ -5,7 +5,7 @@ TypeScriptドキュメント『[_Type Compatibility_](https://www.typescriptlang
 
 ## 導入
 
-TypeScriptにおける型の互換性は、構造上の派生型付け（structural subtyping [¹](#訳注1)）にもとづきます。構造上の型付け（structural typing）とは、型のメンバーだけにもとづいて型を関連づける方法です。これは名目上の型付け（nominal typing）とは対照的です。以下のコードを考えてみましょう。
+TypeScriptにおける型の互換性は、構造上の派生型付け（structural subtyping [¹](#footnote-1)）にもとづきます。構造上の型付け（structural typing）とは、型のメンバーだけにもとづいて型を関連づける方法です。これは名目上の型付け（nominal typing）とは対照的です。以下のコードを考えてみましょう。
 
 ```typescript
 interface Named {
@@ -75,7 +75,7 @@ x = y; // Error
 
 ２番目の代入はエラーです。なぜなら、`y`は`x`がもたない必須の第２引数をもつからです。したがって、代入は許されません。
 
-なぜ私たちが`y = x`の例にあるような「捨てる（discarding）」引数を許しているのか、疑問に思うかもしれません。この代入が許される理由は、余分な関数引数を無視することがJavaScriptでは実際にかなりよくあるからです。例えば、 `Array#forEach` [²](#訳注2)はコールバック関数に３つの引数を提供します。配列の要素、その要素のインデックス、そして配列そのものです。にもかかわらず、第１引数のみを使うコールバックを提供するのはとても便利です。
+なぜ私たちが`y = x`の例にあるような「捨てる（discarding）」引数を許しているのか、疑問に思うかもしれません。この代入が許される理由は、余分な関数引数を無視することがJavaScriptでは実際にかなりよくあるからです。例えば、 `Array#forEach` [²](#footnote-2) はコールバック関数に３つの引数を提供します。配列の要素、その要素のインデックス、そして配列そのものです。にもかかわらず、第１引数のみを使うコールバックを提供するのはとても便利です。
 
 ```typescript
 let items = [1, 2, 3];
@@ -129,7 +129,7 @@ listenEvent(EventType.Mouse, (e: number) => console.log(e));
 
 関数の互換性を比較するとき、任意引数と必須引数は交換可能です。比較元の型の余分な任意引数はエラーとならず、比較元の型にある対応する引数をもたない比較先の任意引数はエラーになりません。
 
-ある関数が可変長引数（Rest parameters [³](#訳注3)）をもつとき、その引数はあたかも一連の無限個の任意引数であるかのように扱われます。
+ある関数が可変長引数（Rest parameters [³](#footnote-3)）をもつとき、その引数はあたかも一連の無限個の任意引数であるかのように扱われます。
 
 これは型システムの観点からは安全ではないのですが、実行時の観点からは、任意引数のアイデアは一般的にあまりうまく強制できないのです。なぜなら、その引数の位置に`undefined`を渡すことはほとんどの関数にとって同等だからです。
 
@@ -153,7 +153,7 @@ invokeLater([1, 2], (x?, y?) => console.log(x + ", " + y));
 
 ## 列挙
 
-列挙 [⁴](#訳注4)は数値と互換性があり、数値は列挙と互換性があります。異なる列挙型同士の列挙値は、非互換だと判断されます。以下は例です。
+列挙 [⁴](#footnote-4) は数値と互換性があり、数値は列挙と互換性があります。異なる列挙型同士の列挙値は、非互換だと判断されます。以下は例です。
 
 ```typescript
 enum Status { Ready, Waiting };
@@ -214,7 +214,7 @@ let y: NotEmpty<string>;
 x = y;  // Error, because x and y are not compatible
 ```
 
-このように、型引数を指定したジェネリクス型 [⁵](#訳注5)は非ジェネリクス型と同じように振る舞います。
+このように、型引数を指定したジェネリクス型 [⁵](#footnote-5) は非ジェネリクス型と同じように振る舞います。
 
 指定された型引数をもたないジェネリクス型にとっては、未指定の型引数のすべての場所に`any`を指定することによって互換性はチェックされます。このとき結果となる型が互換性をチェックされます。ちょうど非ジェネリクス型のときのように。
 
@@ -242,26 +242,38 @@ identity = reverse;  // OK, because (x: any) => any matches (y: any) => any
 
 詳細については、[TypeScript仕様](https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md)をご覧ください。
 
-* * *
+## 脚注
 
-###### 訳注1
+<div id="footnote-1">
 
-「Structural Subtyping」はふつう「構造的部分型」と訳されますが、「部分型」という日本語がイマイチしっくりこなかったので、「派生」を強調した訳にしました。
+¹ 「Structural Subtyping」はふつう「構造的部分型」と訳されますが、「部分型」という日本語がイマイチしっくりこなかったので、「派生」を強調した訳にしました。
 
-###### 訳注2
+</div>
 
-参考：[Array.prototype.forEach() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+<div id="footnote-2">
 
-###### 訳注3
+² 参考：[Array.prototype.forEach() - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
-「可変長引数」はふつう「variable arguments」の訳ですが、JavaScriptでは「rest parameters」に対応する訳がなかったので「可変長引数」と訳しました。
-参考：[Rest parameters - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+</div>
 
-###### 訳注4
+<div id="footnote-3">
 
-String Enumは[TypeScript 2.4から導入](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html)されました。
-参考：[Enums · TypeScript](https://www.typescriptlang.org/docs/handbook/enums.html)
+³ 「可変長引数」はふつう「variable arguments」の訳ですが、JavaScriptでは「rest parameters」に対応する訳がなかったので「可変長引数」と訳しました。参考：[Rest parameters - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 
-###### 訳注5
+</div>
 
-参考：[Generics · TypeScript](https://www.typescriptlang.org/docs/handbook/generics.html)
+<div id="footnote-4">
+
+⁴ String Enumは[TypeScript 2.4から導入](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html)されました。参考：[Enums · TypeScript](https://www.typescriptlang.org/docs/handbook/enums.html)
+
+</div>
+
+<div id="footnote-5">
+
+⁵ 参考：[Generics · TypeScript](https://www.typescriptlang.org/docs/handbook/generics.html)
+
+</div>
+
+## 変更履歴
+
+- 2021-04-24: 脚注を見出し（`<h*>`）から変更。

@@ -134,7 +134,7 @@ GitHub check annotationsを使うと、プルリクエストページのdiff上�
 これはプロジェクトの規模にもよると思うので一概には言えませんが、徐々にやることを私はオススメします。
 
 それと、何よりRBSの構文を知ることが重要ですので（いくら直感的な構文とはいえ）、以下のドキュメントはよく参照していました。
-https://github.com/ruby/rbs/blob/b07243f0f5aef3dac3768881ff1f6b7e56aead9a/docs/syntax.md
+<https://github.com/ruby/rbs/blob/b07243f0f5aef3dac3768881ff1f6b7e56aead9a/docs/syntax.md>
 
 単純なケースだと問題にならないとは思うのですが、複雑な型を定義する場合は構文の理解度がかなり重要かなと思いますし、学習曲線のカーブが大きくなるポイントかなと思います。例えば、以下のようなケースです。
 

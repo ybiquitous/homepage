@@ -41,7 +41,7 @@
     "autoprefixer": "^9.8.6",
     "marked": "^2.0.3",
     "parcel-bundler": "^1.12.5",
-    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-media": "^8.0.0",
     "postcss-modules": "^3.2.2",
     "postcss-nesting": "^7.0.1",
     "remark-preset-ybiquitous": "^0.0.3",

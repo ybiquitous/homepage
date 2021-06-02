@@ -7,25 +7,23 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-export const Link = ({ href, children, className, style }: Props) => {
-  return (
-    <a
-      href={href}
-      className={className}
-      style={style}
-      onClick={(event) => {
-        if (event.metaKey) {
-          return; // normal behavior
-        }
+export const Link = ({ href, children, className, style }: Props) => (
+  <a
+    href={href}
+    className={className}
+    style={style}
+    onClick={(event) => {
+      if (event.metaKey) {
+        return; // normal behavior
+      }
 
-        event.preventDefault();
+      event.preventDefault();
 
-        const state = null;
-        window.history.pushState(state, "", href);
-        window.dispatchEvent(new PopStateEvent("popstate", { state }));
-      }}
-    >
-      {children}
-    </a>
-  );
-};
+      const state = null;
+      window.history.pushState(state, "", href);
+      window.dispatchEvent(new PopStateEvent("popstate", { state }));
+    }}
+  >
+    {children}
+  </a>
+);

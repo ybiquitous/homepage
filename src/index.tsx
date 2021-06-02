@@ -3,15 +3,13 @@ import ReactDOM from "react-dom";
 import { Router } from "./router";
 import { routes } from "./routes";
 
-const Footer = () => {
-  return (
-    <footer>
-      <p>
-        <small>© Masafumi Koba</small>
-      </p>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer>
+    <p>
+      <small>© Masafumi Koba</small>
+    </p>
+  </footer>
+);
 
 const Index = () => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);

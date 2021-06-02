@@ -6,10 +6,8 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-export const Time = ({ date, style }: Props) => {
-  return (
-    <time dateTime={date.toISOString()} className={styles.time} style={style}>
-      {new Date(date).toLocaleDateString("en", { year: "numeric", month: "long", day: "numeric" })}
-    </time>
-  );
-};
+export const Time = ({ date, style }: Props) => (
+  <time dateTime={date.toISOString()} className={styles.time} style={style}>
+    {new Date(date).toLocaleDateString("en", { year: "numeric", month: "long", day: "numeric" })}
+  </time>
+);

@@ -1,6 +1,6 @@
-const { Asset } = require("parcel-bundler");
-const marked = require("marked");
 const hljs = require("highlight.js");
+const marked = require("marked");
+const { Asset } = require("parcel-bundler");
 
 class MarkdownAsset extends Asset {
   constructor(name, options) {

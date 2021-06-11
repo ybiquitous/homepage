@@ -44,13 +44,18 @@
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius);
   margin: var(--space-l) 0;
-  padding: var(--space-m);
-  padding-bottom: var(--space-m);
+  transition: box-shadow 0.3s ease-out;
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.4);
+  }
 }
 
 .menuLink {
   display: block;
-  padding-top: 0.25em;
+  padding: var(--space-m);
+  padding-top: calc(var(--space-m) + 0.25em);
 }
 
 .menuIcon {

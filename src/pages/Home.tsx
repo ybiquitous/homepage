@@ -1,5 +1,5 @@
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faImages, faBlog, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faNpm, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBlog, faGem, faImages, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -51,13 +51,25 @@ const Main = () => {
           <li className={s.menuItem}>
             <a className={s.menuLink} href="https://github.com/ybiquitous">
               <MenuIcon icon={faGithub} />
-              Works
+              GitHub
+            </a>
+          </li>
+          <li className={s.menuItem}>
+            <a className={s.menuLink} href="https://www.npmjs.com/~ybiquitous">
+              <MenuIcon icon={faNpm} />
+              npm
+            </a>
+          </li>
+          <li className={s.menuItem}>
+            <a className={s.menuLink} href="https://rubygems.org/profiles/ybiquitous">
+              <MenuIcon icon={faGem} />
+              RubyGems
             </a>
           </li>
           <li className={s.menuItem}>
             <a className={s.menuLink} href="https://twitter.com/ybiquitous">
               <MenuIcon icon={faTwitter} />
-              Tweets
+              Twitter
             </a>
           </li>
           <li className={s.menuItem}>

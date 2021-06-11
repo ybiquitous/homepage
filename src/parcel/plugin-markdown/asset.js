@@ -22,8 +22,8 @@ class MarkdownAsset extends Asset {
     return marked(this.contents, {
       breaks: true,
       highlight(code, lang) {
-        return typeof lang === "string" && lang.length > 0
-          ? highlight(code, { language: lang }).value
+        return typeof lang === "string" && lang.length > 0 // eslint-disable-line @typescript-eslint/no-unsafe-return
+          ? highlight(code, { language: lang }).value // eslint-disable-line @typescript-eslint/no-unsafe-member-access @typescript-eslint/no-unsafe-call
           : code;
       },
       renderer: new MyRenderer(),

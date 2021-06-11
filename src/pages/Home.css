@@ -44,6 +44,8 @@
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius);
   margin: var(--space-l) 0;
+  
+  /* stylelint-disable plugin/no-low-performance-animation-properties */
   transition: box-shadow 0.3s ease-out;
 
   &:focus,

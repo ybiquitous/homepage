@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "peerDependencies": {
-    "highlight.js": "10.x",
+    "highlight.js": "11.x",
     "marked": "2.x",
     "parcel-bundler": "1.x"
   },

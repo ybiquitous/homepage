@@ -1,4 +1,4 @@
-const hljs = require("highlight.js");
+const { highlight } = require("highlight.js");
 const marked = require("marked");
 const { Asset } = require("parcel-bundler");
 
@@ -23,7 +23,7 @@ class MarkdownAsset extends Asset {
       breaks: true,
       highlight(code, lang) {
         return typeof lang === "string" && lang.length > 0
-          ? hljs.highlight(code, { language: lang }).value
+          ? highlight(code, { language: lang }).value
           : code;
       },
       renderer: new MyRenderer(),

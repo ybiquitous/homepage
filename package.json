@@ -1,11 +1,5 @@
 {
-  "name": "homepage",
-  "version": "0.0.0",
-  "description": "ybiquitous homepage",
-  "author": "Masafumi Koba <ybiquitous@gmail.com>",
-  "license": "MIT",
   "private": true,
-  "repository": "ybiquitous/homepage",
   "scripts": {
     "dev": "parcel src/index.html",
     "build:parcel": "parcel build src/index.html --no-autoinstall --no-cache --no-source-maps",

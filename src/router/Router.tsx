@@ -1,6 +1,6 @@
-import type React from "react";
+import type { ReactElement } from "react";
 
-export type Routes = Record<string, () => React.ReactElement>;
+export type Routes = Record<string, () => ReactElement>;
 
 type Props = {
   routes: Routes;

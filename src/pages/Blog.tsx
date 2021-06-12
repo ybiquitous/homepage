@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "../router";
 import { Breadcrumb, Time, useTitle } from "../utils";
 import s from "./Blog.css";

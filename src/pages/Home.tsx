@@ -2,7 +2,6 @@ import { faGithub, faNpm, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faBlog, faGem, faImages, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
-import React from "react";
 import { Link } from "../router";
 import { useExternalLinkAsNewTab, useTitle } from "../utils";
 import s from "./Home.css";

@@ -1,10 +1,10 @@
-import React from "react";
+import type { ReactNode, CSSProperties } from "react";
 
 type Props = {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 };
 
 export const Link = ({ href, children, className, style }: Props) => (

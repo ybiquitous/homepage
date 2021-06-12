@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "../router";
 import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "../utils";
 import s from "./BlogPost.css";

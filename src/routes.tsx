@@ -1,4 +1,3 @@
-import React from "react";
 import { blogs } from "./blog/index";
 import { Blog } from "./pages/Blog";
 import { BlogPost } from "./pages/BlogPost";

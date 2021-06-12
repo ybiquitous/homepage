@@ -1,8 +1,8 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { Link } from "../router";
 import styles from "./Breadcrumb.css";
 
-export const Breadcrumb = ({ links }: { links: React.ReactNode[] }) => {
+export const Breadcrumb = ({ links }: { links: ReactNode[] }) => {
   const home = <Link href="/">Home</Link>;
 
   return (

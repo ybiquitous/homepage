@@ -1,4 +1,3 @@
-import React from "react";
 import { Breadcrumb, Time, useTitle } from "../utils";
 import s from "./Blog.css"; // borrow
 import metadata from "~slides/metadata.yml";

@@ -1,9 +1,9 @@
-import React from "react";
+import type { CSSProperties } from "react";
 import styles from "./Time.css";
 
 type Props = {
   date: Date;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 };
 
 export const Time = ({ date, style }: Props) => (

@@ -19,7 +19,7 @@ npm ci
 Start a development server on localhost.
 
 ```sh
-npm run dev
+npm start
 ```
 
 ### Build

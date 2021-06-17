@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom";
 import { Router } from "./router";
 import { routes } from "./routes";
 
@@ -28,4 +28,4 @@ const Index = () => {
   );
 };
 
-render(<Index />, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById("root"));

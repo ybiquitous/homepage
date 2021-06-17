@@ -5,9 +5,10 @@ import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Slides } from "./pages/Slides";
 
-type Routes = Record<string, () => JSX.Element>;
+/** @typedef {Record<string, () => JSX.Element>} Routes */
 
-const blogRoutes: Routes = blogs.reduce(
+/** @type {Routes} */
+const blogRoutes = blogs.reduce(
   (newRoutes, blog) => ({
     ...newRoutes,
     [`/blog/${blog.id}`]: () => <BlogPost {...blog} />,
@@ -15,7 +16,8 @@ const blogRoutes: Routes = blogs.reduce(
   {}
 );
 
-export const routes: Routes = {
+/** @type {Routes} */
+export const routes = {
   "/": () => <Home />,
   "/blog": () => <Blog />,
   ...blogRoutes,

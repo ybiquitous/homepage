@@ -25,6 +25,8 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-react": "^7.14.5",
     "@types/marked": "^2.0.3",
     "@types/node": "^15.6.1",
     "@types/parcel-bundler": "^1.12.3",
@@ -152,6 +154,16 @@
   "remarkConfig": {
     "plugins": [
       "remark-preset-ybiquitous"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "automatic"
+        }
+      ]
     ]
   }
 }

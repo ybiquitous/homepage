@@ -1,13 +1,15 @@
-import type { ReactNode, CSSProperties } from "react";
+/**
+ * @typedef {Object} Props
+ * @property {string} href
+ * @property {React.ReactNode} children
+ * @property {string} [className]
+ * @property {React.CSSProperties} [style]
+ */
 
-type Props = {
-  href: string;
-  children: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-};
-
-export const Link = ({ href, children, className, style }: Props) => (
+/**
+ * @param {Props} props
+ */
+export const Link = ({ href, children, className, style }) => (
   <a
     href={href}
     className={className}
@@ -19,6 +21,7 @@ export const Link = ({ href, children, className, style }: Props) => (
 
       event.preventDefault();
 
+      /** @type {null} */
       const state = null;
       window.history.pushState(state, "", href);
       window.dispatchEvent(new PopStateEvent("popstate", { state }));

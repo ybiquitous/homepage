@@ -26,8 +26,8 @@ class MarkdownAsset extends Asset {
     }
 
     // @ts-expect-error
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     return marked(this.contents, {
-      // eslint-disable-line @typescript-eslint/no-unsafe-argument
       breaks: true,
       highlight(code, lang) {
         return typeof lang === "string" && lang.length > 0 // eslint-disable-line @typescript-eslint/no-unsafe-return

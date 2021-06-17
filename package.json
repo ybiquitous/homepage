@@ -60,6 +60,9 @@
     "parserOptions": {
       "project": "tsconfig.json"
     },
+    "env": {
+      "es2020": true
+    },
     "rules": {
       "sort-imports": "off",
       "import/extensions": "off",

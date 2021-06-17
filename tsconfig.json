@@ -15,5 +15,5 @@
     "skipLibCheck": true
   },
   "include": ["src/**/*"],
-  "exclude": ["src/slides-build", "src/parcel"]
+  "exclude": ["src/slides-build"]
 }

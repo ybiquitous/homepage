@@ -1,6 +1,6 @@
 import { Breadcrumb, Time, useTitle } from "../utils";
 import s from "./Blog.css"; // borrow
-import metadata from "~slides/metadata.yml";
+import metadata from "./slides-metadata.json";
 
 export const Slides = () => {
   useTitle("Slides");
@@ -16,13 +16,13 @@ export const Slides = () => {
 
         <ul className={s.list}>
           {metadata
-            .sort((a, b) => b.date.getTime() - a.date.getTime())
+            .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
             .map(({ id, title, date }) => (
               <li key={id} className={s.listItem}>
                 <a href={`/slides/${id}`} target="_blank" rel="noopener" className={s.link}>
                   {title}
                 </a>
-                <Time date={date} />
+                <Time date={new Date(date)} />
               </li>
             ))}
         </ul>

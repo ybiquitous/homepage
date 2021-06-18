@@ -1,8 +1,12 @@
 import { useEffect } from "react";
 
-export const useExternalLinkAsNewTab = (): void => {
+/**
+ * @returns {void}
+ */
+export const useExternalLinkAsNewTab = () => {
   useEffect(() => {
-    const listener: EventListener = (event) => {
+    /** @type {EventListener} */
+    const listener = (event) => {
       const target = event.currentTarget;
       if (target instanceof HTMLAnchorElement) {
         target.target = "_blank";

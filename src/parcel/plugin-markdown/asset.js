@@ -1,8 +1,11 @@
+// @ts-expect-error
 const { highlight } = require("highlight.js");
 const marked = require("marked");
+// @ts-expect-error
 const { Asset } = require("parcel-bundler");
 
 class MarkdownAsset extends Asset {
+  // @ts-expect-error
   constructor(name, options) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     super(name, options);
@@ -12,12 +15,17 @@ class MarkdownAsset extends Asset {
 
   generate() {
     class MyRenderer extends marked.Renderer {
+      /**
+       * @param {string | null} href
+       * @param {string | null} title
+       * @param {string} text
+       */
       link(href, title, text) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-argument
         return super.link(href == null ? href : href.replace(/\.md$/u, ""), title, text);
       }
     }
 
+    // @ts-expect-error
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     return marked(this.contents, {
       breaks: true,

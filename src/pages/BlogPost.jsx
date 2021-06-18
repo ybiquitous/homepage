@@ -4,7 +4,10 @@ import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "../utils";
 import s from "./BlogPost.css";
 import "highlight.js/styles/xcode.css";
 
-const addAnchor = (target: Element) => {
+/**
+ * @param {Element} target
+ */
+const addAnchor = (target) => {
   const anchor = document.createElement("a");
   anchor.href = `#${target.id}`;
   anchor.textContent = "#";
@@ -12,7 +15,10 @@ const addAnchor = (target: Element) => {
   target.insertAdjacentElement("beforeend", anchor);
 };
 
-const scrollToAnchor = (target: Element) => {
+/**
+ * @param {Element} target
+ */
+const scrollToAnchor = (target) => {
   const { hash } = window.location;
   if (hash) {
     const heading = target.querySelector(decodeURIComponent(hash));
@@ -22,7 +28,11 @@ const scrollToAnchor = (target: Element) => {
   }
 };
 
-const generateTOC = (content: HTMLElement, toc: HTMLElement) => {
+/**
+ * @param {HTMLElement} content
+ * @param {HTMLElement} toc
+ */
+const generateTOC = (content, toc) => {
   content.querySelectorAll("h2[id]").forEach((h2) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
@@ -33,17 +43,19 @@ const generateTOC = (content: HTMLElement, toc: HTMLElement) => {
   });
 };
 
-type Props = BlogMetadata & {
-  content: string;
-};
-
+/**
+ * @param {BlogMetadata & { content: string }} props
+ */
 // eslint-disable-next-line max-lines-per-function
-export const BlogPost = ({ title, published, lastUpdated, tags, content }: Props) => {
+export const BlogPost = ({ title, published, lastUpdated, tags, content }) => {
   useTitle(title, "Blog");
   useExternalLinkAsNewTab();
 
-  const contentElement = useRef<HTMLElement>(null);
-  const tocElement = useRef<HTMLUListElement>(null);
+  /** @type {React.MutableRefObject<HTMLElement | null>} */
+  const contentElement = useRef(null);
+  /** @type {React.MutableRefObject<HTMLUListElement | null>} */
+  const tocElement = useRef(null);
+
   useEffect(() => {
     const contentEl = contentElement.current;
     const tocEl = tocElement.current;

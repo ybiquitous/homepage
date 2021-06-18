@@ -1,7 +1,6 @@
 import { faGithub, faNpm, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faBlog, faGem, faImages, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import { Link } from "../router";
 import { useExternalLinkAsNewTab, useTitle } from "../utils";
 import s from "./Home.css";
@@ -36,9 +35,10 @@ const Header = () => (
   </header>
 );
 
-const MenuIcon = ({ icon }: Pick<FontAwesomeIconProps, "icon">) => (
-  <FontAwesomeIcon icon={icon} fixedWidth className={s.menuIcon} />
-);
+/**
+ * @param {Pick<import("@fortawesome/react-fontawesome").FontAwesomeIconProps, "icon">} props
+ */
+const MenuIcon = ({ icon }) => <FontAwesomeIcon icon={icon} fixedWidth className={s.menuIcon} />;
 
 const Main = () => {
   useExternalLinkAsNewTab();

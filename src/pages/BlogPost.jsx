@@ -44,7 +44,17 @@ const generateTOC = (content, toc) => {
 };
 
 /**
- * @param {BlogMetadata & { content: string }} props
+ * @typedef {Object} Props
+ * @property {string} title
+ * @property {string | null} published
+ * @property {string | null} lastUpdated
+ * @property {string} author
+ * @property {string[]} tags
+ * @property {string} content
+ */
+
+/**
+ * @param {Props} props
  */
 // eslint-disable-next-line max-lines-per-function
 export const BlogPost = ({ title, published, lastUpdated, tags, content }) => {
@@ -75,16 +85,16 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }) => {
 
       <main className={s.blog}>
         <div className={s.blogDate}>
-          {published ? (
+          {published != null ? (
             <span>
-              Published on <Time date={published} />
+              Published on <Time date={new Date(published)} />
             </span>
           ) : (
             <em>Unpublished</em>
           )}
-          {lastUpdated && (
+          {lastUpdated != null && (
             <span>
-              Last updated on <Time date={lastUpdated} />
+              Last updated on <Time date={new Date(lastUpdated)} />
             </span>
           )}
         </div>

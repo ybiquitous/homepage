@@ -1,7 +1,7 @@
 import { Link } from "../router";
 import { Breadcrumb, Time, useTitle } from "../utils";
 import s from "./Blog.css";
-import metadata from "~blog/metadata.yml";
+import metadata from "../blog/metadata.json";
 
 export const Blog = () => {
   useTitle("Blog");
@@ -22,14 +22,14 @@ export const Blog = () => {
               if (a.published == null || b.published == null) {
                 return 0;
               }
-              return b.published.getTime() - a.published.getTime();
+              return Date.parse(b.published) - Date.parse(a.published);
             })
             .map(({ id, title, published }) => (
               <li key={id} className={s.listItem}>
                 <Link href={`/blog/${id}`} className={s.link}>
                   {title}
                 </Link>
-                {published && <Time date={published} />}
+                {published != null && <Time date={new Date(published)} />}
               </li>
             ))}
         </ul>

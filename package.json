@@ -69,7 +69,9 @@
       "import/no-internal-modules": [
         "warn",
         {
-          "allow": ["**/*.md"]
+          "allow": [
+            "**/*.md"
+          ]
         }
       ],
       "import/no-unresolved": "warn",

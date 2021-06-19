@@ -5,22 +5,15 @@ import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Slides } from "./pages/Slides";
 
-/** @typedef {Record<string, () => JSX.Element>} Routes */
+export const defaultRoute = () => <NotFound />;
 
-/** @type {Routes} */
-const blogRoutes = blogs.reduce(
-  (newRoutes, blog) => ({
-    ...newRoutes,
-    [`/blog/${blog.id}`]: () => <BlogPost {...blog} />,
-  }),
-  {}
-);
+export const routes = new Map([
+  ["/", () => <Home />],
+  ["/blog", () => <Blog />],
+  ["/slides", () => <Slides />],
+  ["*", defaultRoute],
+]);
 
-/** @type {Routes} */
-export const routes = {
-  "/": () => <Home />,
-  "/blog": () => <Blog />,
-  ...blogRoutes,
-  "/slides": () => <Slides />,
-  "*": () => <NotFound />,
-};
+for (const blog of blogs) {
+  routes.set(`/blog/${blog.id}`, () => <BlogPost {...blog} />);
+}

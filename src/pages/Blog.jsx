@@ -1,4 +1,4 @@
-import { Link } from "../router";
+import { Link } from "../Link";
 import { Breadcrumb, Time, useTitle } from "../utils";
 import s from "./Blog.css";
 import metadata from "../blog/metadata.json";

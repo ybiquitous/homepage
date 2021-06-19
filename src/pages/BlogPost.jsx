@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { Link } from "../router";
+import { Link } from "../Link";
 import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "../utils";
 import s from "./BlogPost.css";
 import "highlight.js/styles/xcode.css";

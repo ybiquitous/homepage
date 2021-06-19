@@ -1,4 +1,4 @@
-import { Link } from "../router";
+import { Link } from "../Link";
 import styles from "./Breadcrumb.css";
 
 /**

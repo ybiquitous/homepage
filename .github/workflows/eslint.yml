@@ -13,5 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+      - run: npm install -g npm # TODO: This will be needless with a newer Node version.
       - run: npm install eslint-config-ybiquitous @typescript-eslint/eslint-plugin
       - run: npx eslint .

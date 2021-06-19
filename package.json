@@ -66,6 +66,14 @@
     "rules": {
       "sort-imports": "off",
       "import/extensions": "off",
+      "import/no-internal-modules": [
+        "warn",
+        {
+          "allow": [
+            "**/*.md"
+          ]
+        }
+      ],
       "import/no-unresolved": "warn",
       "import/prefer-default-export": "off",
       "react/display-name": "off",
@@ -87,6 +95,7 @@
         ],
         "rules": {
           "@typescript-eslint/explicit-function-return-type": "off",
+          "@typescript-eslint/explicit-module-boundary-types": "off",
           "@typescript-eslint/no-require-imports": "off",
           "@typescript-eslint/no-var-requires": "off"
         }

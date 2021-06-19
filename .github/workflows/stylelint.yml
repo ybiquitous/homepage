@@ -13,8 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-        with:
-          node-version: "16.x"
       # https://github.com/actions/toolkit/blob/2f164000dcd42fb08287824a3bc3030dbed33687/docs/commands.md#problem-matchers
       - run: echo "::add-matcher::.github/stylelint-compact.json"
       - run: npm install stylelint stylelint-config-standard stylelint-a11y stylelint-high-performance-animation

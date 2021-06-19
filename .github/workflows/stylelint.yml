@@ -1,8 +1,3 @@
-# https://help.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-error-message
-# https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell
-#
-# https://stylelint.io/user-guide/usage/options#formatter
-
 name: stylelint
 
 on:
@@ -17,12 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          nvm install --latest-npm --no-progress
-          echo "PATH=${NVM_BIN}:${PATH}" >> $GITHUB_ENV
-        shell: bash --login {0}
+      - uses: actions/setup-node@v2
+      # https://github.com/actions/toolkit/blob/2f164000dcd42fb08287824a3bc3030dbed33687/docs/commands.md#problem-matchers
+      - run: echo "::add-matcher::.github/stylelint-compact.json"
       - run: npm install stylelint stylelint-config-standard stylelint-a11y stylelint-high-performance-animation
-      - run: |
-          npx stylelint "**/*.css" --formatter unix \
-            | ruby -pe 'sub(/^(.+):(\d+):(\d+): (.+) \[(.+)\]$/, %q{::\5 file=\1,line=\2,col=\3::\4})'
-        shell: bash
+      - run: npx stylelint "**/*.css" --formatter=compact

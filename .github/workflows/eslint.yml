@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: "16.x"
       - run: npm install eslint-config-ybiquitous @typescript-eslint/eslint-plugin
-      - run: npx eslint .
+      - run: npx eslint . --format=compact

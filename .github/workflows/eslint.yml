@@ -12,9 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          nvm install --latest-npm --no-progress
-          echo "PATH=${NVM_BIN}:${PATH}" >> $GITHUB_ENV
-        shell: bash --login {0}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
       - run: npm install eslint-config-ybiquitous @typescript-eslint/eslint-plugin
       - run: npx eslint .

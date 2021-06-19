@@ -1,3 +1,5 @@
+import { useCallback } from "react";
+
 /**
  * @typedef {Object} Props
  * @property {string} href
@@ -9,12 +11,10 @@
 /**
  * @param {Props} props
  */
-export const Link = ({ href, children, className, style }) => (
-  <a
-    href={href}
-    className={className}
-    style={style}
-    onClick={(event) => {
+export const Link = ({ href, children, className, style }) => {
+  /** @type {React.MouseEventHandler} */
+  const handleClick = useCallback(
+    (event) => {
       if (event.metaKey) {
         return; // normal behavior
       }
@@ -25,8 +25,13 @@ export const Link = ({ href, children, className, style }) => (
       const state = null;
       window.history.pushState(state, "", href);
       window.dispatchEvent(new PopStateEvent("popstate", { state }));
-    }}
-  >
-    {children}
-  </a>
-);
+    },
+    [href]
+  );
+
+  return (
+    <a href={href} className={className} style={style} onClick={handleClick}>
+      {children}
+    </a>
+  );
+};

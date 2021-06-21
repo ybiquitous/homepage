@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const remarkHTML = require("remark-html");
 const remarkHighlight = require("remark-highlight.js");
 const remarkGFM = require("remark-gfm");
@@ -16,12 +17,6 @@ module.exports = {
     publicPath: "/",
     clean: true,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "src/index.html",
-      favicon: "src/favicon.png",
-    }),
-  ],
   module: {
     rules: [
       {
@@ -32,7 +27,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          DEV ? "style-loader" : MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -64,6 +59,15 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html",
+      favicon: "src/favicon.png",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
+    }),
+  ].filter(Boolean),
   resolve: {
     extensions: [".jsx", "..."],
   },

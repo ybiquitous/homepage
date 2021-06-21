@@ -2,11 +2,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// @ts-expect-error -- TS7016
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// @ts-expect-error -- TS7016
 const remarkAutolinkHeadings = require("remark-autolink-headings");
 const remarkGFM = require("remark-gfm");
+// @ts-expect-error -- TS7016
 const remarkHighlight = require("remark-highlight.js");
 const remarkHTML = require("remark-html");
+// @ts-expect-error -- TS7016
 const remarkSlug = require("remark-slug");
 /* eslint-enable @typescript-eslint/no-unsafe-assignment */
 

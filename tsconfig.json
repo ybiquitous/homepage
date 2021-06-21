@@ -16,5 +16,5 @@
     "skipLibCheck": true
   },
   "include": ["src/**/*"],
-  "exclude": ["src/slides-build"]
+  "exclude": ["src/slides-build", "webpack.config.js"]
 }

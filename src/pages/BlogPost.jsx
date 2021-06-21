@@ -4,21 +4,6 @@ import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "../utils";
 import s from "./BlogPost.module.css";
 
 /**
- * @param {Element} target
- */
-const scrollToAnchor = (target) => {
-  const { hash } = window.location;
-  if (hash) {
-    const heading = target.querySelector(decodeURIComponent(hash));
-    if (heading) {
-      heading.scrollIntoView({ behavior: "smooth" });
-    }
-  } else {
-    window.scrollTo(0, 0);
-  }
-};
-
-/**
  * @param {HTMLElement} content
  * @param {HTMLElement} toc
  */
@@ -60,8 +45,8 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }) => {
     const contentEl = contentElement.current;
     const tocEl = tocElement.current;
     if (contentEl && tocEl) {
+      window.scrollTo(0, 0);
       generateTOC(contentEl, tocEl);
-      scrollToAnchor(contentEl);
     }
   }, [contentElement, tocElement]);
 

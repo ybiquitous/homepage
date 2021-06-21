@@ -14,6 +14,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       # https://github.com/actions/toolkit/blob/2f164000dcd42fb08287824a3bc3030dbed33687/docs/commands.md#problem-matchers
-      - run: echo "::add-matcher::.github/stylelint-compact.json"
+      # https://gist.github.com/ybiquitous/184a337662bfcafdd3d227253f9401ff
+      - name: Set up Problem Matchers for stylelint
+        run: |
+          https://gist.githubusercontent.com/ybiquitous/184a337662bfcafdd3d227253f9401ff/raw/ca3681c9b01347fe7af612f4fd64384f135890c7/stylelint-compact.json
+          mv stylelint-compact.json "${HOME}/stylelint-compact.json"
+          echo "::add-matcher::${HOME}/stylelint-compact.json"
       - run: npm install stylelint stylelint-config-standard stylelint-a11y stylelint-high-performance-animation
       - run: npx stylelint "**/*.css" --formatter=compact

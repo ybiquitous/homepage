@@ -32,11 +32,12 @@
         }
 
         :global(.loading) {
-          color: var(--secondary-text-color);
+          color: darkgray;
+          font-size: xx-large;
+          text-align: center;
+          margin-top: 1em;
 
-          & > span {
-            /* stylelint-disable-next-line declaration-property-value-whitelist */
-            font-size: 1.5em;
+          & > * {
             animation: loading 1s infinite;
 
             &:nth-child(2) {
@@ -49,7 +50,7 @@
           }
         }
       </style>
-      <span class="loading">Loading<span>.</span><span>.</span><span>.</span></span>
+      <div class="loading">Loading<span>.</span><span>.</span><span>.</span></div>
     </div>
   </body>
 </html>

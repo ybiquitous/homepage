@@ -150,8 +150,10 @@ hr {
   margin: var(--space-xl) 0;
 }
 
-details > summary:hover {
-  cursor: pointer;
+details > summary {
+  &:focus, &:hover {
+    cursor: pointer;
+  }
 }
 
 .textButton {

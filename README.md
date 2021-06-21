@@ -51,4 +51,4 @@ git push
 ## Stack
 
 - [React](https://reactjs.org/)
-- [Parcel](https://parceljs.org/)
+- [Webpack](https://webpack.js.org/)

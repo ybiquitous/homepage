@@ -11,14 +11,14 @@ Webpack を素の状態で使えるチームであれば、Webpacker という�
 
 ## 目次
 
--   [ゴール](#ゴール)
--   [プロジェクト構成](#プロジェクト構成)
--   [セットアップ](#セットアップ)
--   [Webpack](#webpack)
--   [Rails](#rails)
--   [開発](#開発)
--   [ビルド](#ビルド)
--   [まとめ](#まとめ)
+*   [ゴール](#ゴール)
+*   [プロジェクト構成](#プロジェクト構成)
+*   [セットアップ](#セットアップ)
+*   [Webpack](#webpack)
+*   [Rails](#rails)
+*   [開発](#開発)
+*   [ビルド](#ビルド)
+*   [まとめ](#まとめ)
 
 ## ゴール
 
@@ -68,10 +68,10 @@ Webpack を素の状態で使えるチームであれば、Webpacker という�
 
 ### npm
 
--   [webpack](https://github.com/webpack/webpack)
--   [webpack-cli](https://github.com/webpack/webpack-cli)
--   [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
--   [webpack-manifest-plugin](https://github.com/danethurber/webpack-manifest-plugin)
+*   [webpack](https://github.com/webpack/webpack)
+*   [webpack-cli](https://github.com/webpack/webpack-cli)
+*   [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+*   [webpack-manifest-plugin](https://github.com/danethurber/webpack-manifest-plugin)
 
 以下のコマンドをターミナルで実行します。
 
@@ -87,7 +87,7 @@ yarn add webpack webpack-cli webpack-dev-server webpack-manifest-plugin --dev
 
 ### gem
 
--   [rack-proxy](https://github.com/ncr/rack-proxy)
+*   [rack-proxy](https://github.com/ncr/rack-proxy)
 
 `Gemfile` を編集し、
 
@@ -123,8 +123,8 @@ npm パッケージをインストールしたら、`npm run` で使えるショ
 
 これで、次のショートカットが使えるようになります。
 
--   `npm run dev` - DevServer 起動
--   `npm run build` - アセットファイルの出力
+*   `npm run dev` - DevServer 起動
+*   `npm run build` - アセットファイルの出力
 
 次に `webpack.config.js` を作成・編集します。各オプションの詳細については、[ドキュメント](https://webpack.js.org/configuration/)をご覧ください。重要なのは [`output`](https://webpack.js.org/configuration/output/) オプションです。このオプションには Rails の `public/assets/webpack/` ディレクトリを指定します。
 
@@ -285,8 +285,8 @@ ActiveRecord や MVC フレームワークといった Rails の強力な部分�
 
 Webpacker や Sprockets にも良い点はありますが（少なくとも Rails にデフォルトで組み込まれています）、密結合になっているがゆえの柔軟性の欠如が問題になるケースもあります。例えば、以下のようなケースです。
 
--   最新の Webpack へのアップデートができない。
--   Webpack の設定を `webpack.config.js` ではなく `webpacker.yml` でおこなう必要があり、学習コストが上がる。
--   [`sass-rails`](https://github.com/rails/sass-rails) といった gem が必要で、直接 npm パッケージを使うことができない（またはサポートしてない）。
+*   最新の Webpack へのアップデートができない。
+*   Webpack の設定を `webpack.config.js` ではなく `webpacker.yml` でおこなう必要があり、学習コストが上がる。
+*   [`sass-rails`](https://github.com/rails/sass-rails) といった gem が必要で、直接 npm パッケージを使うことができない（またはサポートしてない）。
 
 最終的には、プロジェクトを取り巻く状況に応じたトレードオフの判断を下すことになるかと思います。この記事がその判断の一助になれば幸いです。

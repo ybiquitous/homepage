@@ -6,10 +6,10 @@ Blogを始めました。最初は、このBlogを乗せているホームペー
 
 このウェブサイトは、主に次の4つの技術・サービスを用いています。すべて最新版で、常に最新版に更新しています。
 
--   [TypeScript](https://www.typescriptlang.org/)
--   [React](https://reactjs.org/)
--   [Parcel](https://parceljs.org/)
--   [Netlify](https://www.netlify.com/)
+*   [TypeScript](https://www.typescriptlang.org/)
+*   [React](https://reactjs.org/)
+*   [Parcel](https://parceljs.org/)
+*   [Netlify](https://www.netlify.com/)
 
 ざっくり言うと、TypeScript＆Reactでコードを書き、Parcelでビルドし、Netlifyにデプロイしています。
 

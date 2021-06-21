@@ -91,26 +91,26 @@ GC Compactionのアルゴリズムの話がわかりやすくスライド（ア�
 
 hsbtさんのRubygems、Bundlerに関するセッション。私なりの理解でまとめると、
 
-- 標準ライブラリ（Standard Library）をgem化しようとしている（default gems）。
-  - gem化することで、Rubyのバージョンアップを待たずにgemだけ更新することができる。
-- RubygemsとBundlerを統合する話。
-  - [rubygems/rubygems](https://github.com/rubygems/rubygems)リポジトリにBundlerは取り込まれたけど、まだ別のツールのまま。
-  - 将来的には同じツールとして統合される予定。
+*   標準ライブラリ（Standard Library）をgem化しようとしている（default gems）。
+    *   gem化することで、Rubyのバージョンアップを待たずにgemだけ更新することができる。
+*   RubygemsとBundlerを統合する話。
+    *   [rubygems/rubygems](https://github.com/rubygems/rubygems)リポジトリにBundlerは取り込まれたけど、まだ別のツールのまま。
+    *   将来的には同じツールとして統合される予定。
 
 そもそも「default gem」と「bundled gem」の違いもよくわかってなかった。以下にまとめてみる。
 
-- Standard Library：Rubyに組み込まれているライブラリ。gem化されてないライブラリ。
-  - 例：`pathname`
-  - ruby/rubyにある。<https://github.com/ruby/ruby/blob/v2_7_1/ext/pathname/lib/pathname.rb>
-  - rubygemsにない。<https://rubygems.org/gems/pathname> → 404 Not Found
-- Default Gem: Rubyを動かすために必要なgem。アンインストールできない。
-  - 例：`benchmark`
-  - ruby/rubyにある。<https://github.com/ruby/ruby/blob/v2_7_1/lib/benchmark.rb>
-  - rubygemsにもある。<https://rubygems.org/gems/benchmark>
-- Bundled gem: Rubyをインストールすると入っているgem。Rubyを動かすのに必ずしも必要というわけではなく、アンインストール可能。
-  - 例：`bundler`（Ruby 2.6より同梱）
-  - ruby/rubyにない。
-  - rubygemsにある。<https://rubygems.org/gems/bundler>
+*   Standard Library：Rubyに組み込まれているライブラリ。gem化されてないライブラリ。
+    *   例：`pathname`
+    *   ruby/rubyにある。<https://github.com/ruby/ruby/blob/v2_7_1/ext/pathname/lib/pathname.rb>
+    *   rubygemsにない。<https://rubygems.org/gems/pathname> → 404 Not Found
+*   Default Gem: Rubyを動かすために必要なgem。アンインストールできない。
+    *   例：`benchmark`
+    *   ruby/rubyにある。<https://github.com/ruby/ruby/blob/v2_7_1/lib/benchmark.rb>
+    *   rubygemsにもある。<https://rubygems.org/gems/benchmark>
+*   Bundled gem: Rubyをインストールすると入っているgem。Rubyを動かすのに必ずしも必要というわけではなく、アンインストール可能。
+    *   例：`bundler`（Ruby 2.6より同梱）
+    *   ruby/rubyにない。
+    *   rubygemsにある。<https://rubygems.org/gems/bundler>
 
 見通しがよくなった。標準ライブラリのgem化は、ruby/rubyという巨大リポジトリからライブラリを抽出することで、ruby/rubyのコードの管理をしやすくし、
 また、ライブラリgemの管理もやりやすくするんだろう、きっと。
@@ -142,7 +142,7 @@ Querlyの方がASTを知らない人向けに作られているので柔軟性�
 jeremyevansさんのKeyword Arguments（kwargs）の話。この件については、[Rails界隈で盛り上がった](https://discuss.rubyonrails.org/t/new-2-7-3-0-keyword-argument-pain-point/74980)のが記憶に新しい。
 ちょっと疲れていて流しながら聴いていたので、kwargsのやばいコード例がたくさん紹介されていたことがぼんやりと記憶にある。
 
-そういえば、[`Module#ruby2_keywords`](http://ruby-doc.org/core-2.7.1/Module.html#ruby2_keywords-method)がライブラリ内で書かれているのをたまに見るなぁ。
+そういえば、[`Module#ruby2_keywords`](http://ruby-doc.org/core-2.7.1/Module.html#ruby2\_keywords-method)がライブラリ内で書かれているのをたまに見るなぁ。
 自分でこのメソッドを書く日が来るのだろうか…。
 
 ## Ruby3 and Beyond

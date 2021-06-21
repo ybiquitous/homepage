@@ -8,9 +8,7 @@
 
 プロジェクトルートに `_redirects` ファイルを用意して、こう書くだけです。
 
-```
-/*    /index.html   200
-```
+    /*    /index.html   200
 
 [Netlifyのドキュメント](https://www.netlify.com/docs/redirects/#rewrites-and-proxying)には、こうあります。
 
@@ -22,7 +20,7 @@
 > (…)
 > このルールは、ブラウザがどのURLをリクエストしても、404を与える代わりにindex.htmlを効果的に提供します。
 
-これだけです。ちなみに、このサイトのリダイレクト設定は[ここ](https://github.com/ybiquitous/homepage/blob/f21b1e5963607f5b6fd9a3b114efeb0786093ffe/_redirects#L1)にあります。
+これだけです。ちなみに、このサイトのリダイレクト設定は[ここ](https://github.com/ybiquitous/homepage/blob/f21b1e5963607f5b6fd9a3b114efeb0786093ffe/\_redirects#L1)にあります。
 
 ただし、この設定だとHTTPステータスは **404** ではなく **200** を返します。これはHTTP原理主義者にとっては不満かも知れませんが、このサイトとしてはこれで十分です。むしろ404ステータスを変えそうとすると、何らかのハックが必要になるでしょう。
 
@@ -33,10 +31,8 @@
 
 元々の `_redirects` には、こう書いていました。
 
-```
-/blog      /    200
-/blog/*    /    200
-```
+    /blog      /    200
+    /blog/*    /    200
 
 そして、ルーティングはこのようになっていました（[コード](https://github.com/ybiquitous/homepage/blob/f21b1e5963607f5b6fd9a3b114efeb0786093ffe/src/routes.tsx#L21-L27)）。
 
@@ -62,8 +58,6 @@ SPAのルーティングを実装したときは、サーバーサイドでの�
 
 そして、Netlifyでは `_redirects` ファイルに
 
-```
-/*    /index.html   200
-```
+    /*    /index.html   200
 
 を設定しておきましょう（大事なことなので繰り返し）！

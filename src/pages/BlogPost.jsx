@@ -1,19 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Link } from "../Link";
 import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "../utils";
-import s from "./BlogPost.css";
-import "highlight.js/styles/xcode.css";
-
-/**
- * @param {Element} target
- */
-const addAnchor = (target) => {
-  const anchor = document.createElement("a");
-  anchor.href = `#${target.id}`;
-  anchor.textContent = "#";
-  anchor.classList.add(s.headingAnchor);
-  target.insertAdjacentElement("beforeend", anchor);
-};
+import s from "./BlogPost.module.css";
 
 /**
  * @param {Element} target
@@ -25,6 +13,8 @@ const scrollToAnchor = (target) => {
     if (heading) {
       heading.scrollIntoView({ behavior: "smooth" });
     }
+  } else {
+    window.scrollTo(0, 0);
   }
 };
 
@@ -71,8 +61,6 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }) => {
     const tocEl = tocElement.current;
     if (contentEl && tocEl) {
       generateTOC(contentEl, tocEl);
-
-      contentEl.querySelectorAll("h2[id],h3[id],h4[id],h5[id],h6[id]").forEach(addAnchor);
       scrollToAnchor(contentEl);
     }
   }, [contentElement, tocElement]);

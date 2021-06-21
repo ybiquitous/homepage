@@ -150,7 +150,11 @@ hr {
   margin: var(--space-xl) 0;
 }
 
-:global(.textButton) {
+details > summary:hover {
+  cursor: pointer;
+}
+
+.textButton {
   background: inherit;
   border: none;
   cursor: pointer;
@@ -160,7 +164,7 @@ hr {
 }
 
 :any-link,
-:global(.link) {
+.link {
   color: var(--default-primary-color);
   text-decoration: none;
 

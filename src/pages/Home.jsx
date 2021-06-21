@@ -3,7 +3,7 @@ import { faBlog, faGem, faImages, faMapMarkerAlt } from "@fortawesome/free-solid
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "../Link";
 import { useExternalLinkAsNewTab, useTitle } from "../utils";
-import s from "./Home.css";
+import s from "./Home.module.css";
 
 const Profile = () => (
   <div className={s.profile}>

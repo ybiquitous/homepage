@@ -6,29 +6,29 @@
 
 ## 3行まとめ
 
-- 中規模Rubyプロジェクトにおける、[Steep](https://github.com/soutaro/steep)による型チェックの実践例の紹介
-- 工夫したこと
-- メリット・デメリット
+*   中規模Rubyプロジェクトにおける、[Steep](https://github.com/soutaro/steep)による型チェックの実践例の紹介
+*   工夫したこと
+*   メリット・デメリット
 
 ## この記事を読む前に
 
 この記事を読む方は、おそらくRuby 3.0で型が導入されるという話はすでにご存知かと思います（Ruby 3.0 Advent Calendar 2020でも、いくつかの紹介記事があります）。
 が、「Rubyに型？」や「RBS？TypeProf？Steep？ってなに？」という方は、以下の記事について目を通しておくことをオススメします。
 
-- [The State of Ruby 3 Typing | Square Corner Blog](https://developer.squareup.com/blog/the-state-of-ruby-3-typing/)
-- [Ruby 3の静的解析機能のRBS、TypeProf、Steep、Sorbetの関係についてのノート - クックパッド開発者ブログ](https://techlife.cookpad.com/entry/2020/12/09/120454)
-- [Ruby 3 の静的解析ツール TypeProf の使い方 - クックパッド開発者ブログ](https://techlife.cookpad.com/entry/2020/12/09/120314)
-- [rbs cli - pockestrap](https://pocke.hatenablog.com/entry/2020/06/15/081130)
-- [RubyからRBSを生成する各方法の特徴 - pockestrap](https://pocke.hatenablog.com/entry/2020/12/18/230235)
-- [Climbing Steep hills, or adopting Ruby 3 types with RBS — Martian Chronicles, Evil Martians’ team blog](https://evilmartians.com/chronicles/climbing-steep-hills-or-adopting-ruby-types)
+*   [The State of Ruby 3 Typing | Square Corner Blog](https://developer.squareup.com/blog/the-state-of-ruby-3-typing/)
+*   [Ruby 3の静的解析機能のRBS、TypeProf、Steep、Sorbetの関係についてのノート - クックパッド開発者ブログ](https://techlife.cookpad.com/entry/2020/12/09/120454)
+*   [Ruby 3 の静的解析ツール TypeProf の使い方 - クックパッド開発者ブログ](https://techlife.cookpad.com/entry/2020/12/09/120314)
+*   [rbs cli - pockestrap](https://pocke.hatenablog.com/entry/2020/06/15/081130)
+*   [RubyからRBSを生成する各方法の特徴 - pockestrap](https://pocke.hatenablog.com/entry/2020/12/18/230235)
+*   [Climbing Steep hills, or adopting Ruby 3 types with RBS — Martian Chronicles, Evil Martians’ team blog](https://evilmartians.com/chronicles/climbing-steep-hills-or-adopting-ruby-types)
 
 特にRubyコミッターである[@mame](https://github.com/mame)さん（[TypeProf](https://github.com/ruby/typeprof)の作者）や[@soutaro](https://github.com/soutaro)さん（[Steep](https://github.com/soutaro/steep)の作者）の記事は一次情報にあたるので、非常にオススメです。
 
 この記事ではRBSとSteepに焦点を当てます（Sorbetについては触れません）。また、理解を深めたい方は以下のGitHubリポジトリも眺めておくとよいと思います。
 
-- [ruby/rbs: Type Signature for Ruby](https://github.com/ruby/rbs)
-- [ruby/gem_rbs: A collection of RBS for gems.](https://github.com/ruby/gem_rbs)
-- [soutaro/steep: Static type checker for Ruby](https://github.com/soutaro/steep)
+*   [ruby/rbs: Type Signature for Ruby](https://github.com/ruby/rbs)
+*   [ruby/gem_rbs: A collection of RBS for gems.](https://github.com/ruby/gem_rbs)
+*   [soutaro/steep: Static type checker for Ruby](https://github.com/soutaro/steep)
 
 ## はじめに
 
@@ -107,10 +107,10 @@ jobs:
 
 以下の2点を工夫しました。
 
-- [GitHub check annotations](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#setting-an-error-message)でレポートする。
-  - `ruby -pe 'sub(...)'` コマンドで、Steepの出力をcheck annotation用のフォーマットに変換してます。
-- 失敗してもステータスはグリーンに。
-  - `rbs prototype` で生成したRBSは不完全なため。
+*   [GitHub check annotations](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#setting-an-error-message)でレポートする。
+    *   `ruby -pe 'sub(...)'` コマンドで、Steepの出力をcheck annotation用のフォーマットに変換してます。
+*   失敗してもステータスはグリーンに。
+    *   `rbs prototype` で生成したRBSは不完全なため。
 
 GitHub check annotationsを使うと、プルリクエストページのdiff上でエラーを確認できます（[例](https://github.com/sider/runners/pull/1725/files)）。
 また、手動でRBSを修正し終わるまでは、プルリクエストをブロックしないようにしてます。
@@ -123,12 +123,12 @@ GitHub check annotationsを使うと、プルリクエストページのdiff上�
 
 大体以下のようなフローです。
 
-1. 定数の型を直す。例）`FOO: untyped` → `FOO: String`
-2. メソッドの引数の型を直す。例）`def foo: (untyped num) -> untyped` → `def foo: (Integer num) -> untyped`
-3. メソッドの戻り値の型を直す。例）`def foo: (Integer num) -> untyped` → `def foo: (Integer num) -> String`
-4. `bundle exec steep check lib/foo.rb` を実行して、エラーがないか確認する。
-   （私はEmacs使いなので使っていませんが、Steepの[VSCode拡張](https://marketplace.visualstudio.com/items?itemName=soutaro.steep-vscode)を使うと捗るかもしれません）
-5. （1〜4の繰り返し）
+1.  定数の型を直す。例）`FOO: untyped` → `FOO: String`
+2.  メソッドの引数の型を直す。例）`def foo: (untyped num) -> untyped` → `def foo: (Integer num) -> untyped`
+3.  メソッドの戻り値の型を直す。例）`def foo: (Integer num) -> untyped` → `def foo: (Integer num) -> String`
+4.  `bundle exec steep check lib/foo.rb` を実行して、エラーがないか確認する。
+    （私はEmacs使いなので使っていませんが、Steepの[VSCode拡張](https://marketplace.visualstudio.com/items?itemName=soutaro.steep-vscode)を使うと捗るかもしれません）
+5.  （1〜4の繰り返し）
 
 大体1ファイル出来上がったらPRを出すようにしてました。1度1つのPRですべてのエラーをチェックしようとしたのですが、数が多すぎて心が折れました…。
 これはプロジェクトの規模にもよると思うので一概には言えませんが、徐々にやることを私はオススメします。
@@ -138,9 +138,9 @@ GitHub check annotationsを使うと、プルリクエストページのdiff上�
 
 単純なケースだと問題にならないとは思うのですが、複雑な型を定義する場合は構文の理解度がかなり重要かなと思いますし、学習曲線のカーブが大きくなるポイントかなと思います。例えば、以下のようなケースです。
 
-- ブロックを受け取る場合と受け取らない場合で、戻り値の型が異なる。
-- 引数の数が多く、必須や任意などさまざま。
-- `Array` や `Hash` が複雑。例）`Array[Hash[Symbol, String | Integer | bool | nil]]`
+*   ブロックを受け取る場合と受け取らない場合で、戻り値の型が異なる。
+*   引数の数が多く、必須や任意などさまざま。
+*   `Array` や `Hash` が複雑。例）`Array[Hash[Symbol, String | Integer | bool | nil]]`
 
 こればかりは慣れていくしかないのかなと思いますし、チームが大きくて学習のバラツキが大きいと最初は苦労するかもしれません。
 
@@ -264,34 +264,34 @@ lib     lib/runners/processor/fxcop.rb                 success  36           18 
 
 ### メリット
 
-- 簡単なユニットテストケースの置き換えができた
-- 引数のランタイムチェック（`ArgumentError`）が不要になった
+*   簡単なユニットテストケースの置き換えができた
+*   引数のランタイムチェック（`ArgumentError`）が不要になった
 
 Minitestなどでテストケースを書くよりは、明らかに簡単ですね。さらに、ランタイムチェックも外部入力以外ではほぼ不要です。
 
-- ビルトインクラスや標準ライブラリの正しい使い方を学べた
+*   ビルトインクラスや標準ライブラリの正しい使い方を学べた
 
 例えば、[`String#match`](https://ruby-doc.org/core-2.7.2/String.html#match-method) はブロックを渡す場合は `nil` を返すことがあるのですが、その `nil` チェックが漏れていたのに気づけたケースがありました。
 
-- クラスやメソッドの設計について、より考えるようになった
+*   クラスやメソッドの設計について、より考えるようになった
 
 複数の型を返すメソッドや `nil` を返すメソッド、複雑な `Hash` を要求するメソッド、といったケースでは型を書くのがめんどくさくなるので、自然とシンプルなインターフェースを好むようになっていきました。
 例えば、以下のようなケースです。
 
-- `String | nil` を返していたのを `Array[String]` で返すようにした
-    - `nil` を返すと呼び出し元で `nil` チェックをしないと型エラーが出ます
-- [`Hash#[]`](https://ruby-doc.org/core-2.7.2/Hash.html#5B-5D-method) は `nil` を返すし、[`Hash#fetch`](https://ruby-doc.org/core-2.7.2/Hash.html#fetch-method) は記述が冗長になるので、PORO（Plain Old Ruby Object）に置き換えた
-    - `Hash[Symbol, String]` のようなケースだと問題ないのですが、値が `String | Integer | bool | nil` みたいになるとチェックが難しいといった理由もあります。
+*   `String | nil` を返していたのを `Array[String]` で返すようにした
+    *   `nil` を返すと呼び出し元で `nil` チェックをしないと型エラーが出ます
+*   [`Hash#[]`](https://ruby-doc.org/core-2.7.2/Hash.html#5B-5D-method) は `nil` を返すし、[`Hash#fetch`](https://ruby-doc.org/core-2.7.2/Hash.html#fetch-method) は記述が冗長になるので、PORO（Plain Old Ruby Object）に置き換えた
+    *   `Hash[Symbol, String]` のようなケースだと問題ないのですが、値が `String | Integer | bool | nil` みたいになるとチェックが難しいといった理由もあります。
 
 ### デメリット
 
-- 学習コストが（まだ）高い
-- RBSのサポートおよび型チェッカの精度が不十分
+*   学習コストが（まだ）高い
+*   RBSのサポートおよび型チェッカの精度が不十分
 
 このあたりは何度も繰り返し触れてきたのですが、時間が解決してくれると信じています。
 普及し始めてくると一気に改善すると思うんですよね。TypeScriptがそうであったように。
 
-- 手書きの修正が必要
+*   手書きの修正が必要
 
 型チェックのメリットを享受するには、まだまだRBSの手書き修正が必要です（`rbs prototype` でひな型は自動生成できますが）。
 まあ、ひな型だけでもメソッドのtypoや引数の個数などはチェックできはしますが、やはりせっかく書くのであれば精度を期待してしまいます。
@@ -299,7 +299,7 @@ Minitestなどでテストケースを書くよりは、明らかに簡単です
 現状は、ひな型を生成してエラーとなる箇所だけ直し、必要に応じて徐々に精度をあげていくアプローチの方が良いでしょう。
 チームの学習曲線に応じて、目標を高く設定しすぎず、ゆっくりと適応していくのが良いように感じます。
 
-- RDocをどこに書くか問題
+*   RDocをどこに書くか問題
 
 Steep language serverでドキュメントを表示したいのであればRDocはRBSに書く必要があるのですが、そうすると実装からドキュメンテーションが離れてしまうことになり、難しい問題です。
 こちらも時間が解決すると思いますが、今のところは `.rb` の方に書いておいて、うまく同期される仕組みができるのを待つのが賢明かもしれません。
@@ -315,10 +315,10 @@ Rubyに型を導入するというのは初めての試みであり、実際にR
 
 私個人の体験でいうと、以下のフローで理解を深めつつ貢献を増やしていくのがいいのかなぁと思っています。
 
-1. Steepを自分の小さなプロジェクトに導入してみる。
-2. RBS未提供ライブラリのポリフィルを書く。
-3. 型チェックのメリットを享受する。
-4. RBS未提供ライブラリのRBSを書いたパッチを [ruby/rbs](https://github.com/ruby/rbs) や [ruby/gem_rbs](https://github.com/ruby/gem_rbs) に送る。
+1.  Steepを自分の小さなプロジェクトに導入してみる。
+2.  RBS未提供ライブラリのポリフィルを書く。
+3.  型チェックのメリットを享受する。
+4.  RBS未提供ライブラリのRBSを書いたパッチを [ruby/rbs](https://github.com/ruby/rbs) や [ruby/gem_rbs](https://github.com/ruby/gem_rbs) に送る。
 
 最初は理解を深めつつ、必要になったタイミングで足りない型や間違った型のパッチを送るイメージです。
 もちろん正しい型を書くにはライブラリのドキュメントや実装を読むことが必要なのですが、ソースコードリーディングの学習方法の1つとしてちょうど良いかもしれません。

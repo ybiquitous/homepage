@@ -47,9 +47,9 @@ alias open-pull-request='hub pull-request --push --draft --browse'
 
 オプションの説明は、ざっと以下である。
 
-- `--push`: 現在のブランチを remote にプッシュする。
-- `--draft`: プルリクエストをドラフトで開く（ドラフトについての詳細は、こちらの[公式ブログ](https://github.blog/2019-02-14-introducing-draft-pull-requests)を参照のこと）。
-- `--browse`: プルリクエストをブラウザで開く。
+*   `--push`: 現在のブランチを remote にプッシュする。
+*   `--draft`: プルリクエストをドラフトで開く（ドラフトについての詳細は、こちらの[公式ブログ](https://github.blog/2019-02-14-introducing-draft-pull-requests)を参照のこと）。
+*   `--browse`: プルリクエストをブラウザで開く。
 
 例えば、典型的なワークフローを示す。
 

@@ -151,7 +151,8 @@ hr {
 }
 
 details > summary {
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     cursor: pointer;
   }
 }

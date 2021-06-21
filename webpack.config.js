@@ -71,8 +71,8 @@ module.exports = {
       template: "src/index.html",
       favicon: "src/favicon.png",
     }),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     new MiniCssExtractPlugin({
-      // eslint-disable-line @typescript-eslint/no-unsafe-call
       filename: "[name].[contenthash].css",
     }),
   ].filter(Boolean),

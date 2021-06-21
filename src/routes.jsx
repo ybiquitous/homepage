@@ -17,5 +17,3 @@ export const routes = new Map([
 for (const blog of blogs) {
   routes.set(`/blog/${blog.id}`, () => <BlogPost {...blog} />);
 }
-
-"".a();

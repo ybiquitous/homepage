@@ -20,9 +20,9 @@
 
 ko1さんのRuby 3に向けての並行性改善の話。C言語・Ruby内部の話はよくわからないのでなんとなくだが、以下が記憶に残った。
 
-*   Guild → Ractor にリネームした（理由は失念）。
-*   スレッド安全性（thread-safety）を保証するためには、いろんなところでfreezeされたオブジェクトが必要になるとか。
-*   See [Feature #17100](https://bugs.ruby-lang.org/issues/17100)
+- Guild → Ractor にリネームした（理由は失念）。
+- スレッド安全性（thread-safety）を保証するためには、いろんなところでfreezeされたオブジェクトが必要になるとか。
+- See [Feature #17100](https://bugs.ruby-lang.org/issues/17100)
 
 [GIL; Global Interpreter Lock](https://en.wikipedia.org/wiki/Global_interpreter_lock)についてよく分かってなかったので改めて調べた。
 Rubyはスレッド安全性を保証するためにGILという仕組みを使ってるので、この仕組みがボトルネックのマルチコアで動かす際のボトルネックになるという話だった。
@@ -45,10 +45,10 @@ mameさんの型に関する進捗の話。[ruby-jp](https://ruby-jp.slack.com)�
 
 記憶に残ったのは、以下の点。
 
-*   Type Profiler は[RBS](https://github.com/ruby/rbs)の自動生成ツール。精度はだいぶ上がってきた。
-*   Type Profiler の名前募集。こちらもリネームするみたい。Type Profilerは「プロファイル」というよりは既存のコードから型定義を生成するツールなので、「パフォーマンス・プロファイリング」のようなものを連想されるとちょっと違う。
-*   [Goodcheck](https://github.com/sider/goodcheck)がデモの例として上げられたので、ちょっとビックリした。
-*   RBSが提供されてない3rd-party gemがあると、まだ解析・生成に失敗するらしい（うろ覚え）。
+- Type Profiler は[RBS](https://github.com/ruby/rbs)の自動生成ツール。精度はだいぶ上がってきた。
+- Type Profiler の名前募集。こちらもリネームするみたい。Type Profilerは「プロファイル」というよりは既存のコードから型定義を生成するツールなので、「パフォーマンス・プロファイリング」のようなものを連想されるとちょっと違う。
+- [Goodcheck](https://github.com/sider/goodcheck)がデモの例として上げられたので、ちょっとビックリした。
+- RBSが提供されてない3rd-party gemがあると、まだ解析・生成に失敗するらしい（うろ覚え）。
 
 `rbs prototype` というコマンドでもRBSの自動生成ができるけど、それとの位置づけはどうなるのだろうか。
 `rbs prototype` は簡易版で、Type Profilerの精度が上がってきたらそちらを使うのかな。後者の方が難しいアルゴリズムを使ってると思われる。

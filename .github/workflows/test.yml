@@ -16,5 +16,11 @@ jobs:
           echo "PATH=${NVM_BIN}:${PATH}" >> $GITHUB_ENV
         shell: bash --login {0}
       - run: npm ci
+      - name: Set up Problem Matchers for tsc
+        run: |
+          curl -fLO "https://raw.githubusercontent.com/actions/setup-node/5c355be17065acf11598c7a9bb47112fbcf2bbdc/.github/tsc.json"
+          mv tsc.json "${HOME}/tsc.json"
+          echo "::add-matcher::${HOME}/tsc.json"
+      - run: npm run lint:types
       - run: npm run lint
       - run: npm run build

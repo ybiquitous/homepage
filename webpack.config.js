@@ -75,7 +75,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
     }),
-  ].filter(Boolean),
+  ],
   resolve: {
     extensions: [".jsx", "..."],
   },

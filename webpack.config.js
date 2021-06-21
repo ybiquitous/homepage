@@ -1,11 +1,14 @@
+/* eslint-env node */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const remarkHTML = require("remark-html");
-const remarkHighlight = require("remark-highlight.js");
-const remarkGFM = require("remark-gfm");
-const remarkSlug = require("remark-slug");
 const remarkAutolinkHeadings = require("remark-autolink-headings");
+const remarkGFM = require("remark-gfm");
+const remarkHighlight = require("remark-highlight.js");
+const remarkHTML = require("remark-html");
+const remarkSlug = require("remark-slug");
+/* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
 const DEV = process.env.NODE_ENV === "development";
 
@@ -20,14 +23,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
+        test: /\.jsx?$/u,
+        exclude: /node_modules/u,
         use: "babel-loader",
       },
       {
-        test: /\.css$/,
+        test: /\.css$/u,
         use: [
-          DEV ? "style-loader" : MiniCssExtractPlugin.loader,
+          DEV ? "style-loader" : MiniCssExtractPlugin.loader, // eslint-disable-line @typescript-eslint/no-unsafe-member-access
           {
             loader: "css-loader",
             options: {
@@ -42,7 +45,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.md$/,
+        test: /\.md$/u,
         use: [
           "html-loader",
           {
@@ -69,6 +72,7 @@ module.exports = {
       favicon: "src/favicon.png",
     }),
     new MiniCssExtractPlugin({
+      // eslint-disable-line @typescript-eslint/no-unsafe-call
       filename: "[name].[contenthash].css",
     }),
   ].filter(Boolean),

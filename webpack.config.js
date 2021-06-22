@@ -59,7 +59,7 @@ module.exports = {
                 plugins: [
                   remarkGFM,
                   remarkSlug,
-                  remarkAutolinkHeadings,
+                  [remarkAutolinkHeadings, { behavior: "append" }],
                   remarkHighlight,
                   remarkHTML,
                 ],

@@ -1,6 +1,6 @@
 [
   {
-    "id": "start-blog",
+    "slug": "2019/start-blog",
     "title": "Blog始めました",
     "published": "2019-05-11T00:00:00.000Z",
     "lastUpdated": "2019-05-12T00:00:00.000Z",
@@ -8,7 +8,7 @@
     "tags": ["typescript", "react", "parcel", "netlify"]
   },
   {
-    "id": "type-compatibility-in-typescript",
+    "slug": "2019/type-compatibility-in-typescript",
     "title": "TypeScriptにおける型の互換性（翻訳）",
     "published": "2019-05-25T00:00:00.000Z",
     "lastUpdated": "2021-06-22T00:00:00.000Z",
@@ -16,7 +16,7 @@
     "tags": ["typescript"]
   },
   {
-    "id": "webpack-on-rails",
+    "slug": "2019/webpack-on-rails",
     "title": "Webpack on Rails",
     "published": "2019-06-19T00:00:00.000Z",
     "lastUpdated": null,
@@ -24,7 +24,7 @@
     "tags": ["rails", "webpack"]
   },
   {
-    "id": "spa-redirect-settings-on-netlify",
+    "slug": "2019/spa-redirect-settings-on-netlify",
     "title": "SPAのためのリダイレクト設定 on Netlify",
     "published": "2019-07-03T00:00:00.000Z",
     "lastUpdated": null,
@@ -32,7 +32,7 @@
     "tags": ["netlify"]
   },
   {
-    "id": "create-pull-request-on-command-line",
+    "slug": "2019/create-pull-request-on-command-line",
     "title": "コマンドラインでプルリクエストを作る",
     "published": "2019-10-11T00:00:00.000Z",
     "lastUpdated": null,
@@ -40,7 +40,7 @@
     "tags": ["github"]
   },
   {
-    "id": "using-nvm-on-github-actions",
+    "slug": "2020/using-nvm-on-github-actions",
     "title": "GitHub Actionsでnvmを使う",
     "published": "2020-06-06T00:00:00.000Z",
     "lastUpdated": null,
@@ -48,7 +48,7 @@
     "tags": ["github-actions", "nvm", "nodejs"]
   },
   {
-    "id": "rubykaigi-takeout-2020",
+    "slug": "2020/rubykaigi-takeout-2020",
     "title": "RubyKaigi Takeout 2020に参加した",
     "published": "2020-09-07T00:00:00.000Z",
     "lastUpdated": "2020-09-10T00:00:00.000Z",
@@ -56,7 +56,7 @@
     "tags": ["ruby", "rubykaigi"]
   },
   {
-    "id": "rubykaigi-takeout-2020-2",
+    "slug": "2020/rubykaigi-takeout-2020-2",
     "title": "RubyKaigi Takeout 2020に参加した（2）",
     "published": "2020-09-10T00:00:00.000Z",
     "lastUpdated": "2020-09-10T00:00:00.000Z",
@@ -64,7 +64,7 @@
     "tags": ["ruby", "rubykaigi"]
   },
   {
-    "id": "example-of-type-checking-by-steep",
+    "slug": "2020/example-of-type-checking-by-steep",
     "title": "Steepによる型チェックの実践例",
     "published": "2020-12-21T00:00:00.000Z",
     "lastUpdated": null,

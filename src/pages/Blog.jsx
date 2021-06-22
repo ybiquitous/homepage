@@ -1,7 +1,7 @@
 import { Link } from "../Link";
 import { Breadcrumb, Time, useTitle } from "../utils";
 import s from "./Blog.module.css";
-import metadata from "../blog/metadata.json";
+import { blogs } from "../blog/index";
 
 export const Blog = () => {
   useTitle("Blog");
@@ -16,7 +16,7 @@ export const Blog = () => {
         <h1 className={s.title}>Recent posts</h1>
 
         <ul className={s.list}>
-          {metadata
+          {blogs
             .filter(({ published }) => published != null)
             .sort((a, b) => {
               if (a.published == null || b.published == null) {
@@ -24,9 +24,9 @@ export const Blog = () => {
               }
               return Date.parse(b.published) - Date.parse(a.published);
             })
-            .map(({ id, title, published }) => (
-              <li key={id} className={s.listItem}>
-                <Link href={`/blog/${id}`} className={s.link}>
+            .map(({ path, title, published }) => (
+              <li key={path} className={s.listItem}>
+                <Link href={path} className={s.link}>
                   {title}
                 </Link>
                 {published != null && <Time date={new Date(published)} />}

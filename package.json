@@ -37,7 +37,6 @@
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
     "postcss": "^8.3.5",
-    "postcss-custom-media": "^8.0.0",
     "postcss-loader": "^6.1.0",
     "postcss-nesting": "^8.0.1",
     "remark-autolink-headings": "^6.0.1",
@@ -150,6 +149,16 @@
           "var(--font-size-code)"
         ]
       },
+      "media-feature-name-value-allowed-list": {
+        "max-width": [
+          "575px",
+          "1199px"
+        ],
+        "min-width": [
+          "576px",
+          "1200px"
+        ]
+      },
       "selector-pseudo-class-no-unknown": [
         true,
         {
@@ -165,8 +174,7 @@
   "postcss": {
     "plugins": [
       "autoprefixer",
-      "postcss-nesting",
-      "postcss-custom-media"
+      "postcss-nesting"
     ]
   },
   "lint-staged": {

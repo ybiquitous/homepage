@@ -26,13 +26,15 @@ const generateTOC = (content, toc) => {
  * @property {string} author
  * @property {string[]} tags
  * @property {string} content
+ * @property {{ path: string, title: string } | null} prev
+ * @property {{ path: string, title: string } | null} next
  */
 
 /**
  * @param {Props} props
  */
 // eslint-disable-next-line max-lines-per-function
-export const BlogPost = ({ title, published, lastUpdated, tags, content }) => {
+export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, next }) => {
   useTitle(title, "Blog");
   useExternalLinkAsNewTab();
 
@@ -90,6 +92,27 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content }) => {
           dangerouslySetInnerHTML={{ __html: content }}
           className={s.blogContent}
         />
+
+        <nav className={s.prevNext}>
+          {prev != null ? (
+            <a className={s.prevNextLink} href={prev.path}>
+              <span className={s.prevNextContent} title={`Previous: “${prev.title}”`}>
+                {prev.title}
+              </span>
+            </a>
+          ) : (
+            <span className={s.prevNextDummy} />
+          )}
+          {next != null ? (
+            <a className={s.prevNextLink} href={next.path}>
+              <span className={s.prevNextContent} title={`Next: “${next.title}”`}>
+                {next.title}
+              </span>
+            </a>
+          ) : (
+            <span className={s.prevNextDummy} />
+          )}
+        </nav>
       </main>
     </>
   );

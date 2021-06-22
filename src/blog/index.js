@@ -24,4 +24,13 @@ const contents = [
 ];
 /* eslint-enable camelcase */
 
-export const blogs = metadata.map((meta, index) => ({ ...meta, content: contents[index] }));
+export const blogs = metadata.map((meta, index, array) => {
+  const prev = array[index - 1];
+  const next = array[index + 1];
+  return {
+    ...meta,
+    content: contents[index],
+    prev: prev != null ? { path: `/blog/${prev.id}`, title: prev.title } : null,
+    next: next != null ? { path: `/blog/${next.id}`, title: next.title } : null,
+  };
+});

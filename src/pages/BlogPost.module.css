@@ -5,11 +5,17 @@
 }
 
 /* https://github.com/remarkjs/remark-autolink-headings */
-:global(.icon.icon-link) {
+:global(.icon-link) {
+  color: var(--secondary-text-color);
+  margin-left: 0.5em;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+
   &::before {
     content: "#";
-    color: var(--secondary-text-color);
-    margin-right: 0.25em;
   }
 }
 
@@ -100,6 +106,26 @@
   & > h5,
   & > h6 {
     margin: var(--space-l) 0 calc(var(--space-l) * -1);
+  }
+
+  /* https://github.com/remarkjs/remark-autolink-headings */
+  & > h1 [aria-hidden] {
+    display: none;
+  }
+
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    & [aria-hidden] {
+      visibility: hidden;
+    }
+
+    &:focus [aria-hidden],
+    &:hover [aria-hidden] {
+      visibility: visible;
+    }
   }
 
   & > blockquote {

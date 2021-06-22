@@ -30,7 +30,8 @@ export const blogs = metadata.map((meta, index, array) => {
   return {
     ...meta,
     content: contents[index],
-    prev: prev != null ? { path: `/blog/${prev.id}`, title: prev.title } : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
-    next: next != null ? { path: `/blog/${next.id}`, title: next.title } : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
+    path: `/blog/${meta.slug}`,
+    prev: prev != null ? { path: `/blog/${prev.slug}`, title: prev.title } : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
+    next: next != null ? { path: `/blog/${next.slug}`, title: next.title } : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
   };
 });

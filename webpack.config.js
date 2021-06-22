@@ -6,13 +6,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // @ts-expect-error -- TS7016
 const remarkAutolinkHeadings = require("remark-autolink-headings");
+const remarkFootnotes = require("remark-footnotes");
 const remarkGFM = require("remark-gfm");
 // @ts-expect-error -- TS7016
 const remarkHighlight = require("remark-highlight.js");
 const remarkHTML = require("remark-html");
 // @ts-expect-error -- TS7016
 const remarkSlug = require("remark-slug");
-const remarkFootnotes = require("remark-footnotes");
 const remarkRelativeLink = require("./src/remark/remark-relative-link");
 /* eslint-enable @typescript-eslint/no-unsafe-assignment */
 

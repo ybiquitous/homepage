@@ -96,7 +96,7 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, n
         <nav className={s.prevNext}>
           {prev != null ? (
             <a className={s.prevNextLink} href={prev.path}>
-              <span className={s.prevNextContent} title={`Previous: “${prev.title}”`}>
+              <span className={s.prevNextContent} title={`Previous: ${prev.title}`}>
                 {prev.title}
               </span>
             </a>
@@ -105,7 +105,7 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, n
           )}
           {next != null ? (
             <a className={s.prevNextLink} href={next.path}>
-              <span className={s.prevNextContent} title={`Next: “${next.title}”`}>
+              <span className={s.prevNextContent} title={`Next: ${next.title}`}>
                 {next.title}
               </span>
             </a>

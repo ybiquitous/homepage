@@ -9,6 +9,7 @@
   color: var(--secondary-text-color);
   margin-left: 0.5em;
 
+  &:focus,
   &:hover {
     text-decoration: underline;
   }
@@ -111,6 +112,7 @@
   & > h1 [aria-hidden] {
     display: none;
   }
+
   & > h2,
   & > h3,
   & > h4,
@@ -119,6 +121,8 @@
     & [aria-hidden] {
       visibility: hidden;
     }
+
+    &:focus [aria-hidden],
     &:hover [aria-hidden] {
       visibility: visible;
     }

@@ -36,7 +36,7 @@
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
-    "postcss": "^7.0.32",
+    "postcss": "^7.0.36",
     "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^6.1.0",
     "postcss-nesting": "^7.0.1",

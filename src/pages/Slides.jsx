@@ -1,5 +1,5 @@
 import { Breadcrumb, Time, useTitle } from "../utils";
-import s from "./Blog.css"; // borrow
+import s from "./Blog.module.css"; // borrow
 import metadata from "./slides-metadata.json";
 
 export const Slides = () => {

@@ -1,5 +1,5 @@
 import { Link } from "../Link";
-import styles from "./Breadcrumb.css";
+import s from "./Breadcrumb.module.css";
 
 /**
  * @param {{ links: React.ReactNode[] }} props
@@ -9,12 +9,12 @@ export const Breadcrumb = ({ links }) => {
 
   return (
     <nav aria-label="Breadcrumb">
-      <ol className={styles.breadcrumb}>
+      <ol className={s.breadcrumb}>
         {[home, ...links].map((link, index) => (
           <li
             key={index}
             aria-current={index === links.length - 1 ? "page" : undefined}
-            className={styles.breadcrumbItem}
+            className={s.breadcrumbItem}
           >
             {link}
           </li>

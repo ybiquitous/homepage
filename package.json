@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "start": "parcel src/index.html",
-    "build:parcel": "parcel build src/index.html --no-autoinstall --no-cache --no-source-maps",
+    "start": "webpack serve --mode=development --node-env=development",
+    "build:webpack": "webpack build --mode=production",
     "build:slide": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
     "build": "npm-run-all --print-label --parallel build:*",
     "postbuild": "cp -v _redirects dist/",
@@ -27,20 +27,31 @@
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-react": "^7.14.5",
-    "@types/marked": "^2.0.3",
     "@types/node": "^15.6.1",
-    "@types/parcel-bundler": "^1.12.3",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.7",
-    "@ybiquitous/parcel-plugin-markdown": "file:src/parcel/plugin-markdown",
     "autoprefixer": "^9.8.6",
-    "marked": "^2.0.7",
-    "parcel-bundler": "^1.12.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "postcss": "^7.0.32",
     "postcss-custom-media": "^7.0.8",
-    "postcss-modules": "^3.2.2",
+    "postcss-loader": "^6.1.0",
     "postcss-nesting": "^7.0.1",
+    "remark-autolink-headings": "^6.0.1",
+    "remark-gfm": "^1.0.0",
+    "remark-highlight.js": "^6.0.0",
+    "remark-html": "^13.0.1",
+    "remark-loader": "^4.0.0",
     "remark-preset-ybiquitous": "^0.0.4",
+    "remark-slug": "^6.0.0",
+    "style-loader": "^2.0.0",
     "typescript": "^4.3.2",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
     "ybiq": "^13.1.0"
   },
   "eslintConfig": {
@@ -152,7 +163,6 @@
     }
   },
   "postcss": {
-    "modules": true,
     "plugins": [
       "autoprefixer",
       "postcss-nesting",

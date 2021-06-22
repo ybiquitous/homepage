@@ -15,6 +15,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "webpack.config.js"],
   "exclude": ["src/slides-build"]
 }

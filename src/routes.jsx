@@ -10,10 +10,13 @@ export const defaultRoute = () => <NotFound />;
 export const routes = new Map([
   ["/", () => <Home />],
   ["/blog", () => <Blog />],
+  ["/blog/", () => <Blog />],
   ["/slides", () => <Slides />],
+  ["/slides/", () => <Slides />],
   ["*", defaultRoute],
 ]);
 
 for (const blog of blogs) {
   routes.set(`/blog/${blog.id}`, () => <BlogPost {...blog} />);
+  routes.set(`/blog/${blog.id}/`, () => <BlogPost {...blog} />);
 }

@@ -152,3 +152,48 @@
     filter: brightness(0.75);
   }
 }
+
+.prevNext {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-m);
+  margin-top: var(--space-xxl);
+
+  @media (max-width: 575px) {
+    flex-flow: column;
+  }
+}
+
+.prevNextLink {
+  display: inline-flex;
+
+  &:first-child {
+    justify-content: start;
+
+    &::before {
+      content: "«";
+      margin-right: 0.25em;
+    }
+  }
+
+  &:last-child {
+    justify-content: end;
+
+    &::after {
+      content: "»";
+      margin-left: 0.25em;
+    }
+  }
+}
+
+.prevNextContent {
+  display: inline-block;
+  max-width: 20em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @media (max-width: 575px) {
+    max-width: 80vw;
+  }
+}

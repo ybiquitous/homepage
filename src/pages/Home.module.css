@@ -13,7 +13,7 @@
   width: 60px;
   height: 60px;
 
-  @media (--small-viewport-up) {
+  @media (min-width: 576px) {
     width: 90px;
     height: 90px;
   }
@@ -24,7 +24,7 @@
   flex-flow: column;
   margin-left: var(--space-m);
 
-  @media (--small-viewport-up) {
+  @media (min-width: 576px) {
     margin-left: var(--space-l);
   }
 }

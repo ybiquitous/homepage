@@ -24,7 +24,7 @@
 }
 
 .blogToc {
-  @media (--large-viewport-up) {
+  @media (min-width: 1200px) {
     position: fixed;
     right: var(--space-xl);
   }
@@ -53,7 +53,7 @@
   color: var(--secondary-text-color);
   display: flex;
 
-  @media (--small-viewport-down) {
+  @media (max-width: 575px) {
     flex-flow: column;
   }
 

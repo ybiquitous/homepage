@@ -8,6 +8,7 @@ import blog_2020_01 from "./2020/using-nvm-on-github-actions.md";
 import blog_2020_02 from "./2020/rubykaigi-takeout-2020.md";
 import blog_2020_03 from "./2020/rubykaigi-takeout-2020-2.md";
 import blog_2020_04 from "./2020/example-of-type-checking-by-steep.md";
+import blog_2021_01 from "./2021/parcel-to-webpack.md";
 import metadata from "./metadata.json";
 /* eslint-enable import/order */
 
@@ -21,6 +22,7 @@ const contents = [
   blog_2020_02,
   blog_2020_03,
   blog_2020_04,
+  blog_2021_01,
 ];
 /* eslint-enable camelcase */
 

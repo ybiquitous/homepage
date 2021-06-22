@@ -5,7 +5,7 @@ const visit = require("unist-util-visit"); // eslint-disable-line import/no-extr
 module.exports = function removeMarkdownExtension() {
   return (tree) => {
     visit(tree, "link", (node) => {
-      if ("url" in node && typeof node.url === "string") {
+      if ("url" in node && typeof node.url === "string" && !node.url.startsWith("http")) {
         node.url = node.url.replace(/\.md$/u, "");
       }
     });

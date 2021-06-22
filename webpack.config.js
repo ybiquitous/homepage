@@ -12,6 +12,7 @@ const remarkHighlight = require("remark-highlight.js");
 const remarkHTML = require("remark-html");
 // @ts-expect-error -- TS7016
 const remarkSlug = require("remark-slug");
+const remarkFootnotes = require("remark-footnotes");
 const remarkRelativeLink = require("./src/remark/remark-relative-link");
 /* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
@@ -62,6 +63,7 @@ module.exports = {
                   remarkGFM,
                   remarkSlug,
                   [remarkAutolinkHeadings, { behavior: "append" }],
+                  remarkFootnotes,
                   remarkHighlight,
                   remarkHTML,
                 ],

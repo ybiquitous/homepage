@@ -6,17 +6,17 @@ Visit [ybiquitous.me](https://ybiquitous.me/).
 
 ## Development
 
-### Install
+### Setup
 
-Install NPM packages.
+To install packages:
 
 ```sh
 npm ci
 ```
 
-### Start server
+### Start dev server
 
-Start a development server on localhost.
+To start a development server:
 
 ```sh
 npm start
@@ -24,7 +24,7 @@ npm start
 
 ### Build
 
-Bulid static files.
+To bulid static files:
 
 ```sh
 npm run build
@@ -32,13 +32,11 @@ npm run build
 
 ### View
 
-Publish `dist/` directory on HTTP server. For example:
+To view built static files on your browser:
 
 ```sh
-python3 -m http.server --directory dist/
+npm run static
 ```
-
-Then, open [localhost:8000](http://localhost:8000/) in your browser.
 
 ### Deploy
 

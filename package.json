@@ -46,7 +46,7 @@
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^13.0.1",
     "remark-loader": "^4.0.0",
-    "remark-preset-ybiquitous": "^0.0.4",
+    "remark-preset-ybiquitous": "^0.0.5",
     "remark-slug": "^6.0.0",
     "style-loader": "^2.0.0",
     "typescript": "^4.3.4",

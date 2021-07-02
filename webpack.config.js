@@ -1,6 +1,8 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const path = require("path");
+// @ts-expect-error -- TS7016
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // @ts-expect-error -- TS7016
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -82,6 +84,10 @@ module.exports = {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
+    }),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    new CopyPlugin({
+      patterns: [{ from: "src/robots.txt", to: "robots.txt" }],
     }),
   ],
   resolve: {

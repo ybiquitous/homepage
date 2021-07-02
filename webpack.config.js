@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 // @ts-expect-error -- TS7016
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // @ts-expect-error -- TS7016
+const CopyPlugin = require("copy-webpack-plugin");
+// @ts-expect-error -- TS7016
 const remarkAutolinkHeadings = require("remark-autolink-headings");
 const remarkFootnotes = require("remark-footnotes");
 const remarkGFM = require("remark-gfm");
@@ -82,6 +84,9 @@ module.exports = {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "src/robots.txt", to: "robots.txt" }],
     }),
   ],
   resolve: {

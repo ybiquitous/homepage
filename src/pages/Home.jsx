@@ -26,7 +26,7 @@ const Profile = () => (
 
 const Header = () => (
   <header>
-    <h1>
+    <h1 className="text-5xl">
       <a href="/" className={s.headerLink}>
         @ybiquitous
       </a>

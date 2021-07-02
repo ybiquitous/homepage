@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { Router } from "./Router";
 
 const Footer = () => (
-  <footer>
+  <footer className="text-gray-400 mt-12">
     <p>
       <small>© Masafumi Koba</small>
     </p>

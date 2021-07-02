@@ -1,3 +1,6 @@
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+
 :root {
   /* Space */
   --space-xxl: 4rem;
@@ -42,35 +45,35 @@
   --code-bg-color: #eee;
 }
 
-html {
-  box-sizing: border-box;
-}
+/* html { */
+/*   box-sizing: border-box; */
+/* } */
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+/* *, */
+/* *::before, */
+/* *::after { */
+/*   box-sizing: inherit; */
+/* } */
 
 body {
-  background: var(--body-bg-color);
-  color: var(--primary-text-color);
-  margin: auto;
-  max-width: 50rem;
-  padding: var(--space-m);
-  font-family: var(--font-family-serif);
-  font-size: var(--font-size-base);
-  line-height: 1.6;
+  /* background: var(--body-bg-color); */
+  /* color: var(--primary-text-color); */
+  /* margin: auto; */
+  /* max-width: 50rem; */
+  /* padding: var(--space-m); */
+  /* font-family: var(--font-family-serif); */
+  /* font-size: var(--font-size-base); */
+  /* line-height: 1.6; */
 }
 
 main {
-  min-height: 50vh;
-  padding: var(--space-m) 0;
+  /* min-height: 50vh; */
+  /* padding: var(--space-m) 0; */
 }
 
 footer {
-  color: var(--secondary-text-color);
-  margin: var(--space-l) 0 var(--space-m);
+  /* color: var(--secondary-text-color); */
+  /* margin: var(--space-l) 0 var(--space-m); */
 }
 
 h1,
@@ -79,15 +82,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-sans-serif);
+  /* font-family: var(--font-family-sans-serif); */
 }
 
 h1 {
-  font-size: var(--font-size-h1);
+  /* font-size: var(--font-size-h1); */
 }
 
 h2 {
-  font-size: var(--font-size-h2);
+  /* font-size: var(--font-size-h2); */
 }
 
 h3 {

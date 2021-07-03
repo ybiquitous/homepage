@@ -45,30 +45,8 @@
   --code-bg-color: #eee;
 }
 
-/* html { */
-/*   box-sizing: border-box; */
-/* } */
-
-/* *, */
-/* *::before, */
-/* *::after { */
-/*   box-sizing: inherit; */
-/* } */
-
-body {
-  /* background: var(--body-bg-color); */
-  /* color: var(--primary-text-color); */
-  /* margin: auto; */
-  /* max-width: 50rem; */
-  /* padding: var(--space-m); */
-  /* font-family: var(--font-family-serif); */
-  /* font-size: var(--font-size-base); */
-  /* line-height: 1.6; */
-}
-
 main {
-  /* min-height: 50vh; */
-  /* padding: var(--space-m) 0; */
+  /* @apply min-h-screen py-4; */
 }
 
 footer {
@@ -110,7 +88,7 @@ h6 {
 }
 
 small {
-  font-size: var(--font-size-s);
+  /* font-size: var(--font-size-s); */
 }
 
 pre,
@@ -155,12 +133,12 @@ details > summary {
 }
 
 .textButton {
-  background: inherit;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  padding: 0;
-  text-align: left;
+  /* background: inherit; */
+  /* border: none; */
+  /* cursor: pointer; */
+  /* font: inherit; */
+  /* padding: 0; */
+  /* text-align: left; */
 }
 
 :any-link,

@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { Link } from "../Link";
-import { Breadcrumb, Time, useTitle, useExternalLinkAsNewTab } from "../utils";
+import { Breadcrumb, Time, useTitle } from "../utils";
 import s from "./BlogPost.module.css";
 
 /**
@@ -36,7 +36,6 @@ const generateTOC = (content, toc) => {
 // eslint-disable-next-line max-lines-per-function
 export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, next }) => {
   useTitle(title, "Blog");
-  useExternalLinkAsNewTab();
 
   /** @type {React.MutableRefObject<HTMLElement | null>} */
   const contentElement = useRef(null);

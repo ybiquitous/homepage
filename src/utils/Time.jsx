@@ -1,10 +1,8 @@
-import s from "./Time.module.css";
-
 /**
- * @param {{ date: Date, style?: React.CSSProperties }} props
+ * @param {{ date: Date, className?: string }} props
  */
-export const Time = ({ date, style }) => (
-  <time dateTime={date.toISOString()} className={s.time} style={style}>
+export const Time = ({ date, className }) => (
+  <time dateTime={date.toISOString()} className={className}>
     {new Date(date).toLocaleDateString("en", { year: "numeric", month: "long", day: "numeric" })}
   </time>
 );

@@ -16,7 +16,7 @@ export const Home = () => {
         </div>
       </Header>
 
-      <main className="mt-24 mb-32">
+      <main className="py-24">
         <nav>
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
             <Menu link="/blog" icon={faBlog} content="Blog" />

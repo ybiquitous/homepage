@@ -143,11 +143,11 @@ details > summary {
 
 :any-link,
 .link {
-  color: var(--default-primary-color);
-  text-decoration: none;
+  /* color: var(--default-primary-color); */
+  /* text-decoration: none; */
 
   &:hover,
   &:focus {
-    color: var(--accent-color);
+    /* color: var(--accent-color); */
   }
 }

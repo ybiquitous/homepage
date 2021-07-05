@@ -55,7 +55,7 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, n
   return (
     <>
       <header>
-        <Breadcrumb links={[<Link href="/blog">Blog</Link>, `“${title}”`]} />
+        <Breadcrumb items={[<Link href="/blog">Blog</Link>, `“${title}”`]} />
       </header>
 
       <main className={s.blog}>

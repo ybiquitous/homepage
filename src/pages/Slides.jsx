@@ -8,7 +8,7 @@ export const Slides = () => {
   return (
     <>
       <header>
-        <Breadcrumb links={["Slides"]} />
+        <Breadcrumb items={["Slides"]} />
       </header>
 
       <main>

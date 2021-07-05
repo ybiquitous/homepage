@@ -1,4 +1,4 @@
-export { Breadcrumb } from "./Breadcrumb";
-export { Time } from "./Time";
-export { useExternalLinkAsNewTab } from "./useExternalLinkAsNewTab";
-export { useTitle } from "./useTitle";
+export * from "./Breadcrumb";
+export * from "./Time";
+export * from "./useExternalLinkAsNewTab";
+export * from "./useTitle";

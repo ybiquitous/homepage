@@ -1,24 +1,31 @@
+import { isValidElement, cloneElement } from "react";
 import { Link } from "../Link";
-import s from "./Breadcrumb.module.css";
 
 /**
- * @param {{ links: React.ReactNode[] }} props
+ * @param {{ items: React.ReactNode[] }} props
  */
-export const Breadcrumb = ({ links }) => {
+export const Breadcrumb = ({ items }) => {
   const home = <Link href="/">Home</Link>;
 
   return (
     <nav aria-label="Breadcrumb">
-      <ol className={s.breadcrumb}>
-        {[home, ...links].map((link, index) => (
-          <li
-            key={index}
-            aria-current={index === links.length - 1 ? "page" : undefined}
-            className={s.breadcrumbItem}
-          >
-            {link}
-          </li>
-        ))}
+      <ol className="flex flex-wrap">
+        {[home, ...items].map((item, index, items) => {
+          const current = index === items.length - 1;
+          const classNames = ["inline-flex items-center"];
+          if (!current) {
+            classNames.push("text-gray-400 after:content-['/'] after:text-xs after:mx-2");
+          }
+          return (
+            <li
+              key={index}
+              aria-current={current ? "page" : undefined}
+              className={classNames.join(" ")}
+            >
+              {isValidElement(item) ? cloneElement(item, { className: "hover:underline" }) : item}
+            </li>
+          );
+        })}
       </ol>
     </nav>
   );

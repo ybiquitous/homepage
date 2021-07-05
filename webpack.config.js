@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // @ts-expect-error -- TS7016
 const remarkAutolinkHeadings = require("remark-autolink-headings");
+const remarkExternalLinks = require("remark-external-links");
 const remarkFootnotes = require("remark-footnotes");
 const remarkGFM = require("remark-gfm");
 // @ts-expect-error -- TS7016
@@ -65,6 +66,7 @@ module.exports = {
                   remarkGFM,
                   remarkSlug,
                   [remarkAutolinkHeadings, { behavior: "append" }],
+                  remarkExternalLinks,
                   remarkFootnotes,
                   remarkHighlight,
                   remarkHTML,

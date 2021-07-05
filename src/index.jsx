@@ -7,7 +7,7 @@ const Root = () => {
     <>
       <Router />
 
-      <footer className="text-gray-400 text-center mt-24">
+      <footer className="text-gray-400 text-center mt-16">
         <p>
           <small>© Masafumi Koba</small>
         </p>

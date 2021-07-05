@@ -12,9 +12,9 @@ export const Blog = () => {
       </header>
 
       <main>
-        <h1 className="text-3xl mt-8 mb-12">Recent posts</h1>
+        <h1 className="text-4xl mt-8 mb-16">Recent posts</h1>
 
-        <ul className="space-y-12">
+        <ul className="space-y-16">
           {blogs
             .filter(({ published }) => published != null)
             .sort((a, b) => {
@@ -25,10 +25,12 @@ export const Blog = () => {
             })
             .map(({ path, title, published }) => (
               <li key={path}>
-                <Link href={path} className="block text-lg text-blue-800">
-                  {title}
+                <Link href={path} className="block text-blue-800 hover:underline">
+                  <div className="text-lg">{title}</div>
+                  {published != null && (
+                    <Time date={new Date(published)} className="text-gray-400" />
+                  )}
                 </Link>
-                {published != null && <Time date={new Date(published)} className="text-gray-400" />}
               </li>
             ))}
         </ul>

@@ -8,9 +8,9 @@ import { Link } from "../../Link";
  */
 export const Menu = ({ link, icon, content, subContent }) => {
   return (
-    <div className="text-xl border rounded shadow hover:shadow-lg hover:bg-blue-50 transition-shadow transition-colors">
+    <div className="text-xl border rounded shadow hover:shadow-lg hover:text-blue-800 transition-shadow">
       <Link className="flex items-center px-5 pb-5 pt-6 gap-4" href={link}>
-        <FontAwesomeIcon icon={icon} fixedWidth className="text-gray-600" />
+        <FontAwesomeIcon icon={icon} fixedWidth />
         <span>{content}</span>
         {subContent != null && <small className="text-gray-400">{subContent}</small>}
       </Link>

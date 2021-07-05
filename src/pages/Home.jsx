@@ -1,7 +1,6 @@
 import { faGithub, faNpm, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faBlog, faGem, faImages } from "@fortawesome/free-solid-svg-icons";
 import { useTitle } from "../utils";
-import { Header } from "./Home/Header";
 import { Profile } from "./Home/Profile";
 import { Menu } from "./Home/Menu";
 
@@ -10,13 +9,11 @@ export const Home = () => {
 
   return (
     <>
-      <Header>
-        <div className="mt-16">
-          <Profile />
-        </div>
-      </Header>
+      <header className="md:mt-24">
+        <Profile />
+      </header>
 
-      <main className="py-24">
+      <main className="py-8 md:py-24">
         <nav>
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
             <Menu link="/blog" icon={faBlog} content="Blog" />

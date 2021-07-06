@@ -2,6 +2,7 @@
 
 :global(.hljs) {
   background: transparent;
+  padding: 0;
 }
 
 /* https://github.com/remarkjs/remark-autolink-headings */
@@ -20,7 +21,11 @@
 }
 
 .blog {
-  padding: var(--space-xl) 0 var(--space-m);
+  /* padding: var(--space-xl) 0 var(--space-m); */
+
+  & h1 {
+    @apply text-xl;
+  }
 }
 
 .blogToc {

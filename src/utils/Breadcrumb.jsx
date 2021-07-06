@@ -14,7 +14,7 @@ export const Breadcrumb = ({ items }) => {
           const current = index === items.length - 1;
           const classNames = ["inline-flex items-center"];
           if (!current) {
-            classNames.push("text-gray-400 after:content-['/'] after:text-xs after:mx-2");
+            classNames.push("my-text-gray after:content-['/'] after:text-xs after:mx-2");
           }
           return (
             <li
@@ -22,7 +22,9 @@ export const Breadcrumb = ({ items }) => {
               aria-current={current ? "page" : undefined}
               className={classNames.join(" ")}
             >
-              {isValidElement(item) ? cloneElement(item, { className: "hover:underline" }) : item}
+              {isValidElement(item)
+                ? cloneElement(item, { className: "hover:my-link-color" })
+                : item}
             </li>
           );
         })}

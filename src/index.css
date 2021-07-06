@@ -72,19 +72,19 @@ h2 {
 }
 
 h3 {
-  font-size: var(--font-size-h3);
+  /* font-size: var(--font-size-h3); */
 }
 
 h4 {
-  font-size: var(--font-size-h4);
+  /* font-size: var(--font-size-h4); */
 }
 
 h5 {
-  font-size: var(--font-size-h5);
+  /* font-size: var(--font-size-h5); */
 }
 
 h6 {
-  font-size: var(--font-size-h6);
+  /* font-size: var(--font-size-h6); */
 }
 
 small {
@@ -95,59 +95,46 @@ pre,
 code,
 kbd,
 samp {
-  font-family: var(--font-family-monospace);
-  font-size: var(--font-size-code);
+  /* font-family: var(--font-family-monospace); */
+  /* font-size: var(--font-size-code); */
 }
 
 code {
-  background: var(--code-bg-color);
-  border-radius: var(--border-radius);
-  padding: 0.1em 0.3em;
-  margin: 0;
+  /* background: var(--code-bg-color); */
+  /* border-radius: var(--border-radius); */
+  /* padding: 0.1em 0.3em; */
+  /* margin: 0; */
 }
 
 pre {
-  background: var(--code-bg-color);
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-base);
-  overflow: auto;
-  padding: var(--space-m);
+  /* background: var(--code-bg-color); */
+  /* border-radius: var(--border-radius); */
+  /* font-size: var(--font-size-base); */
+  /* overflow: auto; */
+  /* padding: var(--space-m); */
 
-  & > code {
-    padding: 0;
-  }
+  /* & > code { */
+  /*   padding: 0; */
+  /* } */
 }
 
 hr {
-  border: 0;
-  height: 1px;
-  background: var(--divider-color);
-  margin: var(--space-xl) 0;
+  /* border: 0; */
+  /* height: 1px; */
+  /* background: var(--divider-color); */
+  /* margin: var(--space-xl) 0; */
 }
 
 details > summary {
-  &:focus,
-  &:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+@layer utilities {
+  .my-link-color {
+    @apply text-blue-800;
   }
-}
 
-.textButton {
-  /* background: inherit; */
-  /* border: none; */
-  /* cursor: pointer; */
-  /* font: inherit; */
-  /* padding: 0; */
-  /* text-align: left; */
-}
-
-:any-link,
-.link {
-  /* color: var(--default-primary-color); */
-  /* text-decoration: none; */
-
-  &:hover,
-  &:focus {
-    /* color: var(--accent-color); */
+  .my-text-gray {
+    @apply text-gray-400;
   }
 }

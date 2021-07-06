@@ -11,21 +11,15 @@ export const Slides = () => {
         <Breadcrumb items={["Slides"]} />
       </header>
 
-      <main>
-        <h1 className="text-3xl mt-8 mb-16">Recent slides</h1>
-
-        <ul className="space-y-12">
+      <main className="mt-16">
+        <ul className="space-y-16">
           {metadata
             .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
             .map(({ id, title, date }) => (
               <li key={id}>
-                <Link
-                  href={`/slides/${id}`}
-                  className="block text-blue-800 hover:underline"
-                  external
-                >
-                  <div className="text-lg">{title}</div>
-                  <Time date={new Date(date)} className="text-gray-400" />
+                <Link href={`/slides/${id}`} className="block hover:my-link-color" external>
+                  <div className="font-semibold text-xl">{title}</div>
+                  <Time date={new Date(date)} className="my-text-gray" />
                 </Link>
               </li>
             ))}

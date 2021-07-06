@@ -11,9 +11,7 @@ export const Blog = () => {
         <Breadcrumb items={["Blog"]} />
       </header>
 
-      <main>
-        <h1 className="text-4xl mt-8 mb-16">Recent posts</h1>
-
+      <main className="mt-16">
         <ul className="space-y-16">
           {blogs
             .filter(({ published }) => published != null)
@@ -25,10 +23,10 @@ export const Blog = () => {
             })
             .map(({ path, title, published }) => (
               <li key={path}>
-                <Link href={path} className="block text-blue-800 hover:underline">
-                  <div className="text-lg">{title}</div>
+                <Link href={path} className="block hover:my-link-color">
+                  <div className="font-semibold text-xl">{title}</div>
                   {published != null && (
-                    <Time date={new Date(published)} className="text-gray-400" />
+                    <Time date={new Date(published)} className="my-text-gray" />
                   )}
                 </Link>
               </li>

@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const path = require("path");
 // @ts-expect-error -- TS7016
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+// @ts-expect-error -- TS7016
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // @ts-expect-error -- TS7016
@@ -83,6 +85,9 @@ module.exports = {
       patterns: [{ from: "src/robots.txt", to: "robots.txt" }],
     }),
   ],
+  optimization: {
+    minimizer: ["...", new CssMinimizerPlugin()],
+  },
   resolve: {
     extensions: [".jsx", "..."],
   },

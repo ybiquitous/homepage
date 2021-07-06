@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "start": "webpack serve --mode=development --node-env=development",
-    "build:webpack": "webpack build --mode=production",
+    "build:webpack": "webpack build --mode=production --node-env=production",
     "build:slide": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
     "build": "npm-run-all --print-label --parallel build:*",
     "postbuild": "cp -v _redirects dist/",
@@ -35,6 +35,7 @@
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^5.2.6",
+    "css-minimizer-webpack-plugin": "^3.0.2",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.0.0",

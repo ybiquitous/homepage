@@ -9,11 +9,11 @@ export const Navi = ({ prev, next }) => {
   const itemClassName = "truncate inline-block max-w-max sm:max-w-sm";
 
   return (
-    <nav className="flex flex-col sm:flex-row justify-between gap-4 mt-20">
+    <nav className="flex flex-col sm:flex-row justify-between gap-4">
       {prev != null ? (
         <Link href={prev.path} className="inline-flex hover:my-link-color">
-          <span className="mr-1">←</span>
-          <span title={`Previous: ${prev.title}`} className={itemClassName}>
+          <span className="mr-1 my-text-gray">Prev:</span>
+          <span title={prev.title} className={itemClassName}>
             {prev.title}
           </span>
         </Link>
@@ -23,10 +23,10 @@ export const Navi = ({ prev, next }) => {
 
       {next != null ? (
         <Link href={next.path} className="inline-flex hover:my-link-color">
-          <span title={`Next: ${next.title}`} className={itemClassName}>
+          <span className="mr-1 my-text-gray">Next:</span>
+          <span title={next.title} className={itemClassName}>
             {next.title}
           </span>
-          <span className="ml-1">→</span>
         </Link>
       ) : (
         <span />

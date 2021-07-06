@@ -66,16 +66,18 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, n
 
         {tags.length !== 0 && <Tags tags={tags} />}
 
-        <details className="my-text-gray text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4">
+        <details className="text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4">
           <summary>Table of Contents</summary>
-          <ul ref={tocElement} className="space-y-4 mt-4" />
+          <ul ref={tocElement} className="my-text-gray space-y-4 mt-4" />
         </details>
 
         <article
           ref={contentElement}
           dangerouslySetInnerHTML={{ __html: content }}
-          className="markdown"
+          className="markdown mt-12"
         />
+
+        <hr className="mt-24 mb-4" />
 
         <Navi prev={prev} next={next} />
       </main>

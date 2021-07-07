@@ -23,19 +23,16 @@ const generateTOC = (content, toc) => {
 };
 
 /**
- * @typedef {Object} Props
- * @property {string} title
- * @property {string | null} published
- * @property {string | null} lastUpdated
- * @property {string} author
- * @property {string[]} tags
- * @property {string} content
- * @property {{ path: string, title: string } | null} prev
- * @property {{ path: string, title: string } | null} next
- */
-
-/**
- * @param {Props} props
+ * @param {{
+ *   title: string,
+ *   published: string | null,
+ *   lastUpdated: string | null,
+ *   author: string,
+ *   tags: string[],
+ *   content: string,
+ *   prev: { path: string, title: string } | null,
+ *   next: { path: string, title: string } | null,
+ * }} props
  */
 // eslint-disable-next-line max-lines-per-function
 export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, next }) => {

@@ -1,9 +1,10 @@
 import { Link } from "../../Link";
 
-/** @typedef {{ path: string, title: string }} Path */
-
 /**
- * @param {{ prev: Path | null, next: Path | null }} props
+ * @param {{
+ *   prev: { path: string, title: string } | null,
+ *   next: { path: string, title: string } | null,
+ * }} props
  */
 export const Navi = ({ prev, next }) => {
   const itemClassName = "truncate inline-block max-w-max sm:max-w-sm";

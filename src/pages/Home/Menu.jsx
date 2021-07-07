@@ -1,10 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "../../Link";
 
-/** @typedef {import("@fortawesome/react-fontawesome").FontAwesomeIconProps} IconProps */
-
 /**
- * @param {{ link: string, icon: IconProps["icon"], content: string, subContent?: string }} props
+ * @param {{
+ *   link: string,
+ *   icon: import("@fortawesome/react-fontawesome").FontAwesomeIconProps["icon"],
+ *   content: string,
+ *   subContent?: string,
+ * }} props
  */
 export const Menu = ({ link, icon, content, subContent }) => {
   return (

@@ -24,6 +24,7 @@ const generateTOC = (content, toc) => {
 
 /**
  * @param {{
+ *   slug: string,
  *   title: string,
  *   published: string | null,
  *   lastUpdated: string | null,
@@ -35,7 +36,7 @@ const generateTOC = (content, toc) => {
  * }} props
  */
 // eslint-disable-next-line max-lines-per-function
-export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, next }) => {
+export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, prev, next }) => {
   useTitle(title, "Blog");
 
   /** @type {React.MutableRefObject<HTMLElement | null>} */
@@ -44,13 +45,19 @@ export const BlogPost = ({ title, published, lastUpdated, tags, content, prev, n
   const tocElement = useRef(null);
 
   useEffect(() => {
-    const contentEl = contentElement.current;
-    const tocEl = tocElement.current;
-    if (contentEl && tocEl) {
-      window.scrollTo(0, 0);
-      generateTOC(contentEl, tocEl);
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  useEffect(() => {
+    if (contentElement.current && tocElement.current) {
+      generateTOC(contentElement.current, tocElement.current);
     }
-  }, [contentElement, tocElement]);
+    return () => {
+      if (tocElement.current) {
+        tocElement.current.innerHTML = ""; // clear
+      }
+    };
+  }, [slug, contentElement.current, tocElement.current]);
 
   return (
     <>

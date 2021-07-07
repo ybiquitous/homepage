@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "start": "webpack serve --mode=development --node-env=development",
-    "build:webpack": "webpack build --mode=production --node-env=production",
+    "build:webpack": "webpack build --mode=production",
     "build:slides": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
     "build": "npm-run-all --print-label build:webpack build:slides",
     "postbuild": "cp -v _redirects dist/",
@@ -13,6 +13,7 @@
     "lint:md": "remark .",
     "lint:md:fix": "remark . --output",
     "lint:types": "tsc --noEmit",
+    "lint:types:watch": "npm run lint:types -- --watch",
     "prettier": "prettier .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write"
@@ -29,8 +30,8 @@
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-react": "^7.14.5",
-    "@types/node": "^15.12.5",
-    "@types/react": "^17.0.12",
+    "@types/node": "^16.0.0",
+    "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.2",
@@ -39,9 +40,9 @@
     "css-minimizer-webpack-plugin": "^3.0.2",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
-    "mini-css-extract-plugin": "^2.0.0",
+    "mini-css-extract-plugin": "^2.1.0",
     "postcss": "^8.3.5",
-    "postcss-loader": "^6.1.0",
+    "postcss-loader": "^6.1.1",
     "remark-autolink-headings": "^6.0.1",
     "remark-external-links": "^8.0.0",
     "remark-footnotes": "^3.0.0",
@@ -55,10 +56,10 @@
     "tailwindcss": "^2.2.4",
     "typescript": "^4.3.5",
     "unist-util-visit": "^2.0.3",
-    "webpack": "^5.41.1",
+    "webpack": "^5.43.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
-    "ybiq": "^13.1.0"
+    "ybiq": "^13.2.0"
   },
   "eslintConfig": {
     "root": true,
@@ -70,6 +71,7 @@
     "ignorePatterns": [
       "coverage",
       "dist",
+      "tmp",
       "src/slides",
       "src/slides-build"
     ],
@@ -133,19 +135,6 @@
       "stylelint-high-performance-animation"
     ],
     "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "tailwind",
-            "apply",
-            "layer",
-            "variants",
-            "responsive",
-            "screen"
-          ]
-        }
-      ],
       "declaration-block-no-duplicate-properties": true,
       "declaration-block-trailing-semicolon": null,
       "declaration-property-value-whitelist": {
@@ -193,9 +182,8 @@
   },
   "postcss": {
     "plugins": [
-      "tailwindcss/nesting",
-      "tailwindcss",
-      "autoprefixer"
+      "autoprefixer",
+      "postcss-nesting"
     ]
   },
   "lint-staged": {

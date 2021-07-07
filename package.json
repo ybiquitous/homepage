@@ -8,6 +8,7 @@
     "postbuild": "cp -v _redirects dist/",
     "static": "npm run build && npx http-server ./dist",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
+    "lint-ci": "npm-run-all --silent --parallel lint:* prettier:check",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:md": "remark .",
     "lint:md:fix": "remark . --output",

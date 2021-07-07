@@ -12,8 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: echo ::set-output name=nvmrc::$(cat .nvmrc)
+        id: nvm
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.x"
+          node-version: "${{ steps.nvm.outputs.nvmrc }}"
       - run: npm install eslint-config-ybiquitous @typescript-eslint/eslint-plugin
       - run: npx eslint .

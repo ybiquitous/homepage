@@ -13,6 +13,7 @@
     "lint:md": "remark .",
     "lint:md:fix": "remark . --output",
     "lint:types": "tsc --noEmit",
+    "lint:types:watch": "npm run lint:types -- --watch",
     "prettier": "prettier .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write"
@@ -58,7 +59,7 @@
     "webpack": "^5.43.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
-    "ybiq": "^13.1.0"
+    "ybiq": "^13.2.0"
   },
   "eslintConfig": {
     "root": true,
@@ -70,6 +71,7 @@
     "ignorePatterns": [
       "coverage",
       "dist",
+      "tmp",
       "src/slides",
       "src/slides-build"
     ],

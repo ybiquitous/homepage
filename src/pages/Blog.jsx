@@ -1,6 +1,5 @@
 import { Link } from "../Link";
 import { Breadcrumb, Time, useTitle } from "../utils";
-import s from "./Blog.module.css";
 import { blogs } from "../blog/index";
 
 export const Blog = () => {
@@ -9,13 +8,11 @@ export const Blog = () => {
   return (
     <>
       <header>
-        <Breadcrumb links={["Blog"]} />
+        <Breadcrumb items={["Blog"]} />
       </header>
 
-      <main>
-        <h1 className={s.title}>Recent posts</h1>
-
-        <ul className={s.list}>
+      <main className="mt-16">
+        <ul className="space-y-16">
           {blogs
             .filter(({ published }) => published != null)
             .sort((a, b) => {
@@ -25,11 +22,13 @@ export const Blog = () => {
               return Date.parse(b.published) - Date.parse(a.published);
             })
             .map(({ path, title, published }) => (
-              <li key={path} className={s.listItem}>
-                <Link href={path} className={s.link}>
-                  {title}
+              <li key={path}>
+                <Link href={path} className="block hover:my-link-color">
+                  <div className="font-semibold text-xl">{title}</div>
+                  {published != null && (
+                    <Time date={new Date(published)} className="my-text-gray" />
+                  )}
                 </Link>
-                {published != null && <Time date={new Date(published)} />}
               </li>
             ))}
         </ul>

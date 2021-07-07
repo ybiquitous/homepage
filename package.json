@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "start": "webpack serve --mode=development --node-env=development",
-    "build:webpack": "webpack build --mode=production",
+    "build:webpack": "webpack build --mode=production --node-env=production",
     "build:slides": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
     "build": "npm-run-all --print-label build:webpack build:slides",
     "postbuild": "cp -v _redirects dist/",
@@ -43,7 +43,6 @@
     "mini-css-extract-plugin": "^2.1.0",
     "postcss": "^8.3.5",
     "postcss-loader": "^6.1.1",
-    "postcss-nesting": "^8.0.1",
     "remark-autolink-headings": "^6.0.1",
     "remark-external-links": "^8.0.0",
     "remark-footnotes": "^3.0.0",
@@ -54,6 +53,7 @@
     "remark-preset-ybiquitous": "^0.0.5",
     "remark-slug": "^6.0.0",
     "style-loader": "^3.0.0",
+    "tailwindcss": "^2.2.4",
     "typescript": "^4.3.5",
     "unist-util-visit": "^2.0.3",
     "webpack": "^5.43.0",
@@ -135,6 +135,19 @@
       "stylelint-high-performance-animation"
     ],
     "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "tailwind",
+            "apply",
+            "layer",
+            "variants",
+            "responsive",
+            "screen"
+          ]
+        }
+      ],
       "declaration-block-no-duplicate-properties": true,
       "declaration-block-trailing-semicolon": null,
       "declaration-property-value-whitelist": {
@@ -182,8 +195,9 @@
   },
   "postcss": {
     "plugins": [
-      "autoprefixer",
-      "postcss-nesting"
+      "tailwindcss/nesting",
+      "tailwindcss",
+      "autoprefixer"
     ]
   },
   "lint-staged": {

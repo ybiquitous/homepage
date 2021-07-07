@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const Profile = () => (
   <div className="flex items-center">
     <img
-      className="rounded-full w-32"
+      className="rounded-full w-32 h-32"
       src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
       alt="Avatar"
     />

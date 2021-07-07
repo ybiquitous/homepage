@@ -59,36 +59,8 @@ details {
       @apply text-base mt-8 mb-4;
     }
 
-    & > blockquote {
-      @apply text-gray-500 border-l-4 border-gray-400 px-4;
-
-      & > p {
-        @apply mt-4;
-      }
-    }
-
-    & pre {
-      @apply bg-gray-100 rounded p-4 overflow-auto;
-
-      & > code {
-        @apply p-0;
-      }
-    }
-
-    & code {
-      @apply bg-gray-100 rounded px-1 py-0.5;
-    }
-
     & p {
       @apply leading-loose;
-    }
-
-    & a[href] {
-      @apply my-link-color;
-    }
-
-    & details {
-      @apply my-4;
     }
 
     & > p,
@@ -112,6 +84,34 @@ details {
       @apply list-decimal;
     }
 
+    & > blockquote {
+      @apply text-gray-500 border-l-4 border-gray-400 px-4;
+
+      & > p {
+        @apply mt-4;
+      }
+    }
+
+    & code {
+      @apply bg-gray-100 rounded px-1 py-0.5;
+    }
+
+    & pre {
+      @apply bg-gray-100 rounded p-4 overflow-auto;
+
+      & > code {
+        @apply p-0;
+      }
+    }
+
+    & a[href] {
+      @apply my-link-color;
+    }
+
+    & details {
+      @apply my-4;
+    }
+
     /* https://github.com/remarkjs/remark-autolink-headings */
     .icon-link {
       @apply before:content-['#'] ml-4 text-gray-400 hover:text-current;
@@ -130,8 +130,11 @@ details {
         visibility: hidden;
       }
 
-      &:hover a[aria-hidden] {
-        visibility: visible;
+      &:hover,
+      &:focus {
+        & a[aria-hidden] {
+          visibility: visible;
+        }
       }
     }
 

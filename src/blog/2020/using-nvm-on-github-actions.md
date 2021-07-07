@@ -2,6 +2,31 @@
 
 よく忘れるので、GitHub Actionsで[nvm](https://github.com/nvm-sh/nvm)を使う方法をメモしておく。
 
+## 基本的にはactions/setup-nodeだけでよい
+
+*（2021年7月7日追記）*
+
+[actions/setup-node@v2.2.0](https://github.com/actions/setup-node/releases/tag/v2.2.0)がnvm互換の `lts` エイリアスに対応した（例．`lts/*`）。
+
+したがって基本的には（未サポートのnvm固有シンタックスを使ってないかぎり）、以下のようにactions/setup-nodeの `node-version` に `.nvmrc` の値をセットするだけで良いんじゃないかと思う。
+
+```yaml
+# See: https://github.com/actions/setup-node/issues/32#issuecomment-539794249
+steps:
+  - run: echo ::set-output name=nvmrc::$(cat .nvmrc)
+    id: nvm
+  - uses: actions/setup-node@v2
+    with:
+      node-version: "${{ steps.nvm.outputs.nvmrc }}"
+```
+
+（当サイトでも[ybiquitous/homepage#545](https://github.com/ybiquitous/homepage/pull/545)にて変更）
+
+`bash` のこととか考えなくて良くなるし、actions/setup-nodeビルトインの[Problem Matchers](https://github.com/actions/toolkit/blob/45647689407e7fb224e06d066dde6aefa67a365f/docs/problem-matchers.md)も使えるし。
+多くの場合、Node.jsイメージのキャッシュも効くはず。
+
+どうしても `nvm` を使いたい場合は、従来どおり以下の内容が有効。
+
 ## nvmはプリインストール済み
 
 2020年6月4日現在、nvmは `ubuntu-latest` (Ubuntu 18.04) イメージに[デフォルトでインストール](https://github.com/actions/virtual-environments/blob/ubuntu18/20200604.1/images/linux/Ubuntu1804-README.md)されている（バージョンは **0.35.3**）。つまり、サードパーティのActionを入れる必要はない。

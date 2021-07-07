@@ -3,8 +3,8 @@
   "scripts": {
     "start": "webpack serve --mode=development --node-env=development",
     "build:webpack": "webpack build --mode=production --node-env=production",
-    "build:slide": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
-    "build": "npm-run-all --print-label --parallel build:*",
+    "build:slides": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
+    "build": "npm-run-all --print-label build:webpack build:slides",
     "postbuild": "cp -v _redirects dist/",
     "static": "npm run build && npx http-server ./dist",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",

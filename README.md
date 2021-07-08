@@ -51,4 +51,3 @@ git push
 - [React](https://reactjs.org/)
 - [Webpack](https://webpack.js.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-

@@ -28,9 +28,26 @@ JSのサンプルコードは[Tailwind CSSのドキュメント](https://tailwin
 
 アクセシビリティ（a11y）とかも考えると色とかはもっと考えたほうがいいかもしれないけど、まあ直感で見やすいものを選んだ。
 
-## Tip
+## Tips
+
+### テスト
 
 テストをどうしようかと考えていたけど、OSの設定をその都度変えればいいだけだった。
 macOSの場合は [ > System Preferences > General](https://support.apple.com/en-us/HT208976) で切り替えられる。
 
-以上。
+### 条件付き@import
+
+highlight.jsのテーマを2つも読み込みたくないなぁと思ってググったら、[`@import`](http://developer.mozilla.org/en-US/docs/Web/CSS/@import)にメディアクエリを指定できることを始めて知った。
+
+以下、実コードより抜粋。
+
+```css
+@import "highlight.js/styles/github.css" (prefers-color-scheme: light);
+@import "highlight.js/styles/github-dark.css" (prefers-color-scheme: dark);
+```
+
+さすがにバンドルされたCSSには両方含まれる。適用されるCSSがOSの設定によって変わるだけ。
+
+## まとめ
+
+本当に思っていたよりも簡単で拍子抜けしてしまった。以上。

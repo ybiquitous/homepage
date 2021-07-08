@@ -1,7 +1,7 @@
 # Dark Mode
 
 当サイトにDark Modeを導入したので、作業ログを残す。
-変更のすべては[ybiquitous/homepage#559](https://github.com/ybiquitous/homepage/pull/559)にある。
+変更のすべては [ybiquitous/homepage#559](https://github.com/ybiquitous/homepage/pull/559) にある。
 
 ## やったこと
 

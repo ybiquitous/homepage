@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
-@import "highlight.js/styles/xcode.css";
+@import "highlight.js/styles/github.css" (prefers-color-scheme: light);
+@import "highlight.js/styles/github-dark.css" (prefers-color-scheme: dark);
 
 details {
   & > summary {
@@ -14,11 +15,15 @@ details {
 
 @layer utilities {
   .my-link-color {
-    @apply text-blue-700;
+    @apply text-blue-700 dark:text-blue-400;
+  }
+
+  .my-link-border-color {
+    @apply border-blue-700 dark:border-blue-400;
   }
 
   .my-text-gray {
-    @apply text-gray-400;
+    @apply text-gray-400 dark:text-gray-500;
   }
 
   .markdown {
@@ -85,7 +90,7 @@ details {
     }
 
     & > blockquote {
-      @apply text-gray-500 border-l-4 border-gray-400 px-4;
+      @apply text-gray-500 border-l-4 border-gray-400 px-4 dark:text-gray-400;
 
       & > p {
         @apply mt-4;
@@ -93,11 +98,11 @@ details {
     }
 
     & code {
-      @apply bg-gray-100 rounded px-1 py-0.5;
+      @apply bg-gray-100 rounded px-1 py-0.5 dark:bg-gray-800;
     }
 
     & pre {
-      @apply bg-gray-100 rounded p-4 overflow-auto;
+      @apply bg-gray-100 rounded p-4 overflow-auto dark:bg-gray-800;
 
       & > code {
         @apply p-0;

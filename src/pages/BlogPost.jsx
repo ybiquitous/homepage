@@ -72,7 +72,7 @@ export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, p
 
         <details className="text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4">
           <summary>Table of Contents</summary>
-          <ul ref={tocElement} className="my-text-gray space-y-4 mt-4" />
+          <ul ref={tocElement} className="space-y-4 mt-4" />
         </details>
 
         <article

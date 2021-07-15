@@ -24,7 +24,7 @@ export const Blog = () => {
             .map(({ path, title, published }) => (
               <li key={path}>
                 <Link href={path} className="block hover:my-link-color">
-                  <div className="font-semibold text-xl">{title}</div>
+                  <div className="font-sans text-xl">{title}</div>
                   {published != null && (
                     <Time date={new Date(published)} className="my-text-gray" />
                   )}

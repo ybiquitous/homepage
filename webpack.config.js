@@ -16,7 +16,6 @@ const remarkGFM = require("remark-gfm");
 // @ts-expect-error -- TS7016
 const remarkHighlight = require("remark-highlight.js");
 const remarkHTML = require("remark-html");
-// @ts-expect-error -- TS7016
 const remarkSlug = require("remark-slug");
 const remarkRelativeLink = require("./src/remark/remark-relative-link");
 /* eslint-enable @typescript-eslint/no-unsafe-assignment */

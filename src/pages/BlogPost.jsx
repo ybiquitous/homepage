@@ -49,6 +49,9 @@ export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, p
   }, [slug]);
 
   useEffect(() => {
+    if (contentElement.current) {
+      contentElement.current.querySelectorAll("h1").forEach((el) => el.remove());
+    }
     if (contentElement.current && tocElement.current) {
       generateTOC(contentElement.current, tocElement.current);
     }
@@ -66,19 +69,27 @@ export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, p
       </header>
 
       <main className="mt-12">
-        <Times published={published} lastUpdated={lastUpdated} />
+        <h1 className="font-sans font-semibold text-5xl leading-tight">{title}</h1>
 
-        {tags.length !== 0 && <Tags tags={tags} />}
+        {tags.length !== 0 && (
+          <div className="mt-8">
+            <Tags tags={tags} />
+          </div>
+        )}
 
-        <details className="text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4">
+        <div className="mt-4">
+          <Times published={published} lastUpdated={lastUpdated} />
+        </div>
+
+        <details className="my-text-gray text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4">
           <summary>Table of Contents</summary>
-          <ul ref={tocElement} className="space-y-4 mt-4" />
+          <ul ref={tocElement} className="space-y-2 mt-4" />
         </details>
 
         <article
           ref={contentElement}
           dangerouslySetInnerHTML={{ __html: content }}
-          className="markdown mt-12"
+          className="markdown mt-16"
         />
 
         <hr className="mt-24 mb-4" />

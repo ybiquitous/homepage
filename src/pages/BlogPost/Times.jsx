@@ -5,19 +5,23 @@ import { Time } from "../../utils";
  */
 export const Times = ({ published, lastUpdated }) => {
   return (
-    <div className="flex flex-col sm:flex-row sm:gap-8">
+    <div className="text-sm my-text-gray flex flex-col sm:flex-row sm:gap-12">
       {published != null ? (
         <span>
-          <span className="my-text-gray">Published on </span>
-          <Time date={new Date(published)} />
+          <em>
+            <Time date={new Date(published)} />
+          </em>
+          <span className="ml-2">published</span>
         </span>
       ) : (
         <em>Unpublished</em>
       )}
       {lastUpdated != null && (
         <span>
-          <span className="my-text-gray">Updated on </span>
-          <Time date={new Date(lastUpdated)} />
+          <em>
+            <Time date={new Date(lastUpdated)} />
+          </em>
+          <span className="ml-2">updated</span>
         </span>
       )}
     </div>

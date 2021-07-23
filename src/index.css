@@ -41,7 +41,7 @@ details {
     }
 
     & > h1 {
-      @apply text-4xl mt-4 mb-12;
+      @apply text-5xl mt-4 mb-12;
     }
 
     & > h2 {

@@ -69,7 +69,7 @@ export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, p
       </header>
 
       <main className="mt-12">
-        <h1 className="font-sans font-semibold text-5xl">{title}</h1>
+        <h1 className="font-sans font-semibold text-5xl leading-tight">{title}</h1>
 
         {tags.length !== 0 && (
           <div className="mt-8">

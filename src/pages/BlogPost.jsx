@@ -71,12 +71,6 @@ export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, p
       <main className="mt-12">
         <h1 className="font-sans font-semibold text-5xl leading-tight">{title}</h1>
 
-        {tags.length !== 0 && (
-          <div className="mt-8">
-            <Tags tags={tags} />
-          </div>
-        )}
-
         <div className="mt-4">
           <Times published={published} lastUpdated={lastUpdated} />
         </div>
@@ -92,7 +86,13 @@ export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, p
           className="markdown mt-16"
         />
 
-        <hr className="mt-24 mb-4" />
+        {tags.length !== 0 && (
+          <div className="mt-16">
+            <Tags tags={tags} />
+          </div>
+        )}
+
+        <hr className="mt-8 mb-4" />
 
         <Navi prev={prev} next={next} />
       </main>

@@ -6,7 +6,7 @@ export const Tags = ({ tags }) => {
     <div className="flex gap-2 font-sans">
       {tags.map((tag) => (
         <small
-          className="bg-gray-100 text-gray-500 hover:text-white hover:bg-green-500 rounded-md py-1 px-2"
+          className="border border-gray-300 hover:border-current rounded-md py-1 px-2"
           key={tag}
         >
           {`#${tag}`}

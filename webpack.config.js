@@ -8,7 +8,6 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // @ts-expect-error -- TS7016
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// @ts-expect-error -- TS7016
 const remarkAutolinkHeadings = require("remark-autolink-headings");
 const remarkExternalLinks = require("remark-external-links");
 const remarkFootnotes = require("remark-footnotes");

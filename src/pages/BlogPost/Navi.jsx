@@ -1,10 +1,10 @@
 import { Link } from "../../Link";
 
 /**
- * @param {{
+ * @type {React.FC<{
  *   prev: { path: string, title: string } | null,
  *   next: { path: string, title: string } | null,
- * }} props
+ * }>}
  */
 export const Navi = ({ prev, next }) => {
   const itemClassName = "truncate inline-block max-w-max sm:max-w-sm";

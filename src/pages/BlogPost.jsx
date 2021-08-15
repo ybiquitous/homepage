@@ -23,7 +23,7 @@ const generateTOC = (content, toc) => {
 };
 
 /**
- * @param {{
+ * @type {React.FC<{
  *   slug: string,
  *   title: string,
  *   published: string | null,
@@ -33,7 +33,7 @@ const generateTOC = (content, toc) => {
  *   content: string,
  *   prev: { path: string, title: string } | null,
  *   next: { path: string, title: string } | null,
- * }} props
+ * }>}
  */
 // eslint-disable-next-line max-lines-per-function
 export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, prev, next }) => {
@@ -49,15 +49,18 @@ export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, p
   }, [slug]);
 
   useEffect(() => {
-    if (contentElement.current) {
-      contentElement.current.querySelectorAll("h1").forEach((el) => el.remove());
+    const contentEl = contentElement.current;
+    const tocEl = tocElement.current;
+    if (contentEl != null) {
+      contentEl.querySelectorAll("h1").forEach((el) => el.remove());
     }
-    if (contentElement.current && tocElement.current) {
-      generateTOC(contentElement.current, tocElement.current);
+
+    if (contentEl != null && tocEl != null) {
+      generateTOC(contentEl, tocEl);
     }
     return () => {
-      if (tocElement.current) {
-        tocElement.current.innerHTML = ""; // clear
+      if (tocEl != null) {
+        tocEl.innerHTML = ""; // clear
       }
     };
   }, [slug, contentElement.current, tocElement.current]);

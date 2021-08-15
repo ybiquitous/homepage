@@ -1,6 +1,6 @@
 import { Link } from "../Link";
-import { Breadcrumb, Time, useTitle } from "../utils";
 import { blogs } from "../blog/index";
+import { Breadcrumb, Time, useTitle } from "../utils";
 
 export const Blog = () => {
   useTitle("Blog");
@@ -14,9 +14,9 @@ export const Blog = () => {
       <main className="mt-16">
         <ul className="space-y-16">
           {blogs
-            .filter(({ published }) => published != null)
+            .filter(({ published }) => Boolean(published))
             .sort((a, b) => {
-              if (a.published == null || b.published == null) {
+              if (!a.published || !b.published) {
                 return 0;
               }
               return Date.parse(b.published) - Date.parse(a.published);
@@ -25,9 +25,7 @@ export const Blog = () => {
               <li key={path}>
                 <Link href={path} className="block hover:my-link-color">
                   <div className="font-sans text-xl">{title}</div>
-                  {published != null && (
-                    <Time date={new Date(published)} className="my-text-gray" />
-                  )}
+                  {published && <Time date={new Date(published)} className="my-text-gray" />}
                 </Link>
               </li>
             ))}

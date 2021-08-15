@@ -1,12 +1,12 @@
 import { useCallback } from "react";
 
 /**
- * @param {{
+ * @type {React.FC<{
  *   href: string,
  *   children: React.ReactNode,
  *   className?: string,
  *   external?: boolean,
- * }} props
+ * }>}
  */
 export const Link = ({ href, children, className, external = href.startsWith("http") }) => {
   /** @type {React.MouseEventHandler} */

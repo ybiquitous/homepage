@@ -2,7 +2,7 @@ import { isValidElement, cloneElement } from "react";
 import { Link } from "../Link";
 
 /**
- * @param {{ items: React.ReactNode[] }} props
+ * @type {React.FC<{ items: React.ReactNode[] }>}
  */
 export const Breadcrumb = ({ items }) => {
   const home = <Link href="/">Home</Link>;
@@ -10,8 +10,8 @@ export const Breadcrumb = ({ items }) => {
   return (
     <nav aria-label="Breadcrumb">
       <ol className="flex flex-wrap">
-        {[home, ...items].map((item, index, items) => {
-          const current = index === items.length - 1;
+        {[home, ...items].map((item, index, list) => {
+          const current = index === list.length - 1;
           const classNames = ["inline-flex items-center"];
           if (!current) {
             classNames.push("my-text-gray after:content-['/'] after:text-xs after:mx-2");

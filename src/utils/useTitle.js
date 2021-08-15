@@ -4,7 +4,7 @@ const base = "@ybiquitous";
 const separator = " - ";
 
 /**
- * @param {string[]} title
+ * @param {readonly string[]} title
  * @returns {void}
  */
 export const useTitle = (...title) => {

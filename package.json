@@ -99,6 +99,7 @@
       "react/jsx-key": "warn",
       "react/jsx-no-target-blank": "warn",
       "react/no-array-index-key": "warn",
+      "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
       "react/require-default-props": "warn",
       "@typescript-eslint/consistent-type-definitions": [

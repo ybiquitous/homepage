@@ -18,5 +18,5 @@ jobs:
         with:
           node-version: "${{ steps.nvm.outputs.nvmrc }}"
           cache: npm
-      - run: npm install eslint-config-ybiquitous @typescript-eslint/eslint-plugin
-      - run: npx eslint --ext=js,jsx,cjs,mjs,ts,tsx .
+      - run: npm ci
+      - run: npm run eslint

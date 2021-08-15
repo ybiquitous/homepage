@@ -1,4 +1,3 @@
-// @ts-expect-error -- https://github.com/microsoft/TypeScript/issues/44632
 const FORMATTER_TITLE = new Intl.DateTimeFormat("en", { dateStyle: "full", timeStyle: "long" });
 const FORMATTER_CONTENT = new Intl.DateTimeFormat("en", {
   year: "numeric",

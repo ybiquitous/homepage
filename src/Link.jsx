@@ -1,32 +1,31 @@
 import { useCallback } from "react";
 
 /**
- * @param {{
+ * @type {React.FC<{
  *   href: string,
  *   children: React.ReactNode,
  *   className?: string,
  *   external?: boolean,
- * }} props
+ * }>}
  */
 export const Link = ({ href, children, className, external = href.startsWith("http") }) => {
-  /** @type {React.MouseEventHandler | undefined} */
-  const handleClick = external
-    ? undefined
-    : useCallback(
-        (event) => {
-          if (event.metaKey) {
-            return; // normal behavior
-          }
+  /** @type {React.MouseEventHandler} */
+  const handleClick = useCallback(
+    (event) => {
+      if (external) return;
 
-          event.preventDefault();
+      // normal behavior
+      if (event.metaKey) return;
 
-          /** @type {null} */
-          const state = null;
-          window.history.pushState(state, "", href);
-          window.dispatchEvent(new PopStateEvent("popstate", { state }));
-        },
-        [href]
-      );
+      event.preventDefault();
+
+      /** @type {null} */
+      const state = null;
+      window.history.pushState(state, "", href);
+      window.dispatchEvent(new PopStateEvent("popstate", { state }));
+    },
+    [href, external]
+  );
 
   return (
     <a

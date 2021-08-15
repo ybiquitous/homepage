@@ -16,7 +16,9 @@
     "lint:types:watch": "npm run lint:types -- --watch",
     "prettier": "prettier .",
     "prettier:check": "npm run prettier -- --check",
-    "prettier:write": "npm run prettier -- --write"
+    "prettier:write": "npm run prettier -- --write",
+    "eslint": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
+    "eslint:fix": "npm run eslint -- --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -33,11 +35,13 @@
     "@types/node": "^16.4.9",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
     "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
+    "eslint-config-ybiquitous": "^14.0.1",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.1.0",
@@ -85,20 +89,14 @@
     "rules": {
       "sort-imports": "off",
       "import/extensions": "off",
-      "import/no-internal-modules": [
-        "warn",
-        {
-          "allow": [
-            "**/*.md"
-          ]
-        }
-      ],
+      "import/no-internal-modules": "off",
       "import/no-unresolved": "warn",
       "import/prefer-default-export": "off",
       "react/display-name": "off",
       "react/jsx-key": "warn",
       "react/jsx-no-target-blank": "warn",
       "react/no-array-index-key": "warn",
+      "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
       "react/require-default-props": "warn",
       "@typescript-eslint/consistent-type-definitions": [
@@ -110,13 +108,22 @@
     "overrides": [
       {
         "files": [
-          "**/*.js"
+          "*.js",
+          "*.jsx"
         ],
         "rules": {
           "@typescript-eslint/explicit-function-return-type": "off",
           "@typescript-eslint/explicit-module-boundary-types": "off",
           "@typescript-eslint/no-require-imports": "off",
           "@typescript-eslint/no-var-requires": "off"
+        }
+      },
+      {
+        "files": [
+          "*.jsx"
+        ],
+        "rules": {
+          "@typescript-eslint/prefer-readonly-parameter-types": "off"
         }
       }
     ]

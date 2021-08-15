@@ -1,8 +1,8 @@
 import { faGithub, faNpm, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faBlog, faGem, faImages } from "@fortawesome/free-solid-svg-icons";
 import { useTitle } from "../utils";
-import { Profile } from "./Home/Profile";
 import { Menu } from "./Home/Menu";
+import { Profile } from "./Home/Profile";
 
 export const Home = () => {
   useTitle();

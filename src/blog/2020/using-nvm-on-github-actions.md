@@ -13,7 +13,7 @@
 ```yaml
 # See: https://github.com/actions/setup-node/issues/32#issuecomment-539794249
 steps:
-  - run: echo ::set-output name=nvmrc::$(cat .nvmrc)
+  - run: echo "::set-output name=nvmrc::$(cat .nvmrc)"
     id: nvm
   - uses: actions/setup-node@v2
     with:

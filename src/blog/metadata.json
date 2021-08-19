@@ -43,7 +43,7 @@
     "slug": "2020/using-nvm-on-github-actions",
     "title": "GitHub Actionsでnvmを使う",
     "published": "2020-06-06T00:00:00.000Z",
-    "lastUpdated": "2021-07-07T00:00:00.000Z",
+    "lastUpdated": "2021-08-19T00:00:00.000Z",
     "author": "Masafumi Koba",
     "tags": ["github-actions", "nvm", "nodejs"]
   },

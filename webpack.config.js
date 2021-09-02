@@ -92,7 +92,10 @@ module.exports = {
   },
   devtool: DEV ? "inline-source-map" : "source-map",
   devServer: {
-    contentBase: path.join(__dirname, "src"),
+    static: {
+      directory: path.join(__dirname, "src"),
+      watch: true,
+    },
     historyApiFallback: { index: "/" },
   },
 };

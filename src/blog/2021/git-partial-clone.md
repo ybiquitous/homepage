@@ -23,6 +23,8 @@ gh repo clone <repository> -- --filter=blob:none
 
 ```shell
 git config --global alias.fast-clone 'clone --filter=blob:none'
+
+git fast-clone <url>
 ```
 
 ## `--filter` とは

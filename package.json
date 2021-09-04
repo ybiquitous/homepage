@@ -54,7 +54,7 @@
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^13.0.1",
     "remark-loader": "^4.0.0",
-    "remark-preset-ybiquitous": "^0.0.5",
+    "remark-preset-ybiquitous": "^0.1.1",
     "remark-slug": "^6.1.0",
     "style-loader": "^3.2.1",
     "tailwindcss": "^2.2.9",

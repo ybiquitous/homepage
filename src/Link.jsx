@@ -27,15 +27,17 @@ export const Link = ({ href, children, className, external = href.startsWith("ht
     [href, external]
   );
 
+  /* eslint-disable react/jsx-no-target-blank -- False positive. */
   return (
     <a
       href={href}
       className={className}
       onClick={handleClick}
       target={external ? "_blank" : undefined}
-      rel={external ? "noopener" : undefined}
+      rel={external ? "noreferrer noopener" : undefined}
     >
       {children}
     </a>
   );
+  /* eslint-enable react/jsx-no-target-blank */
 };

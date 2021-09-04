@@ -53,7 +53,7 @@ export const BlogPost = ({
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchContent(slug).then(setContent);
-  }, [slug, content]);
+  }, [slug, fetchContent, setContent]);
 
   /** @type {React.MutableRefObject<HTMLElement | null>} */
   const contentElement = useRef(null);
@@ -75,12 +75,12 @@ export const BlogPost = ({
         tocEl.innerHTML = ""; // clear
       }
     };
-  }, [slug, content, contentElement.current, tocElement.current]);
+  }, [slug, contentElement.current, tocElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.
 
   return (
     <>
       <header>
-        <Breadcrumb items={[<Link href="/blog">Blog</Link>, `“${title}”`]} />
+        <Breadcrumb items={[{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, `“${title}”`]} />
       </header>
 
       <main className="mt-10 lg:mt-16">
@@ -95,11 +95,13 @@ export const BlogPost = ({
           <ul ref={tocElement} className="space-y-2 mt-4" />
         </details>
 
+        {/* eslint-disable react/no-danger -- This is safe. */}
         <article
+          className="markdown mt-16"
           ref={contentElement}
           dangerouslySetInnerHTML={{ __html: content }}
-          className="markdown mt-16"
         />
+        {/* eslint-enable react/no-danger */}
 
         {tags.length !== 0 && (
           <div className="mt-16">

@@ -1,6 +1,6 @@
 import "./index.css";
 import { render } from "react-dom";
-import { Router } from "./Router";
+import { Router } from "./Router.jsx";
 
 const Root = () => (
   <>

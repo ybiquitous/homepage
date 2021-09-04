@@ -1,9 +1,9 @@
-import { blogs } from "./blog/index";
-import { Blog } from "./pages/Blog";
-import { BlogPost } from "./pages/BlogPost";
-import { Home } from "./pages/Home";
-import { NotFound } from "./pages/NotFound";
-import { Slides } from "./pages/Slides";
+import { blogs } from "./blog/index.js";
+import { Blog } from "./pages/Blog.jsx";
+import { BlogPost } from "./pages/BlogPost.jsx";
+import { Home } from "./pages/Home.jsx";
+import { NotFound } from "./pages/NotFound.jsx";
+import { Slides } from "./pages/Slides.jsx";
 
 export const defaultRoute = () => <NotFound />;
 

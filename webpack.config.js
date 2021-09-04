@@ -1,31 +1,30 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-const path = require("path");
+import path from "node:path";
 // @ts-expect-error -- TS7016
-const CopyPlugin = require("copy-webpack-plugin");
+import CopyPlugin from "copy-webpack-plugin";
 // @ts-expect-error -- TS7016
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 // @ts-expect-error -- TS7016
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const remarkAutolinkHeadings = require("remark-autolink-headings");
-const remarkExternalLinks = require("remark-external-links");
-const remarkFootnotes = require("remark-footnotes");
-const remarkGFM = require("remark-gfm");
-// @ts-expect-error -- TS7016
-const remarkHighlight = require("remark-highlight.js");
-const remarkHTML = require("remark-html");
-const remarkSlug = require("remark-slug");
-const remarkRelativeLink = require("./src/remark/remark-relative-link");
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import remarkAutolinkHeadings from "remark-autolink-headings";
+import remarkExternalLinks from "remark-external-links";
+import remarkFootnotes from "remark-footnotes";
+import remarkGFM from "remark-gfm";
+import remarkHighlight from "remark-highlight.js";
+import remarkHTML from "remark-html";
+import remarkSlug from "remark-slug";
+import remarkRelativeLink from "./src/remark/remark-relative-link.js";
 /* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
 const DEV = process.env.NODE_ENV === "development";
 
-module.exports = {
+export default {
   entry: "./src/index.jsx",
   output: {
     filename: DEV ? "[name].js" : "[name].[contenthash].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(process.cwd(), "dist"),
     publicPath: "/",
     clean: true,
   },
@@ -93,7 +92,7 @@ module.exports = {
   devtool: DEV ? "inline-source-map" : "source-map",
   devServer: {
     static: {
-      directory: path.join(__dirname, "src"),
+      directory: path.join(process.cwd(), "src"),
       watch: true,
     },
     historyApiFallback: { index: "/" },

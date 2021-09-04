@@ -1,3 +1,3 @@
-export * from "./Breadcrumb";
-export * from "./Time";
-export * from "./useTitle";
+export * from "./Breadcrumb.jsx";
+export * from "./Time.jsx";
+export * from "./useTitle.js";

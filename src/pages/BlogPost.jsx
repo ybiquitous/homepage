@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from "react";
-import { Link } from "../Link";
-import { Breadcrumb, useTitle } from "../utils";
-import { Navi } from "./BlogPost/Navi";
-import { Tags } from "./BlogPost/Tags";
-import { Times } from "./BlogPost/Times";
+import { Link } from "../Link.jsx";
+import { Breadcrumb, useTitle } from "../utils/index.js";
+import { Navi } from "./BlogPost/Navi.jsx";
+import { Tags } from "./BlogPost/Tags.jsx";
+import { Times } from "./BlogPost/Times.jsx";
 
 /**
  * @param {HTMLElement} content

@@ -3,6 +3,7 @@ import metadata from "./metadata.json";
 /**
  * @param {string} slug
  */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return
 const content = (slug) => import(`./${slug}.md`).then((module) => module.default);
 
 export const blogs = metadata.map((meta, index, array) => {

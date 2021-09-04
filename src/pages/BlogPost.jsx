@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "../Link";
 import { Breadcrumb, useTitle } from "../utils";
 import { Navi } from "./BlogPost/Navi";
@@ -30,23 +30,35 @@ const generateTOC = (content, toc) => {
  *   lastUpdated: string | null,
  *   author: string,
  *   tags: string[],
- *   content: string,
+ *   content: (slug: string) => Promise<string>,
  *   prev: { path: string, title: string } | null,
  *   next: { path: string, title: string } | null,
  * }} props
  */
 // eslint-disable-next-line max-lines-per-function
-export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, prev, next }) => {
+export const BlogPost = ({
+  slug,
+  title,
+  published,
+  lastUpdated,
+  tags,
+  content: fetchContent,
+  prev,
+  next,
+}) => {
   useTitle(title, "Blog");
+
+  const [content, setContent] = useState("…");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchContent(slug).then(setContent);
+  }, [slug, content]);
 
   /** @type {React.MutableRefObject<HTMLElement | null>} */
   const contentElement = useRef(null);
   /** @type {React.MutableRefObject<HTMLUListElement | null>} */
   const tocElement = useRef(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
 
   useEffect(() => {
     const contentEl = contentElement.current;
@@ -63,7 +75,7 @@ export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, p
         tocEl.innerHTML = ""; // clear
       }
     };
-  }, [slug, contentElement.current, tocElement.current]);
+  }, [slug, content, contentElement.current, tocElement.current]);
 
   return (
     <>

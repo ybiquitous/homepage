@@ -119,28 +119,11 @@ details {
 
     /* https://github.com/remarkjs/remark-autolink-headings */
     .icon-link {
-      @apply before:content-['#'] ml-4 text-gray-400 hover:text-current;
+      @apply before:content-['#'] ml-4 text-gray-300;
     }
 
     & > h1 a[aria-hidden] {
       display: none;
-    }
-
-    & > h2,
-    & > h3,
-    & > h4,
-    & > h5,
-    & > h6 {
-      & a[aria-hidden] {
-        visibility: hidden;
-      }
-
-      &:hover,
-      &:focus {
-        & a[aria-hidden] {
-          visibility: visible;
-        }
-      }
     }
 
     /* https://github.com/remarkjs/remark-autolink-headings */

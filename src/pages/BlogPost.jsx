@@ -48,7 +48,7 @@ export const BlogPost = ({
 }) => {
   useTitle(title, "Blog");
 
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState("…");
 
   useEffect(() => {
     window.scrollTo(0, 0);

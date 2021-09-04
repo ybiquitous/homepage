@@ -83,7 +83,7 @@ export const BlogPost = ({
         <Breadcrumb items={[<Link href="/blog">Blog</Link>, `“${title}”`]} />
       </header>
 
-      <main className="mt-16">
+      <main className="mt-10 lg:mt-16">
         <h1 className="font-sans font-semibold text-5xl leading-tight">{title}</h1>
 
         <div className="mt-4">

@@ -1,5 +1,5 @@
 /**
- * @type {React.FC<{ tags: string[] }>}
+ * @param {{ tags: string[] }} props
  */
 export const Tags = ({ tags }) => (
   <div className="flex gap-2 font-sans">

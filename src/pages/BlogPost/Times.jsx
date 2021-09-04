@@ -1,7 +1,7 @@
 import { Time } from "../../utils";
 
 /**
- * @type {React.FC<{ published: string | null, lastUpdated: string | null }>}
+ * @param {{ published: string | null, lastUpdated: string | null }} props
  */
 export const Times = ({ published, lastUpdated }) => (
   <div className="text-sm my-text-gray flex flex-col sm:flex-row sm:gap-12">

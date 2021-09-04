@@ -23,7 +23,7 @@ const generateTOC = (content, toc) => {
 };
 
 /**
- * @type {React.FC<{
+ * @param {{
  *   slug: string,
  *   title: string,
  *   published: string | null,
@@ -33,7 +33,7 @@ const generateTOC = (content, toc) => {
  *   content: string,
  *   prev: { path: string, title: string } | null,
  *   next: { path: string, title: string } | null,
- * }>}
+ * }} props
  */
 // eslint-disable-next-line max-lines-per-function
 export const BlogPost = ({ slug, title, published, lastUpdated, tags, content, prev, next }) => {

@@ -6,7 +6,7 @@ const FORMATTER_CONTENT = new Intl.DateTimeFormat("en", {
 });
 
 /**
- * @type {React.FC<{ date: Date, className?: string }>}
+ * @param {{ date: Date, className?: string }} props
  */
 export const Time = ({ date, className }) => (
   <time dateTime={date.toISOString()} className={className} title={FORMATTER_TITLE.format(date)}>

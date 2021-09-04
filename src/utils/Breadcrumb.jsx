@@ -2,7 +2,7 @@ import { isValidElement, cloneElement } from "react";
 import { Link } from "../Link";
 
 /**
- * @type {React.FC<{ items: React.ReactNode[] }>}
+ * @param {{ items: React.ReactNode[] }} props
  */
 export const Breadcrumb = ({ items }) => {
   const home = <Link href="/">Home</Link>;

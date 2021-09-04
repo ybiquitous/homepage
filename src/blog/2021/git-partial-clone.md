@@ -19,7 +19,7 @@ git clone --filter=blob:none <url>
 gh repo clone <repository> -- --filter=blob:none
 ```
 
-エイリアスを指定するのもよい。以下の例では `git fast-clone` を登録している。
+エイリアスを指定するのもよい。
 
 ```shell
 git config --global alias.fast-clone 'clone --filter=blob:none'

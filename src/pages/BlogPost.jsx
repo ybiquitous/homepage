@@ -10,7 +10,10 @@ import { Times } from "./BlogPost/Times";
  * @param {HTMLElement} toc
  */
 const generateTOC = (content, toc) => {
-  content.querySelectorAll("h2[id]").forEach((heading) => {
+  const headings = content.querySelectorAll("h2[id]");
+  if (headings.length === 0) return;
+
+  headings.forEach((heading) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
     a.href = `#${heading.id}`;
@@ -20,6 +23,10 @@ const generateTOC = (content, toc) => {
     li.appendChild(a);
     toc.appendChild(li);
   });
+
+  if (toc.parentElement != null) {
+    toc.parentElement.hidden = false;
+  }
 };
 
 /**
@@ -90,7 +97,7 @@ export const BlogPost = ({
           <Times published={published} lastUpdated={lastUpdated} />
         </div>
 
-        <details className="my-text-gray text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4">
+        <details className="my-text-gray text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4" hidden>
           <summary>Table of Contents</summary>
           <ul ref={tocElement} className="space-y-2 mt-4" />
         </details>

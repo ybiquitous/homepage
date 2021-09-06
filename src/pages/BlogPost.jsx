@@ -10,8 +10,14 @@ import { Times } from "./BlogPost/Times";
  * @param {HTMLElement} toc
  */
 const generateTOC = (content, toc) => {
+  if (toc.parentElement == null) return;
+
   const headings = content.querySelectorAll("h2[id]");
-  if (headings.length === 0) return;
+  if (headings.length === 0) {
+    toc.parentElement.hidden = true;
+    return;
+  }
+  toc.parentElement.hidden = false;
 
   headings.forEach((heading) => {
     const li = document.createElement("li");
@@ -23,10 +29,6 @@ const generateTOC = (content, toc) => {
     li.appendChild(a);
     toc.appendChild(li);
   });
-
-  if (toc.parentElement != null) {
-    toc.parentElement.hidden = false;
-  }
 };
 
 /**
@@ -70,19 +72,17 @@ export const BlogPost = ({
   useEffect(() => {
     const contentEl = contentElement.current;
     const tocEl = tocElement.current;
-    if (contentEl != null) {
-      contentEl.querySelectorAll("h1").forEach((el) => el.remove());
-    }
 
     if (contentEl != null && tocEl != null) {
       generateTOC(contentEl, tocEl);
     }
+
     return () => {
       if (tocEl != null) {
         tocEl.innerHTML = ""; // clear
       }
     };
-  }, [slug, contentElement.current, tocElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.
+  }, [slug, content, contentElement.current, tocElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.
 
   return (
     <>

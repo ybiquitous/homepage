@@ -8,9 +8,9 @@
 この記事を書いた人がDockerドキュメントの「[ベストプラクティス](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run)」を説明したページのある箇所に対して、修正リクエストをした（マージ済み）。
 修正プルリクエスト [docker/docker.github.io#12571](https://github.com/docker/docker.github.io/pull/12571) を見ればわかるように、
 
-> Avoid `RUN apt-get upgrade` and `dist-upgrade`, as many of the "essential" packages from the parent images cannot upgrade inside an unprivileged container. If a package contained in the parent image is out-of-date, contact its maintainers. If you know there is a particular package, `foo`, that needs to be updated, use `apt-get install -y foo` to update automatically.
+> Avoid `RUN apt-get upgrade` and `dist-upgrade`, ...
 
-一節をまるっと削除している。
+の一節をまるっと削除している。
 
 つまり、`apt-get upgrade` は脆弱性やら致命的なバグやらを修正してくれるコマンドなんだから、それを「Avoid（避けろ）」というプラクティスはおかしいだろうと。
 

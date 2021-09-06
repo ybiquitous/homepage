@@ -6,8 +6,10 @@ module.exports = function remarkRemoveH1() {
   // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types -- False positive.
   return (tree) => {
     // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types -- False positive.
-    visit(tree, { type: "heading", depth: 1 }, (node, index, parent) => {
-      parent.children.splice(index, 1);
+    visit(tree, { type: "heading", depth: 1 }, (_node, index, parent) => {
+      if (parent) {
+        parent.children.splice(index, 1);
+      }
     });
   };
 };

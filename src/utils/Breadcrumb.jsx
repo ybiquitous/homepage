@@ -19,7 +19,7 @@ export const Breadcrumb = ({ items }) => (
         if (!current) {
           classNames.push("my-text-gray after:content-['/'] after:text-xs after:mx-2");
         }
-        const { el, key } = typeof item === "string" ? { el: <>item</>, key: item } : item;
+        const { el, key } = typeof item === "string" ? { el: <>{item}</>, key: item } : item;
         return (
           <li
             key={key}

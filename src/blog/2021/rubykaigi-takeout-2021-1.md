@@ -57,8 +57,9 @@ TypeProf Language Server がリリースされたら、もう1回Emacsでチャ�
 といったもの。
 
 よくruby/gem_rbs_collectionの引き合いに出されるのがTypeScriptの[DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)リポジトリで、こちらも趣旨は同様だけど、型定義は `@types/***` というnpmパッケージで提供されている。
-雑な感じで、RBSも同様にgemで提供するのかな…と考えてたけど、そういう方針は採らずに `gem collection` コマンドを新規に追加した。ここらへんの背景は質問しておけばよかったかも。
-（gemには `@types/` みたいなネームスペースの概念がないからかな…？）
+RBSも同様にgemで提供するのかな…と考えてたけど、そういう方針は採らずに `gem collection` コマンドが新規に追加された。gemで提供しなかった理由は質問しておけばよかったかも。
+
+以下のドキュメントが参考資料：
 
 - [`rbs collection` のドキュメント](https://github.com/ruby/rbs/blob/2713b948071eb313a7e9871d74ed0894d68712c0/docs/collection.md)
 - [ruby/gem_rbs_collection のREADME](https://github.com/ruby/gem_rbs_collection/blob/617bf1033baf96887e76cafd6dd88340a8006b54/README.md)

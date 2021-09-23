@@ -3,9 +3,7 @@
 9月9-11日の日程で開催された[RubyKaigi Takeout 2021](https://rubykaigi.org/2021-takeout)に今年も参加してきたので、所感をつらつらと記していこうと思う（すでに2週間近く経ってしまった…）。
 1つの投稿を長くしたくないので、複数回に分ける予定。
 
-動画は[公式YouTubeチャンネル](https://www.youtube.com/playlist?list=PLbFmgWm555yYgc4sx2Dkb7WWcfflbt6AP)より視聴可能。
-
-また、有志によるまとめがいくつか上がっているので、このブログではまとめはしない。
+有志によるまとめ（以下）がいくつか上がっているので、このブログではまとめはしない。
 
 - [RubyKaigi Takeout 2021 感想記事 - ruby-jp](https://scrapbox.io/ruby-jp/RubyKaigi_Takeout_2021_%E6%84%9F%E6%83%B3%E8%A8%98%E4%BA%8B)
 - [RubyKaigi Takeout 2021のスライド（Day1）｜TechRacho by BPS株式会社](https://techracho.bpsinc.jp/hachi8833/2021_09_09/111519)
@@ -63,6 +61,9 @@ TypeProfは標準ライブラリなので、3rd-party gemは使えないそう�
 
 - [`rbs collection` のドキュメント](https://github.com/ruby/rbs/blob/2713b948071eb313a7e9871d74ed0894d68712c0/docs/collection.md)
 - [ruby/gem_rbs_collection のREADME](https://github.com/ruby/gem_rbs_collection/blob/617bf1033baf96887e76cafd6dd88340a8006b54/README.md)
+
+その後、[Steepと `rbs collection` との連携](https://github.com/soutaro/steep/pull/420)ができるようになったので（未リリース）、会社のリポジトリで試そうとしたけどうまくいかなかったので、Steepに[issue](https://github.com/soutaro/steep/issues/432)を立てておいた。
+すぐに@pockeさんから返信があったので助かった。`gem collection` はまだ成熟してないので、どんどん使ってフィードバックしていきたい。
 
 ## Ruby Committers vs the World
 

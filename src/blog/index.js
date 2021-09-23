@@ -14,7 +14,13 @@ export const blogs = metadata.map((meta, index, array) => {
     ...meta,
     content,
     path: `/blog/${meta.slug}`,
-    prev: prev != null ? { path: `/blog/${prev.slug}`, title: prev.title } : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
-    next: next != null ? { path: `/blog/${next.slug}`, title: next.title } : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
+    prev:
+      prev != null && prev.published != null
+        ? { path: `/blog/${prev.slug}`, title: prev.title }
+        : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
+    next:
+      next != null && next.published != null
+        ? { path: `/blog/${next.slug}`, title: next.title }
+        : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
   };
 });

@@ -8,7 +8,7 @@
 - [RubyKaigi Takeout 2021 感想記事 - ruby-jp](https://scrapbox.io/ruby-jp/RubyKaigi_Takeout_2021_%E6%84%9F%E6%83%B3%E8%A8%98%E4%BA%8B)
 - [RubyKaigi Takeout 2021のスライド（Day1）｜TechRacho by BPS株式会社](https://techracho.bpsinc.jp/hachi8833/2021_09_09/111519)
 
-## Kaigi’s History
+## Personal Kaigi’s History
 
 1. [RubyKaigi 2018 @仙台](https://rubykaigi.org/2018)（初参加）
 2. [RubyKaigi 2019 @福岡](https://rubykaigi.org/2019)
@@ -81,7 +81,7 @@ YouTube動画では[4:00](https://youtu.be/zQnN1pqK4FQ?t=240)くらいから。
 最終日のMatzによる[キーノート](https://rubykaigi.org/2021-takeout/presentations/yukihiro_matz.html)で軽く型の話に触れていたので紹介。
 YouTube動画では[4:00](https://youtu.be/QQASprf5EGw?t=240)くらいから。
 
-## Ruby Typing History
+## Typing History on RubyKaigi
 
 本稿を書いてて、どのくらい前からRubyKaigiで型の話が出てきたのかふと疑問に思ったので、調べてみた。
 （もしかしたら、漏れがあるかもしれないが…）
@@ -163,3 +163,9 @@ Ruby 3リリースを年末に控え、だいぶ外枠が固まってきた感�
 さらに、型がある程度採用されるようになってツール周りも充実してくると、波及的にドキュメント周りの改善も進むのではないかと思う。
 RBSというのは一種のAPIドキュメントでもあるので、RDocとの連携がどうなるのか興味深い。
 ツールとしては別だが、IDEでの開発者体験という側面では、両者は不可分の関係にあると思う。
+
+---
+
+最後に、2016年からのKaigiの変遷を追ってきて改めて感じたこと。それは、こういう素晴らしいカンファレンスが定期的に開催されることによって、技術の発展に非常に大きな影響を及ぼすんだなと。
+
+運営の皆さん、こういう場を提供してくれて、本当にありがとうございます。

@@ -17,9 +17,6 @@
 5. [RubyKaigi Takeout 2021](https://rubykaigi.org/2021-takeout)（**今回**）
 
 今回で4回目の参加。改めて振り返ってみると、人との繋がりが徐々にできてきたんだなぁとしみじみ感じる。
-初参加の仙台で[Fukuoka.rb](https://github.com/fukuokarb)の[@jimlock](https://twitter.com/jimlock)さんと出会えたのが、今思うと奇跡のような縁。
-翌年の福岡で[Local Organizer](https://rubykaigi.org/2019/team)として活躍されてたのも、また奇跡的。
-
 元々仕事がきっかけで参加するようになったけど、今は仕事抜きで楽しみだもんなぁ。何か温もりを感じるカンファレンスだなと思う☺️
 
 以降は、各セッションについて。本稿では型（というより静的型解析）の話をメインにする。初回参加のときからずっと追いかけてるトピックなので、今回も一番興味があったのがそこ。
@@ -42,6 +39,10 @@ TypeProfは標準ライブラリなので、3rd-party gemは使えないそう�
 同様の理由で[parser](https://github.com/whitequark/parser) gemも使えないとのこと。IDEサポートを充実するには標準ライブラリのRipperだと現状物足りないところがあるらしく、パーサをどうにかしたいという意向があるっぽい。
 ちなみに、標準ライブラリではないSteepにはこのあたりの制約がない。
 
+`if $0 == __FILE__ ... end` をファイル末尾に追加するのはちょっと抵抗があるが、このあたりは今後改善されていくことを期待。
+
+TypeProf Language Server がリリースされたら、もう1回Emacsでチャレンジしたい。
+
 ## The newsletter of RBS updates
 
 2日目、[@pocke](https://twitter.com/p_ck_)さんの[RBS近況報告](https://rubykaigi.org/2021-takeout/presentations/p_ck_.html)。
@@ -55,7 +56,7 @@ TypeProfは標準ライブラリなので、3rd-party gemは使えないそう�
 
 といったもの。
 
-よく引き合いに出されるのがTypeScriptの[DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)リポジトリで、こちらも趣旨は同様だけど、型定義は `@types/***` というnpmパッケージで提供されている。
+よくruby/gem_rbs_collectionの引き合いに出されるのがTypeScriptの[DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)リポジトリで、こちらも趣旨は同様だけど、型定義は `@types/***` というnpmパッケージで提供されている。
 雑な感じで、RBSも同様にgemで提供するのかな…と考えてたけど、そういう方針は採らずに `gem collection` コマンドを新規に追加した。ここらへんの背景は質問しておけばよかったかも。
 （gemには `@types/` みたいなネームスペースの概念がないからかな…？）
 
@@ -167,5 +168,8 @@ RBSというのは一種のAPIドキュメントでもあるので、RDocとの�
 ---
 
 最後に、2016年からのKaigiの変遷を追ってきて改めて感じたこと。それは、こういう素晴らしいカンファレンスが定期的に開催されることによって、技術の発展に非常に大きな影響を及ぼすんだなと。
+特に、過去の発表を全部YouTubeで見返すことができるというのは、本当にスゴイ。
 
-運営の皆さん、こういう場を提供してくれて、本当にありがとうございます。
+運営の皆さん、こういう場を提供してくれて、本当にありがとうございます！
+
+（気力と時間があれば、他のセッションについても書く予定）

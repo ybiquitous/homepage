@@ -10,15 +10,7 @@ import { Times } from "./BlogPost/Times";
  * @param {HTMLElement} toc
  */
 const generateTOC = (content, toc) => {
-  if (toc.parentElement == null) return;
-
   const headings = content.querySelectorAll("h2[id]");
-  if (headings.length === 0) {
-    toc.parentElement.hidden = true;
-    return;
-  }
-  toc.parentElement.hidden = false;
-
   headings.forEach((heading) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
@@ -57,10 +49,11 @@ export const BlogPost = ({
 }) => {
   useTitle(title, "Blog");
 
-  const [content, setContent] = useState("…");
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setContent("");
     fetchContent(slug).then(setContent);
   }, [slug, fetchContent, setContent]);
 
@@ -97,7 +90,7 @@ export const BlogPost = ({
           <Times published={published} lastUpdated={lastUpdated} />
         </div>
 
-        <details className="my-text-gray text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4" hidden>
+        <details className="my-text-gray text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4">
           <summary>Table of Contents</summary>
           <ul ref={tocElement} className="space-y-2 mt-4" />
         </details>
@@ -106,7 +99,9 @@ export const BlogPost = ({
         <article
           className="markdown mt-16"
           ref={contentElement}
-          dangerouslySetInnerHTML={{ __html: content }}
+          dangerouslySetInnerHTML={{
+            __html: content || '<div class="my-text-gray min-h-screen">Loading…</div>',
+          }}
         />
         {/* eslint-enable react/no-danger */}
 

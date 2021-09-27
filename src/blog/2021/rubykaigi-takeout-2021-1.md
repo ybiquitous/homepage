@@ -174,3 +174,29 @@ RBSというのは一種のAPIドキュメントでもあるので、RDocとの�
 運営の皆さん、こういう場を提供してくれて、本当にありがとうございます！
 
 （気力と時間があれば、他のセッションについても書く予定）
+
+## 9月27日 追記
+
+[The newsletter of RBS updates](#the-newsletter-of-rbs-updates) のセクションに
+
+> gemで提供しなかった理由は質問しておけばよかったかも
+
+と書いたが、後日ruby-jp Slackの#typesチャンネルで質問を投げたところ、議論が意外と盛り上がったので追記しておく。
+（このとき、npmの `@types/***` パッケージを想定していた）
+
+簡単にまとめると、次のとおり。
+
+- 理想は `gem install @types/rails`
+  - rubygems.orgにnamespaceを追加する改修が必要
+    - Feature requestはすでにある [rubygems/rubygems.org#2258](https://github.com/rubygems/rubygems.org/issues/2258)
+    - 誰が作る問題
+  - namingで回避案 (e.g. `rbs-***`) は既存gemとの衝突を回避できないのでボツ
+- 議論中にsource追加案（e.g `https://rbs.rubygems.org`）が出てきた
+  - namespace追加するより、もしかしたら楽？
+- 今は[git-cloneを使って](https://github.com/ruby/rbs/blob/ebfb3dbadc14fd787b51ee7ed6f73723cb1bc1f5/lib/rbs/collection/sources/git.rb#L105)実装してる
+  - git-cloneで問題があるのはわかっているが、将来的に ruby/gem_rbs_collection がデカくなってどうしようもなくなる（遅いとか、GitHubに怒られるとか）までに何らかの対応はできるはず（時間は稼げる）
+
+色んな人が参加して議論が拡がっていくのが面白かった。そして、当初の疑問を解消できた！😊
+
+namespaceが実装されるまでgit-cloneで時間を稼ぐ、というアイデアがなんか[（良い意味での）技術的負債](https://t-wada.hatenablog.jp/entry/ward-explains-debt-metaphor)
+を想起させて、なるほどなぁと思ったことも付け加えておく。

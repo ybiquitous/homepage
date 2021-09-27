@@ -196,5 +196,4 @@ RBSというのは一種のAPIドキュメントでもあるので、RDocとの�
 
 色んな人が参加して議論が拡がっていくのが面白かった。そして、当初の疑問を解消できた！😊
 
-namespaceが実装されるまでgit-cloneで時間を稼ぐ、というアイデアがなんか[（良い意味での）技術的負債](https://t-wada.hatenablog.jp/entry/ward-explains-debt-metaphor)
-を想起させて、なるほどなぁと思ったことも付け加えておく。
+namespaceが実装されるまでgit-cloneで時間を稼ぐ、というアイデアがなんか[（良い意味での）技術的負債](https://t-wada.hatenablog.jp/entry/ward-explains-debt-metaphor)を想起させて、なるほどなぁと思ったことも付け加えておく。

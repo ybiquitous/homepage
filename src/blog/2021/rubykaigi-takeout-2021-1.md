@@ -175,15 +175,13 @@ RBSというのは一種のAPIドキュメントでもあるので、RDocとの�
 
 （気力と時間があれば、他のセッションについても書く予定）
 
-## September 27 Postscript
+## September 28 Postscript
 
 [The newsletter of RBS updates](#the-newsletter-of-rbs-updates) のセクションに
 
 > gemで提供しなかった理由は質問しておけばよかったかも
 
 と書いたが、後日ruby-jp Slackの#typesチャンネルで質問を投げたところ、議論が意外と盛り上がったので追記しておく。
-（このとき、npmの `@types/***` パッケージを想定していた）
-
 簡単にまとめると、次のとおり。
 
 - 理想は `gem install @types/rails`

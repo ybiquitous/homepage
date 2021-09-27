@@ -175,7 +175,7 @@ RBSというのは一種のAPIドキュメントでもあるので、RDocとの�
 
 （気力と時間があれば、他のセッションについても書く予定）
 
-## Sep 27 Postscript
+## September 27 Postscript
 
 [The newsletter of RBS updates](#the-newsletter-of-rbs-updates) のセクションに
 

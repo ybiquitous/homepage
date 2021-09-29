@@ -88,6 +88,7 @@
       "es2020": true
     },
     "rules": {
+      "max-statements": "warn",
       "sort-imports": "off",
       "import/extensions": "off",
       "import/no-internal-modules": "off",
@@ -104,7 +105,8 @@
         "error",
         "type"
       ],
-      "@typescript-eslint/explicit-function-return-type": "warn"
+      "@typescript-eslint/explicit-function-return-type": "warn",
+      "@typescript-eslint/no-implicit-any-catch": "off"
     },
     "overrides": [
       {
@@ -226,5 +228,9 @@
         }
       ]
     ]
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11"
+  ]
 }

@@ -23,13 +23,13 @@ export const CopyToClipboard = ({ text }) => {
     }
   };
 
-  let style = "hover:border-white text-gray-500";
+  let style = "text-gray-300 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-100";
   let icon = faClone;
   if (state === SUCCEEDED) {
-    style = "text-green-400";
+    style = "text-green-500";
     icon = faCheck;
   } else if (state === FAILED) {
-    style = "text-red-400";
+    style = "text-red-500";
     icon = faTimes;
   }
 

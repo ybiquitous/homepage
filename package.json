@@ -88,6 +88,7 @@
       "es2020": true
     },
     "rules": {
+      "max-statements": "warn",
       "sort-imports": "off",
       "import/extensions": "off",
       "import/no-internal-modules": "off",

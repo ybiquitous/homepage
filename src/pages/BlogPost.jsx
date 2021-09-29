@@ -47,7 +47,7 @@ const generateCopyToClipboard = (content) => {
     };
 
     // Mount
-    ReactDOM.render(<CopyToClipboard text={pre.textContent || ""} />, btnWrapper);
+    ReactDOM.render(<CopyToClipboard text={pre.textContent ?? ""} />, btnWrapper);
   });
 };
 

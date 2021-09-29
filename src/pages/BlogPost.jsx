@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 import { Link } from "../Link";
-import { Breadcrumb, useTitle } from "../utils";
+import { Breadcrumb, CopyToClipboard, useTitle } from "../utils";
 import { Navi } from "./BlogPost/Navi";
 import { Tags } from "./BlogPost/Tags";
 import { Times } from "./BlogPost/Times";
@@ -10,8 +11,7 @@ import { Times } from "./BlogPost/Times";
  * @param {HTMLElement} toc
  */
 const generateTOC = (content, toc) => {
-  const headings = content.querySelectorAll("h2[id]");
-  headings.forEach((heading) => {
+  content.querySelectorAll("h2[id]").forEach((heading) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
     a.href = `#${heading.id}`;
@@ -20,6 +20,34 @@ const generateTOC = (content, toc) => {
     a.title = heading.textContent ?? "";
     li.appendChild(a);
     toc.appendChild(li);
+  });
+};
+
+/**
+ * @param {HTMLElement} content
+ */
+const generateCopyToClipboard = (content) => {
+  content.querySelectorAll("pre").forEach((pre) => {
+    // Insert a wrapper
+    const wrapper = document.createElement("div");
+    wrapper.className = "relative";
+    pre.replaceWith(wrapper);
+    wrapper.appendChild(pre);
+
+    // Insert a button
+    const btnWrapper = document.createElement("div");
+    btnWrapper.className = "absolute top-2 right-2";
+    btnWrapper.hidden = true;
+    wrapper.appendChild(btnWrapper);
+    wrapper.onmouseenter = () => {
+      btnWrapper.hidden = false;
+    };
+    wrapper.onmouseleave = () => {
+      btnWrapper.hidden = true;
+    };
+
+    // Mount
+    ReactDOM.render(<CopyToClipboard text={pre.textContent || ""} />, btnWrapper);
   });
 };
 
@@ -68,6 +96,7 @@ export const BlogPost = ({
 
     if (contentEl != null && tocEl != null) {
       generateTOC(contentEl, tocEl);
+      generateCopyToClipboard(contentEl);
     }
 
     return () => {

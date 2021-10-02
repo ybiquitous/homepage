@@ -19,27 +19,33 @@ export const CopyToClipboard = ({ text }) => {
     } catch (e) {
       setState(FAILED);
     } finally {
-      setTimeout(() => setState(INITIAL), 3000);
+      setTimeout(() => setState(INITIAL), 2000);
     }
   };
 
   let style = "text-gray-300 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-100";
   let icon = faClone;
+  let message;
   if (state === SUCCEEDED) {
     style = "text-green-500";
     icon = faCheck;
+    message = "Copied!";
   } else if (state === FAILED) {
     style = "text-red-500";
     icon = faTimes;
+    message = "Failed to copy.";
   }
 
   return (
-    <button
-      title="Copy to Clipboard"
-      onClick={handleClick}
-      className={`border border-current rounded px-1 py-0.5 ${style}`}
-    >
-      <FontAwesomeIcon icon={icon} size="sm" fixedWidth />
-    </button>
+    <>
+      {message != null && <span className="mr-2 text-gray-500 text-sm">{message}</span>}
+      <button
+        title="Copy to Clipboard"
+        onClick={handleClick}
+        className={`border border-current rounded px-1 py-0.5 ${style}`}
+      >
+        <FontAwesomeIcon icon={icon} size="sm" fixedWidth />
+      </button>
+    </>
   );
 };

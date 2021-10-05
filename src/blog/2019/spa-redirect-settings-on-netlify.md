@@ -17,10 +17,10 @@
 > If you’re developing a single page app and want history pushstate to work so you get clean URLs, you’ll want to enable the following rewrite rule:
 > (…)
 > This will effectively serve the index.html instead of giving a 404 no matter what URL the browser requests.
->
-> もしシングルページアプリケーション（SPA）を開発していて、クリーンなURLで履歴のpushStateをしたいのであれば、次のリライトルールを有効にしたいと思うでしょう。
-> (…)
-> このルールは、ブラウザがどのURLをリクエストしても、404を与える代わりにindex.htmlを効果的に提供します。
+
+（私訳）「もしシングルページアプリケーション（SPA）を開発していて、クリーンなURLで履歴のpushStateをしたいのであれば、次のリライトルールを有効にしたいと思うでしょう。
+(…)
+このルールは、ブラウザがどのURLをリクエストしても、404を与える代わりにindex.htmlを効果的に提供します。」
 
 これだけです。ちなみに、このサイトのリダイレクト設定は[ここ](https://github.com/ybiquitous/homepage/blob/f21b1e5963607f5b6fd9a3b114efeb0786093ffe/_redirects#L1)にあります。
 

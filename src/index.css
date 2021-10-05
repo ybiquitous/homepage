@@ -45,7 +45,7 @@ details {
     }
 
     & > h2 {
-      @apply text-3xl border-b border-gray-300 mt-16 mb-4 pb-2;
+      @apply text-3xl border-b border-gray-300 mt-16 mb-4 pb-1;
     }
 
     & > h3 {
@@ -90,22 +90,30 @@ details {
     }
 
     & > blockquote {
-      @apply text-gray-500 border-l-4 border-gray-400 px-4 dark:text-gray-400;
+      @apply text-gray-500 italic border-l-2 border-gray-400 px-4 dark:text-gray-400;
 
       & > p {
         @apply mt-4;
       }
+
+      & p:first-of-type::before {
+        content: open-quote;
+      }
+
+      & p:last-of-type::after {
+        content: close-quote;
+      }
     }
 
     & code {
-      @apply bg-gray-100 rounded px-1 py-0.5 dark:bg-gray-800;
+      @apply text-sm bg-gray-100 rounded px-1 py-0.5 dark:bg-gray-800;
     }
 
     & pre {
       @apply bg-gray-100 rounded p-4 overflow-auto dark:bg-gray-800;
 
       & > code {
-        @apply p-0;
+        @apply p-0 leading-relaxed;
       }
     }
 

@@ -30,7 +30,7 @@
 
 この変更を導入したプルリクエストは [ybiquitous/homepage#93](https://github.com/ybiquitous/homepage/pull/93) です。
 
-元々の `_redirects` には、こう書いていました。
+オリジナルの `_redirects` には、こう書いていました。
 
 ```
 /blog      /    200

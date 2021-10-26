@@ -110,7 +110,7 @@ details {
     }
 
     & a[href] {
-      @apply my-link-color;
+      @apply my-link-color break-all;
     }
 
     & details {

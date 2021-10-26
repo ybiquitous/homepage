@@ -66,6 +66,7 @@ OSSの持続可能性って言っちゃうと何かぼんやりしてしまう�
 ## [RailsエンジニアのためのNext.js入門](https://kaigionrails.org/2021/talks/hokaccha/)
 
 スライド: <https://speakerdeck.com/hokaccha/railsenziniafalsetamefalsenext-dot-jsru-men>
+
 ブログ: <https://hokaccha.hatenablog.com/entry/2021/10/23/135532>
 
 @hokacchaさんの実運用に基づくNext.jsの紹介で、使い所というかRailsとの共存のあり方というか、かなりわかりやすいセッションだった。

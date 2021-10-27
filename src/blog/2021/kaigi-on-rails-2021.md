@@ -95,6 +95,8 @@ issueを漁ってみると、ドンピャシャなやつを見つけてしまっ
 
 スライド: <https://docs.google.com/presentation/d/e/2PACX-1vR0xHJzkJ6kW26mROTebtOBGFHbMMEi9zFg69BOeSSZkDMqR5ONoMjZTjLeCPBpJH-yWKumEVuSkggR/pub>
 
+ブログ: <https://pocke.hatenablog.com/entry/2021/10/27/010938>
+
 タイトル通りキャッシュの話。`Rails.cache` のことは[Railsガイド](https://guides.rubyonrails.org/caching_with_rails.html)に乗ってるのでなんとなく知ってたんだけど、SQLキャッシュはガイドにサラッとしか書いてないので、今回始めて知った内容が多かった。
 
 このサンプルコードがすべてを説明してくれている。
@@ -122,11 +124,12 @@ OSSへの情熱が凄まじい。コミット全部読むとか、issueにすべ
 
 ## まとめ
 
-誰が言い出したかわからないけれど、俗に言われる「Kaigi Effect」はたしかに存在すると思う。
+誰が言い出したかわからないけれど、俗に言われる「Kaigi Effect[^1]」はたしかに存在すると思う。
 先月のRubyKaigiしかり、今月のKaigi on Railsしかり。
 
 セッションを視聴し、誰かと会話し、Twitterの反応を眺める。
 その空気感を（オンライン越しとはいえ）共有しているという感覚が、コードを書くことへの情熱をかきたててくれる。
 
-
 こういう場を提供してくれた運営のみなさんに、改めて心から感謝します。
+
+[^1]: 「Kaigi Effect」の由来について、後日[@kakutaniさんから教わった](https://twitter.com/kakutani/status/1452993581996728328)。なんと10年前の[RubyKaigi 2011](https://rubykaigi.org/2011/ja/schedule/details/18M03/)で生まれた言葉だそう。[#kaigieffect](https://togetter.com/li/162817) というハッシュタグもある。

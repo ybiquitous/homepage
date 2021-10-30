@@ -5,6 +5,8 @@
 [去年のアーカイブ](https://kaigionrails.org/2020)を見直してみたところ、1day開催だったと思い出した。
 今年は2dayなので、運営さん大変だったんだろうな…と思いつつ、2dayだとやはり濃い体験ができた。
 
+**2021-10-30 updated**: YouTubeに[アーカイブ動画](https://www.youtube.com/playlist?list=PLiBdJz0juoHD6LBhzv1--OtEdCBBRZv2l)が公開された！
+
 ## reBako
 
 [reBako](https://rebako.io) というオンラインのイベント会場は、今回はじめての試み。
@@ -32,6 +34,9 @@ OSSの持続可能性って言っちゃうと何かぼんやりしてしまう�
 スライド: <https://speakerdeck.com/yusukeiwaki/railsfalse-sisutemutesutojie-pou-xue>
 
 @YusukeIwakiさんのCapybara深堀りセッション。めちゃくちゃ見たかったのだが、会社のMTGと被ってたのでリアルタイムで視聴できず…。後でアーカイブが出たら見直す予定。
+
+**2021-10-30 updated**: アーカイブ視聴したので、感想を[Twitterに残した](https://twitter.com/ybiquitous/status/1454308923880607747)。
+Capybaraがもう少しカスタマイズできるようになればよさそうなんだが… 🤔
 
 ## [Polishing on "Polished Ruby Programming"](https://kaigionrails.org/2021/talks/kakutani/)
 

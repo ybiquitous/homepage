@@ -16,8 +16,8 @@ const remarkGFM = require("remark-gfm");
 const remarkHighlight = require("remark-highlight.js");
 const remarkHTML = require("remark-html");
 const remarkSlug = require("remark-slug");
-const remarkRelativeLink = require("./src/remark/remark-relative-link");
-const remarkRemoveH1 = require("./src/remark/remark-remove-h1");
+const remarkRelativeLink = require("./src/remark/remark-relative-link.cjs");
+const remarkRemoveH1 = require("./src/remark/remark-remove-h1.cjs");
 /* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
 const DEV = process.env.NODE_ENV === "development";

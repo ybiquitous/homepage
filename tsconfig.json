@@ -16,6 +16,6 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "webpack.config.js", "tailwind.config.js"],
+  "include": ["src/**/*", "webpack.config.*", "tailwind.config.*"],
   "exclude": ["src/slides-build"]
 }

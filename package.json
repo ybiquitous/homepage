@@ -53,7 +53,7 @@
     "remark-footnotes": "^3.0.0",
     "remark-gfm": "^1.0.0",
     "remark-highlight.js": "^6.0.0",
-    "remark-html": "^13.0.1",
+    "remark-html": "^15.0.0",
     "remark-loader": "^4.0.0",
     "remark-preset-ybiquitous": "^0.0.5",
     "remark-slug": "^6.1.0",

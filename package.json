@@ -18,7 +18,8 @@
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "eslint": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
-    "eslint:fix": "npm run eslint -- --fix"
+    "eslint:fix": "npm run eslint -- --fix",
+    "test:visual": "percy snapshot test/percy-snapshots.yml"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
+    "@percy/cli": "^1.0.0-beta.70",
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",

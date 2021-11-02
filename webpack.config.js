@@ -1,28 +1,21 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-const path = require("path");
+import * as path from "path";
+import { fileURLToPath } from "url";
 // @ts-expect-error -- TS7016
-const CopyPlugin = require("copy-webpack-plugin");
+import CopyPlugin from "copy-webpack-plugin";
 // @ts-expect-error -- TS7016
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 // @ts-expect-error -- TS7016
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const remarkAutolinkHeadings = require("remark-autolink-headings");
-const remarkExternalLinks = require("remark-external-links");
-const remarkFootnotes = require("remark-footnotes");
-const remarkGFM = require("remark-gfm");
-// @ts-expect-error -- TS7016
-const remarkHighlight = require("remark-highlight.js");
-const remarkHTML = require("remark-html");
-const remarkSlug = require("remark-slug");
-const remarkRelativeLink = require("./src/remark/remark-relative-link.cjs");
-const remarkRemoveH1 = require("./src/remark/remark-remove-h1.cjs");
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 /* eslint-enable @typescript-eslint/no-unsafe-assignment */
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const DEV = process.env.NODE_ENV === "development";
 
-module.exports = {
+export default {
   entry: "./src/index.jsx",
   output: {
     filename: DEV ? "[name].js" : "[name].[contenthash].js",
@@ -47,27 +40,7 @@ module.exports = {
       },
       {
         test: /\.md$/u,
-        use: [
-          "html-loader",
-          {
-            loader: "remark-loader",
-            options: {
-              remarkOptions: {
-                plugins: [
-                  remarkRemoveH1,
-                  remarkRelativeLink,
-                  remarkGFM,
-                  remarkSlug,
-                  [remarkAutolinkHeadings, { behavior: "append" }],
-                  remarkExternalLinks,
-                  remarkFootnotes,
-                  remarkHighlight,
-                  remarkHTML,
-                ],
-              },
-            },
-          },
-        ],
+        use: [path.resolve(__dirname, "./src/remark/remark-loader.cjs")],
       },
     ],
   },

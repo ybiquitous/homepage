@@ -1,8 +1,8 @@
 /* eslint-env node */
-const visit = require("unist-util-visit"); // eslint-disable-line import/no-extraneous-dependencies
+import { visit } from "unist-util-visit"; // eslint-disable-line import/no-extraneous-dependencies
 
 /** @type {import("unified").Plugin} */
-module.exports = function remarkRelativeLink() {
+export default async function remarkRelativeLink() {
   // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types -- False positive.
   return (tree) => {
     // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types -- False positive.
@@ -13,4 +13,4 @@ module.exports = function remarkRelativeLink() {
       }
     });
   };
-};
+}

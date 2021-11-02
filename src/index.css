@@ -117,7 +117,7 @@ details {
       @apply my-4;
     }
 
-    /* https://github.com/remarkjs/remark-autolink-headings */
+    /* https://github.com/rehypejs/rehype-autolink-headings */
     .icon-link {
       @apply before:content-['#'] ml-4 text-gray-300 dark:text-gray-600 hover:text-blue-700 hover:dark:text-blue-400;
     }
@@ -126,9 +126,9 @@ details {
       display: none;
     }
 
-    /* https://github.com/remarkjs/remark-autolink-headings */
-    & > .footnotes > ol {
-      @apply my-4;
+    /* https://github.com/remarkjs/remark-gfm */
+    & > .footnotes {
+      @apply border-t pt-4;
     }
   }
 }

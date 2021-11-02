@@ -1,0 +1,11 @@
+- name: Root
+  url: http://localhost:8080
+
+- name: Blog
+  url: http://localhost:8080/blog
+
+- name: Blog Post
+  url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
+
+- name: Slides
+  url: http://localhost:8080/slides

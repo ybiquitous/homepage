@@ -134,6 +134,9 @@
       }
     ]
   },
+  "eslintIgnore": [
+    "**/*.cjs"
+  ],
   "stylelint": {
     "ignoreFiles": [
       "dist/**/*",

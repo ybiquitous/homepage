@@ -44,7 +44,7 @@
     "eslint-config-ybiquitous": "^14.3.0",
     "html-loader": "^3.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.3.0",
+    "mini-css-extract-plugin": "^2.4.3",
     "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",
     "remark": "^13.0.0",

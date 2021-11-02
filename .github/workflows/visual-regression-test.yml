@@ -22,3 +22,5 @@ jobs:
       - run: npm ci
       - run: npm start &
       - run: npm run test:visual
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

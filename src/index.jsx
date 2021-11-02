@@ -8,7 +8,7 @@ const Root = () => (
 
     <footer className="my-text-gray text-center mt-16">
       <p>
-        <small>© Masafumi Koba</small>
+        <small>© 2019-{new Date().getFullYear()} Masafumi Koba</small>
       </p>
     </footer>
   </>

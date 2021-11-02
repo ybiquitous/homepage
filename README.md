@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5fb40f6a-f14e-4736-84c7-fc6bf149e269/deploy-status)](https://app.netlify.com/sites/ybiquitous-homepage/deploys)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/de267d78/homepage)
 
 # ybiquitous homepage
 

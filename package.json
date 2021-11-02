@@ -24,7 +24,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "highlight.js": "^11.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
@@ -55,7 +55,7 @@
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^13.0.1",
     "remark-loader": "^4.0.0",
-    "remark-preset-ybiquitous": "^0.0.5",
+    "remark-preset-ybiquitous": "^0.1.2",
     "remark-slug": "^6.1.0",
     "style-loader": "^3.3.0",
     "tailwindcss": "^2.2.16",

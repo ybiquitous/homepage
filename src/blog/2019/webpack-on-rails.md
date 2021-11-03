@@ -282,4 +282,4 @@ Webpacker や Sprockets にも良い点はありますが（少なくとも Rail
 
 ---
 
-*2011-11-03 updated*: 「Table of Contents」と重複するため「目次」セクションを削除。
+*2021-11-03 updated*: 「Table of Contents」と重複するため「目次」セクションを削除。

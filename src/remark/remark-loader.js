@@ -1,16 +1,19 @@
-import { unified } from "unified";
-import remarkGfm from "remark-gfm";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import rehypeSlug from "rehype-slug";
+/* eslint-disable import/no-extraneous-dependencies */
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
+/* eslint-enable import/no-extraneous-dependencies */
 
-import remarkRemoveH1 from "./remark-remove-h1.js";
 import remarkRelativeLink from "./remark-relative-link.js";
+import remarkRemoveH1 from "./remark-remove-h1.js";
 
+/** @type {import("webpack").LoaderDefinitionFunction} */
 export default async function remarkLoader(source) {
   const transformed = await unified()
     .use(remarkParse)

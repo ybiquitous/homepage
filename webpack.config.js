@@ -1,5 +1,4 @@
 /* eslint-env node */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import * as path from "path";
 import { fileURLToPath } from "url";
 // @ts-expect-error -- TS7016
@@ -9,13 +8,14 @@ import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 // @ts-expect-error -- TS7016
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-/* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
+// eslint-disable-next-line no-underscore-dangle
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const DEV = process.env.NODE_ENV === "development";
 
-export default {
+/** @type {import("webpack").Configuration} */
+const webpackConfig = {
   entry: "./src/index.jsx",
   output: {
     filename: DEV ? "[name].js" : "[name].[contenthash].js",
@@ -66,6 +66,8 @@ export default {
     extensions: [".jsx", "..."],
   },
   devtool: DEV ? "inline-source-map" : "source-map",
+
+  // @ts-expect-error -- TS2322. See https://github.com/webpack/webpack/pull/12196
   devServer: {
     static: {
       directory: path.join(__dirname, "src"),
@@ -74,3 +76,5 @@ export default {
     historyApiFallback: { index: "/" },
   },
 };
+
+export default webpackConfig;

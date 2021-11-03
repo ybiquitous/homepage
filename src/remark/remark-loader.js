@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import rehypeToc from "@jsdevtools/rehype-toc";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeHighlight from "rehype-highlight";
@@ -22,6 +23,26 @@ export default async function remarkLoader(source) {
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
+    .use(rehypeToc, {
+      headings: ["h2"],
+      customizeTOC: (toc) => {
+        return {
+          type: "element",
+          tagName: "details",
+          properties: {
+            class: "toc-wrapper",
+          },
+          children: [
+            {
+              type: "element",
+              tagName: "summary",
+              children: [{ type: "text", value: "Table of Contents" }],
+            },
+            toc,
+          ],
+        };
+      },
+    })
     .use(rehypeAutolinkHeadings, { behavior: "append" })
     .use(rehypeExternalLinks)
     .use(rehypeHighlight)

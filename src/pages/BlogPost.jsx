@@ -8,23 +8,6 @@ import { Times } from "./BlogPost/Times";
 
 /**
  * @param {HTMLElement} content
- * @param {HTMLElement} toc
- */
-const generateTOC = (content, toc) => {
-  content.querySelectorAll("h2[id]").forEach((heading) => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = `#${heading.id}`;
-    a.textContent = heading.textContent;
-    a.className = "inline-block truncate max-w-full hover:my-link-color";
-    a.title = heading.textContent ?? "";
-    li.appendChild(a);
-    toc.appendChild(li);
-  });
-};
-
-/**
- * @param {HTMLElement} content
  */
 const generateCopyToClipboard = (content) => {
   content.querySelectorAll("pre").forEach((pre) => {
@@ -87,24 +70,14 @@ export const BlogPost = ({
 
   /** @type {React.MutableRefObject<HTMLElement | null>} */
   const contentElement = useRef(null);
-  /** @type {React.MutableRefObject<HTMLUListElement | null>} */
-  const tocElement = useRef(null);
 
   useEffect(() => {
     const contentEl = contentElement.current;
-    const tocEl = tocElement.current;
 
-    if (contentEl != null && tocEl != null) {
-      generateTOC(contentEl, tocEl);
+    if (contentEl != null) {
       generateCopyToClipboard(contentEl);
     }
-
-    return () => {
-      if (tocEl != null) {
-        tocEl.innerHTML = ""; // clear
-      }
-    };
-  }, [slug, content, contentElement.current, tocElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.
+  }, [slug, content, contentElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.
 
   return (
     <>
@@ -119,14 +92,9 @@ export const BlogPost = ({
           <Times published={published} lastUpdated={lastUpdated} />
         </div>
 
-        <details className="my-text-gray text-sm w-60 mt-4 2xl:mt-0 2xl:fixed 2xl:right-4">
-          <summary>Table of Contents</summary>
-          <ul ref={tocElement} className="space-y-2 mt-4" />
-        </details>
-
         {/* eslint-disable react/no-danger -- This is safe. */}
         <article
-          className="markdown mt-16"
+          className="markdown mt-4"
           ref={contentElement}
           dangerouslySetInnerHTML={{
             __html: content || '<div class="my-text-gray min-h-screen">Loading…</div>',

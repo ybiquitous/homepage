@@ -4,6 +4,7 @@ import rehypeExternalLinks from "rehype-external-links";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import rehypeToc from "@jsdevtools/rehype-toc";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -22,6 +23,26 @@ export default async function remarkLoader(source) {
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
+    .use(rehypeToc, {
+      headings: ["h2"],
+      customizeTOC: (toc) => {
+        return {
+          type: "element",
+          tagName: "details",
+          properties: {
+            class: "toc-wrapper",
+          },
+          children: [
+            {
+              type: "element",
+              tagName: "summary",
+              children: [{ type: "text", value: "Table of Contents" }],
+            },
+            toc,
+          ],
+        };
+      },
+    })
     .use(rehypeAutolinkHeadings, { behavior: "append" })
     .use(rehypeExternalLinks)
     .use(rehypeHighlight)

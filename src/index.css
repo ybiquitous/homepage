@@ -130,5 +130,18 @@ details {
     & > .footnotes {
       @apply border-t pt-4;
     }
+
+    /* https://github.com/JS-DevTools/rehype-toc */
+    & > .toc-wrapper {
+      @apply my-text-gray text-sm mt-4 2xl:w-60 2xl:mt-0 2xl:fixed 2xl:right-4;
+
+      .toc-level {
+        @apply list-none pl-2 pt-2;
+      }
+
+      .toc-link {
+        @apply my-text-gray inline-block truncate max-w-full;
+      }
+    }
   }
 }

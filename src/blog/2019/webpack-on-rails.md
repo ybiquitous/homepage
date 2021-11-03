@@ -9,17 +9,6 @@ Webpack を素の状態で使えるチームであれば、Webpacker という�
 
 手っ取り早く試したい方は、この記事で使用したソースコードのサンプルをこちらの[リポジトリ](https://github.com/ybiquitous/webpack-on-rails-example)に置いてますので、ご覧ください（現時点で最新の Rails 6.0.0.rc1 を使用しています）。
 
-## 目次
-
--   [ゴール](#ゴール)
--   [プロジェクト構成](#プロジェクト構成)
--   [セットアップ](#セットアップ)
--   [Webpack](#webpack)
--   [Rails](#rails)
--   [開発](#開発)
--   [ビルド](#ビルド)
--   [まとめ](#まとめ)
-
 ## ゴール
 
 この記事のゴールは、[アセットパイプライン](https://guides.rubyonrails.org/asset_pipeline.html)が提供している[主要な機能](https://guides.rubyonrails.org/asset_pipeline.html#main-features)を、[Sprockets](https://github.com/rails/sprockets) を介さずに Webpack で代替することです。つまり、Sprockets と Webpack を結合させない設計にする、ということになります（もちろん Sprockets を使い続けることも可能です）。
@@ -290,3 +279,7 @@ Webpacker や Sprockets にも良い点はありますが（少なくとも Rail
 -   [`sass-rails`](https://github.com/rails/sass-rails) といった gem が必要で、直接 npm パッケージを使うことができない（またはサポートしてない）。
 
 最終的には、プロジェクトを取り巻く状況に応じたトレードオフの判断を下すことになるかと思います。この記事がその判断の一助になれば幸いです。
+
+---
+
+*2011-11-03 updated*: 「Table of Contents」と重複するため「目次」セクションを削除。

@@ -24,7 +24,7 @@ export const CopyToClipboard = ({ text }) => {
     }
   };
 
-  let style = "text-gray-300 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-100";
+  let style = "text-gray-300 hover:text-gray-500";
   let icon = faClone;
   let message;
   if (state === SUCCEEDED) {
@@ -38,15 +38,15 @@ export const CopyToClipboard = ({ text }) => {
   }
 
   return (
-    <>
-      {message != null && <span className="mr-2 text-gray-500 text-sm">{message}</span>}
+    <span className="relative">
+      {message != null && <span className="absolute -top-10 -right-2 mr-2">{message}</span>}
       <button
         title="Copy to Clipboard"
         onClick={handleClick}
-        className={`border border-current rounded px-1 py-0.5 ${style}`}
+        className={`border border-current rounded px-1 py-0.5 bg-gray-100 ${style}`}
       >
         <FontAwesomeIcon icon={icon} size="sm" fixedWidth />
       </button>
-    </>
+    </span>
   );
 };

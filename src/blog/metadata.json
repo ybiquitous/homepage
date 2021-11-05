@@ -150,5 +150,13 @@
     "lastUpdated": null,
     "author": "Masafumi Koba",
     "tags": ["test", "percy"]
+  },
+  {
+    "slug": "2021/yet-another-remark-loader",
+    "title": "Webpack remark-loaderの代わりを作った話",
+    "published": "2021-11-05T00:00:00.000Z",
+    "lastUpdated": null,
+    "author": "Masafumi Koba",
+    "tags": ["markdown", "remark", "rehype", "unified", "webpack"]
   }
 ]

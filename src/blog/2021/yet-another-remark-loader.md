@@ -5,15 +5,16 @@ PRはこちら 👉 [ybiquitous/homepage#675](https://github.com/ybiquitous/home
 
 ## Pure ESM
 
-たしか、2021年4月に[Node.js v14.0.0](https://nodejs.org/en/blog/release/v14.0.0/)がリリースされてからだろうか、ESM（ECMAScript Modules）が公式サポートされるようになったので、npmパッケージのPure ESM化が始まったように記憶している。
+たしか、2021年4月に[Node.js v14.0.0](https://nodejs.org/en/blog/release/v14.0.0/)がリリースされてからだろうか、ESM（ECMAScript Modules）が公式サポートされるようになったので、npmパッケージのPure ESM化の流れが始まったように記憶している。
 
-同時期だったかそれよりも前からだったか記憶が定かではないが、コミッタを務めるStylelintでも次のメジャアップーデートの話に付随してESM化のテーマが上がっていて、[Pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)というガイドには随分お世話になった。
-パッケージをPure ESMで提供する流れが出てきていたのだ。（ちなみに、ESMとCJS（CommonJS）の両方を提供することを、Dual Packageと呼ぶ）
+同時期だったかそれよりも前からだったか記憶が定かではないが、コミッタを務めるStylelintでも次のメジャーアップデートの話に付随してESM化のテーマが上がっていた。
+その際、[Pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)というガイドには随分お世話になった。
+こうしたガイドやブログなどで徐々にPure ESMの認知度が上がってきたように思う。（ちなみに、ESMとCJS（CommonJS）の両方を提供することを、[Dual package](https://nodejs.org/api/packages.html#dual-commonjses-module-packages)と呼ぶ）
 
-当サイトで、MarkdownをHTMLに変換するために利用している[remark](https://remark.js.org/)というパッケージも、このPure ESM化の流れに乗って次々とPure ESMパッケージをリリースしていた。（See [remark 14.0.0 release note](https://github.com/remarkjs/remark/releases/tag/14.0.0)）
+当サイトで、MarkdownをHTMLに変換するために利用している[remark](https://remark.js.org/)とそれに関連するパッケージも、この流れに乗って次々とPure ESMパッケージをリリースしていた。（See [remark 14.0.0 release note](https://github.com/remarkjs/remark/releases/tag/14.0.0)）
 
-当サイトでは、このremarkをWebpackから扱うための[remark-loader](https://github.com/webpack-contrib/remark-loader)というパッケージを利用していたのだが、困ったことにWebpackのエコシステムはまだPure ESMをサポートしていなかった（2021年11月現在もできてない）。
-remark-loaderがPure ESMのremark v14に対応するのをしばらく待っていたのだが、なかなか進捗が無いことに業を煮やして、自分でremark-loaderの代わりとなるものを実装しようと思い立った。
+私はこのremarkをWebpackから扱うための[remark-loader](https://github.com/webpack-contrib/remark-loader)というパッケージを利用していたのだが、困ったことにWebpackのエコシステムはまだPure ESMをサポートしていなかった。2021年11月現在でもそうだ。サポートに大変な労力がかかることは、容易に想像できる。
+remark-loaderがPure ESMのremarkに対応するのをしばらく待っていたのだが、なかなか進捗が無かったので、どうせなら自分でremark-loaderの代わりとなるものを実装しようと思い立った。
 
 [ybiquitous/homepage#594](https://github.com/ybiquitous/homepage/pull/594)はremark-loaderのアップデートを待っていたが、ついにマージできなかったPRだ。
 
@@ -23,18 +24,18 @@ remark-loaderがPure ESMのremark v14に対応するのをしばらく待って�
 
 ここで1つ異変に気づく。[remark-html](https://github.com/remarkjs/remark-html)というMarkdownをHTMLに変換する責務を負っているパッケージが非推奨となっているのだ。
 
-非推奨警告を読むと、[**rehype**](https://github.com/rehypejs/rehype) エコシステムを使え、と書いてある。
+READMEを読むと、[**rehype**](https://github.com/rehypejs/rehype) エコシステムを使え、と書いてある。
 さらにリンクを辿っていくと、[unifiedjs.com](https://unifiedjs.com/)にたどり着いた。
 以前からremarkを使っていて何となくunifiedのことは知っていたが、それらとrehypeの関係が最初はよく理解できなかった。
 
 元々、remarkのエコシステムはパッケージが沢山あって、リポジトリも分散しており、それでいてドキュメントがあまりなかったから、敬遠していた。
 今回unifiedjs.comを訪れてドキュメントが以前より充実していたので、理解を深めることができた。
 
-簡単に書くと、次の通り。
+簡単に書くと、次のような理解で良いかと思う。
 
-- *unified*: 任意のテキスト変換処理を組み合わせための基盤となるプラグインシステム
-- *remark*: Markdownテキストと[mdast（Markdown Abstract Syntax Tree）](https://github.com/syntax-tree/mdast)を変換する仕組み
-- *rehype*: HTMLテキストと[hast（HTML Abstract Syntax Tree）](https://github.com/syntax-tree/hast)を変換する仕組み
+- *unified* - 任意のテキスト変換処理を組み合わせための基盤となるプラグインシステム
+- *remark* - Markdownテキストと[mdast](https://github.com/syntax-tree/mdast)（Markdown Abstract Syntax Tree）を変換する仕組み
+- *rehype* - HTMLテキストと[hast](https://github.com/syntax-tree/hast)（HTML Abstract Syntax Tree）を変換する仕組み
 
 サンプルコードを見ると、より直感的につかめるかもしれない（ストリームっぽいAPI）。
 
@@ -46,14 +47,15 @@ const htmlText = await unified()
   .process(markdownText);
 ```
 
-それぞれの変換器をunifiedがつなげるイメージ。
+それぞれの変換器をunifiedがつなげるイメージだ。
 
 各*astの実体は、プレーンなJavaScriptオブジェクト。このオブジェクトを普通のJSコードで読み書きすることで、変換処理が実現できる。
 
-例えば、Markdown見出しのmdastはこんな感じ：
+例えば、Markdown見出しのmdastはこんな感じ。
 
 ```js
 // "# 見出し"
+// ↓
 {
   type: "heading",
   depth: 1,
@@ -61,10 +63,11 @@ const htmlText = await unified()
 }
 ```
 
-HTMLリンクのhastの場合は、このように：
+HTMLリンクのhastの場合は、このようになる。
 
 ```js
 // "<a href='https://github.com' class='link' download>GitHub</a>"
+// ↓
 {
   type: "element",
   tagName: "a",
@@ -78,18 +81,18 @@ HTMLリンクのhastの場合は、このように：
 ```
 
 ただMarkdown→HTMLに変換するためだけのライブラリとしてremarkを考えていたので、unifiedやらrehypeやら覚える概念がやたらと増えて辟易したが、一度理解してしまうと「よくできてるなぁ」と感心してしまった。
-何らかの構文をもつテキストは、すべてのこのエコシステム内で実装できてしまう、という非常に柔軟な仕組みになっている。
+何らかの構文（Syntax）をもつテキストは、すべてのこのエコシステム内で実装できてしまう、という非常に柔軟な仕組みになっている。
 深くは見ていないが、現に自然言語（nlcst）やECMAScript（esast）のSyntax Treeがサポートされている。
 
-## Write processor
+## Write unified processor
 
 仕組みを理解したので、あとはMarkdownを処理する `remark-*` パッケージをアップデートしていったり、HTMLを処理する `rehype-*` パッケージに置き換えていった。
 
 [unifiedjs.com/explore](https://unifiedjs.com/explore/) ページでどんなパッケージがあるか簡単に探せるので、望む変換処理を実装したパッケージを見つけてインストールしていく。
 
-さらに、それらを組み合わせて、独自のprocessorを実装していく。これはPure ESMで書かれたモジュールだ。
+さらに、それらを組み合わせて、独自のprocessorを実装していく。パッケージはほぼPure ESMで提供されているので、このprocessorモジュールもPure ESMで書く必要がある。
 
-2021年11月現在の変換処理は次のようになっている。GFM（GitHub Flavored Markdown）へ変換したり、相対リンク変換したり、`<h*>` タグにslugを付けたり、コードにシンタックスハイライトをかけたり…。
+2021年11月現在の変換処理は次のようになっている。GFM（GitHub Flavored Markdown）へ変換したり、相対リンクに変換したり、`<h*>` タグにslugを付けたり、`<pre><code>` にシンタックスハイライトをかけたり…。
 名前から想像できると思うが、柔軟に組み合わせることができるし、自分独自の変換も書ける。
 HTMLのASTから最後に*stringify*してテキストに戻せば、変換は完了だ。
 
@@ -147,16 +150,16 @@ export default function remarkRemoveH1() {
 
 https://github.com/ybiquitous/homepage/blob/74414eb84c6c83118d0207a84234c04b520411fa/src/remark/remark-remove-h1.js#L5-L13
 
-## Use from Webpack
+## Write Webpack loader
 
-Markdown→HTMLの変換処理は書けた。あとはWebpackからLoaderの仕組みで呼び出すだけ。こうなったらLoaderも自分で書くことにした。
-もはや[remark-loader](https://github.com/webpack-contrib/remark-loader)や[html-loader](https://github.com/webpack-contrib/html-loader)は必要ない。
+Markdown→HTMLの変換処理は書けた。あとはWebpackからloaderの仕組みで呼び出すだけ。remark-loaderを置き換えるloaderを書く必要がある。
+もはや[html-loader](https://github.com/webpack-contrib/html-loader)は必要ない。
 
 ここで1つ困ったことが起きた。WebpackからPure ESMのモジュールを呼べないのだ。
 [Write a Loader](https://webpack.js.org/contribute/writing-a-loader/)というWebpackのドキュメントを読んでもわからない。
 ここが1番悩んだポイントかもしれない。
 
-Loaderは書いた。でもそれはPure ESMで書かれたunified processorだ。なぜならunifiedのパッケージたちは皆Pure ESMだから。
+loaderは比較的簡単に書けた。でもそれはPure ESMで書かれたunified processorを含んでいる、ESMモジュールだ。このように。
 
 ```js
 import { unified } from "unified";
@@ -169,7 +172,7 @@ export default async function remarkLoader(source) {
 }
 ```
 
-現状、`webpack.config.js` の `module.rules[].use` にはCJSモジュールしか指定できない。つまり、以下のように書くしかない。
+`webpack.config.js` では `module.rules[].use[]` に今回書いたloaderモジュールのパスを指定する。
 
 ```js
 // webpack.config.js
@@ -178,23 +181,26 @@ export default async function remarkLoader(source) {
     rules: [
       {
         test: /\.md$/,
-        use: [path.resolve(__dirname, "./src/remark/remark-loader.cjs")],
+        use: [path.resolve(__dirname, "./src/remark/remark-loader.js")],
       }
     ]
   }
 }
 ```
 
-`remark-loader.js` (ESM) → `remark-loader.cjs` (CJS) に変換するか？と思ったが、importしているremarkパッケージたちはPure ESMだから、それらもCJSに変換する必要があり、現実的ではない。
+しかしこれは動かない。おそらく [webpack/loader-runner#61](https://github.com/webpack/loader-runner/issues/61) に報告されている問題だと思う。
+まだ、WebpackがESMで書かれたloaderに対応してない。
 
-何か手掛かりがないかNode.jsのドキュメント漁っていたところ、[Dynamic `import()`](https://nodejs.org/api/esm.html#import-expressions)の箇所に行き着いた。
+ツールを使って `remark-loader.js` (ESM) → `remark-loader.cjs` (CJS) に変換するか？と思ったが、importしているremarkパッケージたちはPure ESMだから、それらもCJSに変換する必要があり、現実的ではない。
+
+何か手掛かりがないかNode.jsのドキュメントを漁っていたところ、[Dynamic `import()`](https://nodejs.org/api/esm.html#import-expressions)の箇所に行き着いた。
 CJSモジュールからESMモジュールを呼び出すには、`import()` 関数を使うしかない。
 
 - 🙅 Webpack → ESM
 - 🙆 Webpack → CJS → ESM
 
-やっとのことで、解決策を見つけた。ESMモジュールに `import()` 経由でブリッジするCJSモジュールを書けばいい。
-Webpack LoaderはPromiseをサポートしているので、`import()` を使っても問題はない。ということで書いたモジュールがこちら。
+やっとのことで、解決策を見つけた。ESMモジュールに `import()` 経由でブリッジするCJSモジュールを書けばいいのだ。
+Webpack loaderはPromiseをサポートしているので、`import()` を使っても問題はない。ということで書いたモジュールがこちら。
 
 ```js
 // remark-loader.cjs
@@ -205,9 +211,21 @@ module.exports = function remarkLoader(...args) {
 
 https://github.com/ybiquitous/homepage/blob/74414eb84c6c83118d0207a84234c04b520411fa/src/remark/remark-loader.cjs#L2-L4
 
+`webpack.config.js` で指定しているloaderへのパスも変更する。
+
+```diff
+{
+  test: /\.md$/,
+- use: [path.resolve(__dirname, "./src/remark/remark-loader.js")],
++ use: [path.resolve(__dirname, "./src/remark/remark-loader.cjs")],
+}
+```
+
+これでうまくいった 🎉
+
 ## Conclusion
 
-ESMとCJSの共存は本当にツライ。Pure ESMしか提供しないパッケージが増えてきているが、CJSでしか動かないものはまだいくらでもあるし、まだ過渡期なんだからDual Packageでも良いんじゃない？と思う。ESMからCJSを出力するツールなんていっぱいあるんだし。
+ESMとCJSの共存は本当にツライ。Pure ESMのパッケージが増えてきているが、CJSでしか動かないものはまだいくらでもあるし、まだ過渡期なんだから当分はDual packageでも良いんじゃない？と思う。ESMからCJSを出力するツールなんていっぱいあるんだし。
 
 ただ、無理にでもPure ESM推進していかないと、なかなか移行が進まないんだろうなとも思うし、色々難しい事情があるんだろうな、きっと。
 （ちょっと拙速すぎる感は否めなんだけど…）

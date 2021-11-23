@@ -14,6 +14,15 @@ Homebrew CaskでインストールしているEmacsのアップデートが失�
 ブツブツつぶやいてたら[@jimlock](https://twitter.com/jimlock)さんが反応してくれてソースビルドを勧めてくれたので、やってみることにした。
 （[@jimlockさんのブログ](https://jinroq.hatenablog.jp/entry/2021/11/20/101235)も参考にした。感謝）
 
+## 環境
+
+OSは **macOS Big Sur** [^1]。バージョンは次の通り。
+
+```console
+$ system_profiler SPSoftwareDataType | grep Version
+      System Version: macOS 11.6 (20G165)
+      Kernel Version: Darwin 20.6.0p
+```
 
 ## ソースダウンロード
 
@@ -113,3 +122,5 @@ $ open ~/Applications/Emacs.app
 ![Emoji support on Emacs 29](../../images/emoji-support-on-emacs-29.png)
 
 意外と簡単にビルドできたので、今後も定期的にソースからビルドするつもり。
+
+[^1]: 環境書くの忘れてたので、追記。

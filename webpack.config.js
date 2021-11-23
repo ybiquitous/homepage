@@ -55,7 +55,10 @@ const webpackConfig = {
     }),
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     new CopyPlugin({
-      patterns: [{ from: "src/robots.txt", to: "robots.txt" }],
+      patterns: [
+        { from: "src/robots.txt", to: "robots.txt" },
+        { from: "src/images", to: "images" },
+      ],
     }),
   ],
   optimization: {

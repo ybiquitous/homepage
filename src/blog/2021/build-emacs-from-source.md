@@ -58,7 +58,7 @@ $ /usr/bin/makeinfo --version
 makeinfo (GNU texinfo) 4.8
 ```
 
-Homebrewでインストールできないか探してみると、[`textinfo` というパッケージに含まれている](https://stackoverflow.com/a/44382617)ことがわかった。
+Homebrewでインストールできないか探してみると、[`texinfo` というパッケージに含まれている](https://stackoverflow.com/a/44382617)ことがわかった。
 
 ```console
 $ brew install texinfo

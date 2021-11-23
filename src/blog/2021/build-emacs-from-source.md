@@ -110,6 +110,6 @@ $ open ~/Applications/Emacs.app
 
 `NEWS` 眺めてると、[Emojiサポート](https://github.com/emacs-mirror/emacs/blob/2955d46c00430b38310d0fae968adea91e2bbc3d/etc/NEWS#L108)のセクションを見つけた。`C-x 8 e e` でEmoji選べるようになってる。便利。
 
-![Emoji support on Emacs 29](/images/emoji-support-on-emacs-29.png)
+![Emoji support on Emacs 29](../../images/emoji-support-on-emacs-29.png)
 
 意外と簡単にビルドできたので、今後も定期的にソースからビルドするつもり。

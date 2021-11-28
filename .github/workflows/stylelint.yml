@@ -24,9 +24,10 @@ jobs:
         run: |
           curl -fL "https://gist.githubusercontent.com/ybiquitous/184a337662bfcafdd3d227253f9401ff/raw/ca3681c9b01347fe7af612f4fd64384f135890c7/stylelint-compact.json" > /tmp/stylelint-compact.json
           echo "::add-matcher::/tmp/stylelint-compact.json"
+      # https://github.com/YozhikM/stylelint-a11y/pull/66
       - run: |
           npm install stylelint \
                       stylelint-config-standard \
-                      'github:rsstdd/stylelint-a11y#chore/update-stylelint' \ # https://github.com/YozhikM/stylelint-a11y/pull/66
+                      'github:rsstdd/stylelint-a11y#chore/update-stylelint' \
                       stylelint-high-performance-animation
       - run: npx stylelint "**/*.css" --formatter=compact

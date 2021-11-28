@@ -167,7 +167,7 @@
       ],
       "declaration-block-no-duplicate-properties": true,
       "declaration-block-trailing-semicolon": null,
-      "declaration-property-value-whitelist": {
+      "declaration-property-value-disallowed-list": {
         "font-family": [
           "var(--font-family-serif)",
           "var(--font-family-sans-serif)",

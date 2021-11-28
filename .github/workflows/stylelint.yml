@@ -27,6 +27,6 @@ jobs:
       - run: |
           npm install stylelint \
                       stylelint-config-standard \
-                      'github:rsstdd/stylelint-a11y#chore/update-stylelint' \
+                      'github:rsstdd/stylelint-a11y#chore/update-stylelint' \ # https://github.com/YozhikM/stylelint-a11y/pull/66
                       stylelint-high-performance-animation
       - run: npx stylelint "**/*.css" --formatter=compact

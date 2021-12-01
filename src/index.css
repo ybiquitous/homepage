@@ -64,6 +64,10 @@ details {
       @apply text-base mt-8 mb-4;
     }
 
+    & hr {
+      @apply my-4;
+    }
+
     & p {
       @apply leading-loose;
     }

@@ -61,7 +61,6 @@ const webpackConfig = {
     }),
   ],
   optimization: {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     minimizer: ["...", new CssMinimizerPlugin()],
   },
   resolve: {

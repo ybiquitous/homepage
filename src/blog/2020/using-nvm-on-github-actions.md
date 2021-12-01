@@ -4,6 +4,20 @@
 
 ## 基本的にはactions/setup-nodeだけでよい
 
+*（2021年12月2日追記）*
+
+[actions/setup-node@v2.5.0](https://github.com/actions/setup-node/releases/tag/v2.5.0)が `node-version-file` オプションに対応した。
+つまり、`.nvmrc` の内容を出力するステップは不要となり、よりシンプルなコードが書ける。最高。
+
+```yaml
+steps:
+  - uses: actions/setup-node@v2
+    with:
+      node-version-file: .nvmrc
+```
+
+---
+
 *（2021年7月7日追記）*
 
 [actions/setup-node@v2.2.0](https://github.com/actions/setup-node/releases/tag/v2.2.0)がnvm互換の `lts` エイリアスに対応した（例．`lts/*`）。

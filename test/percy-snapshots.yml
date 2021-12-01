@@ -9,8 +9,9 @@
 
 - name: Blog Post with opened ToC
   url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
-  execute: |
-    document.querySelector("summary").click();
+  waitForTimeout: 5000
+  waitForSelector: "article summary"
+  execute: "document.querySelector('article summary').click();"
 
 - name: Slides
   url: http://localhost:8080/slides

@@ -3,7 +3,6 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 // @ts-expect-error -- TS7016
 import CopyPlugin from "copy-webpack-plugin";
-// @ts-expect-error -- TS7016
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 // @ts-expect-error -- TS7016

@@ -12,11 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "::set-output name=nvmrc::$(< .nvmrc)"
-        id: nvm
       - uses: actions/setup-node@v2
         with:
-          node-version: "${{ steps.nvm.outputs.nvmrc }}"
+          node-version-file: .nvmrc
           cache: npm
       # https://github.com/actions/toolkit/blob/2f164000dcd42fb08287824a3bc3030dbed33687/docs/commands.md#problem-matchers
       # https://gist.github.com/ybiquitous/184a337662bfcafdd3d227253f9401ff

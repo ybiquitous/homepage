@@ -1,6 +1,6 @@
 # Stylelint 14.0.0
 
-*“[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 3日目の記事*
+*これは “[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 3日目の記事です。*
 
 2021年10月21日、[Stylelint 14.0.0](https://github.com/stylelint/stylelint/releases/tag/14.0.0) がリリースされた。
 このバージョンは大きな破壊的変更を含むので、本稿ではその解説をする。
@@ -10,7 +10,7 @@
 
 ## ユーザ向けの変更
 
-今回のバージョンには[マイグレーションガイド](https://stylelint.io/migration-guide/to-14)が用意されているので、先に軽く目を通してもらえると理解が早いかもしれない。
+今回のバージョンには[マイグレーションガイド](https://stylelint.io/migration-guide/to-14)が用意されているので、その内容に沿って説明していく。
 
 ### シンタックス指定方法
 
@@ -29,7 +29,7 @@ a {} /* これはCSS */
 a {} // これはSCSS
 ```
 
-Stylelint 13:
+Stylelint 13はCSSファイルもSCSSファイルも、デフォルトで解析してくれていた。
 
 ```console
 $ stylelint "**/*.{css,scss}"
@@ -41,7 +41,7 @@ a.scss
  1:3  ✖  Unexpected empty block   block-no-empty
 ```
 
-Stylelint 14:
+Stylelint 14では、SCSSのようなCSS拡張を解析しようとすると、失敗してしまう。
 
 ```console
 $ stylelint "**/*.{css,scss}"
@@ -54,8 +54,8 @@ a.scss
  1:6  ✖  Unknown word  CssSyntaxError
 ```
 
-Stylelint 14でそのままSCSSファイルを解析すると、シンタックスエラーが発生する。これを解決するには、新たに追加された `customSyntax` オプションを指定する必要がある。
-また、明示的に `postcss-scss` パッケージをインストールする必要もある。
+上記のシンタックスエラーを解決するには、新たに追加された `customSyntax` オプションを指定する必要がある。
+また、明示的にSCSSシンタックス用の `postcss-scss` パッケージをインストールする必要もある。
 
 `.stylelintrc.json`:
 
@@ -94,7 +94,8 @@ a.scss
 このように、Stylelint 13まではシンタックス自動類推機能のために各シンタックス用のPostCSSプラグインを依存ライブラリとして含んでいたが、Stylelint 14からは含まなくなった。
 そのため、ユーザが自分でプラグインをインストールし、シンタックスを指定する必要がある。
 
-ただ、これではほとんどのユーザは不便になったと感じるだろう。その不満を解消するには、コミュニティが用意している**共有設定**を使えばよい。
+ただ、これではほとんどのユーザは不便になったと感じるだろう。実装はシンプルになったが、ユーザの手間は増えた。
+その点は認識していて、いくつかのコミュニティは**共有設定**を用意している。以下は、SCSSの例。
 
 `.stylelintrc.json`:
 
@@ -119,26 +120,24 @@ a.scss
 ```
 
 [`stylelint-config-recommended-scss`](https://github.com/stylelint-scss/stylelint-config-recommended-scss) をインストールすると、 `postcss-scss` が依存ライブラリとして自動でインストールされる。
-また、`"customSyntax": "postcss-scss"` 設定も継承される。
-
-SCSSのようにユーザベースの大きいシンタックスはコミュニティが提供してくれるが、その他のシンタックスでは共有設定が提供されてないので、自分で `customSyntax` を設定する必要がある。
+また、`"customSyntax": "postcss-scss"` 設定も継承される。コミュニティが推奨するルールセットも有効になる。
 
 #### `customSyntax` 導入の背景
 
 大きな破壊的変更となった `customSyntax` オプションの導入は、PostCSS 8へのアップデート（[stylelint/stylelint#4942](https://github.com/stylelint/stylelint/issues/4942)）が発端となっていた。
-（実装詳細にふれるので、このセクションは読み飛ばしてもらって構わない）
 
-StylelintはPostCSSのエコシステムに強く依存しており、様々なPostCSSプラグインを使っているので、PostCSS 8へのアップデートもそのような依存プラグインがPostCSS 8に対応するのを待つ必要があった。
-そのため、アップデート作業は各プラグインのメンテナの動向に強く依存する形となり、進捗があまり芳しくなかった。
+Stylelintは様々なPostCSSプラグインに強く依存しているので、PostCSS 8へのアップデートもそのような依存プラグインがPostCSS 8に対応するのを待つ必要があった。
+そのため、アップデート作業は各プラグインのメンテナの活動に強く依存する形となり、進捗が芳しくなかった。
 
-特に、シンタックス自動類推機能は [`postcss-syntax`](https://github.com/gucong3000/postcss-syntax) というパッケージに依存しており、このパッケージメンテナの活動量が著しく低下していた。
+特に、シンタックス自動類推機能は [`postcss-syntax`](https://github.com/gucong3000/postcss-syntax) というパッケージに依存しており、このパッケージメンテナの活動が著しく低下していた。
 （[`postcss-jsx`](https://github.com/gucong3000/postcss-jsx)、[`postcss-html`](https://github.com/gucong3000/postcss-html) なども同様）
-SCSSやLessなどのシンタックスは随時アップデートされていくが、新しい機能に追随するためのPostCSSプラグインのメンテナンスが追いつかないという状況だった。
+SCSSやLessなどのCSS拡張言語は随時アップデートされていくが、言語の新しいシンタックスに追随するには各PostCSSプラグインも更新する必要がある。
 
-また、ほとんどのユーザにとって使われないシンタックスが自動でインストールされるのはセキュリティやパフォーマンスにも影響するし、Stylelintの実装もより複雑になりメンテナンスのコストが増大する。
-（特定のシンタックスに関する issue も多いので、その管理も大変なのは言うまでもない）
+また、ほとんどのユーザにとって、使われないシンタックスが自動でインストールされるのはパフォーマンスやセキュリティ、依存ライブラリ管理コストなどに影響する。
+Stylelint自体の実装も複雑になるので、メンテナンスのコストが増大する。
+（特定のシンタックスに関する issue も多い）
 
-[このコメント](https://github.com/stylelint/stylelint/issues/4942#issuecomment-839514125)に集約されているが、こうした様々な事情を背景に、コアをよりスリムにするという設計判断が下されたのだった。
+[このコメント](https://github.com/stylelint/stylelint/issues/4942#issuecomment-839514125)に集約されているが、こうした様々な事情を背景に、コアをよりスリムにするという設計判断が下されたことが、背景にある。
 
 ### Node.js 10のサポート除外
 
@@ -198,7 +197,7 @@ Stylelint自体がTypeScript型定義を提供するようになったので、[
 ## ESM対応
 
 当初、ESM（ECMAScript Modules）対応もバージョン14.0.0に含めるという計画があった（[stylelint/stylelint#5291](https://github.com/stylelint/stylelint/issues/5291)）。
-がしかし、すでにPostCSS 8対応で大きな遅延が発生していたので（StylelintのためにPostCSS 8にアップデートできない、というコミュニティからの圧力もあり）、次のメジャーバージョンでやることになった。
+がしかし、すでにPostCSS 8対応で大きな遅延が発生していたので（StylelintのためにPostCSS 8にアップデートできない、というコミュニティからの圧力もあり）、次のメジャーバージョンで着手することになった。
 Pure ESMか、ESM/CJSのDual Packageでやるかは、まだ議論中。
 
 ## Stylelint SCSS Organization
@@ -207,7 +206,7 @@ Pure ESMか、ESM/CJSのDual Packageでやるかは、まだ議論中。
 [stylelint-scss/stylelint-scss#541](https://github.com/stylelint-scss/stylelint-scss/issues/541) に誕生の背景が書いてある。
 
 以前は個人のリポジトリでSCSS関連パッケージが開発されていたが、より大きなスケールでコミュニティとして活動するようになった。
-SCSSユーザはこれまで以上に安心してStylelintとSCSSを利用できると思う（もちろん、できれば貢献もしてほしい）。
+SCSSユーザはこれまで以上に安心してStylelintとSCSSを利用できると思う。
 
 ## postcss-css-in-js
 

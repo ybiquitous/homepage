@@ -244,3 +244,5 @@ Stylelintコミュニティでは [@jeddy3](https://github.com/jeddy3) さんと
 ---
 
 最後に、この記事を読んでStylelintに興味をもった方、[`good first issue`](https://github.com/stylelint/stylelint/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) ラベルのissueが貢献しやすいよ、と宣伝しておく。
+
+また、弊社ビビッドガーデンは[積極採用中](https://www.wantedly.com/companies/vivid-garden/post_articles/362779)なので、興味をもった方はお気軽にご連絡を。[食べチョク](https://www.tabechoku.com/)というECサイトを運営してます。

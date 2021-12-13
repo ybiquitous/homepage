@@ -61,7 +61,7 @@
     "remark-preset-ybiquitous": "^0.1.2",
     "remark-rehype": "^10.1.0",
     "style-loader": "^3.3.1",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "^3.0.1",
     "typescript": "^4.4.4",
     "unified": "^10.1.1",
     "unist-util-visit": "^4.1.0",

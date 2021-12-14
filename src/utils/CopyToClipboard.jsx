@@ -28,7 +28,7 @@ export const CopyToClipboard = ({ text }) => {
   let icon = faClone;
   let message;
   if (state === SUCCEEDED) {
-    style = "text-green-500";
+    style = "text-emerald-500";
     icon = faCheck;
     message = "Copied!";
   } else if (state === FAILED) {

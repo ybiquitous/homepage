@@ -36,6 +36,9 @@ export default async function remarkLoader(source) {
             {
               type: "element",
               tagName: "summary",
+              properties: {
+                class: "toc-summary",
+              },
               children: [{ type: "text", value: "Table of Contents" }],
             },
             toc,

@@ -102,7 +102,7 @@ details {
     }
 
     & code {
-      @apply bg-gray-100 rounded px-1 py-0.5 dark:bg-gray-800;
+      @apply text-sm bg-gray-100 rounded px-1 py-0.5 dark:bg-gray-800;
     }
 
     & pre {

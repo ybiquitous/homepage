@@ -102,7 +102,7 @@ details {
     }
 
     & code {
-      @apply bg-gray-100 rounded px-1 py-0.5 dark:bg-gray-800;
+      @apply text-sm bg-gray-100 rounded px-1 py-0.5 dark:bg-gray-800;
     }
 
     & pre {
@@ -137,14 +137,18 @@ details {
 
     /* https://github.com/JS-DevTools/rehype-toc */
     & > .toc-wrapper {
-      @apply my-text-gray text-sm mt-4 2xl:w-60 2xl:mt-0 2xl:fixed 2xl:right-4;
+      @apply text-sm mt-4 2xl:w-60 2xl:mt-0 2xl:fixed 2xl:right-4;
+
+      .toc-summary {
+        @apply italic;
+      }
 
       .toc-level {
         @apply list-none pl-2 pt-2;
       }
 
       .toc-link {
-        @apply my-text-gray inline-block truncate max-w-full;
+        @apply text-current inline-block truncate max-w-full;
       }
     }
   }

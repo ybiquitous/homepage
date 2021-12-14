@@ -1,14 +1,12 @@
 /* eslint-env node */
 import * as path from "path";
 import { fileURLToPath } from "url";
-// @ts-expect-error -- TS7016
 import CopyPlugin from "copy-webpack-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 // @ts-expect-error -- TS7016
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-// eslint-disable-next-line no-underscore-dangle
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const DEV = process.env.NODE_ENV === "development";
@@ -52,7 +50,6 @@ const webpackConfig = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
     }),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     new CopyPlugin({
       patterns: [
         { from: "src/robots.txt", to: "robots.txt" },

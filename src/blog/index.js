@@ -9,9 +9,8 @@ const content = async (slug) => import(`./${slug}.md`).then((module) => module.d
 /**
  * @param {{ slug: string, title: string, published: string | null }} navi
  */
-const buildNavi = ({ slug, title, published }) => {
-  return published != null ? { path: `/blog/${slug}`, title } : null;
-};
+const buildNavi = ({ slug, title, published }) =>
+  published != null ? { path: `/blog/${slug}`, title } : null;
 
 // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types -- False positive.
 export const blogs = metadata.map((meta, index, array) => {

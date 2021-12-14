@@ -82,7 +82,7 @@
       "dist",
       "tmp",
       "src/slides-build",
-      "**/remark-remove-h1.js"
+      "src/remark/**"
     ],
     "reportUnusedDisableDirectives": true,
     "parserOptions": {

@@ -2,37 +2,34 @@
 
 *これは “[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 17日目の記事です。*
 
-歴史のあるRailsプロジェクトには、古くなったライブラリを使っていたり、古くなった書き方をしているコードが少なからずあると思います。
+歴史のあるRailsプロジェクトには、古くなったライブラリを使っていたり、古くなった書き方をしているコードが少なからずある。
+この記事では、そのような書き換えたいんだけれども一気にやるのは怖い、といったコードを徐々に書き換えていく方法の1つとして、カジュアルにRuboCopルールを作るテクニックを紹介する。
 
-この記事では、そういった書き換えたいんだけども
+ここでの「カジュアル」は、精度を求めない、という意味。誤検知（false positive）を減らそうとしてルールの実装に時間をかけるのではなく、多少の誤検知を許容して簡単にルールを追加しよう、というやり方。
 
-- 「毎回レビューで指摘するのは心理的負担が大きい」
-- 「そもそもコードベースが大きくてどのくらいあるかわからない」
+複数人チームでの運用を想定している。
 
-…と思ってしまうようなRubyコードを探し出すため、RuboCopカスタムルールを簡単に作るテクニックをご紹介します。
+## Timecop
 
-## Timecopの例
-
-[Timecop](https://github.com/travisjeffery/timecop)という現在時刻を一時的に変更できる便利なgemがあるのですが、実はRails（ActiveSupport）には同様の機能を提供する [`ActiveSupport::Testing::TimeHelpers`](https://api.rubyonrails.org/classes/ActiveSupport/Testing/TimeHelpers.html) というヘルパーモジュールがすでに存在します。
+[Timecop](https://github.com/travisjeffery/timecop)という現在時刻を一時的に変更できる便利なライブラリがあるが、実はRails（ActiveSupport）には同様の機能を提供する [`ActiveSupport::Testing::TimeHelpers`](https://api.rubyonrails.org/classes/ActiveSupport/Testing/TimeHelpers.html) というヘルパーモジュールがすでに存在する。
 
 参考: [Rails: Timecopを使わなくても時間を止められた話｜TechRacho](https://techracho.bpsinc.jp/penguin10/2018_12_25/67780)
 
-私が会社のコード（特にRSpecテストコードに）で大量にTimecopを使ったコードが見つけたとき、これをActiveSupportのTimeHelpersに置き換えたいな〜と考えました。
-しかし、一気に手で直すのは面倒ですし、テストコードには安易にいじりたくはありません。
+ライブラリへの依存は極力少なくしたいが、しかし、一気に手で直すのは面倒だし、テストコードを安易にいじりたくない。
 
-そこで、普段のワークフローに組み込むのが良いのでは？と考えました。
-つまり、プルリクエストを作ったときに編集したファイルに偶然Timecopを使ったコードがあれば、RuboCopのルールで検出してプルリクエスト作者に直してもらおうという作戦です。
+少し調べてみると、RuboCop RailsにTimecopの書き換えを推奨するルールが提案されているのを見つけた。
 
-まさにドンピシャなルールはすでにRuboCop Railsで提案されていた（[PR rubocop/rubocop-rails#38](https://github.com/rubocop/rubocop-rails/pull/38)）のですが、マージされないまま月日が経っていたので、正式に取り込まれるまではカスタムルールでしのごうと考えました。
+[Add Timecop cop by sambostock · Pull Request #38 · rubocop/rubocop-rails](https://github.com/rubocop/rubocop-rails/pull/38)
+
+がしかし、マージされないままかなり月日が経っていたので、正式に取り込まれるまではカスタムルールでしのごうと考えた。
 
 ## カスタムルールの作成
 
-作ったカスタムルールは、このようになりました。実際のコードと少し変えていますが、ほぼ同じものです。
-（“Cop”というのはRuboCopにおけるルールの呼称です）
-
-`lib/custom_cops/no_timecop.rb`:
+作ったカスタムルールは、以下の通り。
+（ちなみに、“Cop”というのはRuboCopにおけるルールの呼称のこと）
 
 ```ruby
+# lib/custom_cops/no_timecop.rb
 return unless defined?(::RuboCop)
 
 module CustomCops
@@ -48,9 +45,10 @@ module CustomCops
 end
 ```
 
-`.rubocop.yml`:
+作ったカスタムCopは、RuboCop設定ファイルで有効にする。
 
 ```yaml
+# .rubocop.yml
 require:
   - ./lib/custom_cops/no_timecop.rb
 
@@ -58,44 +56,53 @@ CustomCops/NoTimecop:
   Enabled: true
 ```
 
-簡単に手順を示すと、次のようになります。
+簡単に手順を示すと、次のとおり。
 
-1. `lib/custom_cops/` ディレクトリを作る（`custom_cops` 以外でもよいです）。
-2. Cop名を決める。→ `NoTimecop`
-3. Cop名に合わせてファイルを作る。→ `lib/custom_cops/no_timecop.rb`
-4. [`RuboCop::Cop::Base`](https://rubydoc.info/gems/rubocop/1.23.0/RuboCop/Cop/Base) を継承したクラスを作る。→ `class CustomCops::NoTimecop`
+1. `lib/custom_cops/` ディレクトリを作る。
+2. Cop名を決める。（例．`NoTimecop`）
+3. Cop名に合わせてファイルを作る。（例．`lib/custom_cops/no_timecop.rb`）
+4. [`RuboCop::Cop::Base`](https://rubydoc.info/gems/rubocop/1.23.0/RuboCop/Cop/Base) を継承したクラスを作る。（例．`class CustomCops::NoTimecop`）
 5. メッセージを `MSG` 定数にセットする。
 6. `on_send` メソッドを実装する。
-7. 作ったルールを `.rubocop.yml` ファイルで有効にする。→ `CustomCops/NoTimecop:`
+7. Copを `.rubocop.yml` ファイルで有効にする。（例．`CustomCops/NoTimecop`）
 8. `rubocop --only` コマンドでテストする。
     ```shell
-    bundle exec rubocop --only CustomCops/NoTimecop`
+    bundle exec rubocop --only CustomCops/NoTimecop
     ```
 
-このあたりはお作法です。[RuboCop公式ドキュメント](https://docs.rubocop.org/rubocop/1.23/extensions.html#custom-cops)も参考にしてみてください。
+[RuboCop公式ドキュメント](https://docs.rubocop.org/rubocop/1.23/extensions.html#custom-cops)も参考になる。
 
-以下は、実装にあたっての注意点です。
+以下のセクションでは、実装にあたっての注意点を挙げる。
 
 ## NameErrorを避ける
 
-カスタムルールのファイル冒頭にある、以下の行が気になった方もいるかと思います。
+カスタムルールのファイル冒頭にある以下の行は、
 
 ```ruby
 return unless defined?(::RuboCop)
 ```
 
-これは、以下のような `NameError` を避けるためのものです。実際にデプロイしたときに発生しました。
+`NameError` を避けるためのもの。このエラーは実際にデプロイしたときに発生した。
 
 ```
 NameError: uninitialized constant CustomCops::RuboCop
 ```
 
-Railsでは普通、`lib/` 以下はAuto-loading対象になっているとかと思います。
-これは開発環境では問題ないのですが、デプロイ環境だとRuboCopが読み込まれないように設定されていたため、エラーが発生したのでした。
+Railsでは普通、`lib/` 以下はAuto-loading対象になっているかと思う。また、普通RuboCopは開発用としてインストールする。
+
+```ruby
+# Gemfile
+group :development do
+  gem "rubocop", require: false
+end
+```
+
+これは開発環境（`RAILS_ENV=development`）では問題ないのだが、本番環境（`RAILS_ENV=production`）ではRuboCopが読み込まれないので、起動時に `NameError` となってしまう。
+そこで `defined?(::RuboCop)` というチェックを入れている。他にもっといい方法があるかもしれない。
 
 ## on_sendメソッド
 
-さて、いちばん重要な `on_send` メソッドの説明に入ります。これは、メソッド呼び出しのイベントハンドラだと考えてください。
+さて、いちばん重要な `on_send` メソッドの説明に入る。これは、ソースコード内のメソッドコールを検出するもの、と考えるとよい。
 
 ```ruby
 def on_send(node)
@@ -105,18 +112,20 @@ def on_send(node)
 end
 ```
 
-例えば、`Timecop.travel(new_time)` というコードをRuboCopで解析すると、`travel` の呼び出しと `new_time` の呼び出しの、計2回 `on_send`  が実行されます。
-`node` 引数は [`RuboCop::AST::Node`](https://rubydoc.info/gems/rubocop-ast/1.14.0/RuboCop/AST/Node) オブジェクトです。
+例えば、`Timecop.travel(new_time)` というコードをRuboCopで解析すると、`travel` と `new_time` の計2回、`on_send`  が実行される。
+つまり、RuboCopがコード内のメソッド呼び出し部分を発見し、そのたびに `on_send` を実行するのだ。
+
+`node` 引数には [`RuboCop::AST::Node`](https://rubydoc.info/gems/rubocop-ast/1.14.0/RuboCop/AST/Node) オブジェクトが渡される。
 （ASTは [Abstract Syntax Tree](https://ja.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E6%A7%8B%E6%96%87%E6%9C%A8) の略）
 
-`node` の中身を覗いてみると、
+`node` の中身を覗くためにデバッグコードを入れて、
 
 ```diff
 def on_send(node)
 + pp node.source, node.receiver.class
 ```
 
-雰囲気がつかめると思います。`RuboCop::AST::ConstNode` は `RuboCop::AST::Node` のサブクラスです。
+実行してみる。
 
 ```console
 $ bundle exec rubocop --cache=false --only CustomCops/NoTimecop foo.rb
@@ -128,25 +137,30 @@ NilClass
 ...
 ```
 
+すると、メソッド呼び出し部分のコードを表した文字列とASTオブジェクトが出力されているのが分かる。
+（`RuboCop::AST::ConstNode` は `RuboCop::AST::Node` のサブクラス）
+
 これを踏まえて以下のコードを見ると、
 
 ```ruby
 node.source.include?("Timecop") && node.receiver.const_name == "Timecop"
 ```
 
-- メソッド呼び出しのソースコードに `"Timecop"` という文字列を含む。
-- かつ、レシーバの定数名が `Timecop` である。
+- メソッド呼び出しのソースコード文字列（`node.source`）に `"Timecop"` を含む。
+- かつ、メソッド呼び出しのレシーバの定数名が `"Timecop"` である。
 
-という条件を表していることが理解できるかと思います。ここのロジックが、あるコードパターンを検出するための最重要な部分です。
-（`RuboCop::AST::Node` はメソッド名や引数名を取得する、といった用途向けに非常に多くのメソッドを用意しています。詳細はAPI Docを参照ください）
+という条件を表していることが理解できるかと思う。ここのロジックが、あるコードパターンを検出するための最重要な部分。
+（`RuboCop::AST::Node` クラスはメソッド名や引数名を取得する、といった用途向けに非常に多くのメソッドを用意している。詳細はRuboCop API Docを参照）
 
-最後に、以下のコードで、`node` で表されたコード断片に対して `MSG` を表示するようにRuboCopに指示していると考えてください。
+この条件にマッチした場合に、
 
 ```ruby
 add_offense(node)
 ```
 
-メッセージは以下のように表示されます。
+は `node` に対して `MSG` を表示するよう、RuboCopに指示する。
+
+メッセージは次のように出力される。
 
 ```console
 $ bundle exec rubocop --cache=false --only CustomCops/NoTimecop foo.rb
@@ -157,23 +171,30 @@ Timecop.travel(new_time)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 ```
 
-## シンプルさを保つ
+## カジュアルに
 
-カスタムルールの実装において注意してほしいのは、あくまで簡易的なロジックで十分であり、`Timecop` のすべての使い方を **網羅する必要はない** ということです。
-より精度を求めて誤検知を避けようとすれば、ルールのロジックはどんどん複雑になっていくでしょう。それは実装コストに見合わないかもしれません。
+冒頭でも述べたが、カスタムCop実装において注意してほしいのは、あくまで簡単なロジックから始める、ということ。
+つまり、`Timecop` のすべての使い方を **網羅する必要はない**。
 
-このカスタムルールは特定のプロジェクト内でしか使わないので、簡単なロジックで必要十分です。
-簡単であればコードも理解しやすいですし、作成者以外でもメンテナンスしやすいでしょう。
-（上記の例では、もしかすると `node.source.include?("Timecop")` だけでも良いかもしれません）
+より精度を求めて誤検知を避けようとすれば、ルールのロジックはどんどん複雑になっていくし、メンテも辛くなっていく（他のメンバーが見てもわからないものになる）。
+辛くなると、ルールを書こうという動機は薄れるし、ルールを書くという行為がチームに波及していかない。
 
-もし、誤検知が発生したとしても、
+こういったカスタムルールは特定のプロジェクト内でしか使わないので、簡単なロジックで必要十分だと思っている。
+
+たとえ誤検知が発生したとしても、
 
 ```ruby
 Timecop.travel(new_time) # rubocop:disable CustomCops/NoTimecop
 ```
 
-のように無効化コメントを付けるだけで回避できます。頑張りすぎないことがポイントです。
+のように無効化コメントを付けるだけで回避できる。数が多くなければ、これでも十分だろう。
 
 ## まとめ
 
-TODO
+プロジェクト内でのみ通用するカスタムRuboCopルールを、カジュアルに書くという方法を提案した。
+RuboCop APIの学習コストを抑え、チーム内でカスタムルールを書く動機づけを促す、というのが大事だと思っている。
+
+もちろん、ドキュメントを見て既存のルールで利用できるものはないか探したり、便利そうなルールを思いついたらissueやプルリクエストを送るのも良いだろう。
+
+しかし、多くの人が使うルールは、マージまでの期間が長くなりがちだ（誤検知との闘いもある）。
+そういった場合に、「カジュアルなカスタムCop」を知っておくことは、1つの武器となるだろう。

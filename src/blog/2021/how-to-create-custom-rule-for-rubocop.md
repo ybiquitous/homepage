@@ -88,7 +88,10 @@ return unless defined?(::RuboCop)
 NameError: uninitialized constant CustomCops::RuboCop
 ```
 
-Railsでは普通、`lib/` 以下はAuto-loading対象になっているかと思う。また、普通RuboCopは開発用としてインストールする。
+~~Railsでは普通、`lib/` 以下はAuto-loading対象になっているかと思う。~~[^1]
+これは `lib/` がAuto-loading対象になっていたことが原因だった。
+
+また、普通RuboCopは開発用としてインストールする。
 
 ```ruby
 # Gemfile
@@ -97,7 +100,7 @@ group :development do
 end
 ```
 
-これは開発環境（`RAILS_ENV=development`）では問題ないのだが、本番環境（`RAILS_ENV=production`）ではRuboCopが読み込まれないので、起動時に `NameError` となってしまう。
+この場合、開発環境（`RAILS_ENV=development`）では問題ないのだが、本番環境（`RAILS_ENV=production`）ではRuboCopが読み込まれないので、起動時に `NameError` となってしまう。
 そこで `defined?(::RuboCop)` というチェックを入れている。他にもっといい方法があるかもしれない。
 
 ## on_sendメソッド
@@ -198,3 +201,5 @@ RuboCop APIの学習コストを抑え、チーム内でカスタムルールを
 
 しかし、多くの人が使うルールは、マージまでの期間が長くなりがちだ（誤検知との闘いもある）。
 そういった場合に、「カジュアルなカスタムCop」を知っておくことは、1つの武器となるだろう。
+
+[^1]: デフォルトでは `lib/` はAuto-loading対象にならない。勘違いしていた。（2021-12-17 修正）

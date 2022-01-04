@@ -1,7 +1,7 @@
 /* eslint-env node */
 import * as path from "path";
 import { fileURLToPath } from "url";
-import CopyPlugin from "copy-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin"; // eslint-disable-line import/default -- TODO: Avoid error.
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 // @ts-expect-error -- TS7016

@@ -50,7 +50,7 @@
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.1",
-    "rehype-autolink-headings": "^6.1.0",
+    "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^1.0.1",
     "rehype-highlight": "^5.0.1",
     "rehype-slug": "^5.0.0",

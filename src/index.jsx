@@ -1,7 +1,7 @@
 import "./index.css";
 import { render } from "react-dom";
-import { Router } from "./Router";
 import { Link } from "./Link";
+import { Router } from "./Router";
 
 const LicenseLink = () => (
   <Link className="my-link-color" href="https://creativecommons.org/licenses/by-sa/4.0/">

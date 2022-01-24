@@ -1,11 +1,12 @@
 import "./index.css";
 import { render } from "react-dom";
 import { Router } from "./Router";
+import { Link } from "./Link";
 
 const LicenseLink = () => (
-  <a className="my-link-color" href="https://creativecommons.org/licenses/by-sa/4.0/">
+  <Link className="my-link-color" href="https://creativecommons.org/licenses/by-sa/4.0/">
     CC BY-SA 4.0
-  </a>
+  </Link>
 );
 
 const Root = () => (

@@ -4,7 +4,6 @@ import { fileURLToPath } from "url";
 import CopyPlugin from "copy-webpack-plugin"; // eslint-disable-line import/default -- TODO: Avoid error.
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-// @ts-expect-error -- TS7016
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -29,11 +28,7 @@ const webpackConfig = {
       },
       {
         test: /\.css$/u,
-        use: [
-          DEV ? "style-loader" : MiniCssExtractPlugin.loader, // eslint-disable-line @typescript-eslint/no-unsafe-member-access
-          "css-loader",
-          "postcss-loader",
-        ],
+        use: [DEV ? "style-loader" : MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
         test: /\.md$/u,
@@ -46,7 +41,6 @@ const webpackConfig = {
       template: "src/index.html",
       favicon: "src/favicon.png",
     }),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
     }),

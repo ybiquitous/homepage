@@ -65,7 +65,7 @@
     "typescript": "^4.5.5",
     "unified": "^10.1.1",
     "unist-util-visit": "^4.1.0",
-    "webpack": "^5.65.0",
+    "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.2",
     "ybiq": "^14.0.1"

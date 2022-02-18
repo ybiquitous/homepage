@@ -1,5 +1,5 @@
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export const Profile = () => (
   <div className="flex items-center">
@@ -15,7 +15,7 @@ export const Profile = () => (
       <div className="my-text-gray sm:text-xl">ybiquitous</div>
       <div className="mt-4">Web Developer. I love Emacs, JavaScript, CSS, and Ruby.</div>
       <div className="mt-2 my-text-gray text-sm">
-        <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-1" />
+        <FontAwesomeIcon icon={solid("location-dot")} className="mr-1" />
         Tokyo, Japan
       </div>
     </div>

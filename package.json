@@ -3,6 +3,7 @@
   "type": "module",
   "scripts": {
     "start": "webpack serve --mode=development --node-env=development",
+    "analyze": "webpack --analyze --mode=production",
     "build:webpack": "webpack build --mode=production --node-env=production",
     "build:slides": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
     "build": "npm-run-all --print-label build:webpack build:slides",
@@ -42,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
+    "babel-plugin-macros": "^3.1.0",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
@@ -66,6 +68,7 @@
     "unified": "^10.1.1",
     "unist-util-visit": "^4.1.0",
     "webpack": "^5.68.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.2",
     "ybiq": "^14.0.1"
@@ -234,7 +237,15 @@
           "runtime": "automatic"
         }
       ]
+    ],
+    "plugins": [
+      "macros"
     ]
+  },
+  "babelMacros": {
+    "fontawesome-svg-core": {
+      "license": "free"
+    }
   },
   "browserslist": [
     "defaults",

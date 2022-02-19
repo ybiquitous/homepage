@@ -1,37 +1,39 @@
 import { Link } from "../../Link";
 
 /**
+ * @see https://leonardofaria.net/2020/07/18/using-flexbox-and-text-ellipsis-together
+ *
+ * @param {{
+ *   href: string,
+ *   title: string,
+ *   label: string,
+ *   labelShort: string,
+ * }} props
+ */
+const NaviLink = ({ href, title, label, labelShort }) => (
+  <Link
+    href={href}
+    className="flex gap-x-1 min-w-0 hover:my-link-color"
+    title={`${label} post: ${title}`}
+  >
+    <span className="my-text-gray shrink-0">{`${labelShort}:`}</span>
+    <span className="truncate">{title}</span>
+  </Link>
+);
+
+/**
  * @param {{
  *   prev: { path: string, title: string } | null,
  *   next: { path: string, title: string } | null,
  * }} props
  */
-export const Navi = ({ prev, next }) => {
-  const itemClassName = "truncate inline-block max-w-max sm:max-w-sm";
-
-  return (
-    <nav className="flex flex-col sm:flex-row justify-between gap-4">
-      {prev != null ? (
-        <Link href={prev.path} className="inline-flex hover:my-link-color">
-          <span className="mr-1 my-text-gray">Prev:</span>
-          <span title={prev.title} className={itemClassName}>
-            {prev.title}
-          </span>
-        </Link>
-      ) : (
-        <span />
-      )}
-
-      {next != null ? (
-        <Link href={next.path} className="inline-flex hover:my-link-color">
-          <span className="mr-1 my-text-gray">Next:</span>
-          <span title={next.title} className={itemClassName}>
-            {next.title}
-          </span>
-        </Link>
-      ) : (
-        <span />
-      )}
-    </nav>
-  );
-};
+export const Navi = ({ prev, next }) => (
+  <nav className="flex justify-between gap-4">
+    {prev != null && (
+      <NaviLink href={prev.path} title={prev.title} label="Previous" labelShort="Prev" />
+    )}
+    {next != null && (
+      <NaviLink href={next.path} title={next.title} label="Next" labelShort="Next" />
+    )}
+  </nav>
+);

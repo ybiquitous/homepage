@@ -182,5 +182,13 @@
     "lastUpdated": "2021-12-17T00:00:00.000Z",
     "author": "Masafumi Koba",
     "tags": ["rubocop", "ruby"]
+  },
+  {
+    "slug": "2022/use-babel-macro-for-fontawesome-6",
+    "title": "Font Awesome 6でBabelマクロを使う",
+    "published": "2022-02-19T00:00:00.000Z",
+    "lastUpdated": null,
+    "author": "Masafumi Koba",
+    "tags": ["babel", "react", "fontawesome"]
   }
 ]

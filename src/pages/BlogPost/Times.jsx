@@ -6,7 +6,7 @@ import { Time } from "../../utils";
 export const Times = ({ published, lastUpdated }) => (
   <div className="text-sm my-text-gray flex flex-wrap gap-x-4">
     {published == null ? <em>Draft</em> : <Time date={new Date(published)} />}
-    {lastUpdated != null && (
+    {lastUpdated != null && lastUpdated !== published && (
       <span>
         (
         <Time date={new Date(lastUpdated)} />

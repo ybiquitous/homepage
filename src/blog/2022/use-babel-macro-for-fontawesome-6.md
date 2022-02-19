@@ -111,7 +111,7 @@ nodePath.parentPath.replaceWith(importName)
 +FontAwesomeIcon icon={solid("cake")} />
 ```
 
-5. TypeScript環境では、型定義を追加する必要があった。
+5. TypeScript環境では、型定義を追加する必要があった。[Issueが報告されていた](https://github.com/FortAwesome/Font-Awesome/issues/18616)ので、そのうち修正されるかもしれない。
 
 ```typescript
 declare module "@fortawesome/fontawesome-svg-core/import.macro" {

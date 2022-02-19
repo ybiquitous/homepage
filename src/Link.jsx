@@ -5,10 +5,11 @@ import { useCallback } from "react";
  *   href: string,
  *   children: React.ReactNode,
  *   className?: string,
+ *   title?: string,
  *   external?: boolean,
  * }} props
  */
-export const Link = ({ href, children, className, external = href.startsWith("http") }) => {
+export const Link = ({ href, children, className, title, external = href.startsWith("http") }) => {
   /** @type {React.MouseEventHandler} */
   const handleClick = useCallback(
     (event) => {
@@ -32,6 +33,7 @@ export const Link = ({ href, children, className, external = href.startsWith("ht
     <a
       href={href}
       className={className}
+      title={title}
       onClick={handleClick}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer noopener" : undefined}

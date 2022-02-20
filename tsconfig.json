@@ -8,6 +8,7 @@
     "jsx": "react-jsx",
     "noEmit": true,
     "strict": true,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

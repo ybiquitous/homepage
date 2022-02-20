@@ -2,25 +2,34 @@ import metadata from "./metadata.json";
 
 /**
  * @param {string} slug
+ * @returns {Promise<string>}
  */
-// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return
-const content = async (slug) => import(`./${slug}.md`).then((module) => module.default);
+const content = async (slug) =>
+  import(`./${slug}.md`).then((module) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
+    const c = module.default;
+    if (typeof c === 'string') {
+      return c;
+    }
+    throw new TypeError(`Unknown slug: "${slug}"`)
+  });
 
 /**
- * @param {{ slug: string, title: string, published: string | null }} navi
+ * @param {Readonly<{ slug: string, title: string, published: string | null }>} navi
+ * @returns {{ path: string, title: string } | null}
  */
 const buildNavi = ({ slug, title, published }) =>
-  published != null ? { path: `/blog/${slug}`, title } : null;
+  published == null ? null : { path: `/blog/${slug}`, title };
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types -- False positive.
+// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types -- `metadata` is a JSON type.
 export const blogs = metadata.map((meta, index, array) => {
-  const prev = array[index - 1];
-  const next = array[index + 1];
+  const prev = index === 0 ? null : array[index - 1];
+  const next = index === array.length - 1 ? null : array[index + 1];
   return {
     ...meta,
     content,
     path: `/blog/${meta.slug}`,
-    prev: prev != null ? buildNavi(prev) : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
-    next: next != null ? buildNavi(next) : null, // eslint-disable-line @typescript-eslint/no-unnecessary-condition
+    prev: prev == null ? null : buildNavi(prev),
+    next: next == null ? null : buildNavi(next),
   };
 });

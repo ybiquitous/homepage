@@ -22,7 +22,7 @@ export const Slides = () => {
                   <Time date={new Date(date)} className="my-text-secondary" />
                 </Link>
               </li>
-          ))}
+            ))}
         </ul>
       </main>
     </>

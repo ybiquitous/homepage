@@ -4,9 +4,7 @@ import { Link } from "./Link";
 import { Router } from "./Router";
 
 const LicenseLink = () => (
-  <Link href="https://creativecommons.org/licenses/by-sa/4.0/">
-    CC BY-SA 4.0
-  </Link>
+  <Link href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</Link>
 );
 
 const Root = () => (

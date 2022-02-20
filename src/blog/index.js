@@ -8,10 +8,10 @@ const content = async (slug) =>
   import(`./${slug}.md`).then((module) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
     const c = module.default;
-    if (typeof c === 'string') {
+    if (typeof c === "string") {
       return c;
     }
-    throw new TypeError(`Unknown slug: "${slug}"`)
+    throw new TypeError(`Unknown slug: "${slug}"`);
   });
 
 /**

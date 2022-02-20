@@ -1,29 +1,26 @@
-@import "tailwindcss/base";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "highlight.js/styles/github.css" (prefers-color-scheme: light);
 @import "highlight.js/styles/github-dark.css" (prefers-color-scheme: dark);
 
-details {
-  & > summary {
-    @apply cursor-pointer;
+@layer base {
+  :any-link {
+    @apply text-blue-700 dark:text-blue-400;
   }
 
-  &[open] > summary {
+  details > summary {
+    @apply cursor-pointer;
+  }
+  details[open] > summary {
     @apply mb-2;
   }
 }
 
 @layer utilities {
-  .my-link-color {
-    @apply text-blue-700 dark:text-blue-400;
-  }
-
-  .my-link-border-color {
-    @apply border-blue-700 dark:border-blue-400;
-  }
-
-  .my-text-gray {
-    @apply text-gray-400 dark:text-gray-500;
+  .my-text-secondary {
+    @apply text-slate-400 dark:text-slate-500;
   }
 
   .markdown {
@@ -113,8 +110,8 @@ details {
       }
     }
 
-    & a[href] {
-      @apply my-link-color break-all;
+    & :any-link {
+      @apply break-all;
     }
 
     & details {

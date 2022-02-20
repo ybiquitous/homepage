@@ -13,10 +13,10 @@ import { Link } from "../../Link";
 const NaviLink = ({ href, title, label, labelShort }) => (
   <Link
     href={href}
-    className="flex gap-x-1 min-w-0 hover:my-link-color"
+    className="flex gap-x-1 min-w-0"
     title={`${label} post: ${title}`}
   >
-    <span className="my-text-gray shrink-0">{`${labelShort}:`}</span>
+    <span className="my-text-secondary shrink-0">{`${labelShort}:`}</span>
     <span className="truncate">{title}</span>
   </Link>
 );

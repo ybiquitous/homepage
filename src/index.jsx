@@ -4,7 +4,7 @@ import { Link } from "./Link";
 import { Router } from "./Router";
 
 const LicenseLink = () => (
-  <Link className="my-link-color" href="https://creativecommons.org/licenses/by-sa/4.0/">
+  <Link href="https://creativecommons.org/licenses/by-sa/4.0/">
     CC BY-SA 4.0
   </Link>
 );
@@ -13,7 +13,7 @@ const Root = () => (
   <>
     <Router />
 
-    <footer className="my-text-gray text-center mt-16">
+    <footer className="my-text-secondary text-center mt-16">
       <p>
         <small>
           © 2019-{new Date().getFullYear()} Masafumi Koba. The content on this website is licensed

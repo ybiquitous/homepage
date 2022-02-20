@@ -4,10 +4,8 @@ import { useCallback } from "react";
  * @param {{
  *   href: string,
  *   children: React.ReactNode,
- *   className?: string,
- *   title?: string,
  *   external?: boolean,
- * }} props
+ * } & React.AnchorHTMLAttributes<HTMLAnchorElement>} props
  */
 export const Link = ({ href, children, className, title, external = href.startsWith("http") }) => {
   /** @type {React.MouseEventHandler} */

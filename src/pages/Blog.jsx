@@ -12,7 +12,7 @@ export const Blog = () => {
       </header>
 
       <main className="mt-16">
-        <ul className="space-y-16">
+        <ul className="divide-y divide-dashed">
           {blogs
             .filter(({ published }) => Boolean(published))
             .sort((a, b) => {
@@ -22,10 +22,10 @@ export const Blog = () => {
               return Date.parse(b.published) - Date.parse(a.published);
             })
             .map(({ path, title, published }) => (
-              <li key={path}>
-                <Link href={path} className="block hover:my-link-color">
+              <li key={path} className="py-10 first:pt-0 last:pb-0">
+                <Link href={path} className="block text-current">
                   <div className="font-sans text-xl">{title}</div>
-                  {published && <Time date={new Date(published)} className="my-text-gray" />}
+                  {published && <Time date={new Date(published)} className="my-text-secondary" />}
                 </Link>
               </li>
             ))}

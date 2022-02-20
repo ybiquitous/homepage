@@ -97,7 +97,7 @@ export const BlogPost = ({
           className="markdown mt-4"
           ref={contentElement}
           dangerouslySetInnerHTML={{
-            __html: content || '<div class="my-text-gray min-h-screen">Loading…</div>',
+            __html: content || '<div class="my-text-secondary min-h-screen">Loading…</div>',
           }}
         />
         {/* eslint-enable react/no-danger */}

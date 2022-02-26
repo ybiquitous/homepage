@@ -6,9 +6,16 @@ import { assert, useMount } from "./utils";
 /**
  * @returns {boolean}
  */
-const initialDark = () =>
-  localStorage.getItem("theme") === "dark" ||
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
+const initialDark = () => {
+  const theme = localStorage.getItem("theme");
+  if (theme === "dark") {
+    return true;
+  }
+  if (theme == null && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return true;
+  }
+  return false;
+};
 
 /**
  * @param {boolean} dark
@@ -33,7 +40,7 @@ const toggle = (dark) => {
   if (dark) {
     localStorage.setItem("theme", "dark");
   } else {
-    localStorage.removeItem("theme");
+    localStorage.setItem("theme", "light");
   }
 
   return dark;

@@ -239,7 +239,5 @@
       "license": "free"
     }
   },
-  "browserslist": [
-    "> 1%"
-  ]
+  "browserslist": "> 1%"
 }

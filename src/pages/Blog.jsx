@@ -23,7 +23,7 @@ export const Blog = () => {
             })
             .map(({ path, title, published }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
-                <Link href={path} className="block text-current">
+                <Link href={path} className="block !text-current">
                   <div className="font-sans text-xl">{title}</div>
                   {published && <Time date={new Date(published)} className="my-text-secondary" />}
                 </Link>

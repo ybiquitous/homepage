@@ -11,7 +11,11 @@ const DEV = process.env.NODE_ENV === "development";
 
 /** @type {import("webpack").Configuration} */
 const webpackConfig = {
-  entry: "./src/index.jsx",
+  entry: {
+    main: "./src/index.jsx",
+    "theme-light": "./src/styles/light.css",
+    "theme-dark": "./src/styles/dark.css",
+  },
   output: {
     filename: DEV ? "[name].js" : "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),

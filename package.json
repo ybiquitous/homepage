@@ -45,7 +45,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-macros": "^3.1.0",
     "copy-webpack-plugin": "^10.2.4",
-    "css-loader": "^6.5.1",
+    "css-loader": "^6.6.0",
     "cssnano": "^5.0.17",
     "eslint-config-ybiquitous": "^15.0.0",
     "html-webpack-plugin": "^5.5.0",

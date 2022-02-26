@@ -135,7 +135,7 @@
 
     /* https://github.com/JS-DevTools/rehype-toc */
     & > .toc-wrapper {
-      @apply text-sm mt-4 2xl:w-60 2xl:mt-0 2xl:fixed 2xl:right-4;
+      @apply bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-100 text-sm rounded p-4 my-8;
 
       .toc-summary {
         @apply italic;
@@ -146,7 +146,7 @@
       }
 
       .toc-link {
-        @apply text-current inline-block truncate max-w-full;
+        @apply text-current inline-block truncate w-full underline underline-offset-4 decoration-dashed;
       }
     }
   }

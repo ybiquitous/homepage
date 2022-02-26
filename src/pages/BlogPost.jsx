@@ -102,13 +102,17 @@ export const BlogPost = ({
         />
         {/* eslint-enable react/no-danger */}
 
+        <div className="mt-4 text-right">
+          <a href="#top">Top ⤴</a>
+        </div>
+
         {tags.length !== 0 && (
-          <div className="mt-16">
+          <div className="mt-4">
             <Tags tags={tags} />
           </div>
         )}
 
-        <hr className="mt-8 mb-4" />
+        <hr className="my-4" />
 
         <Navi prev={prev} next={next} />
       </main>

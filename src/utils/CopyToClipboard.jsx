@@ -14,7 +14,6 @@ export const CopyToClipboard = ({ text }) => {
 
   const handleClick = async () => {
     try {
-      // eslint-disable-next-line compat/compat -- navigator.clipboard() is not supported in iOS Safari 12.2-12.5
       await navigator.clipboard.writeText(text);
       setState(SUCCEEDED);
     } catch (e) {

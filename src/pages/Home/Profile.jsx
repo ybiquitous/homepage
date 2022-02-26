@@ -5,9 +5,11 @@ export const Profile = () => (
   <div className="flex items-center justify-evenly gap-4 sm:gap-8">
     <div className="basis-1/3">
       <img
-        className="rounded-full md:w-40"
+        className="rounded-full"
         src="https://www.gravatar.com/avatar/515b5bb81e946fd400e18de5c4d0763f?s=240"
-        alt="Avatar"
+        alt="ybiquitous"
+        width={160}
+        height={160}
       />
     </div>
     <div className="basis-full flex flex-col">

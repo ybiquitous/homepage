@@ -3,48 +3,43 @@
 
 - name: Root with Dark mode
   url: http://localhost:8080
-  execute:
-    afterNavigation: |
-      document.querySelector('[title="Dark"]').click();
-    beforeSnapshot: |
-      localStorage.clear();
+  execute: |
+    document.querySelector('[title="Dark"]').click();
 
 - name: Blog
   url: http://localhost:8080/blog
+  execute: |
+    document.querySelector('[title="Light"]').click();
 
 - name: Blog with Dark mode
   url: http://localhost:8080/blog
-  execute:
-    afterNavigation: |
-      document.querySelector('[title="Dark"]').click();
-    beforeSnapshot: |
-      localStorage.clear();
+  execute: |
+    document.querySelector('[title="Dark"]').click();
 
 - name: Blog Post
   url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
+  execute: |
+    document.querySelector('[title="Light"]').click();
 
 - name: Blog Post with opened ToC
   url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
   waitForTimeout: 5000
   waitForSelector: "article summary"
   execute: |
+    document.querySelector('[title="Light"]').click();
     document.querySelector('article summary').click();
 
 - name: Blog Post with Dark mode
   url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
-  execute:
-    afterNavigation: |
-      document.querySelector('[title="Dark"]').click();
-    beforeSnapshot: |
-      localStorage.clear();
+  execute: |
+    document.querySelector('[title="Dark"]').click();
 
 - name: Slides
   url: http://localhost:8080/slides
+  execute: |
+    document.querySelector('[title="Light"]').click();
 
 - name: Slides with Dark mode
   url: http://localhost:8080/slides
-  execute:
-    afterNavigation: |
-      document.querySelector('[title="Dark"]').click();
-    beforeSnapshot: |
-      localStorage.clear();
+  execute: |
+    document.querySelector('[title="Dark"]').click();

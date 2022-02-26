@@ -1,7 +1,7 @@
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { useMount } from "./utils";
+import { assert, useMount } from "./utils";
 
 /**
  * @returns {boolean}
@@ -16,11 +16,26 @@ const initialDark = () =>
  */
 const toggle = (dark) => {
   document.documentElement.classList.toggle("dark", dark);
+
+  const themeLight = document.head.querySelector("link[href^='/theme-light']");
+  assert(themeLight instanceof HTMLLinkElement);
+  const themeDark = document.head.querySelector("link[href^='/theme-dark']");
+  assert(themeDark instanceof HTMLLinkElement);
+
+  if (dark) {
+    themeLight.disabled = true;
+    themeDark.disabled = false;
+  } else {
+    themeLight.disabled = false;
+    themeDark.disabled = true;
+  }
+
   if (dark) {
     localStorage.setItem("theme", "dark");
   } else {
     localStorage.removeItem("theme");
   }
+
   return dark;
 };
 

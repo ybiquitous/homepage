@@ -2,7 +2,6 @@
 import * as path from "path";
 import { fileURLToPath } from "url";
 import CopyPlugin from "copy-webpack-plugin"; // eslint-disable-line import/default -- TODO: Avoid error.
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
@@ -28,7 +27,7 @@ const webpackConfig = {
       },
       {
         test: /\.css$/u,
-        use: [DEV ? "style-loader" : MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
         test: /\.md$/u,
@@ -51,9 +50,6 @@ const webpackConfig = {
       ],
     }),
   ],
-  optimization: {
-    minimizer: ["...", new CssMinimizerPlugin()],
-  },
   resolve: {
     extensions: [".jsx", "..."],
   },

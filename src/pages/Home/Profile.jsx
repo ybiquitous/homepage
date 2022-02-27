@@ -12,13 +12,13 @@ export const Profile = () => (
         height={160}
       />
     </div>
-    <div className="basis-full flex flex-col">
+    <div className="flex basis-full flex-col">
       <h1>
         <strong className="text-xl sm:text-4xl">Masafumi Koba</strong>
       </h1>
       <div className="my-text-secondary sm:text-xl">@ybiquitous</div>
       <p className="mt-4 italic">I’m a Web Programmer. I love Emacs, JavaScript, CSS, and Ruby.</p>
-      <small className="mt-1 my-text-secondary inline-flex items-center gap-1">
+      <small className="my-text-secondary mt-1 inline-flex items-center gap-1">
         <FontAwesomeIcon icon={solid("location-dot")} className="mr-1" />
         Tokyo, Japan
       </small>

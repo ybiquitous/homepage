@@ -4,7 +4,7 @@
 export const Tags = ({ tags }) => (
   <div className="flex flex-wrap gap-2 font-sans">
     {tags.map((tag) => (
-      <small className="border border-gray-300 hover:border-current rounded-md py-1 px-2" key={tag}>
+      <small className="rounded-md border border-gray-300 py-1 px-2 hover:border-current" key={tag}>
         {`#${tag}`}
       </small>
     ))}

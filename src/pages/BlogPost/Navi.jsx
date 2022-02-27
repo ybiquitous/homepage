@@ -11,7 +11,7 @@ import { Link } from "../../Link";
  * }} props
  */
 const NaviLink = ({ href, title, label, labelShort }) => (
-  <Link href={href} className="flex gap-x-1 min-w-0" title={`${label} post: ${title}`}>
+  <Link href={href} className="flex min-w-0 gap-x-1" title={`${label} post: ${title}`}>
     <span className="my-text-secondary shrink-0">{`${labelShort}:`}</span>
     <span className="truncate">{title}</span>
   </Link>

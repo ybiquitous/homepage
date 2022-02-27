@@ -23,7 +23,7 @@
 
   .markdown {
     & .hljs {
-      @apply !text-current !p-0;
+      @apply !p-0 !text-current;
     }
 
     & > h1,
@@ -36,27 +36,27 @@
     }
 
     & > h1 {
-      @apply text-5xl mt-4 mb-12;
+      @apply mt-4 mb-12 text-5xl;
     }
 
     & > h2 {
-      @apply text-3xl border-b border-gray-300 mt-16 mb-4 pb-2;
+      @apply mt-16 mb-4 border-b border-gray-300 pb-2 text-3xl;
     }
 
     & > h3 {
-      @apply text-2xl mt-12 mb-4;
+      @apply mt-12 mb-4 text-2xl;
     }
 
     & > h4 {
-      @apply text-xl mt-8 mb-4;
+      @apply mt-8 mb-4 text-xl;
     }
 
     & > h5 {
-      @apply text-lg mt-8 mb-4;
+      @apply mt-8 mb-4 text-lg;
     }
 
     & > h6 {
-      @apply text-base mt-8 mb-4;
+      @apply mt-8 mb-4 text-base;
     }
 
     & hr {
@@ -89,7 +89,7 @@
     }
 
     & > blockquote {
-      @apply text-gray-500 border-l-4 border-gray-400 px-4 dark:text-gray-400;
+      @apply border-l-4 border-gray-400 px-4 text-gray-500 dark:text-gray-400;
 
       & > p {
         @apply mt-4;
@@ -97,11 +97,11 @@
     }
 
     & code {
-      @apply text-sm bg-gray-100 rounded px-1 py-0.5 dark:bg-gray-800;
+      @apply rounded bg-gray-100 px-1 py-0.5 text-sm dark:bg-gray-800;
     }
 
     & pre {
-      @apply bg-gray-100 rounded p-4 overflow-auto dark:bg-gray-800;
+      @apply overflow-auto rounded bg-gray-100 p-4 dark:bg-gray-800;
     }
 
     & :any-link {
@@ -114,7 +114,7 @@
 
     /* https://github.com/rehypejs/rehype-autolink-headings */
     .icon-link {
-      @apply before:content-["#"] ml-4 text-gray-300 dark:text-gray-600 hover:text-blue-700 hover:dark:text-blue-400;
+      @apply ml-4 text-gray-300 before:content-["#"] hover:text-blue-700 dark:text-gray-600 hover:dark:text-blue-400;
     }
 
     & > h1 a[aria-hidden] {
@@ -128,7 +128,7 @@
 
     /* https://github.com/JS-DevTools/rehype-toc */
     & > .toc-wrapper {
-      @apply bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-100 text-sm rounded p-4 my-8;
+      @apply my-8 rounded bg-neutral-100 p-4 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-100;
 
       .toc-summary {
         @apply italic;
@@ -139,7 +139,7 @@
       }
 
       .toc-link {
-        @apply text-current inline-block truncate w-full underline underline-offset-4 decoration-dashed;
+        @apply inline-block w-full truncate text-current underline decoration-dashed underline-offset-4;
       }
     }
   }

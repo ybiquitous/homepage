@@ -11,13 +11,13 @@ const LicenseLink = () => (
 
 const Root = () => (
   <React.StrictMode>
-    <div className="text-right mb-2">
+    <div className="mb-2 text-right">
       <ThemeToggle />
     </div>
 
     <Router />
 
-    <footer className="my-text-secondary text-center mt-16">
+    <footer className="my-text-secondary mt-16 text-center">
       <p>
         <small>
           © 2019-{new Date().getFullYear()} Masafumi Koba. The content on this website is licensed

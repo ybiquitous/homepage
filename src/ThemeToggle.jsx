@@ -69,7 +69,7 @@ export const ThemeToggle = () => {
         />
       </button>
 
-      <span className="text-slate-200 mx-1">|</span>
+      <span className="mx-1 text-slate-200">|</span>
 
       <button type="button" title="Dark" onClick={() => handleClick(true)}>
         <FontAwesomeIcon

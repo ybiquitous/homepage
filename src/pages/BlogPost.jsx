@@ -100,7 +100,7 @@ export const BlogPost = ({
             dangerouslySetInnerHTML={{ __html: content }}
           />
         ) : (
-          <div class="my-text-secondary mt-8 min-h-screen italic">Loading…</div>
+          <div className="my-text-secondary mt-8 min-h-screen italic">Loading…</div>
         )}
         {/* eslint-enable react/no-danger */}
 

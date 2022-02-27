@@ -93,13 +93,15 @@ export const BlogPost = ({
         </div>
 
         {/* eslint-disable react/no-danger -- This is safe. */}
-        <article
-          className="markdown mt-4"
-          ref={contentElement}
-          dangerouslySetInnerHTML={{
-            __html: content || '<div class="my-text-secondary min-h-screen">Loading…</div>',
-          }}
-        />
+        {content ? (
+          <article
+            className="markdown mt-4"
+            ref={contentElement}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        ) : (
+          <div class="my-text-secondary mt-8 min-h-screen italic">Loading…</div>
+        )}
         {/* eslint-enable react/no-danger */}
 
         <div className="mt-4 text-right">

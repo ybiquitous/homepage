@@ -42,7 +42,7 @@ export const CopyToClipboard = ({ text }) => {
       <button
         title="Copy to Clipboard"
         onClick={handleClick}
-        className={`border border-current rounded px-1 py-0.5 bg-gray-100 ${style}`}
+        className={`rounded border border-current bg-gray-100 px-1 py-0.5 ${style}`}
       >
         <FontAwesomeIcon icon={icon} size="sm" fixedWidth />
       </button>

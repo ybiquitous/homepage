@@ -54,6 +54,7 @@
     "mini-css-extract-plugin": "^2.5.3",
     "postcss": "^8.4.7",
     "postcss-loader": "^6.2.1",
+    "prettier-plugin-tailwindcss": "^0.1.8",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^1.0.1",
     "rehype-highlight": "^5.0.2",
@@ -248,5 +249,10 @@
       "license": "free"
     }
   },
-  "browserslist": "> 1%"
+  "browserslist": "> 1%",
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
+  }
 }

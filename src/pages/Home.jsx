@@ -14,7 +14,7 @@ export const Home = () => {
 
       <main className="py-8 md:py-24">
         <nav>
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <Menu link="/blog" icon={solid("blog")} content="Blog" />
             <Menu link="/slides" icon={solid("images")} content="Slides" />
             <Menu

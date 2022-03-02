@@ -6,6 +6,10 @@ const INITIAL = "initial";
 const SUCCEEDED = "succeeded";
 const FAILED = "failed";
 
+const noop = () => {
+  /* noop */
+};
+
 /**
  * @param {{ text: string }} props
  */
@@ -41,7 +45,9 @@ export const CopyToClipboard = ({ text }) => {
       {message != null && <span className="absolute -top-10 -right-2 mr-2">{message}</span>}
       <button
         title="Copy to Clipboard"
-        onClick={handleClick}
+        onClick={() => {
+          handleClick().then(noop);
+        }}
         className={`rounded border border-current bg-gray-100 px-1 py-0.5 ${style}`}
       >
         <FontAwesomeIcon icon={icon} size="sm" fixedWidth />

@@ -1,5 +1,7 @@
 - name: Root
   url: http://localhost:8080
+  execute: |
+    document.querySelector('[title="Light"]').click();
 
 - name: Root with Dark mode
   url: http://localhost:8080

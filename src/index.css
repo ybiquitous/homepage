@@ -144,3 +144,9 @@
     }
   }
 }
+
+body {
+  background: no-repeat linear-gradient(to bottom, #005bbb22 50%, #ffd50022 50%);
+  background-size: auto 100vh;
+  background-attachment: fixed;
+}

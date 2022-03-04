@@ -75,6 +75,12 @@ export const BlogPost = ({
     const contentEl = contentElement.current;
 
     if (contentEl != null) {
+      // Remove ToC if no list items.
+      const toc = contentEl.querySelector(".toc-wrapper");
+      if (toc?.querySelectorAll("li").length === 0) {
+        toc.remove();
+      }
+
       generateCopyToClipboard(contentEl);
     }
   }, [slug, content, contentElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.

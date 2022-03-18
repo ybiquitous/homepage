@@ -145,8 +145,21 @@
   }
 }
 
+:root {
+  --ybiq-bg-opacity: 0.5;
+}
+
+.dark {
+  --ybiq-bg-opacity: 0.1;
+}
+
 body {
-  background: no-repeat linear-gradient(to bottom, #005bbb22 50%, #ffd50022 50%);
+  background: no-repeat
+    linear-gradient(
+      to bottom,
+      hsl(211deg 100% 37% / var(--ybiq-bg-opacity)) 50%,
+      hsl(50deg 100% 50% / var(--ybiq-bg-opacity)) 50%
+    );
   background-size: auto 100vh;
   background-attachment: fixed;
 }

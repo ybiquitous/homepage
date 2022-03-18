@@ -157,8 +157,8 @@ body {
   background: no-repeat
     linear-gradient(
       to bottom,
-      hsl(211 100% 37% / var(--ybiq-bg-opacity)) 50%,
-      hsl(50 100% 50% / var(--ybiq-bg-opacity)) 50%
+      hsl(211deg 100% 37% / var(--ybiq-bg-opacity)) 50%,
+      hsl(50deg 100% 50% / var(--ybiq-bg-opacity)) 50%
     );
   background-size: auto 100vh;
   background-attachment: fixed;

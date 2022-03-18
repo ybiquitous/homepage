@@ -151,7 +151,8 @@
     ],
     "extends": [
       "stylelint-config-standard",
-      "stylelint-a11y/recommended"
+      "stylelint-a11y/recommended",
+      "stylelint-config-prettier"
     ],
     "plugins": [
       "stylelint-high-performance-animation"

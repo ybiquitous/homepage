@@ -27,5 +27,6 @@ jobs:
           npm install stylelint \
                       stylelint-config-standard \
                       'github:rsstdd/stylelint-a11y#chore/update-stylelint' \
-                      stylelint-high-performance-animation
+                      stylelint-high-performance-animation \
+                      stylelint-config-prettier
       - run: npx stylelint "**/*.css" --formatter=compact

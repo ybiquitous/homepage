@@ -52,7 +52,7 @@
     "eslint-config-ybiquitous": "^15.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.5.3",
-    "postcss": "^8.4.7",
+    "postcss": "^8.4.12",
     "postcss-loader": "^6.2.1",
     "prettier-plugin-tailwindcss": "^0.1.8",
     "rehype-autolink-headings": "^6.1.1",

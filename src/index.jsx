@@ -1,6 +1,6 @@
 import "./index.css";
-import React from "react";
-import { render } from "react-dom";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { Link } from "./Link";
 import { Router } from "./Router";
 import { ThemeToggle } from "./ThemeToggle";
@@ -10,7 +10,7 @@ const LicenseLink = () => (
 );
 
 const Root = () => (
-  <React.StrictMode>
+  <StrictMode>
     <div className="mb-2 text-right">
       <ThemeToggle />
     </div>
@@ -25,7 +25,12 @@ const Root = () => (
         </small>
       </p>
     </footer>
-  </React.StrictMode>
+  </StrictMode>
 );
 
-render(<Root />, document.getElementById("root"));
+const container = document.getElementById("root");
+if (container === null) {
+  throw new Error("No container!");
+}
+const root = createRoot(container);
+root.render(<Root />);

@@ -21,11 +21,7 @@ export const Breadcrumb = ({ items }) => (
         }
         const { el, key } = typeof item === "string" ? { el: item, key: item } : item;
         return (
-          <li
-            key={key}
-            aria-current={current ? "page" : undefined}
-            className={classNames.join(" ")}
-          >
+          <li key={key} aria-current={current ? "page" : undefined} className={classNames.join("")}>
             {isValidElement(el) ? cloneElement(el, { className: "my-text-secondary" }) : el}
           </li>
         );

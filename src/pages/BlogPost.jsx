@@ -35,6 +35,26 @@ const generateCopyToClipboard = (content) => {
 };
 
 /**
+ * @param {HTMLElement} content
+ */
+const replaceTweet = (content) => {
+  const { twttr } = window;
+  if (typeof twttr === "undefined") return;
+
+  setTimeout(() => {
+    const { widgets } = twttr;
+    if (typeof widgets === "undefined") return;
+
+    content.querySelectorAll("[data-tweet-id]").forEach((tweet) => {
+      widgets.createTweet(tweet.getAttribute("data-tweet-id") ?? "", tweet, {
+        theme: localStorage.getItem("theme"),
+      });
+      tweet.firstElementChild?.remove();
+    });
+  }, 1500);
+};
+
+/**
  * @param {{
  *   slug: string,
  *   title: string,
@@ -82,6 +102,7 @@ export const BlogPost = ({
       }
 
       generateCopyToClipboard(contentEl);
+      replaceTweet(contentEl);
     }
   }, [slug, content, contentElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.
 

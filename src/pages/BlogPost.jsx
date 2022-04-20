@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Link } from "../Link";
 import { Breadcrumb, CopyToClipboard, useTitle } from "../utils";
 import { Navi } from "./BlogPost/Navi";
@@ -30,7 +30,7 @@ const generateCopyToClipboard = (content) => {
     };
 
     // Mount
-    ReactDOM.render(<CopyToClipboard text={pre.textContent ?? ""} />, btnWrapper);
+    createRoot(btnWrapper).render(<CopyToClipboard text={pre.textContent ?? ""} />);
   });
 };
 

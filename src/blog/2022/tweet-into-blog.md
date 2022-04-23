@@ -9,7 +9,7 @@
 
 ## 例
 
-TODO: 後で当記事のTweetを貼る。
+<https://twitter.com/ybiquitous/status/1517747618386157575>
 
 ## 実装
 

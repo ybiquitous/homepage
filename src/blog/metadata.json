@@ -43,7 +43,7 @@
     "slug": "2020/using-nvm-on-github-actions",
     "title": "GitHub Actionsでnvmを使う",
     "published": "2020-06-06T00:00:00.000Z",
-    "lastUpdated": "2021-12-02T00:00:00.000Z",
+    "lastUpdated": "2022-04-23T00:00:00.000Z",
     "author": "Masafumi Koba",
     "tags": ["github-actions", "nvm", "nodejs"]
   },
@@ -51,7 +51,7 @@
     "slug": "2020/rubykaigi-takeout-2020",
     "title": "RubyKaigi Takeout 2020に参加した",
     "published": "2020-09-07T00:00:00.000Z",
-    "lastUpdated": "2020-09-10T00:00:00.000Z",
+    "lastUpdated": "2022-04-23T00:00:00.000Z",
     "author": "Masafumi Koba",
     "tags": ["ruby", "rubykaigi"]
   },
@@ -59,7 +59,7 @@
     "slug": "2020/rubykaigi-takeout-2020-2",
     "title": "RubyKaigi Takeout 2020に参加した（2）",
     "published": "2020-09-10T00:00:00.000Z",
-    "lastUpdated": "2020-09-10T00:00:00.000Z",
+    "lastUpdated": "2022-04-23T00:00:00.000Z",
     "author": "Masafumi Koba",
     "tags": ["ruby", "rubykaigi"]
   },
@@ -155,7 +155,7 @@
     "slug": "2021/yet-another-remark-loader",
     "title": "Webpack remark-loaderの代わりを作った話",
     "published": "2021-11-05T00:00:00.000Z",
-    "lastUpdated": null,
+    "lastUpdated": "2022-04-23T00:00:00.000Z",
     "author": "Masafumi Koba",
     "tags": ["markdown", "remark", "rehype", "unified", "webpack"]
   },

@@ -131,7 +131,7 @@ const transformed = await unified()
   .process(source);
 ```
 
-https://github.com/ybiquitous/homepage/blob/74414eb84c6c83118d0207a84234c04b520411fa/src/remark/remark-loader.js#L19-L50
+<https://github.com/ybiquitous/homepage/blob/74414eb84c6c83118d0207a84234c04b520411fa/src/remark/remark-loader.js#L19-L50>
 
 例えば、以下は深さ1のMarkdown見出しを削除する独自変換の例。`visit()` というユーティリティパッケージが用意されており、Syntax Tree内を走査してマッチした要素に対して、任意の関数を実行できる。
 `parent.children` というJS配列を書き換えることで、ASTを変更しているのが見てとれる。
@@ -148,7 +148,7 @@ export default function remarkRemoveH1() {
 }
 ```
 
-https://github.com/ybiquitous/homepage/blob/74414eb84c6c83118d0207a84234c04b520411fa/src/remark/remark-remove-h1.js#L5-L13
+<https://github.com/ybiquitous/homepage/blob/74414eb84c6c83118d0207a84234c04b520411fa/src/remark/remark-remove-h1.js#L5-L13>
 
 ## Write Webpack loader
 
@@ -209,7 +209,7 @@ module.exports = function remarkLoader(...args) {
 };
 ```
 
-https://github.com/ybiquitous/homepage/blob/74414eb84c6c83118d0207a84234c04b520411fa/src/remark/remark-loader.cjs#L2-L4
+<https://github.com/ybiquitous/homepage/blob/74414eb84c6c83118d0207a84234c04b520411fa/src/remark/remark-loader.cjs#L2-L4>
 
 `webpack.config.js` で指定しているloaderへのパスも変更する。
 

@@ -13,9 +13,9 @@
 
 ## Magic is organizing chaos
 
-<https://rubykaigi.org/2020-takeout/speakers#shugomaeda>
-<https://github.com/shugo/RubyKaigi2020>
-<https://youtu.be/QKiQiK7gSHQ>
+- <https://rubykaigi.org/2020-takeout/speakers#shugomaeda>
+- <https://github.com/shugo/RubyKaigi2020>
+- <https://youtu.be/QKiQiK7gSHQ>
 
 [`Proc#using`](https://bugs.ruby-lang.org/issues/16461)を提案したという話。
 [Refinements](http://ruby-doc.org/core/doc/syntax/refinements_rdoc.html)に関連する話で、正直サンプルコード以外でRefinementsを見たことがなかったので少し予習した。
@@ -58,8 +58,8 @@ User.where { :name == 'matz' }
 
 ## msgraph: Microsoft Graph API Client with Ruby
 
-<https://rubykaigi.org/2020-takeout/speakers#jimlock>
-<https://youtu.be/TrVhnrTPtoI>
+- <https://rubykaigi.org/2020-takeout/speakers#jimlock>
+- <https://youtu.be/TrVhnrTPtoI>
 
 jinroqさんが[msgraph](https://github.com/jinroq/msgraph)という[Microsoft Graph API](https://docs.microsoft.com/en-us/graph/use-the-api)クライアントのgemを書いた話。
 [公式のgem](https://github.com/microsoftgraph/msgraph-sdk-ruby)がすでに開発がされていないため、自分で作った経緯や作るときの苦労について話していた。
@@ -76,8 +76,8 @@ jinroqさんが[msgraph](https://github.com/jinroq/msgraph)という[Microsoft G
 
 ## Don't @ me! Instance Variable Performance in Ruby
 
-<https://rubykaigi.org/2020-takeout/speakers#tenderlove>
-<https://youtu.be/iDW93fAp2I8>
+- <https://rubykaigi.org/2020-takeout/speakers#tenderlove>
+- <https://youtu.be/iDW93fAp2I8>
 
 tenderloveさんのインスタンス変数に関するパフォーマンスの話。インスタンス変数がどうパフォーマンスに影響するか理解できなかったが、
 GC Compactionのアルゴリズムの話がわかりやすくスライド（アニメーション付き）で説明されていた。
@@ -85,9 +85,9 @@ GC Compactionのアルゴリズムの話がわかりやすくスライド（ア�
 
 ## Dependency Resolution with Standard Libraries
 
-<https://rubykaigi.org/2020-takeout/speakers#hsbt>
-<https://www.slideshare.net/hsbt/dependency-resolution-with-standard-libraries>
-<https://youtu.be/wvayhyTEL_k>
+- <https://rubykaigi.org/2020-takeout/speakers#hsbt>
+- <https://www.slideshare.net/hsbt/dependency-resolution-with-standard-libraries>
+- <https://youtu.be/wvayhyTEL_k>
 
 hsbtさんのRubygems、Bundlerに関するセッション。私なりの理解でまとめると、
 
@@ -120,8 +120,8 @@ hsbtさんのRubygems、Bundlerに関するセッション。私なりの理解�
 
 ## Live coding: Grepping Ruby code like a boss
 
-<https://rubykaigi.org/2020-takeout/speakers#jonatas>
-<https://youtu.be/YczrZQC9aP8>
+- <https://rubykaigi.org/2020-takeout/speakers#jonatas>
+- <https://youtu.be/YczrZQC9aP8>
 
 jonatasさんのASTをカジュアルに使ってRubyコードを検索（grep）する話。hsbtさんと同時刻だったので、後で配信を見直した。
 [Fast](https://github.com/jonatas/fast)というgemを使ってライブコーディングしていた。
@@ -136,8 +136,8 @@ Querlyの方がASTを知らない人向けに作られているので柔軟性�
 
 ## Keyword Arguments: Past, Present, and Future
 
-<https://rubykaigi.org/2020-takeout/speakers#jeremyevans0>
-<https://youtu.be/rxJRrccXRfg>
+- <https://rubykaigi.org/2020-takeout/speakers#jeremyevans0>
+- <https://youtu.be/rxJRrccXRfg>
 
 jeremyevansさんのKeyword Arguments（kwargs）の話。この件については、[Rails界隈で盛り上がった](https://discuss.rubyonrails.org/t/new-2-7-3-0-keyword-argument-pain-point/74980)のが記憶に新しい。
 ちょっと疲れていて流しながら聴いていたので、kwargsのやばいコード例がたくさん紹介されていたことがぼんやりと記憶にある。
@@ -147,8 +147,8 @@ jeremyevansさんのKeyword Arguments（kwargs）の話。この件について�
 
 ## Ruby3 and Beyond
 
-<https://rubykaigi.org/2020-takeout/speakers#yukihiro_matz>
-<https://youtu.be/wVrJZReHlM8>
+- <https://rubykaigi.org/2020-takeout/speakers#yukihiro_matz>
+- <https://youtu.be/wVrJZReHlM8>
 
 今回は一番最後になった、matzさんのキーノート。Ruby3とRuby3以降のお話。
 プログラミング言語の互換性を維持するのが大変なことを、他の言語の歴史を紹介しながら、強調していた。

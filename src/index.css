@@ -63,13 +63,12 @@
       @apply my-4;
     }
 
-    & p {
-      @apply leading-loose;
+    & p,
+    & blockquote {
+      @apply my-6 leading-loose;
     }
 
-    & > p,
     & > pre,
-    & > blockquote,
     & > ul,
     & > ol {
       @apply my-8;
@@ -77,7 +76,7 @@
 
     & ul,
     & ol {
-      @apply pl-8 leading-loose;
+      @apply pl-6 leading-loose;
     }
 
     & ul {

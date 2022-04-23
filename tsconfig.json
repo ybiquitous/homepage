@@ -1,21 +1,12 @@
 {
+  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     "target": "es2020",
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "checkJs": true,
     "jsx": "react-jsx",
-    "noEmit": true,
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "noEmit": true
   },
   "include": ["src/**/*", "webpack.config.*", "tailwind.config.*"],
   "exclude": ["src/slides-build/**/*", "src/remark/**/*"]

@@ -7,7 +7,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const DEV = process.env.NODE_ENV === "development";
+const DEV = process.env["NODE_ENV"] === "development";
 
 /** @type {import("webpack").Configuration} */
 const webpackConfig = {

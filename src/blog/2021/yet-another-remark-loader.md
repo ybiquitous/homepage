@@ -55,8 +55,7 @@ const htmlText = await unified()
 
 ```js
 // "# 見出し"
-// ↓
-{
+node = {
   type: "heading",
   depth: 1,
   children: [{type: "text", value: "見出し"}]
@@ -67,8 +66,7 @@ HTMLリンクのhastの場合は、このようになる。
 
 ```js
 // "<a href='https://github.com' class='link' download>GitHub</a>"
-// ↓
-{
+node = {
   type: "element",
   tagName: "a",
   properties: {

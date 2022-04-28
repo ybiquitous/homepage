@@ -38,11 +38,14 @@ export const Link = ({
 
   const [externalIconShown, setExternalIconShown] = useState(false);
 
-  const handleHover = (/** @type {boolean}*/ toggle) => {
-    if (external && showExternalIcon) {
-      setExternalIconShown(toggle);
-    }
-  };
+  const handleHover = useCallback(
+    (/** @type {boolean}*/ toggle) => {
+      if (external && showExternalIcon) {
+        setExternalIconShown(toggle);
+      }
+    },
+    [external, showExternalIcon]
+  );
 
   /* eslint-disable react/jsx-no-target-blank -- False positive. */
   return (

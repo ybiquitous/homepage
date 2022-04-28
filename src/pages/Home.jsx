@@ -17,17 +17,11 @@ export const Home = () => {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <Menu link="/blog" icon={solid("blog")} content="Blog" />
             <Menu link="/slides" icon={solid("images")} content="Slides" />
-            <Menu
-              link="https://github.com/ybiquitous"
-              icon={brands("github")}
-              content="GitHub"
-              subContent="@ybiquitous"
-            />
+            <Menu link="https://github.com/ybiquitous" icon={brands("github")} content="GitHub" />
             <Menu
               link="https://twitter.com/ybiquitous"
               icon={brands("twitter")}
               content="Twitter"
-              subContent="@ybiquitous"
             />
             <Menu link="https://www.npmjs.com/~ybiquitous" icon={brands("npm")} content="npm" />
             <Menu

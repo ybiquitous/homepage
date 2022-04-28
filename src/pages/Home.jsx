@@ -21,13 +21,11 @@ export const Home = () => {
               link="https://github.com/ybiquitous"
               icon={brands("github")}
               content="GitHub"
-              subContent="@ybiquitous"
             />
             <Menu
               link="https://twitter.com/ybiquitous"
               icon={brands("twitter")}
               content="Twitter"
-              subContent="@ybiquitous"
             />
             <Menu link="https://www.npmjs.com/~ybiquitous" icon={brands("npm")} content="npm" />
             <Menu

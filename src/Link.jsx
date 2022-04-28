@@ -10,7 +10,14 @@ import { useCallback, useState } from "react";
  *   showExternalIcon?: boolean,
  * } & React.AnchorHTMLAttributes<HTMLAnchorElement>} props
  */
-export const Link = ({ href, children, className, title, external = href.startsWith("http"), showExternalIcon = false }) => {
+export const Link = ({
+  href,
+  children,
+  className,
+  title,
+  external = href.startsWith("http"),
+  showExternalIcon = false,
+}) => {
   /** @type {React.MouseEventHandler} */
   const handleClick = useCallback(
     (event) => {
@@ -37,7 +44,6 @@ export const Link = ({ href, children, className, title, external = href.startsW
     }
   };
 
-
   /* eslint-disable react/jsx-no-target-blank -- False positive. */
   return (
     <a
@@ -51,7 +57,13 @@ export const Link = ({ href, children, className, title, external = href.startsW
       onMouseLeave={() => handleHover(false)}
     >
       {children}
-      {externalIconShown && <FontAwesomeIcon icon={solid("arrow-up-right-from-square")} size="xs" className="my-text-secondary" />}
+      {externalIconShown && (
+        <FontAwesomeIcon
+          icon={solid("arrow-up-right-from-square")}
+          size="xs"
+          className="my-text-secondary"
+        />
+      )}
     </a>
   );
   /* eslint-enable react/jsx-no-target-blank */

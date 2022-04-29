@@ -30,13 +30,13 @@ export const Blog = () => {
                   <div className="font-sans text-xl">{title}</div>
                   {published && <Time date={new Date(published)} className="my-text-secondary" />}
                   {tags.length !== 0 && (
-                    <div className="mt-8 my-text-secondary">
+                    <div className="my-text-secondary mt-8">
                       <Tags tags={tags} />
                     </div>
                   )}
                 </Link>
               </li>
-          ))}
+            ))}
         </ul>
       </main>
     </>

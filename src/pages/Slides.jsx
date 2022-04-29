@@ -1,5 +1,7 @@
-import { Link } from "../Link";
-import { Breadcrumb, Time, useTitle } from "../utils";
+import { Breadcrumb } from "../components/Breadcrumb";
+import { Link } from "../components/Link";
+import { Time } from "../components/Time";
+import { useTitle } from "../hooks/useTitle";
 import metadata from "./slides-metadata.json";
 
 export const Slides = () => {

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "../../Link";
+import { Link } from "../../components/Link";
 
 /**
  * @param {{

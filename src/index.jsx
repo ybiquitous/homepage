@@ -1,9 +1,9 @@
 import "./index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Link } from "./Link";
-import { Router } from "./Router";
-import { ThemeToggle } from "./ThemeToggle";
+import { Link } from "./components/Link";
+import { Router } from "./components/Router";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 const LicenseLink = () => (
   <Link href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</Link>

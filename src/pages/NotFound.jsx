@@ -1,4 +1,4 @@
-import { useTitle } from "../utils";
+import { useTitle } from "../hooks/useTitle";
 
 export const NotFound = () => {
   useTitle("Page Not Found");

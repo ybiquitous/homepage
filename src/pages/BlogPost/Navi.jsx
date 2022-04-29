@@ -1,4 +1,4 @@
-import { Link } from "../../Link";
+import { Link } from "../../components/Link";
 
 /**
  * @see https://leonardofaria.net/2020/07/18/using-flexbox-and-text-ellipsis-together

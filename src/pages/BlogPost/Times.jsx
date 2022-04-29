@@ -1,4 +1,4 @@
-import { Time } from "../../utils";
+import { Time } from "../../components/Time";
 
 /**
  * @param {{ published: string | null, lastUpdated: string | null }} props

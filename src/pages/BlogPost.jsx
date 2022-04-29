@@ -3,9 +3,9 @@ import { createRoot } from "react-dom/client";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { CopyToClipboard } from "../components/CopyToClipboard";
 import { Link } from "../components/Link";
+import { Tags } from "../components/Tags";
 import { useTitle } from "../hooks/useTitle";
 import { Navi } from "./BlogPost/Navi";
-import { Tags } from "./BlogPost/Tags";
 import { Times } from "./BlogPost/Times";
 
 /**

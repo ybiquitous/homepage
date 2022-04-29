@@ -1,6 +1,7 @@
 import { blogs } from "../blog/index";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
+import { Tags } from "../components/Tags";
 import { Time } from "../components/Time";
 import { useTitle } from "../hooks/useTitle";
 
@@ -23,14 +24,19 @@ export const Blog = () => {
               }
               return Date.parse(b.published) - Date.parse(a.published);
             })
-            .map(({ path, title, published }) => (
+            .map(({ path, title, published, tags }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">
                   <div className="font-sans text-xl">{title}</div>
                   {published && <Time date={new Date(published)} className="my-text-secondary" />}
+                  {tags.length !== 0 && (
+                    <div className="mt-8 my-text-secondary">
+                      <Tags tags={tags} />
+                    </div>
+                  )}
                 </Link>
               </li>
-            ))}
+          ))}
         </ul>
       </main>
     </>

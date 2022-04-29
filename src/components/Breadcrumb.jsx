@@ -1,5 +1,5 @@
 import { isValidElement, cloneElement } from "react";
-import { Link } from "../Link";
+import { Link } from "./Link";
 
 const home = { el: <Link href="/">Home</Link>, key: "Home" };
 

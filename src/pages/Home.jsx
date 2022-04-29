@@ -1,5 +1,5 @@
 import { brands, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
-import { useTitle } from "../utils";
+import { useTitle } from "../hooks/useTitle";
 import { Menu } from "./Home/Menu";
 import { Profile } from "./Home/Profile";
 

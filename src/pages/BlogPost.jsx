@@ -1,7 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { Link } from "../Link";
-import { Breadcrumb, CopyToClipboard, useTitle } from "../utils";
+import { Breadcrumb } from "../components/Breadcrumb";
+import { CopyToClipboard } from "../components/CopyToClipboard";
+import { Link } from "../components/Link";
+import { useTitle } from "../hooks/useTitle";
 import { Navi } from "./BlogPost/Navi";
 import { Tags } from "./BlogPost/Tags";
 import { Times } from "./BlogPost/Times";

@@ -1,7 +1,8 @@
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { assert, useMount } from "./utils";
+import { useMount } from "../hooks/useMount";
+import { assert } from "../utils/assert";
 
 /**
  * @returns {boolean}

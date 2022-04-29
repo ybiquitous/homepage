@@ -15,7 +15,7 @@ export const Blog = () => {
       </header>
 
       <main className="mt-16">
-        <ul className="divide-y divide-dashed">
+        <ul className="divide-y divide-dashed divide-slate-300 dark:divide-slate-600">
           {blogs
             .filter(({ published }) => Boolean(published))
             .sort((a, b) => {

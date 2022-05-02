@@ -33,7 +33,7 @@
     "core-js": "^3.22.3",
     "highlight.js": "^11.5.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",

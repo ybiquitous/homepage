@@ -28,7 +28,9 @@ export const Blog = () => {
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">
                   <div className="font-sans text-xl">{title}</div>
-                  {Boolean(published) && <Time date={new Date(published)} className="my-text-secondary" />}
+                  {Boolean(published) && (
+                    <Time date={new Date(published)} className="my-text-secondary" />
+                  )}
                   {tags.length !== 0 && (
                     <div className="my-text-secondary mt-8">
                       <Tags tags={tags} />

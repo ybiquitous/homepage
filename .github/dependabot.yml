@@ -4,7 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 20
+    rebase-strategy: disabled
     ignore:
       - dependency-name: "@types/*"
   - package-ecosystem: github-actions

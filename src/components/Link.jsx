@@ -60,7 +60,7 @@ export const Link = ({
       onMouseLeave={() => handleHover(false)}
     >
       {children}
-      {externalIconShown && (
+      {Boolean(externalIconShown) && (
         <FontAwesomeIcon
           icon={solid("arrow-up-right-from-square")}
           size="xs"

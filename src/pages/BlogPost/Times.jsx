@@ -6,6 +6,7 @@ import { Time } from "../../components/Time";
 export const Times = ({ published, lastUpdated }) => (
   <div className="my-text-secondary flex flex-wrap gap-x-4 text-sm">
     {published == null ? <em>Draft</em> : <Time date={new Date(published)} />}
+    {/* eslint-disable-next-line react/jsx-no-leaked-render -- False positive. */}
     {lastUpdated != null && lastUpdated !== published && (
       <span>
         (

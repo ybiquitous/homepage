@@ -19,7 +19,7 @@
     "lint:types:watch": "npm run lint:types -- --watch",
     "lint:styles": "npm run prettier -- --check",
     "lint:styles:fix": "npm run prettier -- --write",
-    "prettier": "prettier .",
+    "prettier": "prettier --cache .",
     "eslint": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
     "eslint:fix": "npm run eslint -- --fix",
     "test": "npm-run-all --parallel lint build",
@@ -220,7 +220,7 @@
     }
   },
   "lint-staged": {
-    "!(*.snap)": "prettier --write",
+    "!(*.snap)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail"
   },
   "remarkConfig": {

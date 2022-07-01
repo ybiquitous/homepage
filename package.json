@@ -54,7 +54,7 @@
     "cssnano": "^5.1.10",
     "eslint-config-ybiquitous": "^15.4.0",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.6.0",
+    "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.0",
     "prettier-plugin-tailwindcss": "^0.1.11",

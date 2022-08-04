@@ -33,7 +33,7 @@ export const Link = ({
       window.history.pushState(state, "", href);
       window.dispatchEvent(new PopStateEvent("popstate", { state }));
     },
-    [href]
+    [href, openNewWindow]
   );
 
   /* eslint-disable react/jsx-no-target-blank -- False positive. */

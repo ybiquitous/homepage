@@ -1,3 +1,6 @@
+@import "~@fortawesome/fontawesome-free/css/fontawesome.min.css";
+@import "~@fortawesome/fontawesome-free/css/solid.min.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +16,18 @@
 
   details[open] > summary {
     @apply mb-2;
+  }
+
+  /* See https://fontawesome.com/v6/docs/web/add-icons/pseudo-elements */
+  a[href^="http"]:not(.no-icon)::after {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    font-size: 0.75em;
+    content: "\f08e";
+    margin: 0 0.25em 0 0.5em;
+    vertical-align: 0.125em;
   }
 }
 

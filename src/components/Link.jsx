@@ -8,6 +8,7 @@ import { useCallback } from "react";
  *   title?: string,
  *   openNewWindow?: boolean,
  *   noIcon?: boolean,
+ *   noPushState?: boolean,
  * }} props
  */
 export const Link = ({
@@ -17,11 +18,12 @@ export const Link = ({
   title,
   openNewWindow = false,
   noIcon = false,
+  noPushState = false,
 }) => {
   /** @type {React.MouseEventHandler} */
   const handleClick = useCallback(
     (event) => {
-      if (openNewWindow || href.startsWith("http")) return;
+      if (openNewWindow || noPushState || href.startsWith("http")) return;
 
       // normal behavior
       if (event.metaKey) return;
@@ -33,7 +35,7 @@ export const Link = ({
       window.history.pushState(state, "", href);
       window.dispatchEvent(new PopStateEvent("popstate", { state }));
     },
-    [href, openNewWindow]
+    [href, openNewWindow, noPushState]
   );
 
   /* eslint-disable react/jsx-no-target-blank -- False positive. */

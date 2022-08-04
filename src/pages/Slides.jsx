@@ -19,7 +19,7 @@ export const Slides = () => {
             .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
             .map(({ id, title, date }) => (
               <li key={id} className="py-10 first:pt-0 last:pb-0">
-                <Link href={`/slides/${id}`} className="block !text-current">
+                <Link href={`/slides/${id}`} className="block !text-current" noPushState>
                   <div className="font-sans text-xl">{title}</div>
                   <Time date={new Date(date)} className="my-text-secondary" />
                 </Link>

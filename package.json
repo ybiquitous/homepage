@@ -57,7 +57,7 @@
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.0",
-    "prettier-plugin-tailwindcss": "^0.1.11",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^1.0.1",
     "rehype-highlight": "^5.0.2",

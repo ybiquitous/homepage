@@ -30,7 +30,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "core-js": "^3.23.3",
+    "core-js": "^3.24.1",
     "highlight.js": "^11.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -240,7 +240,7 @@
         "@babel/preset-env",
         {
           "useBuiltIns": "usage",
-          "corejs": "3.23"
+          "corejs": "3.24"
         }
       ]
     ],

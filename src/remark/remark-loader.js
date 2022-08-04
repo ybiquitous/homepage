@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import rehypeToc from "@jsdevtools/rehype-toc";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeExternalLinks from "rehype-external-links";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
@@ -49,7 +48,6 @@ export default async function remarkLoader(source) {
       },
     })
     .use(rehypeAutolinkHeadings, { behavior: "append" })
-    .use(rehypeExternalLinks)
     .use(rehypeHighlight)
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(source);

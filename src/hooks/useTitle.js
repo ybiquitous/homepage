@@ -4,11 +4,11 @@ const base = "@ybiquitous";
 const separator = " - ";
 
 /**
- * @param {readonly string[]} title
+ * @param {ReadonlyArray<string | null | undefined>} title
  * @returns {void}
  */
 export const useTitle = (...title) => {
   useEffect(() => {
-    document.title = title.length === 0 ? base : [...title, base].join(separator);
+    document.title = title.length === 0 ? base : [...title, base].filter(Boolean).join(separator);
   }, [title]);
 };

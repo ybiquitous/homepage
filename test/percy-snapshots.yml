@@ -18,6 +18,11 @@
   execute: |
     document.querySelector('[title="Dark"]').click();
 
+- name: Blog Tag
+  url: http://localhost:8080/blog/tags/typescript
+  execute: |
+    document.querySelector('[title="Light"]').click();
+
 - name: Blog Post
   url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
   execute: |

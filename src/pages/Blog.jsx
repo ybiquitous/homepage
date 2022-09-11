@@ -1,17 +1,24 @@
-import { blogs } from "../blog/index";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
 import { Time } from "../components/Time";
 import { useTitle } from "../hooks/useTitle";
 
-export const Blog = () => {
-  useTitle("Blog");
+/**
+ * @param {{
+ *   blogs: ReadonlyArray<import("../blog/index").Blog>,
+ *   title?: string | undefined,
+ * }} props
+ */
+export const Blog = ({ blogs, title }) => {
+  useTitle("Blog", title);
 
   return (
     <>
       <header>
-        <Breadcrumb items={["Blog"]} />
+        <Breadcrumb
+          items={title ? [{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, title] : ["Blog"]}
+        />
       </header>
 
       <main className="mt-16">
@@ -28,15 +35,15 @@ export const Blog = () => {
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">
                   <div className="font-sans text-xl">{title}</div>
-                  {Boolean(published) && (
+                  {published ? (
                     <Time date={new Date(published)} className="my-text-secondary" />
-                  )}
-                  {tags.length !== 0 && (
-                    <div className="my-text-secondary mt-8">
-                      <Tags tags={tags} />
-                    </div>
-                  )}
+                  ) : null}
                 </Link>
+                {tags.length !== 0 && (
+                  <div className="mt-8">
+                    <Tags tags={tags} />
+                  </div>
+                )}
               </li>
             ))}
         </ul>

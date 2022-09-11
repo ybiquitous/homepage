@@ -1,4 +1,4 @@
-import { blogs } from "./blog/index";
+import { blogs, blogsByTag } from "./blog/index";
 import { Blog } from "./pages/Blog";
 import { BlogPost } from "./pages/BlogPost";
 import { Home } from "./pages/Home";
@@ -9,8 +9,8 @@ export const defaultRoute = () => <NotFound />;
 
 export const routes = new Map([
   ["/", () => <Home />],
-  ["/blog", () => <Blog />],
-  ["/blog/", () => <Blog />],
+  ["/blog", () => <Blog blogs={blogs} />],
+  ["/blog/", () => <Blog blogs={blogs} />],
   ["/slides", () => <Slides />],
   ["/slides/", () => <Slides />],
   ["*", defaultRoute],
@@ -19,4 +19,9 @@ export const routes = new Map([
 for (const blog of blogs) {
   routes.set(blog.path, () => <BlogPost {...blog} />);
   routes.set(`${blog.path}/`, () => <BlogPost {...blog} />);
+}
+
+for (const [tag, tagBlogs] of blogsByTag(blogs)) {
+  routes.set(`/blog/tags/${tag}`, () => <Blog blogs={tagBlogs} title={`Tag #${tag}`} />);
+  routes.set(`/blog/tags/${tag}/`, () => <Blog blogs={tagBlogs} title={`Tag #${tag}`} />);
 }

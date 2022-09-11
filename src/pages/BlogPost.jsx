@@ -57,17 +57,7 @@ const replaceTweet = (content) => {
 };
 
 /**
- * @param {{
- *   slug: string,
- *   title: string,
- *   published: string | null,
- *   lastUpdated: string | null,
- *   author: string,
- *   tags: string[],
- *   content: (slug: string) => Promise<string>,
- *   prev: { path: string, title: string } | null,
- *   next: { path: string, title: string } | null,
- * }} props
+ * @param {import("../blog/index").Blog} props
  */
 // eslint-disable-next-line max-lines-per-function
 export const BlogPost = ({

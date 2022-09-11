@@ -1,17 +1,28 @@
-import { blogs } from "../blog/index";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
 import { Time } from "../components/Time";
 import { useTitle } from "../hooks/useTitle";
 
-export const Blog = () => {
-  useTitle("Blog");
+/**
+ * @param {{
+ *   blogs: ReadonlyArray<import("../blog/index").Blog>,
+ *   title?: string | undefined,
+ * }} props
+ */
+export const Blog = ({ blogs, title }) => {
+  useTitle("Blog", title);
 
   return (
     <>
       <header>
-        <Breadcrumb items={["Blog"]} />
+        <Breadcrumb
+          items={
+            title === undefined
+              ? ["Blog"]
+              : [{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, title]
+          }
+        />
       </header>
 
       <main className="mt-16">
@@ -19,24 +30,24 @@ export const Blog = () => {
           {blogs
             .filter(({ published }) => Boolean(published))
             .sort((a, b) => {
-              if (!a.published || !b.published) {
+              if (a.published === null || b.published === null) {
                 return 0;
               }
               return Date.parse(b.published) - Date.parse(a.published);
             })
-            .map(({ path, title, published, tags }) => (
+            .map(({ path, title: blogTitle, published, tags }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">
-                  <div className="font-sans text-xl">{title}</div>
-                  {Boolean(published) && (
+                  <div className="font-sans text-xl">{blogTitle}</div>
+                  {published !== null && (
                     <Time date={new Date(published)} className="my-text-secondary" />
                   )}
-                  {tags.length !== 0 && (
-                    <div className="my-text-secondary mt-8">
-                      <Tags tags={tags} />
-                    </div>
-                  )}
                 </Link>
+                {tags.length !== 0 && (
+                  <div className="mt-8">
+                    <Tags tags={tags} />
+                  </div>
+                )}
               </li>
             ))}
         </ul>

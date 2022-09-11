@@ -1,4 +1,16 @@
+import { uniqueArray } from "../utils/uniqueArray.js";
 import metadata from "./metadata.json";
+
+/**
+ * @typedef {{
+ *   slug: string,
+ *   title: string,
+ *   published: string | null,
+ *   lastUpdated: string | null
+ *   author: string,
+ *   tags: ReadonlyArray<string>,
+ * }} BlogMeta
+ */
 
 /**
  * @param {string} slug
@@ -15,13 +27,31 @@ const content = async (slug) =>
   });
 
 /**
- * @param {Readonly<{ slug: string, title: string, published: string | null }>} navi
- * @returns {{ path: string, title: string } | null}
+ * @typedef {{
+ *   path: string,
+ *   title: string,
+ * }} PathInfo
+ */
+
+/**
+ * @param {Readonly<BlogMeta>} navi
+ * @returns {PathInfo | null}
  */
 const buildNavi = ({ slug, title, published }) =>
   published == null ? null : { path: `/blog/${slug}`, title };
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types -- `metadata` is a JSON type.
+/**
+ * @typedef {BlogMeta & {
+ *   content: (slug: string) => Promise<string>,
+ *   path: string,
+ *   prev: PathInfo | null,
+ *   next: PathInfo | null,
+ * }} Blog
+ */
+
+/**
+ * @type {ReadonlyArray<Blog>}
+ */
 export const blogs = metadata.map((meta, index, array) => {
   const prev = index === 0 ? null : array[index - 1];
   const next = index === array.length - 1 ? null : array[index + 1];
@@ -33,3 +63,21 @@ export const blogs = metadata.map((meta, index, array) => {
     next: next == null ? null : buildNavi(next),
   };
 });
+
+/**
+ * @param {ReadonlyArray<Blog>} originalBlogs
+ * @returns {Map<string, Array<Blog>>}
+ */
+export const blogsByTag = (originalBlogs) => {
+  return uniqueArray(originalBlogs.flatMap((b) => b.tags)).reduce(
+    (/** @type {Map<string, Array<Blog>>} */ map, tag) => {
+      const filteredBlogs = map.get(tag) ?? [];
+      for (const blog of originalBlogs.filter((b) => b.tags.includes(tag))) {
+        filteredBlogs.push(blog);
+      }
+      map.set(tag, filteredBlogs);
+      return map;
+    },
+    new Map()
+  );
+};

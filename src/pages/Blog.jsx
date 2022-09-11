@@ -17,7 +17,11 @@ export const Blog = ({ blogs, title }) => {
     <>
       <header>
         <Breadcrumb
-          items={title ? [{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, title] : ["Blog"]}
+          items={
+            title === undefined
+              ? ["Blog"]
+              : [{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, title]
+          }
         />
       </header>
 
@@ -26,18 +30,18 @@ export const Blog = ({ blogs, title }) => {
           {blogs
             .filter(({ published }) => Boolean(published))
             .sort((a, b) => {
-              if (!a.published || !b.published) {
+              if (a.published === null || b.published === null) {
                 return 0;
               }
               return Date.parse(b.published) - Date.parse(a.published);
             })
-            .map(({ path, title, published, tags }) => (
+            .map(({ path, title: blogTitle, published, tags }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">
-                  <div className="font-sans text-xl">{title}</div>
-                  {published ? (
+                  <div className="font-sans text-xl">{blogTitle}</div>
+                  {published !== null && (
                     <Time date={new Date(published)} className="my-text-secondary" />
-                  ) : null}
+                  )}
                 </Link>
                 {tags.length !== 0 && (
                   <div className="mt-8">

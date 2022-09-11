@@ -65,14 +65,14 @@ export const blogs = metadata.map((meta, index, array) => {
 });
 
 /**
- * @param {ReadonlyArray<Blog>} blogs
+ * @param {ReadonlyArray<Blog>} originalBlogs
  * @returns {Map<string, Array<Blog>>}
  */
-export const blogsByTag = (blogs) => {
-  return uniqueArray(blogs.flatMap((m) => m.tags)).reduce(
+export const blogsByTag = (originalBlogs) => {
+  return uniqueArray(originalBlogs.flatMap((b) => b.tags)).reduce(
     (/** @type {Map<string, Array<Blog>>} */ map, tag) => {
       const filteredBlogs = map.get(tag) ?? [];
-      for (const blog of blogs.filter((m) => m.tags.includes(tag))) {
+      for (const blog of originalBlogs.filter((b) => b.tags.includes(tag))) {
         filteredBlogs.push(blog);
       }
       map.set(tag, filteredBlogs);

@@ -125,7 +125,7 @@
     "published": "2021-09-23T00:00:00.000Z",
     "lastUpdated": "2021-09-27T16:00:00.000Z",
     "author": "Masafumi Koba",
-    "tags": ["rubykaigi"]
+    "tags": ["ruby", "rubykaigi"]
   },
   {
     "slug": "2021/ecs-deploy-via-github-actions",
@@ -222,5 +222,13 @@
     "lastUpdated": null,
     "author": "Masafumi Koba",
     "tags": ["markdown", "remark", "twitter"]
+  },
+  {
+    "slug": "2022/rubykaigi-2022",
+    "title": "RubyKaigi 2022",
+    "published": "2022-09-20T00:00:00.000Z",
+    "lastUpdated": null,
+    "author": "Masafumi Koba",
+    "tags": ["ruby", "rubykaigi"]
   }
 ]

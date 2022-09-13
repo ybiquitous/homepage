@@ -43,13 +43,17 @@
 
 - name: Blog Post with Tweet
   url: http://localhost:8080/blog/2022/tweet-into-blog
+  waitForTimeout: 5000
+  waitForSelector: "[data-tweet-id] iframe"
   execute: |
-    document.querySelector('[title="Light]').click();
+    document.querySelector('[title="Light"]').click();
 
 - name: Blog Post with SpeakerDeck
   url: http://localhost:8080/blog/2021/kaigi-on-rails-2021
+  waitForTimeout: 5000
+  waitForSelector: ".speakerdeck-iframe"
   execute: |
-    document.querySelector('[title="Light]').click();
+    document.querySelector('[title="Light"]').click();
 
 - name: Slides
   url: http://localhost:8080/slides

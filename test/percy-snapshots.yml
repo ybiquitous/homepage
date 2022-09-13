@@ -44,7 +44,7 @@
 - name: Blog Post with Tweet
   url: http://localhost:8080/blog/2022/tweet-into-blog
   waitForTimeout: 5000
-  waitForSelector: "[data-tweet-id]:has(iframe)"
+  waitForSelector: "[data-tweet-id] iframe"
   execute: |
     document.querySelector('[title="Light"]').click();
 

@@ -17,12 +17,13 @@ export default function remarkTwitter() {
       const [, , , tweetId] = url.pathname.split("/", 4);
       if (tweetId === undefined || tweetId === "") return;
 
+      const href = url.toString();
       /** @type {import("mdast").HTML} */
       const newNode = {
         type: "html",
         value: `
           <div data-tweet-id="${tweetId}" style="min-height: 200px;">
-            <a href="${url}" target="_blank" rel="nofollow noopener noreferrer">${url}</a></div>
+            <a href="${href}" target="_blank" rel="nofollow noopener noreferrer">${href}</a></div>
           </div>`,
       };
       parent.children.splice(index, 1, newNode);

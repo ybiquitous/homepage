@@ -13,11 +13,17 @@ const DEV = process.env["NODE_ENV"] === "development";
 const webpackConfig = {
   entry: {
     main: "./src/index.jsx",
+    "service-worker": "./src/service-worker.js",
     "theme-light": "./src/styles/light.css",
     "theme-dark": "./src/styles/dark.css",
   },
   output: {
-    filename: DEV ? "[name].js" : "[name].[contenthash].js",
+    filename: (pathData) => {
+      if (pathData.runtime === "service-worker") {
+        return "service-worker.js";
+      }
+      return DEV ? "[name].js" : "[name].[contenthash].js";
+    },
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
     clean: true,
@@ -51,6 +57,7 @@ const webpackConfig = {
       patterns: [
         { from: "src/robots.txt", to: "robots.txt" },
         { from: "src/images", to: "images" },
+        { from: "src/manifest.json", to: "manifest.json" },
       ],
     }),
   ],

@@ -22,7 +22,7 @@ export default function remarkTwitter() {
         type: "html",
         value: `
           <div data-tweet-id="${tweetId}" style="min-height: 200px;">
-            <a href="${url}" target="_blank" rel="nofollow noopener noreferrer">${url}</a></div>
+            <a href="${String(url)}" target="_blank" rel="nofollow noopener noreferrer">${String(url)}</a></div>
           </div>`,
       };
       parent.children.splice(index, 1, newNode);

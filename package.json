@@ -90,7 +90,8 @@
       "dist",
       "tmp",
       "src/slides-build",
-      "src/remark/**"
+      "src/remark/**",
+      "**/*.cjs"
     ],
     "reportUnusedDisableDirectives": true,
     "parserOptions": {
@@ -146,9 +147,6 @@
       }
     ]
   },
-  "eslintIgnore": [
-    "**/*.cjs"
-  ],
   "stylelint": {
     "ignoreFiles": [
       "dist/**/*",

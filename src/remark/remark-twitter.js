@@ -20,7 +20,10 @@ export default function remarkTwitter() {
       /** @type {import("mdast").HTML} */
       const newNode = {
         type: "html",
-        value: `<div data-tweet-id="${tweetId}"><a href="${node.url}" target="_blank" rel="nofollow noopener noreferrer">${node.url}</a></div>`,
+        value: `
+          <div data-tweet-id="${tweetId}" style="min-height: 200px;">
+            <a href="${node.url}" target="_blank" rel="nofollow noopener noreferrer">${node.url}</a></div>
+          </div>`,
       };
       parent.children.splice(index, 1, newNode);
     });

@@ -1,8 +1,8 @@
 /**
  * @template T
- * @param {Iterable<T>} iterable
+ * @param {ReadonlyArray<T>} array
  * @returns {Array<T>}
  */
-export function uniqueArray(iterable) {
-  return [...new Set(iterable)];
+export function uniqueArray(array) {
+  return [...new Set(array)];
 }

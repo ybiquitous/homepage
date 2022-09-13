@@ -2,14 +2,14 @@ import { uniqueArray } from "../utils/uniqueArray.js";
 import metadata from "./metadata.json";
 
 /**
- * @typedef {{
+ * @typedef {Readonly<{
  *   slug: string,
  *   title: string,
  *   published: string | null,
  *   lastUpdated: string | null
  *   author: string,
  *   tags: ReadonlyArray<string>,
- * }} BlogMeta
+ * }>} BlogMeta
  */
 
 /**
@@ -27,26 +27,26 @@ const content = async (slug) =>
   });
 
 /**
- * @typedef {{
+ * @typedef {Readonly<{
  *   path: string,
  *   title: string,
- * }} PathInfo
+ * }>} PathInfo
  */
 
 /**
- * @param {Readonly<BlogMeta>} navi
+ * @param {BlogMeta} navi
  * @returns {PathInfo | null}
  */
 const buildNavi = ({ slug, title, published }) =>
   published == null ? null : { path: `/blog/${slug}`, title };
 
 /**
- * @typedef {BlogMeta & {
+ * @typedef {BlogMeta & Readonly<{
  *   content: (slug: string) => Promise<string>,
  *   path: string,
  *   prev: PathInfo | null,
  *   next: PathInfo | null,
- * }} Blog
+ * }>} Blog
  */
 
 /**
@@ -69,15 +69,16 @@ export const blogs = metadata.map((meta, index, array) => {
  * @returns {Map<string, Array<Blog>>}
  */
 export const blogsByTag = (originalBlogs) => {
-  return uniqueArray(originalBlogs.flatMap((b) => b.tags)).reduce(
-    (/** @type {Map<string, Array<Blog>>} */ map, tag) => {
-      const filteredBlogs = map.get(tag) ?? [];
-      for (const blog of originalBlogs.filter((b) => b.tags.includes(tag))) {
-        filteredBlogs.push(blog);
-      }
-      map.set(tag, filteredBlogs);
-      return map;
-    },
-    new Map()
-  );
+  /** @type {Map<string, Array<Blog>>} */
+  const map = new Map();
+
+  for (const tag of uniqueArray(originalBlogs.flatMap((b) => b.tags))) {
+    const filteredBlogs = map.get(tag) ?? [];
+    for (const blog of originalBlogs.filter((b) => b.tags.includes(tag))) {
+      filteredBlogs.push(blog);
+    }
+    map.set(tag, filteredBlogs);
+  }
+
+  return map;
 };

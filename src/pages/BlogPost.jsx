@@ -1,60 +1,12 @@
 import { useRef, useEffect, useState } from "react";
-import { createRoot } from "react-dom/client";
 import { Breadcrumb } from "../components/Breadcrumb";
-import { CopyToClipboard } from "../components/CopyToClipboard";
 import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
 import { useTitle } from "../hooks/useTitle";
 import { Navi } from "./BlogPost/Navi";
 import { Times } from "./BlogPost/Times";
-
-/**
- * @param {HTMLElement} content
- */
-const generateCopyToClipboard = (content) => {
-  content.querySelectorAll("pre").forEach((pre) => {
-    // Insert a wrapper
-    const wrapper = document.createElement("div");
-    wrapper.className = "relative";
-    pre.replaceWith(wrapper);
-    wrapper.appendChild(pre);
-
-    // Insert a button
-    const btnWrapper = document.createElement("div");
-    btnWrapper.className = "absolute top-2 right-2";
-    btnWrapper.hidden = true;
-    wrapper.appendChild(btnWrapper);
-    wrapper.onmouseenter = () => {
-      btnWrapper.hidden = false;
-    };
-    wrapper.onmouseleave = () => {
-      btnWrapper.hidden = true;
-    };
-
-    // Mount
-    createRoot(btnWrapper).render(<CopyToClipboard text={pre.textContent ?? ""} />);
-  });
-};
-
-/**
- * @param {HTMLElement} content
- */
-const replaceTweet = (content) => {
-  const { twttr } = window;
-  if (typeof twttr === "undefined") return;
-
-  setTimeout(() => {
-    const { widgets } = twttr;
-    if (typeof widgets === "undefined") return;
-
-    content.querySelectorAll("[data-tweet-id]").forEach((tweet) => {
-      widgets.createTweet(tweet.getAttribute("data-tweet-id") ?? "", tweet, {
-        theme: localStorage.getItem("theme"),
-      });
-      tweet.firstElementChild?.remove();
-    });
-  }, 1500);
-};
+import { generateCopyToClipboard } from "./BlogPost/generateCopyToClipboard";
+import { replaceTweet } from "./BlogPost/replaceTweet";
 
 /**
  * @param {import("../blog/index").Blog} props

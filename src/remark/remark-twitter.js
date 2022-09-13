@@ -14,8 +14,8 @@ export default function remarkTwitter() {
       if (url.protocol !== "https:") return;
       if (url.hostname !== "twitter.com") return;
 
-      const [_root, _username, _status, tweetId] = url.pathname.split("/", 4);
-      if (!tweetId) return;
+      const [, , , tweetId] = url.pathname.split("/", 4);
+      if (tweetId === undefined || tweetId === "") return;
 
       /** @type {import("mdast").HTML} */
       const newNode = {

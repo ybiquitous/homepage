@@ -58,6 +58,7 @@ const webpackConfig = {
         { from: "src/robots.txt", to: "robots.txt" },
         { from: "src/images", to: "images" },
         { from: "src/manifest.json", to: "manifest.json" },
+        { from: "src/favicon-512.png", to: "favicon-512.png" },
       ],
     }),
   ],

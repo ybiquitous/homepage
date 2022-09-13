@@ -7,7 +7,7 @@ import { ThemeToggle } from "./components/ThemeToggle";
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js").catch((error) => {
-    console.warn(error);
+    console.error(error);
   });
 }
 

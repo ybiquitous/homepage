@@ -18,7 +18,12 @@ const webpackConfig = {
     "theme-dark": "./src/styles/dark.css",
   },
   output: {
-    filename: DEV ? "[name].js" : "[name].[contenthash].js",
+    filename: (pathData) => {
+      if (pathData.runtime === "service-worker") {
+        return "service-worker.js";
+      }
+      return DEV ? "[name].js" : "[name].[contenthash].js";
+    },
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
     clean: true,

@@ -44,12 +44,12 @@
 - name: Blog Post with Tweet
   url: http://localhost:8080/blog/2022/tweet-into-blog
   execute: |
-    document.querySelector('[title="Light]').click();
+    document.querySelector('[title="Light"]').click();
 
 - name: Blog Post with SpeakerDeck
   url: http://localhost:8080/blog/2021/kaigi-on-rails-2021
   execute: |
-    document.querySelector('[title="Light]').click();
+    document.querySelector('[title="Light"]').click();
 
 - name: Slides
   url: http://localhost:8080/slides

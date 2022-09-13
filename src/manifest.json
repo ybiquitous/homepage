@@ -1,0 +1,15 @@
+{
+  "short_name": "@ybiquitous",
+  "name": "@ybiquitous's website",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "theme_color": "#0088FF",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "/favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

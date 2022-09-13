@@ -13,6 +13,7 @@ const DEV = process.env["NODE_ENV"] === "development";
 const webpackConfig = {
   entry: {
     main: "./src/index.jsx",
+    "service-worker": "./src/service-worker.js",
     "theme-light": "./src/styles/light.css",
     "theme-dark": "./src/styles/dark.css",
   },
@@ -51,6 +52,7 @@ const webpackConfig = {
       patterns: [
         { from: "src/robots.txt", to: "robots.txt" },
         { from: "src/images", to: "images" },
+        { from: "src/manifest.json", to: "manifest.json" },
       ],
     }),
   ],

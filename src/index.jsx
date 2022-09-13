@@ -5,6 +5,12 @@ import { Link } from "./components/Link";
 import { Router } from "./components/Router";
 import { ThemeToggle } from "./components/ThemeToggle";
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js").catch((error) => {
+    console.warn(error);
+  });
+}
+
 const LicenseLink = () => (
   <Link href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</Link>
 );

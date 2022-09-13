@@ -90,7 +90,6 @@
       "dist",
       "tmp",
       "src/slides-build",
-      "src/remark/**",
       "**/*.cjs"
     ],
     "reportUnusedDisableDirectives": true,
@@ -122,7 +121,8 @@
         "type"
       ],
       "@typescript-eslint/explicit-function-return-type": "warn",
-      "@typescript-eslint/no-implicit-any-catch": "off"
+      "@typescript-eslint/no-implicit-any-catch": "off",
+      "@typescript-eslint/prefer-readonly-parameter-types": "off"
     },
     "overrides": [
       {
@@ -135,14 +135,6 @@
           "@typescript-eslint/explicit-module-boundary-types": "off",
           "@typescript-eslint/no-require-imports": "off",
           "@typescript-eslint/no-var-requires": "off"
-        }
-      },
-      {
-        "files": [
-          "*.jsx"
-        ],
-        "rules": {
-          "@typescript-eslint/prefer-readonly-parameter-types": "off"
         }
       }
     ]

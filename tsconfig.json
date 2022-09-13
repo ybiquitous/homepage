@@ -9,5 +9,5 @@
     "noEmit": true
   },
   "include": ["src/**/*", "webpack.config.*", "tailwind.config.*"],
-  "exclude": ["src/slides-build/**/*", "src/remark/**/*"]
+  "exclude": ["src/slides-build/**/*"]
 }

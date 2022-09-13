@@ -6,7 +6,7 @@ export default function remarkRelativeLink() {
   return (tree) => {
     visit(tree, "link", (node) => {
       if (!node.url.startsWith("http")) {
-        node.url = node.url.replace(/\.md$/u, "");
+        node.url = node.url.replace(/\.md$/u, ""); // eslint-disable-line no-param-reassign
       }
     });
   };

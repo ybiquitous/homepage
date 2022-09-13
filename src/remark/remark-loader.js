@@ -26,7 +26,7 @@ export default async function remarkLoader(source) {
     .use(rehypeSlug)
     .use(rehypeToc, {
       headings: ["h2"],
-      customizeTOC: (toc) => {
+      customizeTOC(toc) {
         return {
           type: "element",
           tagName: "details",

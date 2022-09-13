@@ -41,6 +41,11 @@
   execute: |
     document.querySelector('[title="Dark"]').click();
 
+- name: Blog Post with Tweet
+  url: http://localhost:8080/blog/2022/tweet-into-blog
+  execute: |
+    document.querySelector('[title="Light]').click();
+
 - name: Slides
   url: http://localhost:8080/slides
   execute: |

@@ -11,11 +11,12 @@ export function replaceTweet(el) {
 
     el.querySelectorAll("[data-tweet-id]").forEach((tweet) => {
       if (typeof widgets === "undefined") {
-        tweet.innerHTML += `
-          <div class="my-text-secondary" style="margin-top: 1rem;">
-            <small>Failed to load the tweet :(</small>
-          </div>
-        `;
+        const message = document.createElement("div");
+        message.textContent = "Failed to load the tweet :(";
+        message.className = "my-text-secondary";
+        message.style.marginBlockStart = "1rem";
+        message.style.fontSize = "smaller";
+        tweet.appendChild(message);
       } else {
         widgets.createTweet(tweet.getAttribute("data-tweet-id") ?? "", tweet, {
           theme: localStorage.getItem("theme"),

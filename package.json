@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "webpack serve --mode=development --node-env=development",
+    "start": "webpack serve --mode=development --node-env=development --stats=minimal",
     "start:open": "npm run start -- --open",
     "analyze": "webpack --analyze --mode=production",
     "build:webpack": "webpack build --mode=production --node-env=production",

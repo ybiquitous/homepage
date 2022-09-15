@@ -8,13 +8,20 @@ export function replaceTweet(el) {
 
   setTimeout(() => {
     const { widgets } = twttr;
-    if (typeof widgets === "undefined") return;
 
     el.querySelectorAll("[data-tweet-id]").forEach((tweet) => {
-      widgets.createTweet(tweet.getAttribute("data-tweet-id") ?? "", tweet, {
-        theme: localStorage.getItem("theme"),
-      });
-      tweet.firstElementChild?.remove();
+      if (typeof widgets === "undefined") {
+        tweet.innerHTML += `
+          <div class="my-text-secondary" style="margin-top: 1rem;">
+            <small>Failed to load the tweet :(</small>
+          </div>
+        `;
+      } else {
+        widgets.createTweet(tweet.getAttribute("data-tweet-id") ?? "", tweet, {
+          theme: localStorage.getItem("theme"),
+        });
+        tweet.firstElementChild?.remove();
+      }
     });
   }, 1500);
 }

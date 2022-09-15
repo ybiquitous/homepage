@@ -16,6 +16,7 @@ export function replaceTweet(el) {
         message.className = "my-text-secondary";
         message.style.marginBlockStart = "1rem";
         message.style.fontSize = "smaller";
+        message.style.fontStyle = "italic";
         tweet.appendChild(message);
       } else {
         widgets.createTweet(tweet.getAttribute("data-tweet-id") ?? "", tweet, {

@@ -80,18 +80,18 @@
 
     & p,
     & blockquote {
-      @apply my-6 leading-loose;
+      @apply my-8 leading-7;
     }
 
     & > pre,
     & > ul,
     & > ol {
-      @apply my-8;
+      @apply my-6;
     }
 
     & ul,
     & ol {
-      @apply pl-6 leading-loose;
+      @apply space-y-1.5 pl-6 leading-relaxed;
     }
 
     & ul {

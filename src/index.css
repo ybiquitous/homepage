@@ -91,7 +91,7 @@
 
     & ul,
     & ol {
-      @apply pl-6 leading-relaxed space-y-1.5;
+      @apply space-y-1.5 pl-6 leading-relaxed;
     }
 
     & ul {

@@ -57,11 +57,9 @@ export const BlogPost = ({
       </header>
 
       <main className="mt-10 lg:mt-16">
-        <h1 className="font-sans text-5xl font-semibold leading-tight">{title}</h1>
+        <h1 className="font-sans text-4xl font-semibold leading-tight mb-8">{title}</h1>
 
-        <div className="mt-4">
-          <Times published={published} lastUpdated={lastUpdated} />
-        </div>
+        <Times published={published} lastUpdated={lastUpdated} />
 
         {/* eslint-disable react/no-danger -- This is safe. */}
         {content ? (

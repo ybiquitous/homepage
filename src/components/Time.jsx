@@ -1,7 +1,7 @@
 const FORMATTER_TITLE = new Intl.DateTimeFormat("en", { dateStyle: "full", timeStyle: "long" });
 const FORMATTER_CONTENT = new Intl.DateTimeFormat("en", {
   year: "numeric",
-  month: "long",
+  month: "short",
   day: "numeric",
 });
 

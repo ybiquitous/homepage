@@ -142,18 +142,22 @@
 
     /* https://github.com/JS-DevTools/rehype-toc */
     & > .toc-wrapper {
-      @apply my-8 rounded bg-neutral-100 p-4 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-100;
+      @apply rounded bg-neutral-100 p-4 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-100;
 
       .toc-summary {
         @apply italic;
       }
 
       .toc-level {
-        @apply list-none pl-2 pt-2;
+        @apply pl-4 pt-2;
+      }
+
+      .toc-item::marker {
+        content: "»";
       }
 
       .toc-link {
-        @apply inline-block w-full truncate text-current hover:underline;
+        @apply ml-2 text-current hover:underline;
       }
     }
   }

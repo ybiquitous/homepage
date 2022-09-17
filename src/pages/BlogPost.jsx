@@ -57,7 +57,7 @@ export const BlogPost = ({
       </header>
 
       <main className="mt-10 lg:mt-16">
-        <h1 className="mb-8 text-4xl font-semibold leading-tight">{title}</h1>
+        <h1 className="mb-12 text-4xl font-semibold leading-tight">{title}</h1>
 
         <Times published={published} lastUpdated={lastUpdated} />
 

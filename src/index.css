@@ -47,7 +47,7 @@
     & > h4,
     & > h5,
     & > h6 {
-      @apply font-sans font-semibold;
+      @apply font-semibold;
     }
 
     & > h1 {
@@ -153,7 +153,7 @@
       }
 
       .toc-link {
-        @apply inline-block w-full truncate font-sans text-current hover:underline;
+        @apply inline-block w-full truncate text-current hover:underline;
       }
     }
   }

@@ -38,7 +38,7 @@ export const Blog = ({ blogs, title }) => {
             .map(({ path, title: blogTitle, published, tags }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">
-                  <div className="font-sans text-xl">{blogTitle}</div>
+                  <div className="text-xl">{blogTitle}</div>
                   {published !== null && (
                     <Time date={new Date(published)} className="my-text-secondary" />
                   )}

@@ -149,7 +149,7 @@
       }
 
       .toc-level {
-        @apply pl-4 pt-2;
+        @apply list-none pl-2 pt-2;
       }
 
       .toc-item::marker {

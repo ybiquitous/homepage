@@ -31,7 +31,7 @@ OSSの持続可能性って言っちゃうと何かぼんやりしてしまう�
 
 ## [Railsのシステムテスト解剖学](https://kaigionrails.org/2021/talks/YusukeIwaki/)
 
-<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/f7a6538b3a0d44cab5c6b06749eef136" title="Railsの システムテスト解剖学" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>
+[Railsのシステムテスト解剖学](https://speakerdeck.com/player/f7a6538b3a0d44cab5c6b06749eef136)
 
 @YusukeIwakiさんのCapybara深堀りセッション。めちゃくちゃ見たかったのだが、会社のMTGと被ってたのでリアルタイムで視聴できず…。後でアーカイブが出たら見直す予定。
 
@@ -43,7 +43,7 @@ Capybaraがもう少しカスタマイズできるようになればよさそう
 
 ## [Polishing on "Polished Ruby Programming"](https://kaigionrails.org/2021/talks/kakutani/)
 
-<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/cdfd98d4842a48daa7c97ce6394db7a7" title="Polishing on &quot;Polished Ruby Programming&quot; #kaigionrails / kaigionrails 2021" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>
+[Polishing on "Polished Ruby Programming" #kaigionrails / kaigionrails 2021 - Speaker Deck](https://speakerdeck.com/player/cdfd98d4842a48daa7c97ce6394db7a7)
 
 @kakutaniさんの『[Polished Ruby Programming](https://www.amazon.co.jp/Polished-Ruby-Programming-maintainable-high-performance-ebook/dp/B093TH9P7C)』翻訳のお話。
 以前から邦訳が欲しい欲しいと言い続けてて、なんと@kakutaniさんが邦訳してくださることに！来春刊行予定。絶対に買う。
@@ -62,7 +62,7 @@ Capybaraがもう少しカスタマイズできるようになればよさそう
 
 ## [FactoryBotのbuild strategiesをいい感じに直してくれるgemを作った話](https://kaigionrails.org/2021/talks/neko314/)
 
-<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 420px;" src="https://speakerdeck.com/player/65d47cdf198f4825ad95f8426dc876f2" title="Introduce-my-gem-factory_strategist" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.3333333333333333" frameborder="0"></iframe>
+[Introduce-my-gem-factory_strategist](https://speakerdeck.com/player/65d47cdf198f4825ad95f8426dc876f2)
 
 `FactoryBot` の何でもかんでも `create` するのを止めたい。`build` や `build_stubbed` にすれば無駄なレコード生成が抑えられるでしょう、というもうかなり以前からある問題に対する1つの解決策を提示。
 
@@ -73,7 +73,7 @@ Capybaraがもう少しカスタマイズできるようになればよさそう
 
 ## [RailsエンジニアのためのNext.js入門](https://kaigionrails.org/2021/talks/hokaccha/)
 
-<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/026dff060184446e8d6960443ca50e9f" title="RailsエンジニアのためのNext.js入門" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>
+[RailsエンジニアのためのNext.js入門](https://speakerdeck.com/player/026dff060184446e8d6960443ca50e9f)
 
 [ブログ](https://hokaccha.hatenablog.com/entry/2021/10/23/135532)
 

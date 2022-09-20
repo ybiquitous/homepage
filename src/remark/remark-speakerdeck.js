@@ -17,16 +17,17 @@ export default function remarkSpeakerdeck() {
       const [, , deckId] = url.pathname.split("/", 3);
       if (deckId === undefined || deckId === "") return;
 
-      let title = undefined;
+      let title = "";
       const [titleNode] = node.children;
       if (titleNode && "value" in titleNode) {
         title = titleNode.value;
+        title = `title="${title}"`;
       }
 
       /** @type {import("mdast").HTML} */
       const newNode = {
         type: "html",
-        value: `<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/${deckId}" title="${title}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>`,
+        value: `<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/${deckId}" ${title} allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>`,
       };
       parent.children.splice(index, 1, newNode);
     });

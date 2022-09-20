@@ -31,7 +31,7 @@ OSSの持続可能性って言っちゃうと何かぼんやりしてしまう�
 
 ## [Railsのシステムテスト解剖学](https://kaigionrails.org/2021/talks/YusukeIwaki/)
 
-[Railsのシステムテスト解剖学](https://speakerdeck.com/player/f7a6538b3a0d44cab5c6b06749eef136)
+[Railsのシステムテスト解剖学 - Speaker Deck](https://speakerdeck.com/player/f7a6538b3a0d44cab5c6b06749eef136)
 
 @YusukeIwakiさんのCapybara深堀りセッション。めちゃくちゃ見たかったのだが、会社のMTGと被ってたのでリアルタイムで視聴できず…。後でアーカイブが出たら見直す予定。
 
@@ -62,7 +62,7 @@ Capybaraがもう少しカスタマイズできるようになればよさそう
 
 ## [FactoryBotのbuild strategiesをいい感じに直してくれるgemを作った話](https://kaigionrails.org/2021/talks/neko314/)
 
-[Introduce-my-gem-factory_strategist](https://speakerdeck.com/player/65d47cdf198f4825ad95f8426dc876f2)
+[Introduce-my-gem-factory_strategist - Speaker Deck](https://speakerdeck.com/player/65d47cdf198f4825ad95f8426dc876f2)
 
 `FactoryBot` の何でもかんでも `create` するのを止めたい。`build` や `build_stubbed` にすれば無駄なレコード生成が抑えられるでしょう、というもうかなり以前からある問題に対する1つの解決策を提示。
 
@@ -73,7 +73,7 @@ Capybaraがもう少しカスタマイズできるようになればよさそう
 
 ## [RailsエンジニアのためのNext.js入門](https://kaigionrails.org/2021/talks/hokaccha/)
 
-[RailsエンジニアのためのNext.js入門](https://speakerdeck.com/player/026dff060184446e8d6960443ca50e9f)
+[RailsエンジニアのためのNext.js入門 - Speaker Deck](https://speakerdeck.com/player/026dff060184446e8d6960443ca50e9f)
 
 [ブログ](https://hokaccha.hatenablog.com/entry/2021/10/23/135532)
 

@@ -9,7 +9,7 @@
 
 ## [Ruby meets WebAssembly](https://rubykaigi.org/2022/presentations/kateinoigakukun.html)
 
-<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/fbfddfe5eccb4700a3ae600b814a9ce9" title="Ruby meets WebAssembly" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>
+[Ruby meets WebAssembly - Speaker Deck](https://speakerdeck.com/player/fbfddfe5eccb4700a3ae600b814a9ce9)
 
 個人的には、今回のセッションの中で一番衝撃だった。
 
@@ -59,7 +59,7 @@ Ruby WasmはRuby 3.2にバンドルされるので、次のKaigiではWasm関連
 
 ## [Adding Type Signatures into Ruby Docs](https://rubykaigi.org/2022/presentations/oceanicpanda.html)
 
-<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/a2b097dc2c5e4615a800a0786df76f97" title="Adding Type Signatures into Ruby Docs" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>
+[Adding Type Signatures into Ruby Docs - Speaker Deck](https://speakerdeck.com/player/a2b097dc2c5e4615a800a0786df76f97)
 
 [rubyapi.org](https://rubyapi.org/) の作者のセッション。このAPIドキュメントサイトはかなり見やすい。普段は[Dash](https://kapeli.com/dash)というmacOSアプリでRubyのAPIを探すことが多く、Dash内部では [ruby-doc.org](https://ruby-doc.org/) が使われているのでそちらを見ることが多いが（[docs.ruby-lang.org](https://docs.ruby-lang.org/) はあんまり見ない）、この rubyapi.org は見やすく検索性に優れてるので、Dashでもこちらを採用してほしいなと思ったほど。
 
@@ -73,7 +73,7 @@ Ruby WasmはRuby 3.2にバンドルされるので、次のKaigiではWasm関連
 
 ## [RBS generation framework using Rack architecture](https://rubykaigi.org/2022/presentations/_ksss_.html)
 
-<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/4d87c4ade696409aadf1e992971e60d4" title="RBS generation framework using Rack architecture" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>
+[RBS generation framework using Rack architecture - Speaker Deck](https://speakerdeck.com/player/4d87c4ade696409aadf1e992971e60d4)
 
 ブログは[こちら](https://ksss9.hatenablog.com/entry/2022/09/11/100155)。
 
@@ -93,7 +93,7 @@ Ruby WasmはRuby 3.2にバンドルされるので、次のKaigiではWasm関連
 
 ## [The Better RuboCop World to enjoy Ruby](https://rubykaigi.org/2022/presentations/nay3.html)
 
-<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="https://speakerdeck.com/player/1c05e4592a734bbdb47329ee5eb3b9cb" title="The Better RuboCop World to enjoy Ruby" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>
+[The Better RuboCop World to enjoy Ruby - Speaker Deck](https://speakerdeck.com/player/1c05e4592a734bbdb47329ee5eb3b9cb)
 
 RuboCopとの上手な付き合い方、の話だと自分は捉えた。RuboCopは非常に強力なツールなのだが、0/1 (bad/good) のCI的な価値観で運用してしまうと辛くなる、という考えにとても共感する。badとgoodの間にmaybe goodがある、とトークでは語られていた。たしかに。
 
@@ -109,7 +109,7 @@ RuboCopが引き起こす「ツラみ」はおそらくデフォルト設定の�
 
 「Commiters vs The World」にてShopifyチームがRubyパーサ（`parse.y` ？）を書き直すみたいなことを言ってたけど、このツイートかな👇
 
-<https://twitter.com/kddnewton/status/1568316056208547840>
+[Kevin Newton on Twitter: "Since @yukihiro_matz mentioned it on stage at #rubykaigi... Yes! I'm going to be rewriting the Ruby parser. I'm super super excited about this, and you should be too! Below is a brief thread about how and why, but tl;dr: portability, error tolerance, and maintainability." / Twitter](https://twitter.com/kddnewton/status/1568316056208547840)
 
 昨年のKaigiで、たしか今のパーサだとVSCode拡張のようなIDE連携に不十分、みたいな話があった記憶があり、Shopifyが本腰入れて取り組むという話になっているぽい。Ruby 3以降の開発者体験強化の流れから、やはり本丸に取り組み必要があるのかな。「あんまり期待しないで」的なことを言ってた気もするけど、やはり俄然Shopifyを応援したい👏
 
@@ -120,6 +120,6 @@ RuboCopが引き起こす「ツラみ」はおそらくデフォルト設定の�
 
 次回は**長野県松本市**とのこと。2年前のコロナキャンセルに対するリベンジ開催の雰囲気を感じる。
 
-<https://twitter.com/rubykaigi/status/1568517449812946946>
+[RubyKaigi on Twitter: "RubyKaigi 2023: May 11-13, 2023; See you in Matsumoto! #rubykaigi" / Twitter](https://twitter.com/rubykaigi/status/1568517449812946946)
 
 まだ行けるかわからないから、運営スタッフの皆さんは大変だろうけど、オンライン併用も継続してほしいな…。

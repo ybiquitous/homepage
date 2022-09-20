@@ -178,7 +178,7 @@ Rubyの文化とあんまりマッチしないんだろうなぁと漠然と感�
 どういうカタチでFormatterが提供されることになるか、今後が非常に気になる。
 RuboCopが準拠する[The Ruby Style Guide](https://rubystyle.guide/)との兼ね合いとか…。
 
-<https://twitter.com/ybiquitous/status/1302161022246031362>
+[Masafumi Koba 🇺🇦 on Twitter: "RuboCopのデフォルトがアレな問題は確かに同意なんだけど、RuboCop作者個人の好みにしたがって作ってきてて、かなりの規模のコミュニティが育ってきてるという事実がある（デファクトスタンダード）し、それは作者の自由だよなぁとも思う。 #rubykaigi" / Twitter](https://twitter.com/ybiquitous/status/1302161022246031362)
 
 ## 感想戦
 

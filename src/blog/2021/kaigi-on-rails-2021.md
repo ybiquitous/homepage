@@ -37,7 +37,7 @@ OSSの持続可能性って言っちゃうと何かぼんやりしてしまう�
 
 **2021-10-30 updated**: アーカイブ視聴したので、感想をTwitterに残した。
 
-<https://twitter.com/ybiquitous/status/1454308923880607747>
+[Masafumi Koba 🇺🇦 on Twitter: "#kaigionrails のRailsシステムテストのセッション視聴完了。Capybaraに対する理解が深まるとともに、モヤモヤも増えたw https://t.co/aBS8eTiWg3" / Twitter](https://twitter.com/ybiquitous/status/1454308923880607747)
 
 Capybaraがもう少しカスタマイズできるようになればよさそうなんだが… 🤔
 
@@ -140,4 +140,4 @@ OSSへの情熱が凄まじい。コミット全部読むとか、issueにすべ
 
 [^1]: 「Kaigi Effect」の由来について、後日@kakutaniさんから教わった。なんと10年前の[RubyKaigi 2011](https://rubykaigi.org/2011/ja/schedule/details/18M03/)で生まれた言葉だそう。[#kaigieffect](https://togetter.com/li/162817) というハッシュタグもある。
 
-<https://twitter.com/kakutani/status/1452993581996728328>
+[Kakutani Shintaro on Twitter: ""誰が言い出したかわからないけれど、俗に言われる「Kaigi Effect」はたしかに存在すると思う" リプライでブラ下げておくか… » Kaigi on Rails 2021 - Blog - @ybiquitous https://t.co/APJHpeyJQg" / Twitter](https://twitter.com/kakutani/status/1452993581996728328)

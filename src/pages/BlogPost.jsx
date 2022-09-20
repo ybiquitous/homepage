@@ -6,6 +6,7 @@ import { useTitle } from "../hooks/useTitle";
 import { Navi } from "./BlogPost/Navi";
 import { Times } from "./BlogPost/Times";
 import { generateCopyToClipboard } from "./BlogPost/generateCopyToClipboard";
+import { replaceSpeakerdeck } from "./BlogPost/replaceSpeakerdeck";
 import { replaceTweet } from "./BlogPost/replaceTweet";
 
 /**
@@ -46,6 +47,7 @@ export const BlogPost = ({
       }
 
       generateCopyToClipboard(contentEl);
+      replaceSpeakerdeck(contentEl);
       replaceTweet(contentEl);
     }
   }, [slug, content, contentElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.

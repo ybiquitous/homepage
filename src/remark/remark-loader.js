@@ -12,6 +12,7 @@ import { unified } from "unified";
 
 import remarkRelativeLink from "./remark-relative-link.js";
 import remarkRemoveH1 from "./remark-remove-h1.js";
+import remarkSpeakerdeck from "./remark-speakerdeck.js";
 import remarkTwitter from "./remark-twitter.js";
 
 /** @type {import("webpack").LoaderDefinitionFunction} */
@@ -21,6 +22,7 @@ export default async function remarkLoader(source) {
     .use(remarkRemoveH1)
     .use(remarkRelativeLink)
     .use(remarkGfm)
+    .use(remarkSpeakerdeck)
     .use(remarkTwitter)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeSlug)

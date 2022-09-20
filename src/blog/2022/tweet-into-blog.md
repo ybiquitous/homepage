@@ -9,7 +9,7 @@
 
 ## 例
 
-<https://twitter.com/ybiquitous/status/1517747618386157575>
+[Masafumi Koba 🇺🇦 on Twitter: "個人ブログのMarkdownにTweetを埋め込んでみた。 https://t.co/jbFy9SRREh" / Twitter](https://twitter.com/ybiquitous/status/1517747618386157575)
 
 ## 実装
 

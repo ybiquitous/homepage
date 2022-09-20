@@ -26,7 +26,7 @@ export default function remarkSpeakerdeck() {
       /** @type {import("mdast").HTML} */
       const newNode = {
         type: "html",
-        value: `<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" src="${src}" ${title} allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.78343949044586" frameborder="0"></iframe>`,
+        value: `<iframe class="speakerdeck-iframe" style="border: 0px none; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0% padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 315px;" src="${src}" ${title} allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-ratio="1.777" frameborder="0"></iframe>`,
       };
       parent.children.splice(index, 1, newNode);
     });

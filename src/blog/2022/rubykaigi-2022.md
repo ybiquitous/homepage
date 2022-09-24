@@ -16,6 +16,7 @@
 RubyとWasm（WebAssembly）についてはたしか去年あたりに最初に発表されたときも驚いた記憶があるが、今回のキーノートで実際にデモを見ることができて、今後への期待がさらに膨らんだ。
 
 関連リンクはこちら👇
+
 - [github.com/ruby/ruby.wasm](https://github.com/ruby/ruby.wasm) - ruby/ruby.wasm リポジトリ
 - [irb-wasm.vercel.app](https://irb-wasm.vercel.app) - IRBをブラウザで実行できるWebアプリ
 - [ruby-head-wasm-wasi](https://www.npmjs.com/package/ruby-head-wasm-wasi) - Ruby Wasmを同梱したnpmパッケージ

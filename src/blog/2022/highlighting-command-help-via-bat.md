@@ -28,7 +28,7 @@ The official description:
 
 It is a Rust-based command line tool. I have used the useful tool for several years, instead of cat(1) or less(1).
 
-## How
+## How it works
 
 I have copied and pasted the `help` alias snippet above to my `.zshrc` file.
 Let me split this one-liner alias into multi-lines for an explanation as below.

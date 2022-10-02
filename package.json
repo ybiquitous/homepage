@@ -246,7 +246,7 @@
       "license": "free"
     }
   },
-  "browserslist": "> 1%",
+  "browserslist": "> 1%, not op_mini all",
   "prettier": {
     "plugins": [
       "prettier-plugin-tailwindcss"

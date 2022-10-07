@@ -1,3 +1,12 @@
+---
+slug: 2019/spa-redirect-settings-on-netlify
+title: SPAのためのリダイレクト設定 on Netlify
+published: 2019-07-03T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: netlify
+---
+
 # SPAのためのリダイレクト設定 on Netlify
 
 このブログは現在[Netlify](https://www.netlify.com/)上にデプロイしているのですが、404ページがNetlifyが用意したものだったので、ちょっとイケてないなぁと思っていました。

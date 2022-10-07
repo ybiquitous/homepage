@@ -1,3 +1,12 @@
+---
+slug: 2021/kaigi-on-rails-2021
+title: Kaigi on Rails 2021
+published: 2021-10-26T00:00:00.000Z
+lastUpdated: 2022-09-20T00:00:00.000Z
+author: Masafumi Koba
+tags: ruby, rails, kaigionrails
+---
+
 # Kaigi on Rails 2021
 
 10月22日(金)／23日(土)の2日間、[Kaigi on Rails 2021](https://kaigionrails.org/2021)に参加してきた。

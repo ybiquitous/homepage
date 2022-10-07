@@ -1,3 +1,12 @@
+---
+slug: 2021/ecs-deploy-via-github-actions
+title: ECS Deploy via GitHub Actions
+published: 2021-09-30T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: github-actions, ecs
+---
+
 # ECS Deploy via GitHub Actions
 
 最近会社のRailsアプリのECSデプロイをAWS CodeBuildからGitHub Actionsに移行したので、その備忘録。

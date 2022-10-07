@@ -1,3 +1,12 @@
+---
+slug: 2022/highlighting-command-help-via-bat
+title: Highlighting command help via bat(1)
+published: 2022-09-24T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: shell, tips
+---
+
 # Highlighting command help via bat(1)
 
 In this post, I introduce a tip that can show a color-highlighting help output for arbitary commands.

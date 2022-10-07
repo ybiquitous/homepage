@@ -1,3 +1,12 @@
+---
+slug: 2019/webpack-on-rails
+title: Webpack on Rails
+published: 2019-06-19T00:00:00.000Z
+lastUpdated: 2021-11-03T00:00:00.000Z
+author: Masafumi Koba
+tags: rails, webpack
+---
+
 # Webpack on Rails
 
 [Webpacker](https://github.com/rails/webpacker) を使わずに、Webpack と Rails を連携させる最低限の方法についての覚え書きです。

@@ -1,3 +1,12 @@
+---
+slug: 2021/parcel-to-webpack
+title: ParcelからWebpackに移行した話
+published: 2021-06-23T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: parcel, webpack
+---
+
 # ParcelからWebpackに移行した話
 
 [このブログを始めた](../2019/start-blog.md)ときからずっと[Parcel](https://parceljs.org/)でサイトを構築していたのだけれど、かなりツラミが出てきたので、別のツールに移行することを数日前に決心し、実行した（[ybiquitous/homepage#515](https://github.com/ybiquitous/homepage/pull/515)）。

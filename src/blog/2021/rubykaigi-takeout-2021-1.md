@@ -1,3 +1,12 @@
+---
+slug: 2021/rubykaigi-takeout-2021-1
+title: "RubyKaigi Takeout 2021 - #1"
+published: 2021-09-23T00:00:00.000Z
+lastUpdated: 2021-09-27T16:00:00.000Z
+author: Masafumi Koba
+tags: ruby, rubykaigi
+---
+
 # RubyKaigi Takeout 2021 - #1
 
 9月9-11日の日程で開催された[RubyKaigi Takeout 2021](https://rubykaigi.org/2021-takeout)に今年も参加してきたので、所感をつらつらと記していこうと思う（すでに2週間近く経ってしまった…）。

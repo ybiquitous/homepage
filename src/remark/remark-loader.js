@@ -4,6 +4,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -19,6 +20,7 @@ import remarkTwitter from "./remark-twitter.js";
 export default async function remarkLoader(source) {
   const transformed = await unified()
     .use(remarkParse)
+    .use(remarkFrontmatter, ["yaml"])
     .use(remarkRemoveH1)
     .use(remarkRelativeLink)
     .use(remarkGfm)

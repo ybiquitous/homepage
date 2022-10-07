@@ -1,3 +1,12 @@
+---
+slug: 2022/react-18
+title: React 18
+published: 2022-04-21T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: react
+---
+
 # React 18
 
 2022年3月29日、[React 18がリリースされた](https://reactjs.org/blog/2022/03/29/react-v18.html)。

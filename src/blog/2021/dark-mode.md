@@ -1,3 +1,12 @@
+---
+slug: 2021/dark-mode
+title: Dark Mode
+published: 2021-07-09T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: css, dark-mode, tailwindcss
+---
+
 # Dark Mode
 
 当サイトにDark Modeを導入したので、作業ログを残す。

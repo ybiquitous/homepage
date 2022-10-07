@@ -1,3 +1,12 @@
+---
+slug: 2022/rubykaigi-2022
+title: RubyKaigi 2022
+published: 2022-09-20T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: ruby, rubykaigi
+---
+
 # RubyKaigi 2022
 
 9月8日〜10日、[RubyKaigi 2022](https://rubykaigi.org/2022/)に参加した。今年は三重県津市で開催された。

@@ -1,3 +1,12 @@
+---
+slug: 2022/steep-problem-matcher
+title: Steep Problem Matcher
+published: 2022-03-10T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: ruby, steep, github-actions
+---
+
 # Steep Problem Matcher
 
 [@sinsokuさんのSteep記事](https://sinsoku.hatenablog.com/entry/2022/03/09/234511)を最近読んで、そういえば以前[Steepに関する記事](../2020/example-of-type-checking-by-steep.md)を書いたとき、GitHub Actionsを使ってSteepエラーをレポートするためにシェルのパイプ（`|`）を使った例を紹介していたことを思い出した。

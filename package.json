@@ -22,6 +22,7 @@
     "lint:styles": "npm run prettier -- --check",
     "lint:styles:fix": "npm run prettier -- --write",
     "prettier": "prettier --cache .",
+    "preeslint": "npm run build:blog",
     "eslint": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
     "eslint:fix": "npm run eslint -- --fix",
     "test": "npm-run-all --parallel lint build",

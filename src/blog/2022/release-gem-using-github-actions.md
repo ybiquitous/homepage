@@ -76,6 +76,10 @@ jobs:
           TAG_NAME: ${{ steps.tag.outputs.name }}
 ```
 
+`on.workflow_dispatch` が手動トリガーを可能にしてくれる。この中でOTPを受け取る設定を入れる。
+
+`concurrency` は、誤って2重送信してしまったときの防止策。まあ、これはなくてもいいかもしれない。
+
 `bundle exec rake release` コマンドは、Gitタグを打ってgemをビルドし、RubyGems.orgにアップロードしてくれる。
 タグを打つ前に、`git config` コマンドでコミットユーザとEmailをセットしておくことがミソ。
 

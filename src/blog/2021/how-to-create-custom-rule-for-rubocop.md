@@ -1,3 +1,10 @@
+---
+published: 2021-12-17T00:00:00.000Z
+lastUpdated: 2021-12-17T00:00:00.000Z
+author: Masafumi Koba
+tags: rubocop, ruby
+---
+
 # RuboCopカスタムルールを気軽に作る
 
 *これは “[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 17日目の記事です。*

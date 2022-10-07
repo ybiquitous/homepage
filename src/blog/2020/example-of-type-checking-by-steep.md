@@ -1,3 +1,10 @@
+---
+published: 2020-12-21T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: ruby, rbs, steep, advent-calendar
+---
+
 # Steepによる型チェックの実践例
 
 この記事は「[Ruby 3.0 Advent Calendar 2020](https://qiita.com/advent-calendar/2020/ruby3)」20日目の記事です。

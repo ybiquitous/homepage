@@ -1,3 +1,10 @@
+---
+published: 2021-09-04T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: git
+---
+
 # Git Partial Clone
 
 大きいリポジトリを `git clone` するときに時間がかかるのを避けたいときは、Gitの [Partial Clone](https://git-scm.com/docs/partial-clone) という機能を活用する。

@@ -1,3 +1,10 @@
+---
+published: 2020-06-06T00:00:00.000Z
+lastUpdated: 2022-04-23T00:00:00.000Z
+author: Masafumi Koba
+tags: github-actions, nvm, nodejs
+---
+
 # GitHub Actionsでnvmを使う
 
 よく忘れるので、GitHub Actionsで[nvm](https://github.com/nvm-sh/nvm)を使う方法をメモしておく。

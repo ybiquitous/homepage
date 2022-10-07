@@ -1,3 +1,10 @@
+---
+published: 2022-04-23T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: markdown, remark, twitter
+---
+
 # Tweet into Blog
 
 当ブログにTwitterのリッチなカードを表示させたくて、試行錯誤して実現できたので、その備忘録。

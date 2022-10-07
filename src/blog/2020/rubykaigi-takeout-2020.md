@@ -1,3 +1,10 @@
+---
+published: 2020-09-07T00:00:00.000Z
+lastUpdated: 2022-04-23T00:00:00.000Z
+author: Masafumi Koba
+tags: ruby, rubykaigi
+---
+
 # RubyKaigi Takeout 2020に参加した
 
 2020年9月の4日・5日（金・土）の2日間にわたってオンライン開催された[RubyKaigi Takeout 2020](https://rubykaigi.org/2020-takeout)に参加したので、その感想を書く。

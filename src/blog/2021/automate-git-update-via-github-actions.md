@@ -1,3 +1,10 @@
+---
+published: 2021-06-30T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: github-actions
+---
+
 # Gitを自動でアップデートするGitHub Actionを書いた
 
 ## TL;DR

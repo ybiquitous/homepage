@@ -1,3 +1,10 @@
+---
+published: 2021-11-23T00:00:00.000Z
+lastUpdated: 2022-04-23T00:00:00.000Z
+author: Masafumi Koba
+tags: emacs
+---
+
 # Emacsをソースからビルドした
 
 Homebrew CaskでインストールしているEmacsのアップデートが失敗したので、初めてソースコードからEmacsをビルドした。備忘録を残しておく。

@@ -1,3 +1,10 @@
+---
+published: 2019-05-25T00:00:00.000Z
+lastUpdated: 2021-06-22T00:00:00.000Z
+author: Masafumi Koba
+tags: typescript
+---
+
 # TypeScriptにおける型の互換性（翻訳）
 
 TypeScriptドキュメント『[_Type Compatibility_](https://www.typescriptlang.org/docs/handbook/type-compatibility.html)』を読んで面白い内容だったので、勉強がてら翻訳してみました。

@@ -1,3 +1,10 @@
+---
+published: 2021-12-03T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: stylelint, css
+---
+
 # Stylelint 14.0.0
 
 *これは “[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 3日目の記事です。*

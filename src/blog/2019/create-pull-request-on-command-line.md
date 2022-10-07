@@ -1,3 +1,10 @@
+---
+published: 2019-10-11T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: github
+---
+
 # コマンドラインでプルリクエストを作る
 
 ## hub とは

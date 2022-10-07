@@ -1,3 +1,10 @@
+---
+published: 2019-05-11T00:00:00.000Z
+lastUpdated: 2019-05-12T00:00:00.000Z
+author: Masafumi Koba
+tags: typescript, react, parcel, netlify
+---
+
 # Blog始めました
 
 Blogを始めました。最初は、このBlogを乗せているホームページの技術スタックについて書きます。

@@ -1,5 +1,5 @@
 import { uniqueArray } from "../utils/uniqueArray.js";
-import metadata from "./metadata.json";
+import metadata from "./metadata.js";
 
 /**
  * @typedef {Readonly<{

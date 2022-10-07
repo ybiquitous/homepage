@@ -1,3 +1,10 @@
+---
+published: 2021-09-07T00:00:00.000Z
+lastUpdated: null
+author: Masafumi Koba
+tags: docker
+---
+
 # Dockerfileのベストプラクティスが変わった話
 
 昨日Twitterで面白い記事が流れてきたので、気になって読んでみた。

@@ -1,6 +1,4 @@
 ---
-slug: 2021/rubykaigi-takeout-2021-1
-title: "RubyKaigi Takeout 2021 - #1"
 published: 2021-09-23T00:00:00.000Z
 lastUpdated: 2021-09-27T16:00:00.000Z
 author: Masafumi Koba

@@ -1,6 +1,4 @@
 ---
-slug: 2021/css-modules-to-tailwindcss
-title: CSS ModulesからTailwind CSSに切り替えた
 published: 2021-07-08T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

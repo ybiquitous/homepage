@@ -1,6 +1,4 @@
 ---
-slug: 2020/example-of-type-checking-by-steep
-title: Steepによる型チェックの実践例
 published: 2020-12-21T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

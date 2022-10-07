@@ -1,6 +1,4 @@
 ---
-slug: 2021/yet-another-remark-loader
-title: Webpack remark-loaderの代わりを作った話
 published: 2021-11-05T00:00:00.000Z
 lastUpdated: 2022-04-24T00:00:00.000Z
 author: Masafumi Koba

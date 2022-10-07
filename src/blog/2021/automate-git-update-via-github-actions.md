@@ -1,6 +1,4 @@
 ---
-slug: 2021/automate-git-update-via-github-actions
-title: Gitを自動でアップデートするGitHub Actionを書いた
 published: 2021-06-30T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

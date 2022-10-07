@@ -1,6 +1,4 @@
 ---
-slug: 2021/ecs-deploy-via-github-actions
-title: ECS Deploy via GitHub Actions
 published: 2021-09-30T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

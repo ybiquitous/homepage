@@ -1,6 +1,4 @@
 ---
-slug: 2020/rubykaigi-takeout-2020-2
-title: RubyKaigi Takeout 2020に参加した（2）
 published: 2020-09-10T00:00:00.000Z
 lastUpdated: 2022-04-23T00:00:00.000Z
 author: Masafumi Koba

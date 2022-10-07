@@ -1,6 +1,4 @@
 ---
-slug: 2021/introduce-percy
-title: Introduce Percy
 published: 2021-11-03T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

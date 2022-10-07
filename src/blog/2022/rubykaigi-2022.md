@@ -1,6 +1,4 @@
 ---
-slug: 2022/rubykaigi-2022
-title: RubyKaigi 2022
 published: 2022-09-20T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

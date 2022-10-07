@@ -1,6 +1,4 @@
 ---
-slug: 2021/parcel-to-webpack
-title: ParcelからWebpackに移行した話
 published: 2021-06-23T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

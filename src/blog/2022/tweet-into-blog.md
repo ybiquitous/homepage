@@ -1,6 +1,4 @@
 ---
-slug: 2022/tweet-into-blog
-title: Tweet into Blog
 published: 2022-04-23T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

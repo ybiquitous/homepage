@@ -1,6 +1,4 @@
 ---
-slug: 2022/steep-problem-matcher
-title: Steep Problem Matcher
 published: 2022-03-10T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

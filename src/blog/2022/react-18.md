@@ -1,6 +1,4 @@
 ---
-slug: 2022/react-18
-title: React 18
 published: 2022-04-21T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

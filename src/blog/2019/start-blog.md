@@ -1,6 +1,4 @@
 ---
-slug: 2019/start-blog
-title: Blog始めました
 published: 2019-05-11T00:00:00.000Z
 lastUpdated: 2019-05-12T00:00:00.000Z
 author: Masafumi Koba

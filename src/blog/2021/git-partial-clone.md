@@ -1,6 +1,4 @@
 ---
-slug: 2021/git-partial-clone
-title: Git Partial Clone
 published: 2021-09-04T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

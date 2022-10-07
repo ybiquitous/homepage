@@ -1,6 +1,4 @@
 ---
-slug: 2021/dockerfile-best-practices-changed
-title: Dockerfileのベストプラクティスが変わった話
 published: 2021-09-07T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

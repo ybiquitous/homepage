@@ -1,6 +1,4 @@
 ---
-slug: 2021/how-to-create-custom-rule-for-rubocop
-title: RuboCopカスタムルールを気軽に作る
 published: 2021-12-17T00:00:00.000Z
 lastUpdated: 2021-12-17T00:00:00.000Z
 author: Masafumi Koba

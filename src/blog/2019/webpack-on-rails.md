@@ -1,6 +1,4 @@
 ---
-slug: 2019/webpack-on-rails
-title: Webpack on Rails
 published: 2019-06-19T00:00:00.000Z
 lastUpdated: 2021-11-03T00:00:00.000Z
 author: Masafumi Koba

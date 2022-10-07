@@ -1,6 +1,4 @@
 ---
-slug: 2021/dark-mode
-title: Dark Mode
 published: 2021-07-09T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

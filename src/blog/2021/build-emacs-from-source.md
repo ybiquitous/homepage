@@ -1,6 +1,4 @@
 ---
-slug: 2021/build-emacs-from-source
-title: Emacsをソースからビルドした
 published: 2021-11-23T00:00:00.000Z
 lastUpdated: 2022-04-23T00:00:00.000Z
 author: Masafumi Koba

@@ -1,6 +1,4 @@
 ---
-slug: 2021/kaigi-on-rails-2021
-title: Kaigi on Rails 2021
 published: 2021-10-26T00:00:00.000Z
 lastUpdated: 2022-09-20T00:00:00.000Z
 author: Masafumi Koba

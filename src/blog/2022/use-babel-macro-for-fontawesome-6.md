@@ -1,6 +1,4 @@
 ---
-slug: 2022/use-babel-macro-for-fontawesome-6
-title: Font Awesome 6でBabelマクロを使う
 published: 2022-02-19T00:00:00.000Z
 lastUpdated: 2022-03-23T00:00:00.000Z
 author: Masafumi Koba

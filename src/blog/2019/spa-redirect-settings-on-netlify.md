@@ -1,6 +1,4 @@
 ---
-slug: 2019/spa-redirect-settings-on-netlify
-title: SPAのためのリダイレクト設定 on Netlify
 published: 2019-07-03T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

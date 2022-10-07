@@ -22,7 +22,6 @@ async function processFile(file) {
       .use(remarkFrontmatter, ["yaml"])
       .use(() => (tree) => {
         const yamlNode = tree.children.find(({ type }) => type === "yaml");
-
         if (yamlNode === undefined) {
           reject(new Error(`No front matter in ${file}`));
           return;
@@ -33,8 +32,18 @@ async function processFile(file) {
           return;
         }
 
+        // @ts-expect-error -- TS2339: Property 'depth' does not exist on type 'Content'.
+        const h1 = tree.children.find(({ type, depth }) => type === "heading" && depth === 1);
+        if (h1 === undefined) {
+          reject(new Error(`No h1 in ${file}`));
+          return;
+        }
+
         /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
         const metadata = yaml.parse(yamlNode.value);
+        metadata.slug = file.replace(/\.md$/u, "").split("/").slice(-2).join("/");
+        // @ts-expect-error -- TS2339: Property 'children' does not exist on type 'Content'.
+        metadata.title = h1.children[0].value;
         metadata.tags = metadata.tags.split(/\s{0,10},\s{0,10}/u);
         /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
 

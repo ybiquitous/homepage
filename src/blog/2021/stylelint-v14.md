@@ -1,6 +1,4 @@
 ---
-slug: 2021/stylelint-v14
-title: Stylelint 14.0.0
 published: 2021-12-03T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba

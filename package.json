@@ -12,6 +12,7 @@
     "postbuild": "cp -v _redirects dist/",
     "static": "npm run build && npx http-server ./dist",
     "format": "npm-run-all --print-label --parallel lint:*:fix",
+    "prelint-ci": "npm run build:blog",
     "lint-ci": "npm-run-all --silent --parallel lint:*",
     "lint": "npm-run-all --print-label --parallel lint:*",
     "lint:md": "remark .",

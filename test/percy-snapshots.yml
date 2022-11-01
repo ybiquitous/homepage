@@ -1,35 +1,35 @@
 - name: Root
-  url: http://localhost:8080
+  url: "/"
   execute: |
     document.querySelector('[title="Light"]').click();
 
 - name: Root with Dark mode
-  url: http://localhost:8080
+  url: "/"
   execute: |
     document.querySelector('[title="Dark"]').click();
 
 - name: Blog
-  url: http://localhost:8080/blog
+  url: /blog
   execute: |
     document.querySelector('[title="Light"]').click();
 
 - name: Blog with Dark mode
-  url: http://localhost:8080/blog
+  url: /blog
   execute: |
     document.querySelector('[title="Dark"]').click();
 
 - name: Blog Tag
-  url: http://localhost:8080/blog/tags/typescript
+  url: /blog/tags/typescript
   execute: |
     document.querySelector('[title="Light"]').click();
 
 - name: Blog Post
-  url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
+  url: /blog/2019/type-compatibility-in-typescript
   execute: |
     document.querySelector('[title="Light"]').click();
 
 - name: Blog Post with opened ToC
-  url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
+  url: /blog/2019/type-compatibility-in-typescript
   waitForTimeout: 5000
   waitForSelector: "article summary"
   execute: |
@@ -37,30 +37,30 @@
     document.querySelector('article summary').click();
 
 - name: Blog Post with Dark mode
-  url: http://localhost:8080/blog/2019/type-compatibility-in-typescript
+  url: /blog/2019/type-compatibility-in-typescript
   execute: |
     document.querySelector('[title="Dark"]').click();
 
 - name: Blog Post with Tweet
-  url: http://localhost:8080/blog/2022/tweet-into-blog
+  url: /blog/2022/tweet-into-blog
   waitForTimeout: 5000
   waitForSelector: "[data-tweet-id] iframe"
   execute: |
     document.querySelector('[title="Light"]').click();
 
 - name: Blog Post with SpeakerDeck
-  url: http://localhost:8080/blog/2021/kaigi-on-rails-2021
+  url: /blog/2021/kaigi-on-rails-2021
   waitForTimeout: 5000
   waitForSelector: ".speakerdeck-iframe"
   execute: |
     document.querySelector('[title="Light"]').click();
 
 - name: Slides
-  url: http://localhost:8080/slides
+  url: /slides
   execute: |
     document.querySelector('[title="Light"]').click();
 
 - name: Slides with Dark mode
-  url: http://localhost:8080/slides
+  url: /slides
   execute: |
     document.querySelector('[title="Dark"]').click();

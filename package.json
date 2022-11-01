@@ -57,7 +57,7 @@
     "core-js": "^3.25.3",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.13",
-    "eslint-config-ybiquitous": "^16.0.0",
+    "eslint-config-ybiquitous": "^16.1.0",
     "glob": "^8.0.3",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",

@@ -56,7 +56,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "core-js": "^3.25.3",
     "css-loader": "^6.7.1",
-    "cssnano": "^5.1.13",
+    "cssnano": "^5.1.14",
     "eslint-config-ybiquitous": "^16.1.0",
     "glob": "^8.0.3",
     "html-webpack-plugin": "^5.5.0",

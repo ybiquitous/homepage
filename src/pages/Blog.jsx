@@ -29,12 +29,6 @@ export const Blog = ({ blogs, title }) => {
         <ul className="divide-y divide-dashed divide-slate-300 dark:divide-slate-600">
           {blogs
             .filter(({ published }) => Boolean(published))
-            .sort((a, b) => {
-              if (a.published === null || b.published === null) {
-                return 0;
-              }
-              return Date.parse(b.published) - Date.parse(a.published);
-            })
             .map(({ path, title: blogTitle, published, tags }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">

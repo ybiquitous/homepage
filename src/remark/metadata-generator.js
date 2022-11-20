@@ -46,7 +46,9 @@ async function processFile(file) {
         metadata.title = h1.children[0].value;
         metadata.tags = (metadata.tags ?? "")
           .split(/\s{0,10},\s{0,10}/u)
-          .filter((/** @type {string} */ tag) => tag.trim().length > 0);
+          .filter((/** @type {string} */ tag) => tag.trim().length > 0)
+          .sort((/** @type {string} */ a, /** @type {string} */ b) => a.localeCompare(b));
+
         /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
 
         resolve(metadata);
@@ -62,6 +64,19 @@ async function processFile(file) {
 async function main(inputPattern = "", outputFile = "") {
   const files = glob.sync(inputPattern);
   const list = await Promise.all(files.map(processFile));
+
+  /**
+   * @typedef {{ published: string | null }} MetaEntry
+   * @type {(a: MetaEntry, b: MetaEntry) => number}
+   */
+  const byLastPublished = (a, b) => {
+    if (a.published === null || b.published === null) {
+      return 0;
+    }
+    return Date.parse(b.published) - Date.parse(a.published);
+  };
+  list.sort(byLastPublished);
+
   const content = `export default ${JSON.stringify(list, null, 2)}`;
   await fs.writeFile(outputFile, content);
 }

@@ -44,7 +44,9 @@ async function processFile(file) {
         metadata.slug = file.replace(/\.md$/u, "").split("/").slice(-2).join("/");
         // @ts-expect-error -- TS2339: Property 'children' does not exist on type 'Content'.
         metadata.title = h1.children[0].value;
-        metadata.tags = metadata.tags.split(/\s{0,10},\s{0,10}/u);
+        metadata.tags = (metadata.tags ?? "")
+          .split(/\s{0,10},\s{0,10}/u)
+          .filter((tag) => tag.trim().length > 0);
         /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
 
         resolve(metadata);

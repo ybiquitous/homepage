@@ -2,6 +2,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prepare": "husky install",
+    "prestart": "npm run build:blog",
     "start": "webpack serve --mode=development --node-env=development --stats=minimal",
     "start:open": "npm run start -- --open",
     "analyze": "webpack --analyze --mode=production",

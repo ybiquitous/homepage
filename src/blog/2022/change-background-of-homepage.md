@@ -2,7 +2,6 @@
 published: 2022-03-05T00:00:00.000Z
 lastUpdated: null
 author: Masafumi Koba
-tags: ""
 ---
 
 # ホームページの背景を変えた

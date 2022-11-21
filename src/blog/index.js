@@ -41,7 +41,13 @@ const buildNavi = ({ slug, title, published }) =>
   published == null ? null : { path: `/blog/${slug}`, title };
 
 /**
- * @typedef {BlogMeta & Readonly<{
+ * @typedef {Readonly<{
+ *   slug: string,
+ *   title: string,
+ *   author: string,
+ *   tags: ReadonlyArray<string>,
+ *   published: Date | null,
+ *   lastUpdated: Date | null
  *   content: (slug: string) => Promise<string>,
  *   path: string,
  *   prev: PathInfo | null,
@@ -53,14 +59,20 @@ const buildNavi = ({ slug, title, published }) =>
  * @type {ReadonlyArray<Blog>}
  */
 export const blogs = metadata.map((meta, index, array) => {
-  const prev = index === 0 ? null : array[index - 1];
-  const next = index === array.length - 1 ? null : array[index + 1];
+  const { slug, title, author, tags, published, lastUpdated } = meta;
+  const prev = array[index - 1];
+  const next = array[index + 1];
   return {
-    ...meta,
+    slug,
+    title,
+    author,
+    tags,
+    published: typeof published === "string" ? new Date(published) : published,
+    lastUpdated: typeof lastUpdated === "string" ? new Date(lastUpdated) : lastUpdated,
     content,
-    path: `/blog/${meta.slug}`,
-    prev: prev == null ? null : buildNavi(prev),
-    next: next == null ? null : buildNavi(next),
+    path: `/blog/${slug}`,
+    prev: prev ? buildNavi(prev) : null,
+    next: next ? buildNavi(next) : null,
   };
 });
 

@@ -28,14 +28,13 @@ export const Blog = ({ blogs, title }) => {
       <main className="mt-16">
         <ul className="divide-y divide-dashed divide-slate-300 dark:divide-slate-600">
           {blogs
-            .filter(({ published }) => Boolean(published))
+            .filter(({ published }) => published != null)
+            .sort((a, b) => (b.published?.getTime() ?? 0) - (a.published?.getTime() ?? 0))
             .map(({ path, title: blogTitle, published, tags }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">
                   <div className="text-xl">{blogTitle}</div>
-                  {published !== null && (
-                    <Time date={new Date(published)} className="my-text-secondary" />
-                  )}
+                  {published !== null && <Time date={published} className="my-text-secondary" />}
                 </Link>
                 {tags.length !== 0 && (
                   <div className="mt-8">

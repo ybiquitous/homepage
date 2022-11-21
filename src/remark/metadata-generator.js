@@ -69,13 +69,13 @@ async function main(inputPattern = "", outputFile = "") {
    * @typedef {{ published: string | null }} MetaEntry
    * @type {(a: MetaEntry, b: MetaEntry) => number}
    */
-  const byLastPublished = (a, b) => {
+  const byPublished = (a, b) => {
     if (a.published === null || b.published === null) {
       return 0;
     }
-    return Date.parse(b.published) - Date.parse(a.published);
+    return Date.parse(a.published) - Date.parse(b.published);
   };
-  list.sort(byLastPublished);
+  list.sort(byPublished);
 
   const content = `export default ${JSON.stringify(list, null, 2)}`;
   await fs.writeFile(outputFile, content);

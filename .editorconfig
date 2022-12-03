@@ -1,5 +1,4 @@
-# EditorConfig is awesome: http://EditorConfig.org
-
+# editorconfig.org
 root = true
 
 [*]
@@ -13,4 +12,4 @@ max_line_length = 100
 
 # trailing spaces in markdown indicate word wrap
 [*.md]
-trim_trailing_spaces = false
+trim_trailing_whitespace = false

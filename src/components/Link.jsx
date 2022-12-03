@@ -38,7 +38,6 @@ export const Link = ({
     [href, openNewWindow, noPushState]
   );
 
-  /* eslint-disable react/jsx-no-target-blank -- False positive. */
   return (
     <a
       href={href}
@@ -51,5 +50,4 @@ export const Link = ({
       {children}
     </a>
   );
-  /* eslint-enable react/jsx-no-target-blank */
 };

@@ -56,7 +56,7 @@
     "babel-loader": "^9.1.0",
     "babel-plugin-macros": "^3.1.0",
     "copy-webpack-plugin": "^11.0.0",
-    "core-js": "^3.26.1",
+    "core-js": "^3.27.1",
     "css-loader": "^6.7.3",
     "cssnano": "^5.1.14",
     "eslint-config-ybiquitous": "^16.2.0",
@@ -244,7 +244,7 @@
         "@babel/preset-env",
         {
           "useBuiltIns": "usage",
-          "corejs": "3.26"
+          "corejs": "3.27"
         }
       ]
     ],

@@ -5,7 +5,7 @@ import { visit } from "unist-util-visit"; // eslint-disable-line import/no-extra
 export default function remarkRelativeLink() {
   return (tree) => {
     visit(tree, "link", (node) => {
-      if (!node.url.startsWith("http")) {
+      if ("url" in node && !node.url.startsWith("http")) {
         node.url = node.url.replace(/\.md$/u, ""); // eslint-disable-line no-param-reassign
       }
     });

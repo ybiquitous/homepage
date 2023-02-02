@@ -6,6 +6,7 @@ export default function remarkSpeakerdeck() {
   return (tree) => {
     visit(tree, "link", (node, index, parent) => {
       if (parent == null || index == null) return;
+      if (!("url" in node) || !("children" in node)) return;
       if (!node.url.startsWith("http")) return;
 
       const url = new URL(node.url);

@@ -1,7 +1,7 @@
 /* eslint-env node */
 /* eslint-disable import/no-extraneous-dependencies */
 import * as fs from "node:fs/promises";
-import glob from "glob";
+import { globSync } from "glob";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkParse from "remark-parse";
 import remarkStringify from "remark-stringify";
@@ -62,7 +62,7 @@ async function processFile(file) {
  * @param {string | undefined} outputFile
  */
 async function main(inputPattern = "", outputFile = "") {
-  const files = glob.sync(inputPattern);
+  const files = globSync(inputPattern);
   const list = await Promise.all(files.map(processFile));
 
   /**

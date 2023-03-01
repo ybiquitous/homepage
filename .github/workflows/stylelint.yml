@@ -16,11 +16,5 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-      # https://github.com/YozhikM/stylelint-a11y/pull/66
-      - run: |
-          npm install stylelint \
-                      stylelint-config-standard \
-                      'github:rsstdd/stylelint-a11y#chore/update-stylelint' \
-                      stylelint-high-performance-animation \
-                      stylelint-config-prettier
+      - run: npm run stylelint-install
       - run: npx stylelint "**/*.css" --formatter=github

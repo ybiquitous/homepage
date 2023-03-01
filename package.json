@@ -28,7 +28,8 @@
     "eslint": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
     "eslint:fix": "npm run eslint -- --fix",
     "test": "npm-run-all --parallel lint build",
-    "test:visual": "percy snapshot test/percy-snapshots.yml --base-url \"http://localhost:8080\""
+    "test:visual": "percy snapshot test/percy-snapshots.yml --base-url \"http://localhost:8080\"",
+    "stylelint-install": "npm install stylelint stylelint-config-standard stylelint-high-performance-animation @ronilaukkarinen/stylelint-a11y"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
@@ -158,8 +159,7 @@
     ],
     "extends": [
       "stylelint-config-standard",
-      "stylelint-a11y/recommended",
-      "stylelint-config-prettier"
+      "@ronilaukkarinen/stylelint-a11y/recommended"
     ],
     "plugins": [
       "stylelint-high-performance-animation"
@@ -179,7 +179,6 @@
         }
       ],
       "declaration-block-no-duplicate-properties": true,
-      "declaration-block-trailing-semicolon": null,
       "declaration-property-value-disallowed-list": {
         "font-family": [
           "var(--font-family-serif)",

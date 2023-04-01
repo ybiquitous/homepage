@@ -1,7 +1,7 @@
 /* eslint-env node */
 import { visit } from "unist-util-visit"; // eslint-disable-line import/no-extraneous-dependencies
 
-/** @type {import("unified").Plugin<unknown, import("mdast").Root>} */
+/** @type {import("unified").Plugin<unknown[], import("mdast").Root>} */
 export default function remarkSpeakerdeck() {
   return (tree) => {
     visit(tree, "link", (node, index, parent) => {

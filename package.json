@@ -63,7 +63,7 @@
     "eslint-config-ybiquitous": "^16.3.0",
     "glob": "^9.1.0",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.7.2",
+    "mini-css-extract-plugin": "^2.7.5",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "prettier-plugin-tailwindcss": "^0.2.3",

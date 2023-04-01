@@ -51,27 +51,27 @@
     }
 
     & > h1 {
-      @apply mt-4 mb-12 text-5xl;
+      @apply mb-12 mt-4 text-5xl;
     }
 
     & > h2 {
-      @apply mt-16 mb-4 border-b border-gray-300 pb-2 text-3xl;
+      @apply mb-4 mt-16 border-b border-gray-300 pb-2 text-3xl;
     }
 
     & > h3 {
-      @apply mt-12 mb-4 text-2xl;
+      @apply mb-4 mt-12 text-2xl;
     }
 
     & > h4 {
-      @apply mt-8 mb-4 text-xl;
+      @apply mb-4 mt-8 text-xl;
     }
 
     & > h5 {
-      @apply mt-8 mb-4 text-lg;
+      @apply mb-4 mt-8 text-lg;
     }
 
     & > h6 {
-      @apply mt-8 mb-4 text-base;
+      @apply mb-4 mt-8 text-base;
     }
 
     & hr {

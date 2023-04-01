@@ -42,7 +42,7 @@ export const CopyToClipboard = ({ text }) => {
 
   return (
     <span className="relative">
-      {message != null && <span className="absolute -top-10 -right-2 mr-2">{message}</span>}
+      {message != null && <span className="absolute -right-2 -top-10 mr-2">{message}</span>}
       <button
         title="Copy to Clipboard"
         onClick={() => {

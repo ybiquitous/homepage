@@ -87,7 +87,7 @@
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0",
     "yaml": "^2.2.2",
-    "ybiq": "^15.6.0"
+    "ybiq": "^16.0.0"
   },
   "eslintConfig": {
     "root": true,

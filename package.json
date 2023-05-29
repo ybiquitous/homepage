@@ -65,7 +65,7 @@
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.23",
-    "postcss-loader": "^7.3.0",
+    "postcss-loader": "^7.3.2",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-highlight": "^6.0.0",

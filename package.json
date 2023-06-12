@@ -44,7 +44,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
-    "@babel/preset-react": "^7.22.3",
+    "@babel/preset-react": "^7.22.5",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@percy/cli": "^1.26.0",
     "@tsconfig/strictest": "^2.0.1",

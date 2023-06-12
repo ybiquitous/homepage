@@ -84,3 +84,8 @@ typings/
 # Custom
 dist/
 /src/blog/metadata.*
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/

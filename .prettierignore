@@ -95,3 +95,8 @@ dist/
 .remarkignore
 .nvmrc
 /src/blog/metadata.*
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/

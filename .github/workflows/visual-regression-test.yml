@@ -25,3 +25,10 @@ jobs:
       - run: npm run test:visual -- --verbose
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      - name: Warn if no access to Percy token
+        run: |
+          if [[ -z $PERCY_TOKEN ]]; then
+            echo "::warning title=${GITHUB_WORKFLOW}::Re-run manually to test changes on Percy"
+          fi
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

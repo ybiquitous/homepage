@@ -6,6 +6,13 @@ updates:
       interval: weekly
     open-pull-requests-limit: 20
     rebase-strategy: disabled
+    groups:
+      babel:
+        patterns: ["@babel/*", "babel-*"]
+      remark:
+        patterns: ["remark", "remark-*", "rehype-*", "unified", "unist-"]
+      typescript:
+        patterns: ["typescript", "@types/*", "@tsconfig/*"]
   - package-ecosystem: github-actions
     directory: "/"
     schedule:

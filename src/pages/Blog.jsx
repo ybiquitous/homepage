@@ -45,7 +45,9 @@ export const Blog = ({ posts, title }) => {
             ))}
         </ul>
 
-        <div className="my-text-secondary mt-12 text-center text-sm">{`Total ${posts.length} posts`}</div>
+        <div className="my-text-secondary mt-12 text-center text-sm">{`Total ${posts.length} ${
+          posts.length === 1 ? "post" : "posts"
+        }`}</div>
       </main>
     </>
   );

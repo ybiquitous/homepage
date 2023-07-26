@@ -37,13 +37,15 @@ export const Blog = ({ posts, title }) => {
                   {published !== null && <Time date={published} className="my-text-secondary" />}
                 </Link>
                 {tags.length !== 0 && (
-                  <div className="mt-8">
+                  <div className="mt-4">
                     <Tags tags={tags} />
                   </div>
                 )}
               </li>
             ))}
         </ul>
+
+        <div className="my-text-secondary mt-12 text-center text-sm">{`Total ${posts.length} posts`}</div>
       </main>
     </>
   );

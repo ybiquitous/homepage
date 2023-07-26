@@ -1,3 +1,4 @@
+import { assert } from "../utils/assert.js";
 import { uniqueArray } from "../utils/uniqueArray.js";
 import metadata from "./metadata.js";
 
@@ -41,8 +42,15 @@ const buildNavi = ({ slug, title, published }) =>
   published == null ? null : { path: `/blog/${slug}`, title };
 
 /**
+ * @param {string | null} value
+ * @returns {Date | null}
+ */
+const parseDate = (value) => (typeof value === "string" ? new Date(value) : value);
+
+/**
  * @typedef {Readonly<{
  *   slug: string,
+ *   year: number,
  *   title: string,
  *   author: string,
  *   tags: ReadonlyArray<string>,
@@ -52,23 +60,32 @@ const buildNavi = ({ slug, title, published }) =>
  *   path: string,
  *   prev: PathInfo | null,
  *   next: PathInfo | null,
- * }>} Blog
+ * }>} BlogPost
  */
 
 /**
- * @type {ReadonlyArray<Blog>}
+ * @type {ReadonlyArray<BlogPost>}
  */
-export const blogs = metadata.map((meta, index, array) => {
+export const blogPosts = metadata.map((meta, index, array) => {
   const { slug, title, author, tags, published, lastUpdated } = meta;
+
+  const year = Number(slug.split("/")[0]);
+  const publishedAsDate = parseDate(published);
+  if (publishedAsDate) {
+    assert(publishedAsDate.getFullYear() === year);
+  }
+
   const prev = array[index - 1];
   const next = array[index + 1];
+
   return {
     slug,
+    year,
     title,
     author,
     tags,
-    published: typeof published === "string" ? new Date(published) : published,
-    lastUpdated: typeof lastUpdated === "string" ? new Date(lastUpdated) : lastUpdated,
+    published: publishedAsDate,
+    lastUpdated: parseDate(lastUpdated),
     content,
     path: `/blog/${slug}`,
     prev: prev ? buildNavi(prev) : null,
@@ -77,20 +94,33 @@ export const blogs = metadata.map((meta, index, array) => {
 });
 
 /**
- * @param {ReadonlyArray<Blog>} originalBlogs
- * @returns {Map<string, Array<Blog>>}
+ * @param {ReadonlyArray<BlogPost>} originalPosts
+ * @returns {Map<number, Array<BlogPost>>}
  */
-export const blogsByTag = (originalBlogs) => {
-  /** @type {Map<string, Array<Blog>>} */
-  const map = new Map();
+export const groupBlogPostsByYear = (originalPosts) => {
+  /** @type {Map<number, Array<BlogPost>>} */
+  const posts = new Map();
 
-  for (const tag of uniqueArray(originalBlogs.flatMap((b) => b.tags))) {
-    const filteredBlogs = map.get(tag) ?? [];
-    for (const blog of originalBlogs.filter((b) => b.tags.includes(tag))) {
-      filteredBlogs.push(blog);
-    }
-    map.set(tag, filteredBlogs);
+  for (const year of new Set(originalPosts.map((post) => post.year))) {
+    const filteredPosts = posts.get(year) ?? [];
+    posts.set(year, [...filteredPosts, ...originalPosts.filter((post) => post.year === year)]);
   }
 
-  return map;
+  return posts;
+};
+
+/**
+ * @param {ReadonlyArray<BlogPost>} originalPosts
+ * @returns {Map<string, Array<BlogPost>>}
+ */
+export const groupBlogPostsByTag = (originalPosts) => {
+  /** @type {Map<string, Array<BlogPost>>} */
+  const posts = new Map();
+
+  for (const tag of uniqueArray(originalPosts.flatMap(({ tags }) => tags))) {
+    const filteredPosts = posts.get(tag) ?? [];
+    posts.set(tag, [...filteredPosts, ...originalPosts.filter(({ tags }) => tags.includes(tag))]);
+  }
+
+  return posts;
 };

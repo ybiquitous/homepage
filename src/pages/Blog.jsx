@@ -6,11 +6,11 @@ import { useTitle } from "../hooks/useTitle";
 
 /**
  * @param {{
- *   blogs: ReadonlyArray<import("../blog/index").Blog>,
+ *   posts: ReadonlyArray<import("../blog/index.js").BlogPost>,
  *   title?: string | undefined,
  * }} props
  */
-export const Blog = ({ blogs, title }) => {
+export const Blog = ({ posts, title }) => {
   useTitle("Blog", title);
 
   return (
@@ -27,7 +27,7 @@ export const Blog = ({ blogs, title }) => {
 
       <main className="mt-16">
         <ul className="divide-y divide-dashed divide-slate-300 dark:divide-slate-600">
-          {blogs
+          {posts
             .filter(({ published }) => published != null)
             .sort((a, b) => (b.published?.getTime() ?? 0) - (a.published?.getTime() ?? 0))
             .map(({ path, title: blogTitle, published, tags }) => (

@@ -35,7 +35,7 @@ export const Link = ({
       window.history.pushState(state, "", href);
       window.dispatchEvent(new PopStateEvent("popstate", { state }));
     },
-    [href, openNewWindow, noPushState]
+    [href, openNewWindow, noPushState],
   );
 
   return (

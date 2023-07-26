@@ -8,7 +8,7 @@ interface Window {
       createTweet: <E extends Element>(
         tweetID: string,
         targetEl: E,
-        options?: ReadonlyRecord<string, unknown>
+        options?: ReadonlyRecord<string, unknown>,
       ) => Promise<E>;
     };
   };

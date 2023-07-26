@@ -18,6 +18,11 @@
   execute: |
     document.querySelector('[title="Dark"]').click();
 
+- name: Blog Year
+  url: /blog/2019
+  execute: |
+    document.querySelector('[title="Light"]').click();
+
 - name: Blog Tag
   url: /blog/tags/typescript
   execute: |

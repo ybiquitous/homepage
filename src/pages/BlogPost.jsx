@@ -10,11 +10,12 @@ import { replaceSpeakerdeck } from "./BlogPost/replaceSpeakerdeck";
 import { replaceTweet } from "./BlogPost/replaceTweet";
 
 /**
- * @param {import("../blog/index").Blog} props
+ * @param {import("../blog/index.js").BlogPost} props
  */
 // eslint-disable-next-line max-lines-per-function
 export const BlogPost = ({
   slug,
+  year,
   title,
   published,
   lastUpdated,
@@ -55,7 +56,13 @@ export const BlogPost = ({
   return (
     <>
       <header>
-        <Breadcrumb items={[{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, `“${title}”`]} />
+        <Breadcrumb
+          items={[
+            { el: <Link href="/blog">Blog</Link>, key: "Blog" },
+            { el: <Link href={`/blog/${year}`}>{year}</Link>, key: `Blog ${year}` },
+            `“${title}”`,
+          ]}
+        />
       </header>
 
       <main className="mt-10 lg:mt-16">

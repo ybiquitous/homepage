@@ -9,6 +9,8 @@ updates:
     groups:
       babel:
         patterns: ["@babel/*", "babel-*"]
+      fontawesome:
+        patterns: ["@fortawesome/*"]
       remark:
         patterns: ["remark", "remark-*", "rehype-*", "unified", "unist-"]
       typescript:

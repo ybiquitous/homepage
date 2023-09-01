@@ -44,7 +44,7 @@ const webpackConfig = {
       },
       {
         test: /\.md$/u,
-        use: [fileURLToPath(new URL("./src/remark/remark-loader.cjs", import.meta.url))],
+        use: [fileURLToPath(new URL("./src/remark/remark-loader.js", import.meta.url))],
       },
     ],
   },

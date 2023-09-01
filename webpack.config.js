@@ -1,11 +1,8 @@
 /* eslint-env node */
-import * as path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath } from "node:url";
 import CopyPlugin from "copy-webpack-plugin"; // eslint-disable-line import/default -- TODO: Avoid error.
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const DEV = process.env["NODE_ENV"] === "development";
 
@@ -24,7 +21,7 @@ const webpackConfig = {
       }
       return DEV ? "[name].js" : "[name].[contenthash].js";
     },
-    path: path.resolve(__dirname, "dist"),
+    path: fileURLToPath(new URL("./dist", import.meta.url)),
     publicPath: "/",
     clean: true,
   },
@@ -41,7 +38,7 @@ const webpackConfig = {
       },
       {
         test: /\.md$/u,
-        use: [path.resolve(__dirname, "./src/remark/remark-loader.cjs")],
+        use: [fileURLToPath(new URL("./src/remark/remark-loader.cjs", import.meta.url))],
       },
     ],
   },
@@ -70,7 +67,7 @@ const webpackConfig = {
   // @ts-expect-error -- TS2322. See https://github.com/webpack/webpack/pull/12196
   devServer: {
     static: {
-      directory: path.join(__dirname, "src"),
+      directory: fileURLToPath(new URL("./src", import.meta.url)),
       watch: true,
     },
     historyApiFallback: { index: "/" },

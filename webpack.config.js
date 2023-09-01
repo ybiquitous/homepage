@@ -1,8 +1,10 @@
-/* eslint-env node */
+import process from "node:process";
 import { fileURLToPath } from "node:url";
 import CopyPlugin from "copy-webpack-plugin"; // eslint-disable-line import/default -- TODO: Avoid error.
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+
+import postcssOptions from "./postcss.config.js";
 
 const DEV = process.env["NODE_ENV"] === "development";
 
@@ -34,7 +36,11 @@ const webpackConfig = {
       },
       {
         test: /\.css$/u,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          { loader: "postcss-loader", options: { postcssOptions } },
+        ],
       },
       {
         test: /\.md$/u,

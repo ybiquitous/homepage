@@ -1,7 +1,6 @@
-/* eslint-env node */
-const defaultTheme = require("tailwindcss/defaultTheme");
+import defaultTheme from "tailwindcss/defaultTheme"; // eslint-disable-line import/no-extraneous-dependencies
 
-module.exports = {
+const config = {
   content: ["./src/*.html", "./src/**/*.jsx"],
   darkMode: "class",
   theme: {
@@ -19,3 +18,5 @@ module.exports = {
     },
   },
 };
+
+export default config;

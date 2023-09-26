@@ -12,7 +12,7 @@ updates:
       fontawesome:
         patterns: ["@fortawesome/*"]
       remark:
-        patterns: ["remark", "remark-*", "rehype-*", "unified", "unist-"]
+        patterns: ["remark", "remark-*", "rehype-*", "unified", "unist-*", "mdast-*"]
       typescript:
         patterns: ["typescript", "@types/*", "@tsconfig/*"]
   - package-ecosystem: github-actions

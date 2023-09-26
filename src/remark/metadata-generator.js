@@ -1,7 +1,9 @@
 /* eslint-env node */
 /* eslint-disable import/no-extraneous-dependencies */
 import * as fs from "node:fs/promises";
+
 import { globSync } from "glob";
+import { literal, parent } from "mdast-util-assert";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkParse from "remark-parse";
 import remarkStringify from "remark-stringify";
@@ -21,35 +23,33 @@ async function processFile(file) {
       .use(remarkStringify)
       .use(remarkFrontmatter, ["yaml"])
       .use(() => (tree) => {
+        parent(tree);
+
         const yamlNode = tree.children.find(({ type }) => type === "yaml");
         if (yamlNode === undefined) {
           reject(new Error(`No front matter in ${file}`));
           return;
         }
+        literal(yamlNode);
 
-        if (!("value" in yamlNode && typeof yamlNode.value === "string")) {
-          reject(new Error(`Invalid front matter in ${file}`));
-          return;
-        }
-
-        // @ts-expect-error -- TS2339: Property 'depth' does not exist on type 'Content'.
-        const h1 = tree.children.find(({ type, depth }) => type === "heading" && depth === 1);
+        const h1 = tree.children.find((child) => child.type === "heading" && child.depth === 1);
         if (h1 === undefined) {
           reject(new Error(`No h1 in ${file}`));
           return;
         }
+        parent(h1);
 
-        /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
-        const metadata = yaml.parse(yamlNode.value);
+        const [h1Child] = h1.children;
+        literal(h1Child);
+
+        /** @type {{ slug: string; title: string; tags?: string | string[]; }} */
+        const metadata = yaml.parse(yamlNode.value); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
         metadata.slug = file.replace(/\.md$/u, "").split("/").slice(-2).join("/");
-        // @ts-expect-error -- TS2339: Property 'children' does not exist on type 'Content'.
-        metadata.title = h1.children[0].value;
-        metadata.tags = (metadata.tags ?? "")
+        metadata.title = h1Child.value;
+        metadata.tags = (metadata.tags?.toString() ?? "")
           .split(/\s{0,10},\s{0,10}/u)
-          .filter((/** @type {string} */ tag) => tag.trim().length > 0)
-          .sort((/** @type {string} */ a, /** @type {string} */ b) => a.localeCompare(b));
-
-        /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
+          .filter((tag) => tag.trim().length > 0)
+          .sort((a, b) => a.localeCompare(b));
 
         resolve(metadata);
       })

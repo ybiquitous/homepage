@@ -3,8 +3,9 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "resolvePackageJsonExports": true,
     "jsx": "react-jsx",
     "noEmit": true
   },

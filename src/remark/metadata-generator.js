@@ -2,8 +2,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import * as fs from "node:fs/promises";
 
-import { literal, parent } from "mdast-util-assert";
 import { globSync } from "glob";
+import { literal, parent } from "mdast-util-assert";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkParse from "remark-parse";
 import remarkStringify from "remark-stringify";

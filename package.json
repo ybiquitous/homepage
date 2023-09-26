@@ -62,6 +62,7 @@
     "eslint-config-ybiquitous": "^18.1.0",
     "glob": "^10.3.7",
     "html-webpack-plugin": "^5.5.3",
+    "mdast-util-assert": "^5.0.0",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.30",
     "postcss-loader": "^7.3.3",

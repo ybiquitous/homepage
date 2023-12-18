@@ -29,7 +29,7 @@
     "eslint:fix": "npm run eslint -- --fix",
     "test": "npm-run-all --parallel lint build",
     "test:visual": "percy snapshot test/percy-snapshots.yml --base-url \"http://localhost:8080\"",
-    "stylelint-install": "npm install stylelint stylelint-config-standard stylelint-high-performance-animation @ronilaukkarinen/stylelint-a11y"
+    "stylelint-install": "npm install stylelint@15 stylelint-config-standard@34 stylelint-high-performance-animation @ronilaukkarinen/stylelint-a11y"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",

@@ -1,4 +1,4 @@
-const table = new Map([
+const dictionary = new Map([
   ["post", "posts"],
   ["tag", "tags"],
 ]);
@@ -12,5 +12,5 @@ const table = new Map([
  * @returns {string}
  */
 export function pluralize(count, singular) {
-  return count === 1 ? singular : table.get(singular) ?? singular;
+  return count === 1 ? singular : dictionary.get(singular) ?? singular;
 }

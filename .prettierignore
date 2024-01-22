@@ -5,6 +5,9 @@
 /src/slides
 /src/slides-build
 
+.prettierignore
+*.png
+
 # ↓↓↓ Copy from .gitignore ↓↓↓
 
 ### https://raw.github.com/github/gitignore/37abd930a6893fd3a716c48934e704795bc2a45c/Node.gitignore

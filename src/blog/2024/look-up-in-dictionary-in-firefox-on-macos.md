@@ -17,7 +17,8 @@ Safariは言わすもがなだが、macOSのChromeでは右クリックすると
 
 しかし、なぜかFirefoxでは「Look Up」が右クリックで出てこない。仕方がないので拡張機能を探すことにした。見つけたのがこちら。
 
-[Look up dictionary by using Right Click](https://addons.mozilla.org/en-US/firefox/addon/look-up-dict-by-uri-scheme/)
+- [Look up dictionary by using Right Click](https://addons.mozilla.org/en-US/firefox/addon/look-up-dict-by-uri-scheme/)
+- [Harpseal/LookUp-Dictionary-By-dict-URI-Scheme](https://github.com/Harpseal/LookUp-Dictionary-By-dict-URI-Scheme)
 
 あんまり使われている形跡がないけれど、他に良いのが無さそうだしソースコードがGitHubに公開されているし安心だろうと試しに入れてみたところ、一応問題なく使える。
 右クリックでコンテキストメニュー内に「Look Up…」が追加されていることがわかる（下のスクリーンショット）。

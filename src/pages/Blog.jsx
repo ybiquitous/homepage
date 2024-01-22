@@ -15,12 +15,15 @@ export const Blog = ({ posts, breadcrumbs }) => {
   const subTitles = breadcrumbs.map((b) => (typeof b === "string" ? b : b.key));
   useTitle(mainTitle, ...subTitles);
 
+  const breadcrumbItems = [
+    { el: <Link href="/blog">{mainTitle}</Link>, key: mainTitle },
+    ...breadcrumbs,
+  ];
+
   return (
     <>
       <header>
-        <Breadcrumb
-          items={[{ el: <Link href="/blog">{mainTitle}</Link>, key: mainTitle }, ...breadcrumbs]}
-        />
+        <Breadcrumb items={breadcrumbItems} />
       </header>
 
       <main className="mt-16">

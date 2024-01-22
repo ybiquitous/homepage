@@ -5,10 +5,11 @@ const home = { el: <Link href="/">Home</Link>, key: "Home" };
 
 /**
  * @typedef {{ el: JSX.Element, key: string }} Item
+ * @typedef {ReadonlyArray<string | Item>} Items
  */
 
 /**
- * @param {{ items: ReadonlyArray<string | Item> }} props
+ * @param {{ items: Items }} props
  */
 export const Breadcrumb = ({ items }) => (
   <nav aria-label="Breadcrumb">

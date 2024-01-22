@@ -7,22 +7,23 @@ import { useTitle } from "../hooks/useTitle";
 /**
  * @param {{
  *   posts: ReadonlyArray<import("../blog/index.js").BlogPost>,
- *   title?: string | undefined,
+ *   breadcrumbs: import("../components/Breadcrumb.js").Items,
  * }} props
  */
-export const Blog = ({ posts, title }) => {
-  useTitle("Blog", title);
+export const Blog = ({ posts, breadcrumbs }) => {
+  const mainTitle = "Blog";
+  const subTitles = breadcrumbs.map((b) => (typeof b === "string" ? b : b.key));
+  useTitle(mainTitle, ...subTitles);
+
+  const breadcrumbItems =
+    breadcrumbs.length === 0
+      ? [mainTitle]
+      : [{ el: <Link href="/blog">{mainTitle}</Link>, key: mainTitle }, ...breadcrumbs];
 
   return (
     <>
       <header>
-        <Breadcrumb
-          items={
-            title === undefined
-              ? ["Blog"]
-              : [{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, title]
-          }
-        />
+        <Breadcrumb items={breadcrumbItems} />
       </header>
 
       <main className="mt-16">

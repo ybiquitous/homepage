@@ -23,6 +23,11 @@
   execute: |
     document.querySelector('[title="Light"]').click();
 
+- name: Blog Tags
+  url: /blog/tags
+  execute: |
+    document.querySelector('[title="Light"]').click();
+
 - name: Blog Tag
   url: /blog/tags/typescript
   execute: |

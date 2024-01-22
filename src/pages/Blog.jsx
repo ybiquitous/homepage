@@ -30,11 +30,14 @@ export const Blog = ({ posts, title }) => {
           {posts
             .filter(({ published }) => published != null)
             .sort((a, b) => (b.published?.getTime() ?? 0) - (a.published?.getTime() ?? 0))
-            .map(({ path, title: blogTitle, published, tags }) => (
+            .map(({ path, title: blogTitle, published, author, tags }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
                 <Link href={path} className="block !text-current">
                   <div className="text-xl">{blogTitle}</div>
-                  {published !== null && <Time date={published} className="my-text-secondary" />}
+                  <div className="my-text-secondary flex flex-wrap gap-x-8">
+                    {published !== null && <Time date={published} />}
+                    <address>{`by ${author}`}</address>
+                  </div>
                 </Link>
                 {tags.length !== 0 && (
                   <div className="mt-4">

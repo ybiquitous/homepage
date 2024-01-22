@@ -22,6 +22,10 @@
     @apply rounded-lg border border-gray-200 px-1.5 py-1 text-xs;
   }
 
+  address {
+    @apply not-italic;
+  }
+
   /* See https://fontawesome.com/v6/docs/web/add-icons/pseudo-elements */
   a[href^="http"]:not(.no-icon)::after {
     display: inline-block;

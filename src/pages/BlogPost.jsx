@@ -19,6 +19,7 @@ export const BlogPost = ({
   title,
   published,
   lastUpdated,
+  author,
   tags,
   content: fetchContent,
   prev,
@@ -68,7 +69,10 @@ export const BlogPost = ({
       <main className="mt-10 lg:mt-16">
         <h1 className="mb-12 text-4xl font-semibold leading-tight">{title}</h1>
 
-        <Times published={published} lastUpdated={lastUpdated} />
+        <div className="my-text-secondary flex flex-wrap gap-x-8 text-sm">
+          <Times published={published} lastUpdated={lastUpdated} />
+          <address>{`by ${author}`}</address>
+        </div>
 
         {/* eslint-disable react/no-danger -- This is safe. */}
         {content ? (

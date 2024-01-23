@@ -3,6 +3,7 @@ import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
 import { Time } from "../components/Time";
 import { useTitle } from "../hooks/useTitle";
+import { pluralize } from "../utils/pluralize";
 
 /**
  * @param {{
@@ -49,9 +50,9 @@ export const Blog = ({ posts, breadcrumbs }) => {
             ))}
         </ul>
 
-        <div className="my-text-secondary mt-12 text-center text-sm">{`Total ${posts.length} ${
-          posts.length === 1 ? "post" : "posts"
-        }`}</div>
+        <div className="my-text-secondary mt-12 text-sm">
+          {`Total ${posts.length} ${pluralize(posts.length, "post")}`}
+        </div>
       </main>
     </>
   );

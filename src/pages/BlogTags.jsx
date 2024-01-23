@@ -40,7 +40,7 @@ export const BlogTags = ({ postsByTag }) => {
               ))}
             </ul>
             <p className="my-text-secondary mt-8 text-sm">
-              {`${tagCount} ${pluralize(tagCount, "tag")} found.`}
+              {`Total ${tagCount} ${pluralize(tagCount, "tag")}`}
             </p>
           </>
         )}

@@ -13,12 +13,9 @@ import { unified } from "unified";
 import yaml from "yaml";
 /* eslint-enable import/no-extraneous-dependencies */
 
-/**
- * @typedef {import('unist').Node} Node
- * @typedef {import('vfile').VFile} VFile
- *
- * @type {() => (tree: Node, file: VFile) => void}
- */
+/** @typedef {import('unist').Node} Node */
+/** @typedef {import('vfile').VFile} VFile */
+/** @type {() => (tree: Node, file: VFile) => void} */
 function processMarkdown() {
   return (tree, file) => {
     parent(tree);

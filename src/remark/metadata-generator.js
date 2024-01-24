@@ -1,7 +1,7 @@
-/* eslint-env node */
 /* eslint-disable import/no-extraneous-dependencies */
 import assert from "node:assert/strict";
 import { writeFile } from "node:fs/promises";
+import process from "node:process";
 
 import { globSync } from "glob";
 import { literal, parent } from "mdast-util-assert";
@@ -13,10 +13,11 @@ import { unified } from "unified";
 import yaml from "yaml";
 /* eslint-enable import/no-extraneous-dependencies */
 
-/** @typedef {import('unist').Node} Node */
+/** @typedef {import('mdast').Root} Root */
 /** @typedef {import('vfile').VFile} VFile */
-/** @type {() => (tree: Node, file: VFile) => void} */
-function processMarkdown() {
+
+/** @type {() => (tree: Root, file: VFile) => void} */
+function extractMetadata() {
   return (tree, file) => {
     parent(tree);
 
@@ -56,7 +57,7 @@ async function processFile(filePath) {
     .use(remarkParse)
     .use(remarkStringify)
     .use(remarkFrontmatter, ["yaml"])
-    .use(processMarkdown)
+    .use(extractMetadata)
     .process(readSync(filePath));
 }
 

@@ -1,15 +1,13 @@
-/* eslint-env node */
 import { visit } from "unist-util-visit"; // eslint-disable-line import/no-extraneous-dependencies
 
-/** @type {import("unified").Plugin<unknown[], import("mdast").Root>} */
+/** @type {() => (tree: import("mdast").Root) => void} */
 export default function remarkTwitter() {
   return (tree) => {
-    visit(tree, "link", (node, index, parent) => {
+    visit(tree, "link", (link, index, parent) => {
       if (parent == null || index == null) return;
-      if (!("url" in node)) return;
-      if (!node.url.startsWith("http")) return;
+      if (!link.url.startsWith("http")) return;
 
-      const url = new URL(node.url);
+      const url = new URL(link.url);
 
       // https://twitter.com/{username}/status/{tweet_id}
       if (url.protocol !== "https:") return;
@@ -19,7 +17,7 @@ export default function remarkTwitter() {
       if (tweetId === undefined || tweetId === "") return;
 
       const href = url.toString();
-      /** @type {import("mdast").HTML} */
+      /** @type {import("mdast").Html} */
       const newNode = {
         type: "html",
         value: `

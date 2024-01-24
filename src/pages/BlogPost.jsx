@@ -51,6 +51,14 @@ export const BlogPost = ({
       generateCopyToClipboard(contentEl);
       replaceSpeakerdeck(contentEl);
       replaceTweet(contentEl);
+
+      // Scroll to heading when hash is present.
+      const hash = window.location.hash;
+      if (hash) {
+        const id = decodeURIComponent(hash.slice(1));
+        const el = document.querySelector(`[id="${id}"]`);
+        el?.scrollIntoView();
+      }
     }
   }, [slug, content, contentElement.current]); // eslint-disable-line react-hooks/exhaustive-deps -- Needed for DOM manipulations.
 

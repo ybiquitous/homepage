@@ -1,12 +1,11 @@
-/* eslint-env node */
 import { visit } from "unist-util-visit"; // eslint-disable-line import/no-extraneous-dependencies
 
-/** @type {import("unified").Plugin<unknown[], import("mdast").Root>} */
+/** @type {() => (tree: import("mdast").Root) => void} */
 export default function remarkRelativeLink() {
   return (tree) => {
-    visit(tree, "link", (node) => {
-      if ("url" in node && !node.url.startsWith("http")) {
-        node.url = node.url.replace(/\.md$/u, ""); // eslint-disable-line no-param-reassign
+    visit(tree, "link", (link) => {
+      if (!link.url.startsWith("http")) {
+        link.url = link.url.replace(/\.md$/u, ""); // eslint-disable-line no-param-reassign
       }
     });
   };

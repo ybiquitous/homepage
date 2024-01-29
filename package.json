@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "prestart": "npm run build:blog",
     "start": "webpack serve --mode=development --define-process-env-node-env=development --stats=minimal",
     "start:open": "npm run start -- --open",
@@ -224,7 +224,7 @@
     }
   },
   "lint-staged": {
-    "!(*.snap)": "prettier --cache --write",
+    "!(**/*.snap|.husky/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail"
   },
   "remarkConfig": {

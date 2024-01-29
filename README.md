@@ -49,6 +49,6 @@ git push
 
 ## Stack
 
-- [React](https://reactjs.org/)
-- [Webpack](https://webpack.js.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
+* [React](https://reactjs.org/)
+* [Webpack](https://webpack.js.org/)
+* [Tailwind CSS](https://tailwindcss.com/)

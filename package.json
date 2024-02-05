@@ -59,7 +59,7 @@
     "core-js": "^3.35.1",
     "css-loader": "^6.9.1",
     "cssnano": "^6.0.3",
-    "eslint-config-ybiquitous": "^19.0.0",
+    "eslint-config-ybiquitous": "^19.1.0",
     "glob": "^10.3.10",
     "html-webpack-plugin": "^5.6.0",
     "mdast-util-assert": "^5.0.0",

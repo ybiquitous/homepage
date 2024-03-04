@@ -63,7 +63,7 @@
     "glob": "^10.3.10",
     "html-webpack-plugin": "^5.6.0",
     "mdast-util-assert": "^5.0.0",
-    "mini-css-extract-plugin": "^2.8.0",
+    "mini-css-extract-plugin": "^2.8.1",
     "postcss": "^8.4.35",
     "postcss-loader": "^8.1.0",
     "prettier-plugin-tailwindcss": "^0.5.11",

@@ -53,7 +53,7 @@ export const BlogPost = ({
       replaceTweet(contentEl);
 
       // Scroll to heading when hash is present.
-      const hash = window.location.hash;
+      const { hash } = window.location;
       if (hash) {
         const id = decodeURIComponent(hash.slice(1));
         const el = document.querySelector(`[id="${id}"]`);

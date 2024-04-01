@@ -6,7 +6,7 @@ import { Router } from "./components/Router";
 import { ThemeToggle } from "./components/ThemeToggle";
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js").catch((error) => {
+  navigator.serviceWorker.register("/service-worker.js").catch((/** @type {unknown} */ error) => {
     console.error(error);
   });
 }

@@ -87,7 +87,7 @@
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
-    "yaml": "^2.4.1",
+    "yaml": "^2.4.2",
     "ybiq": "^17.2.0"
   },
   "eslintConfig": {

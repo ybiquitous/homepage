@@ -1,14 +1,21 @@
 {
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2021",
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "resolvePackageJsonExports": true,
     "jsx": "react-jsx",
+    "checkJs": true,
     "noEmit": true
   },
-  "include": ["src/**/*", "webpack.config.*", "tailwind.config.*", "postcss.config.*"],
+  "include": [
+    "src/**/*",
+    "webpack.config.*",
+    "tailwind.config.*",
+    "postcss.config.*",
+    "scripts/**/*"
+  ],
   "exclude": ["src/slides-build/**/*"]
 }

@@ -1,7 +1,8 @@
+/* eslint-disable no-console, max-lines-per-function, max-statements */
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { stdin as input, stdout as output } from "node:process";
 import * as readline from "node:readline/promises";
-import { stdin as input, stdout as output, exit } from "node:process";
 import { styleText } from "node:util";
 
 const projectRoot = path.resolve(import.meta.dirname, "..");
@@ -17,7 +18,7 @@ async function main() {
     const thisYearDir = path.resolve(blogRoot, `${thisYear}`);
 
     const title = await rl.question(styleText("bold", "Title? "));
-    const slug = title.trim().replaceAll(/[?!]/g, "").replaceAll(/\s+/g, "-").toLowerCase();
+    const slug = title.trim().replaceAll(/[!?]/gu, "").replaceAll(/\s+/gu, "-").toLowerCase();
     const blogFile = path.resolve(thisYearDir, `${slug}.md`);
     const blogFileRelative = path.relative(projectRoot, blogFile);
 
@@ -28,13 +29,13 @@ async function main() {
 
       if (yesNo.toLowerCase() !== "y") {
         console.log("Abort.");
-        return 1;
+        return;
       }
     }
 
     const tags = (await rl.question(styleText("bold", "Tags? ")))
       .trim()
-      .split(/[\s,]+/)
+      .split(/[\s,]+/u)
       .filter(Boolean);
 
     const yesNo = await rl.question(`Write ${styleText("bold", blogFileRelative)}? [Y/n] `);
@@ -67,4 +68,5 @@ tags: ${tags.join(", ")}
   }
 }
 
-main().then((code) => exit(code));
+main();
+/* eslint-enable no-console, max-lines-per-function, max-statements */

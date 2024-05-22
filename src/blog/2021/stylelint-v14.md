@@ -7,7 +7,7 @@ tags: stylelint, css
 
 # Stylelint 14.0.0
 
-*これは “[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 3日目の記事です。*
+> これは “[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 3日目の記事です。
 
 2021年10月21日、[Stylelint 14.0.0](https://github.com/stylelint/stylelint/releases/tag/14.0.0) がリリースされた。
 このバージョンは大きな破壊的変更を含むので、本稿ではその解説をする。

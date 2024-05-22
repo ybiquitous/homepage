@@ -1,6 +1,6 @@
 ---
 published: 2019-10-11T00:00:00.000Z
-lastUpdated: null
+lastUpdated: 2024-05-22T00:00:00.000Z
 author: Masafumi Koba
 tags: github
 ---
@@ -22,7 +22,7 @@ tags: github
 [hub-pull-request(1)](https://hub.github.com/hub-pull-request.1.html) はプルリクエストを作るためのコマンドである。使い方は単純に 、`master` 以外のブランチで以下のコマンドを実行するだけである。
 
 ```shell
-$ hub pull-request
+hub pull-request
 ```
 
 これだけでエディタが開き、保存すれば、GitHub にプルリクエストが作られる。
@@ -31,7 +31,7 @@ $ hub pull-request
 
 以下、公式マニュアルに記載されてあるコマンド実行例を抜粋する。
 
-```shell
+```sh-session
 $ hub pull-request
 [ opens a text editor for writing title and message ]
 [ creates a pull request for the current branch ]
@@ -60,7 +60,7 @@ alias open-pull-request='hub pull-request --push --draft --browse'
 
 例えば、典型的なワークフローを示す。
 
-```shell
+```sh-session
 $ git checkout master
 (...いくつかファイルを編集...)
 

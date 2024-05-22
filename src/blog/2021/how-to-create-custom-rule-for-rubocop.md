@@ -7,7 +7,7 @@ tags: rubocop, ruby
 
 # RuboCopカスタムルールを気軽に作る
 
-*これは “[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 17日目の記事です。*
+> これは “[ビビッドガーデン Advent Calendar 2021](https://qiita.com/advent-calendar/2021/vivid-garden)” 17日目の記事です。
 
 歴史のあるRailsプロジェクトには、古くなったライブラリを使っていたり、古くなった書き方をしているコードが少なからずある。
 この記事では、そのような書き換えたいんだけれども一気にやるのは怖い、といったコードを徐々に書き換えていく方法の1つとして、カジュアルにRuboCopルールを作るテクニックを紹介する。

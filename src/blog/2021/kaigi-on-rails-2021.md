@@ -102,7 +102,7 @@ Next.jsはパフォーマンスが最適化されているのでRailsのフロ�
 
 issueを漁ってみると、ドンピャシャなやつを見つけてしまった。
 
-[[Question] Project status · Issue #328 · roidrage/lograge](https://github.com/roidrage/lograge/issues/328)
+[\[Question\] Project status · Issue #328 · roidrage/lograge](https://github.com/roidrage/lograge/issues/328)
 
 最近、メンテが止まってるgemをよく目にするように思う…。
 
@@ -145,6 +145,6 @@ OSSへの情熱が凄まじい。コミット全部読むとか、issueにすべ
 
 こういう場を提供してくれた運営のみなさんに、改めて心から感謝します。
 
-[^1]: 「Kaigi Effect」の由来について、後日@kakutaniさんから教わった。なんと10年前の[RubyKaigi 2011](https://rubykaigi.org/2011/ja/schedule/details/18M03/)で生まれた言葉だそう。[#kaigieffect](https://togetter.com/li/162817) というハッシュタグもある。
-
 [Kakutani Shintaro on Twitter: ""誰が言い出したかわからないけれど、俗に言われる「Kaigi Effect」はたしかに存在すると思う" リプライでブラ下げておくか… » Kaigi on Rails 2021 - Blog - @ybiquitous https://t.co/APJHpeyJQg" / Twitter](https://twitter.com/kakutani/status/1452993581996728328)
+
+[^1]: 「Kaigi Effect」の由来について、後日@kakutaniさんから教わった。なんと10年前の[RubyKaigi 2011](https://rubykaigi.org/2011/ja/schedule/details/18M03/)で生まれた言葉だそう。[#kaigieffect](https://togetter.com/li/162817) というハッシュタグもある。

@@ -255,7 +255,11 @@ identity = reverse;  // OK, because (x: any) => any matches (y: any) => any
 - June 22, 2021: 「TypeScript仕様」リンクの404エラーを修正。脚注を改善。
 
 [^1]: 「Structural Subtyping」はふつう「構造的部分型」と訳されますが、「部分型」という日本語がイマイチしっくりこなかったので、「派生」を強調した訳にしました。
+
 [^2]: [Array.prototype.forEach() - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+
 [^3]: 「可変長引数」はふつう「variable arguments」の訳ですが、JavaScriptでは「rest parameters」に対応する訳がなかったので「可変長引数」と訳しました。参考：[Rest parameters - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+
 [^4]: String Enumは[TypeScript 2.4から導入](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html)されました。参考：[Enums · TypeScript](https://www.typescriptlang.org/docs/handbook/enums.html)
+
 [^5]: [Generics · TypeScript](https://www.typescriptlang.org/docs/handbook/generics.html)

@@ -27,8 +27,8 @@ Safariは言わすもがなだが、macOSのChromeでは右クリックすると
 
 さすがにデフォルトでサポートされていてもいいんじゃないかとBugzillaを探してみたところ、以下のチケットを見つけた。
 
-- [301451 - [meta] Gecko doesn't support Cmd-Ctrl-D lookup in Mac OS X Dictionary.app](https://bugzilla.mozilla.org/show_bug.cgi?id=301451)
-- [1116391 - Add "Look Up in Dictionary" context menu entry [Mac OS X]](https://bugzilla.mozilla.org/show_bug.cgi?id=1116391)
+- [301451 - \[meta\] Gecko doesn't support Cmd-Ctrl-D lookup in Mac OS X Dictionary.app](https://bugzilla.mozilla.org/show_bug.cgi?id=301451)
+- [1116391 - Add "Look Up in Dictionary" context menu entry \[Mac OS X\]](https://bugzilla.mozilla.org/show_bug.cgi?id=1116391)
 
 最初のチケットは <kbd>Control</kbd>+<kbd>Command</kbd>+<kbd>D</kbd> ショートカットキーに対応したもので、クローズされている。
 ちなみに、そのショートカットキーのことはこのブログを書くまで知らなかった。[このページ](https://support.apple.com/en-us/HT201236)にmacOSショートカットキーの一覧が載っている。正直このショートカットキーは覚えにくく、押しにくい。

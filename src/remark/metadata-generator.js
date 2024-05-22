@@ -62,10 +62,10 @@ async function processFile(filePath) {
 }
 
 /**
- * @param {string | undefined} inputPattern
- * @param {string | undefined} outputFile
+ * @param {string} inputPattern
+ * @param {string} outputFile
  */
-async function main(inputPattern = "", outputFile = "") {
+async function main(inputPattern, outputFile) {
   const files = globSync(inputPattern);
   const vFiles = await Promise.all(files.map(processFile));
   const metadataList = vFiles.map((vFile) => vFile.data);
@@ -83,6 +83,7 @@ async function main(inputPattern = "", outputFile = "") {
 
   const content = `export default ${JSON.stringify(metadataList, null, 2)}`;
   await writeFile(outputFile, content, "utf-8");
+  process.stdout.write(`Wrote ${outputFile}\n`);
 }
 
-main(process.argv[2], process.argv[3]);
+main("src/blog/**/*.md", "src/blog/metadata.js");

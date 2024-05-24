@@ -18,7 +18,11 @@ async function main() {
     const thisYearDir = path.resolve(blogRoot, `${thisYear}`);
 
     const title = await rl.question(styleText("bold", "Title? "));
-    const slug = title.trim().replaceAll(/[!?]/gu, "").replaceAll(/\s+/gu, "-").toLowerCase();
+    const slug = title
+      .trim()
+      .replaceAll(/[!?()]/gu, "")
+      .replaceAll(/\s+/gu, "-")
+      .toLowerCase();
     const blogFile = path.resolve(thisYearDir, `${slug}.md`);
     const blogFileRelative = path.relative(projectRoot, blogFile);
 

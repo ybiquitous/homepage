@@ -67,9 +67,9 @@ async function processFile(filePath) {
  * @param {string} outputFile
  */
 async function main(inputPattern, outputFile) {
-  const files = globSync(inputPattern);
+  /** @type {string[]} */
+  const files = globSync(inputPattern); // eslint-disable-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const vFiles = await Promise.all(files.map(processFile));
-  // @ts-expect-error -- TS7006: Parameter 'vFile' implicitly has an 'any' type.
   const metadataList = vFiles.map((vFile) => vFile.data);
 
   /** @typedef {import('vfile').Data} Data */

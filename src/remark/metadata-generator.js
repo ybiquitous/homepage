@@ -1,9 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import assert from "node:assert/strict";
+// @ts-expect-error -- TS2305: Module '"node:fs"' has no exported member 'globSync'.
+import { globSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import process from "node:process";
 
-import { globSync } from "glob";
 import { literal, parent } from "mdast-util-assert";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkParse from "remark-parse";
@@ -68,6 +69,7 @@ async function processFile(filePath) {
 async function main(inputPattern, outputFile) {
   const files = globSync(inputPattern);
   const vFiles = await Promise.all(files.map(processFile));
+  // @ts-expect-error -- TS7006: Parameter 'vFile' implicitly has an 'any' type.
   const metadataList = vFiles.map((vFile) => vFile.data);
 
   /** @typedef {import('vfile').Data} Data */

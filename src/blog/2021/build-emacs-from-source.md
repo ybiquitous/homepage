@@ -127,7 +127,7 @@ $ open ~/Applications/Emacs.app
 必要なライブラリが分からなくて最初は少しハマったが、以降は問題なくインストールできたし、今のところ問題なく動いている。
 （このブログもビルドしたEmacsで書いている）
 
-`NEWS` 眺めてると、[Emojiサポート](https://github.com/emacs-mirror/emacs/blob/2955d46c00430b38310d0fae968adea91e2bbc3d/etc/NEWS#L108)のセクションを見つけた。<kbd>C-x 8 e e</kbd>でEmoji選べるようになってる。便利。
+`NEWS` 眺めてると、[Emojiサポート](https://github.com/emacs-mirror/emacs/blob/2955d46c00430b38310d0fae968adea91e2bbc3d/etc/NEWS#L108)のセクションを見つけた。<kbd>C-x 8 e e</kbd>でEmojiを選べるようになってる。便利。
 
 ![Emoji support on Emacs 29](../../images/emoji-support-on-emacs-29.png)
 

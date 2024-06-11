@@ -35,7 +35,9 @@ export const Blog = ({ posts, breadcrumbs }) => {
         <ul className="mb-8 inline-flex list-none flex-wrap divide-x divide-slate-300 dark:divide-slate-600">
           {YEARS.map((year) => (
             <li className="px-2 first:ps-0 last:pe-0" key={year}>
-              <a href={`/blog/${year}`}>{year}</a>
+              <a className="my-text-secondary text-sm" href={`/blog/${year}`}>
+                {year}
+              </a>
             </li>
           ))}
         </ul>

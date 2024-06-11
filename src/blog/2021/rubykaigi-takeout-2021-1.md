@@ -76,10 +76,12 @@ RBSも同様にgemで提供するのかな…と考えてたけど、そうい�
 
 ## Ruby Committers vs the World
 
-恒例の[vs the World](https://rubykaigi.org/2021-takeout/presentations/rubylangorg.html)でも、[@soutaro](https://twitter.com/soutaro)さんからRBSのアップデートの話があった。
-YouTube動画では[4:00](https://youtu.be/zQnN1pqK4FQ?t=240)くらいから。
+<https://www.youtube.com/watch?v=zQnN1pqK4FQ>
 
-また、LSP絡みでパーサを良くしたいという話も@mameさんからあった。動画で[12:00](https://youtu.be/zQnN1pqK4FQ?t=720)くらいから。
+恒例の[vs the World](https://rubykaigi.org/2021-takeout/presentations/rubylangorg.html)でも、[@soutaro](https://twitter.com/soutaro)さんからRBSのアップデートの話があった。
+YouTube動画では[4:00](https://www.youtube.com/watch?v=zQnN1pqK4FQ&t=240s)くらいから。
+
+また、LSP絡みでパーサを良くしたいという話も@mameさんからあった。動画では[12:00](https://www.youtube.com/watch?v=zQnN1pqK4FQ&t=720s)くらいから。
 けっこう議論が白熱してて面白かった。以下、一例。
 
 - parser gemをバンドルする？Ripperどうする？

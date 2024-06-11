@@ -16,6 +16,7 @@ import remarkRelativeLink from "./remark-relative-link.js";
 import remarkRemoveH1 from "./remark-remove-h1.js";
 import remarkSpeakerdeck from "./remark-speakerdeck.js";
 import remarkTwitter from "./remark-twitter.js";
+import remarkYoutube from "./remark-youtube.js";
 
 /** @type {import("webpack").LoaderDefinitionFunction} */
 export default async function remarkLoader(source) {
@@ -28,6 +29,7 @@ export default async function remarkLoader(source) {
     .use(remarkAlert)
     .use(remarkSpeakerdeck)
     .use(remarkTwitter)
+    .use(remarkYoutube)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeSlug)
     .use(rehypeToc, {

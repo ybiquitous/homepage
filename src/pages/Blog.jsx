@@ -1,3 +1,4 @@
+import { allPostYears } from "../blog/index.js";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
@@ -5,12 +6,15 @@ import { Time } from "../components/Time";
 import { useTitle } from "../hooks/useTitle";
 import { pluralize } from "../utils/pluralize";
 
+const YEARS = [...allPostYears].reverse();
+
 /**
  * @param {{
  *   posts: ReadonlyArray<import("../blog/index.js").BlogPost>,
  *   breadcrumbs: import("../components/Breadcrumb.js").Items,
  * }} props
  */
+// eslint-disable-next-line max-lines-per-function
 export const Blog = ({ posts, breadcrumbs }) => {
   const mainTitle = "Blog";
   const subTitles = breadcrumbs.map((b) => (typeof b === "string" ? b : b.key));
@@ -27,7 +31,15 @@ export const Blog = ({ posts, breadcrumbs }) => {
         <Breadcrumb items={breadcrumbItems} />
       </header>
 
-      <main className="mt-16">
+      <main className="mt-8">
+        <ul className="mb-8 inline-flex list-none flex-wrap divide-x divide-slate-300 dark:divide-slate-600">
+          {YEARS.map((year) => (
+            <li className="px-2 first:ps-0 last:pe-0" key={year}>
+              <a href={`/blog/${year}`}>{year}</a>
+            </li>
+          ))}
+        </ul>
+
         <ul className="divide-y divide-dashed divide-slate-300 dark:divide-slate-600">
           {posts
             .filter(({ published }) => published != null)

@@ -124,3 +124,5 @@ export const groupBlogPostsByTag = (originalPosts) => {
 
   return posts;
 };
+
+export const allPostYears = uniqueArray(blogPosts.map((post) => post.year));

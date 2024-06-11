@@ -65,6 +65,13 @@
   execute: |
     document.querySelector('[title="Light"]').click();
 
+- name: Blog Post with YouTube
+  url: /blog/2021/rubykaigi-takeout-2021-1
+  waitForTimeout: 5000
+  waitForSelector: ".youtube-iframe"
+  execute: |
+    document.querySelector('[title="Light"]').click();
+
 - name: Blog Post with GFM Alerts
   url: /blog/2021/build-emacs-from-source
   waitForTimeout: 5000

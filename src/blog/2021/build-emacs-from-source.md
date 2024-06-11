@@ -1,6 +1,6 @@
 ---
 published: 2021-11-23T00:00:00.000Z
-lastUpdated: 2022-04-23T00:00:00.000Z
+lastUpdated: 2024-06-11T00:00:00.000Z
 author: Masafumi Koba
 tags: emacs
 ---
@@ -42,7 +42,8 @@ $ system_profiler SPSoftwareDataType | grep Version
 $ git fast-clone https://github.com/emacs-mirror/emacs.git
 ```
 
-Note: `git fast-clone` は[独自エイリアス](./git-partial-clone.md)であることに注意。
+> [!NOTE]
+> `git fast-clone` は[独自エイリアス](./git-partial-clone.md)であることに注意。
 
 ## ビルド準備
 
@@ -126,9 +127,13 @@ $ open ~/Applications/Emacs.app
 必要なライブラリが分からなくて最初は少しハマったが、以降は問題なくインストールできたし、今のところ問題なく動いている。
 （このブログもビルドしたEmacsで書いている）
 
-`NEWS` 眺めてると、[Emojiサポート](https://github.com/emacs-mirror/emacs/blob/2955d46c00430b38310d0fae968adea91e2bbc3d/etc/NEWS#L108)のセクションを見つけた。`C-x 8 e e` でEmoji選べるようになってる。便利。
+`NEWS` 眺めてると、[Emojiサポート](https://github.com/emacs-mirror/emacs/blob/2955d46c00430b38310d0fae968adea91e2bbc3d/etc/NEWS#L108)のセクションを見つけた。<kbd>C-x 8 e e</kbd>でEmoji選べるようになってる。便利。
 
 ![Emoji support on Emacs 29](../../images/emoji-support-on-emacs-29.png)
+
+> [!NOTE]
+> Emacs 29で公式にサポートされた🎉（[NEWS](https://github.com/emacs-mirror/emacs/blob/emacs-29.1/etc/NEWS#L884)）。
+> デフォルトのキープレフィックスは<kbd>C-x 8 e</kbd>。
 
 意外と簡単にビルドできたので、今後も定期的にソースからビルドするつもり。
 

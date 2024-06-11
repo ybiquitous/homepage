@@ -19,7 +19,7 @@
   }
 
   kbd {
-    @apply rounded-lg border border-gray-200 px-1.5 py-1 text-xs;
+    @apply mx-1 rounded-lg border border-gray-200 px-1.5 py-1 text-xs;
   }
 
   address {
@@ -170,6 +170,31 @@
 
       .toc-link {
         @apply ml-2 text-current hover:underline;
+      }
+    }
+
+    /* https://github.com/jaywcjlove/remark-github-blockquote-alert */
+    .markdown-alert {
+      @apply my-8 grid gap-2 rounded-md border-s-4 border-blue-500 bg-gray-200 p-4 text-sm dark:bg-gray-800;
+
+      & > .markdown-alert-title {
+        @apply flex items-center gap-2 font-semibold capitalize;
+
+        & > .octicon {
+          fill: currentcolor;
+        }
+      }
+
+      &.markdown-alert-note {
+        @apply border-blue-500;
+
+        & > .markdown-alert-title {
+          @apply text-blue-500;
+        }
+      }
+
+      & > p {
+        @apply m-0;
       }
     }
   }

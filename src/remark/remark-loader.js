@@ -4,6 +4,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import { remarkAlert } from "remark-github-blockquote-alert";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -24,6 +25,7 @@ export default async function remarkLoader(source) {
     .use(remarkRemoveH1)
     .use(remarkRelativeLink)
     .use(remarkGfm)
+    .use(remarkAlert)
     .use(remarkSpeakerdeck)
     .use(remarkTwitter)
     .use(remarkRehype, { allowDangerousHtml: true })

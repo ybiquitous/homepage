@@ -30,7 +30,7 @@ Safariは言わすもがなだが、macOSのChromeでは右クリックすると
 - [301451 - \[meta\] Gecko doesn't support Cmd-Ctrl-D lookup in Mac OS X Dictionary.app](https://bugzilla.mozilla.org/show_bug.cgi?id=301451)
 - [1116391 - Add "Look Up in Dictionary" context menu entry \[Mac OS X\]](https://bugzilla.mozilla.org/show_bug.cgi?id=1116391)
 
-最初のチケットは <kbd>Control</kbd>+<kbd>Command</kbd>+<kbd>D</kbd> ショートカットキーに対応したもので、クローズされている。
+最初のチケットは<kbd>Control</kbd>+<kbd>Command</kbd>+<kbd>D</kbd>ショートカットキーに対応したもので、クローズされている。
 ちなみに、そのショートカットキーのことはこのブログを書くまで知らなかった。[このページ](https://support.apple.com/en-us/HT201236)にmacOSショートカットキーの一覧が載っている。正直このショートカットキーは覚えにくく、押しにくい。
 
 2番目のチケットがまさに探していたもので、何と9年前にオープンされているがまだクローズされていない。やはりネイティブの人は辞書なんかしょっちゅう使わないので、優先順位が低いのだろうか。個人的にはなんとか実装してほしい。

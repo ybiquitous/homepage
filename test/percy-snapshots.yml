@@ -65,6 +65,13 @@
   execute: |
     document.querySelector('[title="Light"]').click();
 
+- name: Blog Post with GFM Alerts
+  url: /blog/2021/build-emacs-from-source
+  waitForTimeout: 5000
+  waitForSelector: ".markdown-alert"
+  execute: |
+    document.querySelector('[title="Light"]').click();
+
 - name: Slides
   url: /slides
   execute: |

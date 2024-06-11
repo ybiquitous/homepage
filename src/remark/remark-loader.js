@@ -6,6 +6,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
+import { remarkAlert } from "remark-github-blockquote-alert"; // eslint-disable-line import/no-unresolved
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
@@ -24,6 +25,7 @@ export default async function remarkLoader(source) {
     .use(remarkRemoveH1)
     .use(remarkRelativeLink)
     .use(remarkGfm)
+    .use(remarkAlert)
     .use(remarkSpeakerdeck)
     .use(remarkTwitter)
     .use(remarkRehype, { allowDangerousHtml: true })

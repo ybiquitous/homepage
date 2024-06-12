@@ -10,8 +10,9 @@ export default function remarkTwitter() {
       const url = new URL(link.url);
 
       // https://twitter.com/{username}/status/{tweet_id}
+      // https://x.com/{username}/status/{tweet_id}
       if (url.protocol !== "https:") return;
-      if (url.hostname !== "twitter.com") return;
+      if (!(url.hostname === "twitter.com" || url.hostname === "x.com")) return;
 
       const [, , , tweetId] = url.pathname.split("/", 4);
       if (tweetId === undefined || tweetId === "") return;

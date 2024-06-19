@@ -20,7 +20,7 @@ async function main() {
     const title = await rl.question(styleText("bold", "Title? "));
     const slug = title
       .trim()
-      .replaceAll(/[!()?]/gu, "")
+      .replaceAll(/[!"'()?’“”]/gu, "")
       .replaceAll(/\s+/gu, "-")
       .toLowerCase();
     const blogFile = path.resolve(thisYearDir, `${slug}.md`);
@@ -42,7 +42,7 @@ async function main() {
       .split(/[\s,]+/u)
       .filter(Boolean);
 
-    const yesNo = await rl.question(`Write ${styleText("bold", blogFileRelative)}? [Y/n] `);
+    const yesNo = await rl.question(`Write? ${styleText("bold", blogFileRelative)} [Y/n] `);
 
     if (yesNo.toLowerCase() === "n") {
       console.log("Abort.");

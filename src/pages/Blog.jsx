@@ -48,9 +48,9 @@ export const Blog = ({ posts, breadcrumbs }) => {
             .sort((a, b) => (b.published?.getTime() ?? 0) - (a.published?.getTime() ?? 0))
             .map(({ path, title: blogTitle, published, author, tags }) => (
               <li key={path} className="py-10 first:pt-0 last:pb-0">
-                <Link href={path} className="block !text-current">
+                <Link href={path} className="grid gap-2 !text-current">
                   <div className="text-xl">{blogTitle}</div>
-                  <div className="my-text-secondary flex flex-wrap gap-x-8">
+                  <div className="my-text-secondary flex flex-wrap gap-x-8 text-sm">
                     {published !== null && <Time date={published} />}
                     <address>{`by ${author}`}</address>
                   </div>

@@ -20,7 +20,7 @@ async function main() {
     const title = await rl.question(styleText("bold", "Title? "));
     const slug = title
       .trim()
-      .replaceAll(/[!()?'"’“”]/gu, "")
+      .replaceAll(/[!"'()?’“”]/gu, "")
       .replaceAll(/\s+/gu, "-")
       .toLowerCase();
     const blogFile = path.resolve(thisYearDir, `${slug}.md`);

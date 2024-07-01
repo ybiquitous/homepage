@@ -64,7 +64,7 @@
     "html-webpack-plugin": "^5.6.0",
     "mdast-util-assert": "^5.0.0",
     "mini-css-extract-plugin": "^2.9.0",
-    "postcss": "^8.4.38",
+    "postcss": "^8.4.39",
     "postcss-loader": "^8.1.1",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "rehype-autolink-headings": "^7.1.0",

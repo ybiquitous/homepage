@@ -12,5 +12,5 @@ const dictionary = new Map([
  * @returns {string}
  */
 export function pluralize(count, singular) {
-  return count === 1 ? singular : dictionary.get(singular) ?? singular;
+  return count === 1 ? singular : (dictionary.get(singular) ?? singular);
 }

@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import assert from "node:assert/strict";
-// @ts-expect-error -- TS2305: Module '"node:fs"' has no exported member 'globSync'.
 import { globSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import process from "node:process";

@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import assert from "node:assert/strict";
-// @ts-expect-error -- TS2305: Module '"node:fs"' has no exported member 'globSync'.
 import { globSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import process from "node:process";
@@ -68,7 +67,7 @@ async function processFile(filePath) {
  */
 async function main(inputPattern, outputFile) {
   /** @type {string[]} */
-  const files = globSync(inputPattern); // eslint-disable-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  const files = globSync(inputPattern);
   const vFiles = await Promise.all(files.map(processFile));
   const metadataList = vFiles.map((vFile) => vFile.data);
 

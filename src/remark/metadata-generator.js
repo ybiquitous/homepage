@@ -67,7 +67,7 @@ async function processFile(filePath) {
  */
 async function main(inputPattern, outputFile) {
   /** @type {string[]} */
-  const files = globSync(inputPattern); // eslint-disable-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  const files = globSync(inputPattern);
   const vFiles = await Promise.all(files.map(processFile));
   const metadataList = vFiles.map((vFile) => vFile.data);
 

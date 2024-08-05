@@ -20,7 +20,7 @@ export const CopyToClipboard = ({ text }) => {
     try {
       await navigator.clipboard.writeText(text);
       setState(SUCCEEDED);
-    } catch (e) {
+    } catch {
       setState(FAILED);
     } finally {
       setTimeout(() => setState(INITIAL), 2000);

@@ -60,7 +60,7 @@
     "core-js": "^3.37.1",
     "css-loader": "^7.1.2",
     "cssnano": "^7.0.4",
-    "eslint-config-ybiquitous": "^20.0.0",
+    "eslint-config-ybiquitous": "^21.0.0",
     "html-webpack-plugin": "^5.6.0",
     "mdast-util-assert": "^5.0.0",
     "mini-css-extract-plugin": "^2.9.0",

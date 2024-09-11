@@ -62,7 +62,7 @@ GitHubのサービス開始が2008年4月で、それ以前・以降でOSS界隈
 
 ## Conclusion
 
-懇親会でも色んな人と話せて楽しかった。[udzura](https://x.com/udzura)さんや[onk](https://x.com/onk)さんと初めて話せたし、[yotii23](https://x.com/yotii23)さんとも久しぶりに情報交換できた。
+懇親会でも色んな人と話せて楽しかった。[okuramasafumi](https://x.com/okuramasafumi)さんや[osyoyu](https://x.com/osyoyu)さん、[udzura](https://x.com/udzura)さんや[onk](https://x.com/onk)さんといった方々と初めて話せたし、[yotii23](https://x.com/yotii23)さんとも久しぶりに情報交換できた。
 いかんせん人見知りなので、参加人数がそれほど多くないこういった地域Ruby会議の方がRubyKaigiと比べてコミュニケーションをとりやすい。一人一人としっかり話す時間があるのが、とても心地よかった。
 
 最後に、オーガナイザー・運営スタッフの皆さんにも、福岡Ruby会議04の開催に感謝を述べたい。ありがとうございました。

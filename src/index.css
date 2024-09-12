@@ -170,8 +170,12 @@
         @apply list-none pl-2 pt-2;
       }
 
-      .toc-item::marker {
-        content: "»";
+      .toc-item {
+        @apply leading-10;
+
+        &::marker {
+          content: "»";
+        }
       }
 
       .toc-link {

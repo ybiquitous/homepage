@@ -47,7 +47,7 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@jsdevtools/rehype-toc": "^3.0.2",
-    "@percy/cli": "^1.30.2",
+    "@percy/cli": "^1.30.4",
     "@tsconfig/strictest": "^2.0.5",
     "@types/node": "^22.9.3",
     "@types/react": "^18.3.12",

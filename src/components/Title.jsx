@@ -3,12 +3,12 @@ const separator = " - ";
 
 /**
  * @param {{
- *   parts?: string | ReadonlyArray<string | null | undefined>,
+ *   content?: string | ReadonlyArray<string | null | undefined>,
  * }} props
  */
-export const Title = ({ parts = [] }) => {
-  parts = [parts].flat();
-  const content = parts.length === 0 ? base : [...parts, base].filter(Boolean).join(separator);
+export const Title = ({ content }) => {
+  const contentArray = [content].flat().filter(Boolean);
+  const text = contentArray.length === 0 ? base : [...contentArray, base].join(separator);
 
-  return <title>{content}</title>;
+  return <title>{text}</title>;
 };

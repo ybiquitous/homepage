@@ -14,7 +14,7 @@ export const BlogTags = ({ postsByTag }) => {
 
   return (
     <>
-      <Title parts={"Tags"} />
+      <Title content="Tags" />
 
       <header>
         <Breadcrumb items={[{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, "Tags"]} />

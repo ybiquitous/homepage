@@ -60,7 +60,7 @@ export const BlogPost = ({
 
   return (
     <>
-      <Title parts={[title, "Blog"]} />
+      <Title content={[title, "Blog"]} />
 
       <header>
         <Breadcrumb

@@ -26,7 +26,7 @@ export const Blog = ({ posts, breadcrumbs }) => {
 
   return (
     <>
-      <Title parts={[mainTitle, ...subTitles]} />
+      <Title content={[mainTitle, ...subTitles]} />
 
       <header>
         <Breadcrumb items={breadcrumbItems} />

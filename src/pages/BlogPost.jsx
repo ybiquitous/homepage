@@ -2,11 +2,11 @@ import { useRef, useEffect, useState } from "react";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
+import { Title } from "../components/Title";
 import { Navi } from "./BlogPost/Navi";
 import { Times } from "./BlogPost/Times";
 import { generateCopyToClipboard } from "./BlogPost/generateCopyToClipboard";
 import { replaceTweet } from "./BlogPost/replaceTweet";
-import { buildTitle } from "../utils/buildTitle";
 
 /**
  * @param {import("../blog/index.js").BlogPost} props
@@ -60,7 +60,7 @@ export const BlogPost = ({
 
   return (
     <>
-      <title>{buildTitle(title, "Blog")}</title>
+      <Title parts={[title, "Blog"]} />
 
       <header>
         <Breadcrumb

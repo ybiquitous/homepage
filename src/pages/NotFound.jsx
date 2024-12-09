@@ -1,9 +1,9 @@
-import { buildTitle } from "../utils/buildTitle";
+import { Title } from "../components/Title";
 
 export const NotFound = () => {
   return (
     <>
-      <title>{buildTitle("Page Not Found")}</title>
+      <Title parts={"Page Not Found"} />
 
       <main className="py-12 text-center">
         <h1 className="text-8xl">Ooops!</h1>

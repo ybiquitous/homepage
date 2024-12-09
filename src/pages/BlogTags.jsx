@@ -1,6 +1,6 @@
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
-import { buildTitle } from "../utils/buildTitle";
+import { Title } from "../components/Title";
 import { pluralize } from "../utils/pluralize";
 
 /**
@@ -14,7 +14,7 @@ export const BlogTags = ({ postsByTag }) => {
 
   return (
     <>
-      <title>{buildTitle("Tags")}</title>
+      <Title parts={["Tags"]} />
 
       <header>
         <Breadcrumb items={[{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, "Tags"]} />

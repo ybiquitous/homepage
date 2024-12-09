@@ -1,13 +1,13 @@
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Time } from "../components/Time";
-import { buildTitle } from "../utils/buildTitle";
+import { Title } from "../components/Title";
 import metadata from "./slides-metadata.json";
 
 export const Slides = () => {
   return (
     <>
-      <title>{buildTitle("Slides")}</title>
+      <Title parts={"Slides"} />
 
       <header>
         <Breadcrumb items={["Slides"]} />

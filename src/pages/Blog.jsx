@@ -3,7 +3,7 @@ import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
 import { Time } from "../components/Time";
-import { buildTitle } from "../utils/buildTitle";
+import { Title } from "../components/Title";
 import { pluralize } from "../utils/pluralize";
 
 const YEARS = [...allPostYears].reverse();
@@ -26,7 +26,7 @@ export const Blog = ({ posts, breadcrumbs }) => {
 
   return (
     <>
-      <title>{buildTitle(mainTitle, ...subTitles)}</title>
+      <Title parts={[mainTitle, ...subTitles]} />
 
       <header>
         <Breadcrumb items={breadcrumbItems} />

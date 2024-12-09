@@ -1,9 +1,9 @@
-import { useTitle } from "../hooks/useTitle";
+import { Title } from "../components/Title";
 
-export const NotFound = () => {
-  useTitle("Page Not Found");
+export const NotFound = () => (
+  <>
+    <Title content="Page Not Found" />
 
-  return (
     <main className="py-12 text-center">
       <h1 className="text-8xl">Ooops!</h1>
       <p className="mt-24 text-lg">Sorry, the Page is Not Found.</p>
@@ -11,5 +11,5 @@ export const NotFound = () => {
         <a href="/">Back to Home</a>
       </p>
     </main>
-  );
-};
+  </>
+);

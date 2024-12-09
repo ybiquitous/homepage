@@ -3,7 +3,7 @@ import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
 import { Time } from "../components/Time";
-import { useTitle } from "../hooks/useTitle";
+import { Title } from "../components/Title";
 import { pluralize } from "../utils/pluralize";
 
 const YEARS = [...allPostYears].reverse();
@@ -18,7 +18,6 @@ const YEARS = [...allPostYears].reverse();
 export const Blog = ({ posts, breadcrumbs }) => {
   const mainTitle = "Blog";
   const subTitles = breadcrumbs.map((b) => (typeof b === "string" ? b : b.key));
-  useTitle(mainTitle, ...subTitles);
 
   const breadcrumbItems =
     breadcrumbs.length === 0
@@ -27,6 +26,8 @@ export const Blog = ({ posts, breadcrumbs }) => {
 
   return (
     <>
+      <Title content={[mainTitle, ...subTitles]} />
+
       <header>
         <Breadcrumb items={breadcrumbItems} />
       </header>

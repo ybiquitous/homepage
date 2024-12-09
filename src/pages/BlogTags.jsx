@@ -1,6 +1,6 @@
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
-import { useTitle } from "../hooks/useTitle";
+import { Title } from "../components/Title";
 import { pluralize } from "../utils/pluralize";
 
 /**
@@ -9,13 +9,13 @@ import { pluralize } from "../utils/pluralize";
  * }} props
  */
 export const BlogTags = ({ postsByTag }) => {
-  useTitle("Tags");
-
   const tagCount = postsByTag.size;
   const sortedPostsByTag = [...postsByTag].sort(([a], [b]) => a.localeCompare(b));
 
   return (
     <>
+      <Title content="Tags" />
+
       <header>
         <Breadcrumb items={[{ el: <Link href="/blog">Blog</Link>, key: "Blog" }, "Tags"]} />
       </header>

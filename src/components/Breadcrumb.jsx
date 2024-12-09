@@ -4,7 +4,7 @@ import { Link } from "./Link";
 const home = { el: <Link href="/">Home</Link>, key: "Home" };
 
 /**
- * @typedef {{ el: JSX.Element, key: string }} Item
+ * @typedef {{ el: React.ReactElement, key: string }} Item
  * @typedef {ReadonlyArray<string | Item>} Items
  */
 

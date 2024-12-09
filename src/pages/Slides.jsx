@@ -1,14 +1,14 @@
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Time } from "../components/Time";
-import { useTitle } from "../hooks/useTitle";
+import { buildTitle } from "../utils/buildTitle";
 import metadata from "./slides-metadata.json";
 
 export const Slides = () => {
-  useTitle("Slides");
-
   return (
     <>
+      <title>{buildTitle("Slides")}</title>
+
       <header>
         <Breadcrumb items={["Slides"]} />
       </header>

@@ -1,13 +1,13 @@
 import { brands, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
-import { useTitle } from "../hooks/useTitle";
+import { buildTitle } from "../utils/buildTitle";
 import { Menu } from "./Home/Menu";
 import { Profile } from "./Home/Profile";
 
 export const Home = () => {
-  useTitle();
-
   return (
     <>
+      <title>{buildTitle()}</title>
+
       <header className="md:mt-24">
         <Profile />
       </header>

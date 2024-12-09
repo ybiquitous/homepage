@@ -2,11 +2,11 @@ import { useRef, useEffect, useState } from "react";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Link } from "../components/Link";
 import { Tags } from "../components/Tags";
-import { useTitle } from "../hooks/useTitle";
 import { Navi } from "./BlogPost/Navi";
 import { Times } from "./BlogPost/Times";
 import { generateCopyToClipboard } from "./BlogPost/generateCopyToClipboard";
 import { replaceTweet } from "./BlogPost/replaceTweet";
+import { buildTitle } from "../utils/buildTitle";
 
 /**
  * @param {import("../blog/index.js").BlogPost} props
@@ -24,8 +24,6 @@ export const BlogPost = ({
   prev,
   next,
 }) => {
-  useTitle(title, "Blog");
-
   const [content, setContent] = useState("");
 
   useEffect(() => {
@@ -34,7 +32,7 @@ export const BlogPost = ({
     fetchContent(slug).then(setContent);
   }, [slug, fetchContent, setContent]);
 
-  /** @type {React.MutableRefObject<HTMLElement | null>} */
+  /** @type {React.RefObject<HTMLElement | null>} */
   const contentElement = useRef(null);
 
   useEffect(() => {
@@ -62,6 +60,8 @@ export const BlogPost = ({
 
   return (
     <>
+      <title>{buildTitle(title, "Blog")}</title>
+
       <header>
         <Breadcrumb
           items={[

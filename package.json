@@ -4,11 +4,11 @@
   "scripts": {
     "prepare": "husky",
     "prestart": "npm run build:blog",
-    "start": "webpack serve --mode=development --define-process-env-node-env=development --stats=minimal",
+    "start": "webpack serve --mode=development --node-env=development --stats=minimal",
     "start:open": "npm run start -- --open",
     "analyze": "webpack --analyze --mode=production",
     "build:blog": "node src/remark/metadata-generator.js",
-    "build:webpack": "webpack build --mode=production --define-process-env-node-env=production",
+    "build:webpack": "webpack build --mode=production --node-env=production",
     "build:slides": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
     "build": "npm-run-all --print-label build:blog build:webpack build:slides",
     "postbuild": "cp -v _redirects dist/",

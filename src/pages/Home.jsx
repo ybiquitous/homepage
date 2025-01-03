@@ -1,5 +1,5 @@
-import { faBlog, faGem, faImages } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faNpm, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBlog, faGem, faImages } from "@fortawesome/free-solid-svg-icons";
 import { Title } from "../components/Title";
 import { Menu } from "./Home/Menu";
 import { Profile } from "./Home/Profile";

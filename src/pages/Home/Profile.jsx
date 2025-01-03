@@ -1,4 +1,4 @@
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Profile = () => (
@@ -19,7 +19,7 @@ export const Profile = () => (
       <div className="my-text-secondary sm:text-xl">@ybiquitous</div>
       <p className="mt-4 italic">I’m a Web Programmer. I love Emacs, JavaScript, CSS, and Ruby.</p>
       <small className="my-text-secondary mt-1 inline-flex items-center gap-1">
-        <FontAwesomeIcon icon={solid("location-dot")} className="mr-1" />
+        <FontAwesomeIcon icon={faLocationDot} className="mr-1" />
         Tokyo, Japan
       </small>
     </div>

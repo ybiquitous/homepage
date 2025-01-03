@@ -1,4 +1,4 @@
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { faCheck, faCopy, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
@@ -28,15 +28,15 @@ export const CopyToClipboard = ({ text }) => {
   };
 
   let style = "text-gray-300 hover:text-gray-500";
-  let icon = solid("copy");
+  let icon = faCopy;
   let message;
   if (state === SUCCEEDED) {
     style = "text-emerald-500";
-    icon = solid("check");
+    icon = faCheck;
     message = "Copied!";
   } else if (state === FAILED) {
     style = "text-red-500";
-    icon = solid("xmark");
+    icon = faXmark;
     message = "Failed to copy.";
   }
 

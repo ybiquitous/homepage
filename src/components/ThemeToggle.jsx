@@ -1,4 +1,4 @@
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useMount } from "../hooks/useMount";
@@ -64,19 +64,13 @@ export const ThemeToggle = () => {
   return (
     <span>
       <button type="button" title="Light" onClick={() => handleClick(false)}>
-        <FontAwesomeIcon
-          icon={solid("sun")}
-          className={dark ? "text-slate-400" : "text-orange-400"}
-        />
+        <FontAwesomeIcon icon={faSun} className={dark ? "text-slate-400" : "text-orange-400"} />
       </button>
 
       <span className="mx-1 text-slate-200">|</span>
 
       <button type="button" title="Dark" onClick={() => handleClick(true)}>
-        <FontAwesomeIcon
-          icon={solid("moon")}
-          className={dark ? "text-yellow-400" : "text-slate-400"}
-        />
+        <FontAwesomeIcon icon={faMoon} className={dark ? "text-yellow-400" : "text-slate-400"} />
       </button>
     </span>
   );

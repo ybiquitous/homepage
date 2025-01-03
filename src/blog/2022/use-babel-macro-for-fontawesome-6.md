@@ -1,11 +1,16 @@
 ---
 published: 2022-02-19T00:00:00.000Z
-lastUpdated: 2022-03-23T00:00:00.000Z
+lastUpdated: 2025-01-03T00:00:00.000Z
 author: Masafumi Koba
 tags: babel, react, fontawesome
 ---
 
 # Font Awesome 6でBabelマクロを使う
+
+> [!NOTE]
+> Font Awesome 6からBabelマクロを使った方法は非推奨になったので、本サイトも元のインポート方法に置き換えた。
+>
+> See PR [ybiquitous/homepage#1692](https://github.com/ybiquitous/homepage/pull/1692)
 
 ふと今日思い立って、このサイトで利用している[Font Awesome](https://fontawesome.com)というアイコンライブラリをバージョン5から6にアップデートした。
 その際、新しいビルドの仕組み（**Babelマクロ**）が導入されていたので、勉強がてらやってみた。当記事はその備忘録である。

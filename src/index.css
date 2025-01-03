@@ -162,20 +162,12 @@
     & > .toc-wrapper {
       @apply rounded bg-neutral-100 p-4 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-100;
 
-      .toc-summary {
-        @apply italic;
-      }
-
       .toc-level {
         @apply list-none pl-2 pt-2;
       }
 
       .toc-item {
         @apply leading-10;
-
-        &::marker {
-          content: "»";
-        }
       }
 
       .toc-link {

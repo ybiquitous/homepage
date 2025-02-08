@@ -171,12 +171,8 @@
         true,
         {
           "ignoreAtRules": [
-            "tailwind",
             "apply",
-            "layer",
-            "variants",
-            "responsive",
-            "screen"
+            "custom-variant"
           ]
         }
       ],

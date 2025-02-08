@@ -172,6 +172,7 @@
         {
           "ignoreAtRules": [
             "apply",
+            "config",
             "custom-variant"
           ]
         }

@@ -2,6 +2,8 @@
 @import url("~@fortawesome/fontawesome-free/css/solid.min.css");
 @import "tailwindcss"; /* stylelint-disable-line import-notation */
 
+@config "../tailwind.config.js";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {

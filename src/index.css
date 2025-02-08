@@ -65,6 +65,7 @@
   .markdown {
     & .hljs {
       @apply !p-0;
+
       color: currentcolor !important;
       background: inherit !important;
     }

@@ -73,7 +73,7 @@ export const BlogPost = ({
       </header>
 
       <main className="mt-10 lg:mt-16">
-        <h1 className="mb-12 text-4xl font-semibold leading-tight">{title}</h1>
+        <h1 className="mb-12 text-4xl leading-tight font-semibold">{title}</h1>
 
         <div className="my-text-secondary flex flex-wrap gap-x-8 text-sm">
           <Times published={published} lastUpdated={lastUpdated} />

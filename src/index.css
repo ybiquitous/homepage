@@ -1,9 +1,10 @@
 @import url("~@fortawesome/fontawesome-free/css/fontawesome.min.css");
 @import url("~@fortawesome/fontawesome-free/css/solid.min.css");
+@import "tailwindcss"; /* stylelint-disable-line import-notation */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config "../tailwind.config.js";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :any-link {
@@ -43,6 +44,17 @@
   iframe {
     max-width: 100%;
   }
+
+  body {
+    background: no-repeat
+      linear-gradient(
+        to bottom,
+        hsl(211deg 100% 37% / var(--ybiq-bg-opacity)) 50%,
+        hsl(50deg 100% 50% / var(--ybiq-bg-opacity)) 50%
+      );
+    background-size: auto 100vh;
+    background-attachment: fixed;
+  }
 }
 
 @layer utilities {
@@ -65,27 +77,27 @@
     }
 
     & > h1 {
-      @apply mb-12 mt-4 text-5xl;
+      @apply mt-4 mb-12 text-5xl;
     }
 
     & > h2 {
-      @apply mb-4 mt-16 border-b border-gray-300 pb-2 text-3xl;
+      @apply mt-16 mb-4 border-b border-gray-300 pb-2 text-3xl;
     }
 
     & > h3 {
-      @apply mb-4 mt-12 text-2xl;
+      @apply mt-12 mb-4 text-2xl;
     }
 
     & > h4 {
-      @apply mb-4 mt-8 text-xl;
+      @apply mt-8 mb-4 text-xl;
     }
 
     & > h5 {
-      @apply mb-4 mt-8 text-lg;
+      @apply mt-8 mb-4 text-lg;
     }
 
     & > h6 {
-      @apply mb-4 mt-8 text-base;
+      @apply mt-8 mb-4 text-base;
     }
 
     & hr {
@@ -163,7 +175,7 @@
       @apply rounded bg-neutral-100 p-4 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-100;
 
       .toc-level {
-        @apply list-none pl-2 pt-2;
+        @apply list-none pt-2 pl-2;
       }
 
       .toc-item {
@@ -210,15 +222,4 @@
 
 .dark {
   --ybiq-bg-opacity: 0.1;
-}
-
-body {
-  background: no-repeat
-    linear-gradient(
-      to bottom,
-      hsl(211deg 100% 37% / var(--ybiq-bg-opacity)) 50%,
-      hsl(50deg 100% 50% / var(--ybiq-bg-opacity)) 50%
-    );
-  background-size: auto 100vh;
-  background-attachment: fixed;
 }

@@ -63,8 +63,12 @@
   }
 
   .markdown {
+    /* NOTE: This overrides the highlight.js theme. */
     & .hljs {
-      @apply !p-0 !text-current;
+      @apply !p-0;
+
+      color: currentcolor !important;
+      background: inherit !important;
     }
 
     & > h1,

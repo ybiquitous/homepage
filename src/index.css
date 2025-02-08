@@ -1,7 +1,6 @@
 @import url("~@fortawesome/fontawesome-free/css/fontawesome.min.css");
 @import url("~@fortawesome/fontawesome-free/css/solid.min.css");
-
-@import "tailwindcss";
+@import "tailwindcss"; /* stylelint-disable-line import-notation */
 
 @layer base {
   :any-link {

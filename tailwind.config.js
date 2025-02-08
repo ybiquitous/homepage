@@ -1,4 +1,4 @@
-import defaultTheme from "tailwindcss/defaultTheme"; // eslint-disable-line import/no-extraneous-dependencies
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config = {
   content: ["./src/*.html", "./src/**/*.jsx"],

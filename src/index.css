@@ -63,6 +63,7 @@
   }
 
   .markdown {
+    /* NOTE: This overrides the highlight.js theme. */
     & .hljs {
       @apply !p-0;
 

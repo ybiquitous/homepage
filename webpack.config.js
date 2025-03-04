@@ -1,6 +1,6 @@
 import process from "node:process";
 import { fileURLToPath } from "node:url";
-import CopyPlugin from "copy-webpack-plugin"; // eslint-disable-line import/default -- TODO: Avoid error.
+import CopyPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 

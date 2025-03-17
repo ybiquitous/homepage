@@ -13,6 +13,8 @@ updates:
         patterns: ["@fortawesome/*"]
       remark:
         patterns: ["remark", "remark-*", "rehype-*", "unified", "unist-*", "mdast-*"]
+      tailwindcss:
+        patterns: ["tailwindcss", "@tailwindcss/*"]
       typescript:
         patterns: ["typescript", "@types/*", "@tsconfig/*"]
       typescript-eslint:

@@ -8,7 +8,7 @@
 
 @layer base {
   :any-link {
-    @apply text-blue-700 dark:text-blue-400;
+    @apply text-indigo-800 dark:text-sky-400;
   }
 
   details > summary {
@@ -46,13 +46,10 @@
   }
 
   body {
-    background: no-repeat
-      linear-gradient(
-        to bottom,
-        hsl(211deg 100% 37% / var(--ybiq-bg-opacity)) 50%,
-        hsl(50deg 100% 50% / var(--ybiq-bg-opacity)) 50%
-      );
-    background-size: auto 100vh;
+    background-image: url("./images/matsuyama-castle-20250417.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
   }
 }
@@ -219,11 +216,5 @@
 }
 
 :root {
-  --ybiq-bg-opacity: 0.5;
-
   scrollbar-gutter: stable;
-}
-
-.dark {
-  --ybiq-bg-opacity: 0.1;
 }

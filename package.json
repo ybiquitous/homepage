@@ -222,7 +222,7 @@
     }
   },
   "lint-staged": {
-    "!(**/*.{jpg,png,snap}|.husky/**)": "prettier --cache --write",
+    "!(**/*.{jpg,png,snap}|.husky/**|.git*)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail"
   },
   "remarkConfig": {

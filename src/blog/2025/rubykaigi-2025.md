@@ -30,4 +30,3 @@ tags: ruby, rubykaigi
 ## セッション
 
 前置きが長くなったが、本題の
-

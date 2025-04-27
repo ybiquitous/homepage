@@ -223,7 +223,7 @@
   },
   "lint-staged": {
     "!(**/*.{jpg,png,snap}|.husky/**|.git*)": "prettier --cache --write",
-    "!(CHANGELOG).md": "remark --frail"
+    "!(CHANGELOG).md": "remark --frail --output /dev/null"
   },
   "remarkConfig": {
     "plugins": [

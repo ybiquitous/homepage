@@ -50,7 +50,7 @@
     "@percy/cli": "^1.31.0",
     "@tailwindcss/postcss": "^4.1.11",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/node": "^24.0.7",
+    "@types/node": "^24.0.10",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.35.0",

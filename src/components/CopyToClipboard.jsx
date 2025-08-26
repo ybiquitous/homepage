@@ -50,7 +50,7 @@ export const CopyToClipboard = ({ text }) => {
         }}
         className={`rounded border border-current bg-gray-100 px-1 py-0.5 ${style}`}
       >
-        <FontAwesomeIcon icon={icon} size="sm" fixedWidth />
+        <FontAwesomeIcon icon={icon} size="sm" />
       </button>
     </span>
   );

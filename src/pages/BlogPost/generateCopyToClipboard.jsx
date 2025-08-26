@@ -26,6 +26,6 @@ export function generateCopyToClipboard(el) {
     };
 
     // Mount
-    createRoot(btnWrapper).render(<CopyToClipboard text={pre.textContent ?? ""} />);
+    createRoot(btnWrapper).render(<CopyToClipboard text={pre.textContent} />);
   });
 }

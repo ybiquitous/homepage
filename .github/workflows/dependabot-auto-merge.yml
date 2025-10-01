@@ -6,6 +6,6 @@ on:
 
 jobs:
   auto-merge:
-    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@2fd29486ae4def771910ed448123404eeefdeef6 # main
+    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@e969f0368d1b73854f0232dcb70cc383b23e8154 # main
     permissions:
       contents: write

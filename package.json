@@ -33,11 +33,11 @@
     "blog-new": "node ./scripts/new-blog-post.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.1",
-    "@fortawesome/fontawesome-svg-core": "^7.0.1",
-    "@fortawesome/free-brands-svg-icons": "^7.0.1",
-    "@fortawesome/free-solid-svg-icons": "^7.0.1",
-    "@fortawesome/react-fontawesome": "^3.0.2",
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.0",
     "highlight.js": "^11.11.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"

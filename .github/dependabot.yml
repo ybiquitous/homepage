@@ -9,16 +9,18 @@ updates:
     groups:
       babel:
         patterns: ["@babel/*", "babel-*"]
+      eslint:
+        patterns: ["eslint", "eslint-*", "typescript-eslint"]
       fontawesome:
         patterns: ["@fortawesome/*"]
+      react:
+        patterns: ["react", "react-dom"]
       remark:
         patterns: ["remark", "remark-*", "rehype-*", "unified", "unist-*", "mdast-*"]
       tailwindcss:
         patterns: ["tailwindcss", "@tailwindcss/*"]
       typescript:
         patterns: ["typescript", "@types/*", "@tsconfig/*"]
-      eslint:
-        patterns: ["eslint", "eslint-*", "typescript-eslint"]
   - package-ecosystem: github-actions
     directory: "/"
     schedule:

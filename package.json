@@ -10,13 +10,11 @@
     "build:blog": "node src/remark/metadata-generator.js",
     "build:webpack": "webpack build --mode=production --node-env=production",
     "build:slides": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
-    "build": "npm-run-all --print-label build:blog build:webpack build:slides",
+    "build": "ybiq run --npm build:blog build:webpack build:slides",
     "postbuild": "cp -v _redirects dist/",
     "static": "npm run build && npx http-server ./dist",
-    "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
-    "prelint-ci": "npm run build:blog",
-    "lint-ci": "npm-run-all --silent --parallel lint:*",
-    "lint": "npm-run-all --print-label --silent --parallel lint:*",
+    "format": "ybiq run --npm lint:md:fix lint:styles:fix",
+    "lint": "ybiq run --npm lint:md lint:types lint:styles",
     "lint:md": "remark .",
     "lint:md:fix": "remark . --output",
     "lint:types": "tsc --noEmit",
@@ -25,9 +23,9 @@
     "lint:styles:fix": "npm run prettier -- --write",
     "prettier": "prettier --cache .",
     "preeslint": "npm run build:blog",
-    "eslint": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
+    "eslint": "eslint --cache",
     "eslint:fix": "npm run eslint -- --fix",
-    "test": "npm-run-all --parallel lint build",
+    "test": "ybiq run --npm lint build",
     "test:visual": "percy snapshot test/percy-snapshots.yml --base-url \"http://localhost:8080\"",
     "stylelint-install": "npm install stylelint@15 stylelint-config-standard@34 stylelint-high-performance-animation @ronilaukkarinen/stylelint-a11y",
     "blog-new": "node ./scripts/new-blog-post.js"
@@ -60,7 +58,9 @@
     "core-js": "^3.47.0",
     "css-loader": "^7.1.2",
     "cssnano": "^7.1.2",
-    "eslint-config-ybiquitous": "^22.0.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "html-webpack-plugin": "^5.6.5",
     "mdast-util-assert": "^5.0.0",
     "mini-css-extract-plugin": "^2.9.4",
@@ -82,6 +82,7 @@
     "tailwindcss": "^4.0.14",
     "to-vfile": "^8.0.0",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.48.1",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
     "webpack": "^5.103.0",
@@ -89,69 +90,7 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
     "yaml": "^2.8.2",
-    "ybiq": "^19.1.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "ybiquitous/browser",
-      "ybiquitous/react",
-      "ybiquitous/typescript"
-    ],
-    "ignorePatterns": [
-      "coverage",
-      "dist",
-      "tmp",
-      "src/slides-build",
-      "src/blog/metadata.*",
-      "**/*.cjs"
-    ],
-    "reportUnusedDisableDirectives": true,
-    "parserOptions": {
-      "project": "tsconfig.json"
-    },
-    "env": {
-      "es2020": true
-    },
-    "rules": {
-      "max-statements": [
-        "warn",
-        20
-      ],
-      "sort-imports": "off",
-      "import/extensions": "off",
-      "import/no-internal-modules": "off",
-      "import/no-unresolved": "warn",
-      "import/prefer-default-export": "off",
-      "react/display-name": "off",
-      "react/jsx-key": "warn",
-      "react/jsx-no-target-blank": "warn",
-      "react/no-array-index-key": "warn",
-      "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off",
-      "react/require-default-props": "warn",
-      "@typescript-eslint/consistent-type-definitions": [
-        "error",
-        "type"
-      ],
-      "@typescript-eslint/explicit-function-return-type": "warn",
-      "@typescript-eslint/no-implicit-any-catch": "off",
-      "@typescript-eslint/prefer-readonly-parameter-types": "off"
-    },
-    "overrides": [
-      {
-        "files": [
-          "*.js",
-          "*.jsx"
-        ],
-        "rules": {
-          "@typescript-eslint/explicit-function-return-type": "off",
-          "@typescript-eslint/explicit-module-boundary-types": "off",
-          "@typescript-eslint/no-require-imports": "off",
-          "@typescript-eslint/no-var-requires": "off"
-        }
-      }
-    ]
+    "ybiq": "^21.0.1"
   },
   "stylelint": {
     "ignoreFiles": [
@@ -223,7 +162,8 @@
   },
   "lint-staged": {
     "!(**/*.{jpg,png,snap}|.husky/**)": "prettier --cache --write",
-    "!(CHANGELOG).md": "remark --frail"
+    "!(CHANGELOG).md": "remark --frail",
+    "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix"
   },
   "remarkConfig": {
     "plugins": [
@@ -260,5 +200,8 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
+  },
+  "overrides": {
+    "conventional-changelog-conventionalcommits": "^9.1.0"
   }
 }

@@ -17,8 +17,8 @@ updates:
         patterns: ["tailwindcss", "@tailwindcss/*"]
       typescript:
         patterns: ["typescript", "@types/*", "@tsconfig/*"]
-      typescript-eslint:
-        patterns: ["@typescript-eslint/eslint-plugin", "eslint-config-ybiquitous"]
+      eslint:
+        patterns: ["eslint", "eslint-*", "typescript-eslint"]
   - package-ecosystem: github-actions
     directory: "/"
     schedule:

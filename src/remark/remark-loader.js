@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import rehypeToc from "@jsdevtools/rehype-toc";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
@@ -6,11 +5,10 @@ import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
-import { remarkAlert } from "remark-github-blockquote-alert"; // eslint-disable-line import/no-unresolved
+import { remarkAlert } from "remark-github-blockquote-alert";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-/* eslint-enable import/no-extraneous-dependencies */
 
 import remarkRelativeLink from "./remark-relative-link.js";
 import remarkRemoveH1 from "./remark-remove-h1.js";

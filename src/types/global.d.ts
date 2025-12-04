@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 interface Window {
   /**
    * @see https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-javascript-factory-function

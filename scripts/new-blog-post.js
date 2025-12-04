@@ -1,4 +1,3 @@
-/* eslint-disable no-console, max-lines-per-function, max-statements */
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { stdin as input, stdout as output } from "node:process";
@@ -73,4 +72,3 @@ tags: ${tags.join(", ")}
 }
 
 main();
-/* eslint-enable no-console, max-lines-per-function, max-statements */

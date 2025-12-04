@@ -5,6 +5,11 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["**"]
+  # Run the workflow regularly, as auto-merged PRs by bots may not trigger it.
+  schedule:
+    - cron: "0 0 1,15 * *"
+  # Allow manual triggering of the workflow.
+  workflow_dispatch:
 
 concurrency:
   group: test-${{ github.ref }}
@@ -24,5 +29,6 @@ jobs:
           cache: npm
       - run: npm --global install npm@latest
       - run: npm ci
-      - run: npm run lint-ci
+      - run: npm run build:blog
+      - run: npm run lint
       - run: npm run build

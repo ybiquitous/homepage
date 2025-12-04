@@ -1,5 +1,5 @@
 /* eslint-env node */
-import { visit } from "unist-util-visit"; // eslint-disable-line import/no-extraneous-dependencies
+import { visit } from "unist-util-visit";
 
 /** @type {() => (tree: import("mdast").Root) => void} */
 export default function remarkRemoveH1() {

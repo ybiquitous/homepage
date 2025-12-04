@@ -1,4 +1,4 @@
-import { visit } from "unist-util-visit"; // eslint-disable-line import/no-extraneous-dependencies
+import { visit } from "unist-util-visit";
 
 /** @type {() => (tree: import("mdast").Root) => void} */
 export default function remarkRelativeLink() {
@@ -7,7 +7,7 @@ export default function remarkRelativeLink() {
       if (link.url.startsWith("http")) return;
       if (!link.url.includes(".md")) return;
 
-      link.url = link.url.replace(/\.md/u, ""); // eslint-disable-line no-param-reassign
+      link.url = link.url.replace(/\.md/u, "");
     });
   };
 }

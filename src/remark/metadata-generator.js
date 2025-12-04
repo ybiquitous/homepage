@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import assert from "node:assert/strict";
 import { globSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
@@ -11,7 +10,6 @@ import remarkStringify from "remark-stringify";
 import { readSync } from "to-vfile";
 import { unified } from "unified";
 import yaml from "yaml";
-/* eslint-enable import/no-extraneous-dependencies */
 
 /** @typedef {import('mdast').Root} Root */
 /** @typedef {import('vfile').VFile} VFile */
@@ -37,7 +35,7 @@ function extractMetadata() {
     literal(h1Child);
 
     /** @type {{ slug: string; title: string; tags?: string | string[]; }} */
-    const metadata = yaml.parse(yamlNode.value); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
+    const metadata = yaml.parse(yamlNode.value);
     metadata.slug = file.path.replace(/\.md$/u, "").split("/").slice(-2).join("/");
     metadata.title = h1Child.value;
     metadata.tags = (metadata.tags?.toString() ?? "")
@@ -45,7 +43,7 @@ function extractMetadata() {
       .filter((tag) => tag.trim().length > 0)
       .sort((a, b) => a.localeCompare(b));
 
-    file.data = metadata; // eslint-disable-line no-param-reassign
+    file.data = metadata;
   };
 }
 

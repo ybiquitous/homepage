@@ -21,7 +21,13 @@ updates:
         patterns: ["tailwindcss", "@tailwindcss/*"]
       typescript:
         patterns: ["typescript", "@types/*", "@tsconfig/*"]
+    cooldown:
+      default-days: 7
+
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
+      exclude: ["ybiquitous/*"]

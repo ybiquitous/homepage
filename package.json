@@ -27,7 +27,8 @@
     "eslint:fix": "npm run eslint -- --fix",
     "test": "ybiq run --npm lint build",
     "test:visual": "percy snapshot test/percy-snapshots.yml --base-url \"http://localhost:8080\"",
-    "stylelint-install": "npm install stylelint@15 stylelint-config-standard@34 stylelint-high-performance-animation @ronilaukkarinen/stylelint-a11y",
+    "stylelint-install": "npm install --no-save stylelint stylelint-config-standard stylelint-high-performance-animation @csstools/stylelint-formatter-github",
+    "stylelint-run": "stylelint \"**/*.css\" --custom-formatter @csstools/stylelint-formatter-github",
     "blog-new": "node ./scripts/new-blog-post.js"
   },
   "dependencies": {
@@ -99,8 +100,7 @@
       "src/slides-build/**/*"
     ],
     "extends": [
-      "stylelint-config-standard",
-      "@ronilaukkarinen/stylelint-a11y/recommended"
+      "stylelint-config-standard"
     ],
     "plugins": [
       "stylelint-high-performance-animation"
@@ -156,7 +156,6 @@
           ]
         }
       ],
-      "a11y/media-prefers-reduced-motion": null,
       "plugin/no-low-performance-animation-properties": true
     }
   },

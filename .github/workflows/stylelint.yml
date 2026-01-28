@@ -19,4 +19,4 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm run stylelint-install
-      - run: npx stylelint "**/*.css" --formatter=github
+      - run: npm run stylelint-run

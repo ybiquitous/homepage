@@ -1,4 +1,3 @@
-/* eslint-env node */
 import { visit } from "unist-util-visit";
 
 /** @type {() => (tree: import("mdast").Root) => void} */

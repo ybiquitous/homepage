@@ -8,7 +8,8 @@
     "resolvePackageJsonExports": true,
     "jsx": "react-jsx",
     "checkJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["node", "react", "react-dom"]
   },
   "include": [
     "src/**/*",

@@ -80,7 +80,7 @@
     "remark-stringify": "^11.0.0",
     "tailwindcss": "^4.0.14",
     "to-vfile": "^8.0.0",
-    "typescript": "^6.0.2",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.58.2",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.1.0",

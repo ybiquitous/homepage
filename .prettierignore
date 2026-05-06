@@ -95,6 +95,7 @@ typings/
 
 # Custom
 dist/
+.gitignore
 .remarkignore
 .nvmrc
 /src/blog/metadata.*

@@ -32,7 +32,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: npm start
+      - run: npm run prestart --ignore-scripts
+      - run: npm run start --ignore-scripts
         background: true
       - run: npm run test:visual -- --verbose
         env:

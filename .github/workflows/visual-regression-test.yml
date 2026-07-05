@@ -32,7 +32,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: npm start &
+      - run: npm start
+        background: true
       - run: npm run test:visual -- --verbose
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

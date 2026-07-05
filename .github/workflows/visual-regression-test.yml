@@ -33,6 +33,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm start
+        id: dev-server
         background: true
       - run: npm run test:visual -- --verbose
         env:
@@ -44,3 +45,4 @@ jobs:
           fi
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      - cancel: dev-server

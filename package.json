@@ -42,9 +42,9 @@
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.5",
-    "@babel/preset-react": "^7.28.5",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
+    "@babel/preset-react": "^8.0.1",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@percy/cli": "^1.32.2",
     "@tailwindcss/postcss": "^4.3.0",

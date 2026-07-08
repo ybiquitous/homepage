@@ -47,7 +47,7 @@
     "@babel/preset-react": "^8.0.1",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@percy/cli": "^1.32.2",
-    "@tailwindcss/postcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.2",
     "@tsconfig/strictest": "^2.0.8",
     "@types/node": "^26.0.1",
     "@types/react": "^19.2.17",

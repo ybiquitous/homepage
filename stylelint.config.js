@@ -10,6 +10,7 @@ export default {
         ignoreAtRules: ["apply", "config", "custom-variant"],
       },
     ],
+    "at-rule-prelude-no-invalid": [true, { ignoreAtRules: ["apply"] }],
     "declaration-block-no-duplicate-properties": true,
     "declaration-property-value-disallowed-list": {
       "font-family": [

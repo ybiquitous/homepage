@@ -23,6 +23,15 @@ export default defineConfig([
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
+      globals: {
+        URL: "readonly",
+        console: "readonly",
+        document: "readonly",
+        localStorage: "readonly",
+        self: "readonly",
+        setTimeout: "readonly",
+        window: "readonly",
+      },
     },
     extends: [
       js.configs.recommended,

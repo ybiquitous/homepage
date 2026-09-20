@@ -1,4 +1,3 @@
-import globals from "globals";
 import js from "@eslint/js";
 import { defineConfig } from "eslint/config";
 
@@ -25,7 +24,13 @@ export default defineConfig([
       ecmaVersion: "latest",
       sourceType: "module",
       globals: {
-        ...globals.browser,
+        URL: "readonly",
+        console: "readonly",
+        document: "readonly",
+        localStorage: "readonly",
+        self: "readonly",
+        setTimeout: "readonly",
+        window: "readonly",
       },
     },
     extends: [

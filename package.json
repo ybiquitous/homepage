@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare": "husky",
+    "prepare": "git config set --local core.hooksPath .githooks || true",
     "prestart": "npm run build:blog",
     "start": "webpack serve --mode=development --config-node-env=development --stats=minimal",
     "start:open": "npm run start -- --open",
@@ -29,7 +29,8 @@
     "test:visual": "percy snapshot test/percy-snapshots.yml --base-url \"http://localhost:8080\"",
     "stylelint-install": "npm install --no-save stylelint stylelint-config-standard stylelint-high-performance-animation @csstools/stylelint-formatter-github",
     "stylelint-run": "stylelint \"**/*.css\" --custom-formatter @csstools/stylelint-formatter-github",
-    "blog-new": "node ./scripts/new-blog-post.js"
+    "blog-new": "node ./scripts/new-blog-post.js",
+    "clean": "git clean -dx --force --exclude=node_modules"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.3.1",
@@ -89,10 +90,10 @@
     "webpack-cli": "^7.2.3",
     "webpack-dev-server": "^6.0.0",
     "yaml": "^2.9.0",
-    "ybiq": "^21.0.3"
+    "ybiq": "^22.0.0"
   },
   "lint-staged": {
-    "!(**/*.{jpg,png,snap}|.husky/**)": "prettier --cache --write",
+    "!(**/*.{jpg,png,snap,snapshot}|.githooks/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix"
   },
@@ -127,8 +128,5 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
-  },
-  "overrides": {
-    "conventional-changelog-conventionalcommits": "^9.1.0"
   }
 }

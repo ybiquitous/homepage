@@ -93,7 +93,7 @@
     "ybiq": "^22.0.0"
   },
   "lint-staged": {
-    "!(**/*.{jpg,png,snap}|**/*.snapshot|.githooks/**)": "prettier --cache --write",
+    "!(**/*.{jpg,png,snap,snapshot}|.githooks/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix"
   },

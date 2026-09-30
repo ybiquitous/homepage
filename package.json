@@ -50,7 +50,7 @@
     "@percy/cli": "^1.32.7",
     "@tailwindcss/postcss": "^4.3.3",
     "@tsconfig/strictest": "^2.0.8",
-    "@types/node": "^26.6.1",
+    "@types/node": "^26.6.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@typescript/native": "npm:typescript@^7.0.2",

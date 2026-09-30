@@ -90,7 +90,7 @@
     "webpack-cli": "^7.2.3",
     "webpack-dev-server": "^6.0.0",
     "yaml": "^2.9.1",
-    "ybiq": "^22.0.0"
+    "ybiq": "^22.2.0"
   },
   "lint-staged": {
     "!(**/*.{jpg,png,snap,snapshot}|.githooks/**)": "prettier --cache --write",

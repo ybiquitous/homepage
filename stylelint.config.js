@@ -2,7 +2,6 @@
 export default {
   ignoreFiles: ["dist/**/*", "node_modules/**/*", "src/slides-build/**/*"],
   extends: ["stylelint-config-standard"],
-  plugins: ["stylelint-high-performance-animation"],
   rules: {
     "at-rule-no-unknown": [
       true,
@@ -43,6 +42,5 @@ export default {
         ignorePseudoClasses: ["global"],
       },
     ],
-    "plugin/no-low-performance-animation-properties": true,
   },
 };

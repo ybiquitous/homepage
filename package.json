@@ -27,7 +27,7 @@
     "eslint:fix": "npm run eslint -- --fix",
     "test": "ybiq run --npm lint build",
     "test:visual": "percy snapshot test/percy-snapshots.yml --base-url \"http://localhost:8080\"",
-    "stylelint-install": "npm install --no-save stylelint stylelint-config-standard stylelint-high-performance-animation",
+    "stylelint-install": "npm install --no-save stylelint stylelint-config-standard",
     "stylelint-run": "stylelint \"**/*.css\"",
     "blog-new": "node ./scripts/new-blog-post.js",
     "clean": "git clean -dx --force --exclude=node_modules"

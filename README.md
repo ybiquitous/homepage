@@ -7,6 +7,14 @@ Visit [ybiquitous.me](https://ybiquitous.me/).
 
 ## Development
 
+### Node.js
+
+The Node.js version is declared in `package.json` with `devEngines.runtime`. If the Node.js version does not match `devEngines.runtime`, `npm` commands fail.
+
+> [!NOTE]
+> `engines.node` is also kept for Netlify, which does not read `devEngines.runtime`.
+> Ref: <https://www.netlify.com/changelog/2026-07-07-nodejs-24-default-new-sites/>
+
 ### Setup
 
 To install packages:

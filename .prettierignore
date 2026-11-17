@@ -97,5 +97,4 @@ typings/
 dist/
 .gitignore
 .remarkignore
-.nvmrc
 /src/blog/metadata.*

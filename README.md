@@ -12,8 +12,8 @@ Visit [ybiquitous.me](https://ybiquitous.me/).
 The Node.js version is declared in `package.json` with `devEngines.runtime`. If the Node.js version does not match `devEngines.runtime`, `npm` commands fail.
 
 > [!NOTE]
-> `engines.node` is also kept for Netlify, which does not read `devEngines.runtime`.
-> Ref: <https://www.netlify.com/changelog/2026-07-07-nodejs-24-default-new-sites/>
+> Netlify does not read `devEngines.runtime`. Set the `NODE_VERSION` environment variable to match it in the Netlify build settings.
+> Ref: <https://docs.netlify.com/build/configure-builds/manage-dependencies/#node-js-and-javascript>
 
 ### Setup
 

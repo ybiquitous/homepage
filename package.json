@@ -23,7 +23,7 @@
     "build:blog": "node src/remark/metadata-generator.js",
     "build:webpack": "webpack build --mode=production --config-node-env=production",
     "build:slides": "rm -rf dist/slides && mkdir -p dist/slides && cp -R src/slides-build/* dist/slides/",
-    "build": "ybiq run --npm build:blog build:webpack build:slides",
+    "build": "npm run build:blog && npm run build:webpack && npm run build:slides",
     "postbuild": "cp -v _redirects dist/",
     "static": "npm run build && npx http-server ./dist",
     "format": "ybiq run --npm lint:md:fix lint:styles:fix",

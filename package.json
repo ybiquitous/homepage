@@ -59,7 +59,7 @@
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@percy/cli": "^1.32.7",
     "@tailwindcss/postcss": "^4.3.5",
-    "@tsconfig/strictest": "^2.0.8",
+    "@tsconfig/strictest": "^2.0.9",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",

@@ -92,7 +92,7 @@
     "tailwindcss": "^4.0.14",
     "to-vfile": "^8.0.0",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "^8.72.0",
+    "typescript-eslint": "^8.73.0",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.2.0",
     "webpack": "^5.112.2",
